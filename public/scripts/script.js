@@ -50,13 +50,6 @@ function imgsToLightMode() {
   }
 }
 
-// function imgsToLightMode() {
-//   let imglist = document.querySelectorAll(".switchable-img");
-//   imglist.forEach(element => {
-//     element.setAttribute('src', `../assets/images/${element.id}.png`);
-//   })
-// }
-
 function switchTheme(e) {
   if (e.target.checked) {
     document.documentElement.setAttribute('current-theme', 'dark');
@@ -99,40 +92,6 @@ function getNextSiblingWithClass(element, selector) {
     sibling = sibling.nextElementSibling
   }
 };
-
-// exl.forEach(element => {
-//   element.addEventListener("click", function() {
-//     this.classList.toggle("rotated");
-//     if (this.style.maxHeight) {
-//       this.style.maxHeight = null;
-//     } else {
-//       this.style.maxHeight = "9999px";
-//     }
-//   })
-// });
-
-// exl.forEach(element => {
-//   element.addEventListener("click", function() {
-//     this.classList.toggle("rotated");
-//     if (this.style.maxHeight) {
-//       this.style.maxHeight = null;
-//     } else {
-//       this.style.maxHeight = (this.scrollHeight + 16) + "px";
-//     }
-//   })
-// });
-
-// exl.forEach(element => {
-//   element.addEventListener("click", function() {
-//     this.classList.toggle("rotated");
-//     let content = getNextSiblingWithClass(this, ".exl-content");
-//     if (content.style.maxHeight) {
-//       content.style.maxHeight = null;
-//     } else {
-//       content.style.maxHeight = content.scrollHeight + "px";
-//     }
-//   })
-// });
 
 exl.forEach(element => {
   element.addEventListener("click", function() {

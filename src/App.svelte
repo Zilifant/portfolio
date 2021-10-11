@@ -33,28 +33,20 @@
     <a
       class={`main-nav-item main-nav-item-home ${isCurrent(bio)}-main`}
       href='/' on:click|preventDefault={() => (page = bio)}
-    >
-      {bio}
-    </a>
+    >{bio}</a>
     <a
       class={`main-nav-item main-nav-item-resume ${isCurrent(res)}-main`}
       href='/' on:click|preventDefault={() => (page = res)}
-    >
-      {res}
-    </a>
+    >{res}</a>
     <a
       class={`main-nav-item main-nav-item-writing ${isCurrent(writ)}-main`}
       href='/' on:click|preventDefault={() => (page = writ)}
-    >
-      {writ}
-    </a>
+    >{writ}</a>
     <a
       class={`main-nav-item main-nav-item-contact ${isCurrent(code)}-main`}
       href='/' on:click|preventDefault={() => (page = code)}
-    >
-      {code}
-    </a>
-    <!-- <div class='drop-nav'>
+    >{code}</a>
+    <div class='drop-nav'>
       <button class='drop-nav-btn'>
         <div class='drop-nav-btn-icon'>
           <div class='drop-nav-btn-icon-bar'></div>
@@ -65,31 +57,23 @@
       </button>
       <div class='drop-nav-items'>
         <a
-          class='drop-nav-item drop-nav-item-home'
+          class={`drop-nav-item drop-nav-item-home ${isCurrent(bio)}-drop`}
           href='/' on:click|preventDefault={() => (page = bio)}
-        >
-          <div>{bio}</div>
-        </a>
+        ><div>{bio}</div></a>
         <a
-          class='drop-nav-item drop-nav-item-resume '
+          class={`drop-nav-item drop-nav-item-resume ${isCurrent(res)}-drop`}
           href='/' on:click|preventDefault={() => (page = res)}
-        >
-          <div>{res}</div>
-        </a>
+        ><div>{res}</div></a>
         <a
-          class='drop-nav-item drop-nav-item-writing'
+          class={`drop-nav-item drop-nav-item-writing ${isCurrent(writ)}-drop`}
           href='/' on:click|preventDefault={() => (page = writ)}
-        >
-          <div>{writ}</div>
-        </a>
+        ><div>{writ}</div></a>
         <a
-          class='drop-nav-item drop-nav-item-contact'
+          class={`drop-nav-item drop-nav-item-contact ${isCurrent(code)}-drop`}
           href='/' on:click|preventDefault={() => (page = code)}
-        >
-          <div>{code}</div>
-        </a>
+        ><div>{code}</div></a>
       </div>
-    </div> -->
+    </div>
   </nav>
 
   <div class='content-wrapper'>
