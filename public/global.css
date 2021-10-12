@@ -365,15 +365,7 @@
   --accent-hover: var(--emer5);
 }
 
-/* RESET
-8888888b.  8888888888  .d8888b.  8888888888 88888888888 
-888   Y88b 888        d88P  Y88b 888            888     
-888    888 888        Y88b.      888            888     
-888   d88P 8888888     "Y888b.   8888888        888     
-8888888P"  888            "Y88b. 888            888     
-888 T88b   888              "888 888            888     
-888  T88b  888        Y88b  d88P 888            888     
-888   T88b 8888888888  "Y8888P"  8888888888     888     */
+/*RESET*/
 
 html, body {
   margin: 0;
@@ -488,15 +480,7 @@ p, ul, ol, li {
   font-weight: 450;
 }
 
-/* GRID
- .d8888b.  8888888b.  8888888 8888888b.  
-d88P  Y88b 888   Y88b   888   888  "Y88b 
-888    888 888    888   888   888    888 
-888        888   d88P   888   888    888 
-888  88888 8888888P"    888   888    888 
-888    888 888 T88b     888   888    888 
-Y88b  d88P 888  T88b    888   888  .d88P 
- "Y8888P88 888   T88b 8888888 8888888P"  */
+/*GRID*/
 
 .main-head       { grid-area: hdm; }
 .main-head-left  { grid-area: hdl; }
@@ -511,7 +495,7 @@ Y88b  d88P 888  T88b    888   888  .d88P
 
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr fit-content(800px) 1fr;
+  grid-template-columns: 1fr 800px 1fr;
   grid-template-areas:
   "hdl hdm hdr"
   "nav nav nav"
@@ -524,15 +508,11 @@ Y88b  d88P 888  T88b    888   888  .d88P
   background-attachment: fixed;
 }
 
-/* HEAD
-888    888 8888888888        d8888 8888888b.  
-888    888 888              d88888 888  "Y88b 
-888    888 888             d88P888 888    888 
-8888888888 8888888        d88P 888 888    888 
-888    888 888           d88P  888 888    888 
-888    888 888          d88P   888 888    888 
-888    888 888         d8888888888 888  .d88P 
-888    888 8888888888 d88P     888 8888888P"  */
+@media(max-width: 800px) {
+  .wrapper { grid-template-columns: 1fr fit-content(800px) 1fr; }
+}
+
+/*HEAD*/
 
 .main-head-bg {
   position: absolute;
@@ -571,38 +551,10 @@ Y88b  d88P 888  T88b    888   888  .d88P
   letter-spacing: .1rem;
 }
 
-/* .github-corner {
-  position: absolute;
-  display: flex;
-  top: 0;
-  right: 0;
-  height: 58px;
-  width: 58px;
-  background: var(--header-text);
-  clip-path: polygon(0 0, 100% 0, 100% 100%);
-  object-fit: contain;
-  overflow: hidden;
-}
-
-.github-corner img {
-  width: 70%;
-  display: block;
-  transform: rotate(45deg);
-  margin: auto;
-} */
-
 /* hide default header */
 @media (max-width: 600px) { .main-head { display: none; } }
 
-/*LIGHT-DARK SWITCH
- .d8888b.  888       888 8888888 88888888888 
-d88P  Y88b 888   o   888   888       888     
-Y88b.      888  d8b  888   888       888     
- "Y888b.   888 d888b 888   888       888     
-    "Y88b. 888d88888b888   888       888     
-      "888 88888P Y88888   888       888     
-Y88b  d88P 8888P   Y8888   888       888     
- "Y8888P"  888P     Y888 8888888     888     */
+/*LIGHT-DARK SWITCH*/
 
 .theme-switch-text {
   position: absolute;
@@ -671,17 +623,9 @@ input:checked + .theme-switch-slider:before {
   .theme-switch-text { display: none; }
 }
 
-/* NAV
-888b    888        d8888 888     888 
-8888b   888       d88888 888     888 
-88888b  888      d88P888 888     888 
-888Y88b 888     d88P 888 Y88b   d88P 
-888 Y88b888    d88P  888  Y88b d88P  
-888  Y88888   d88P   888   Y88o88P   
-888   Y8888  d8888888888    Y888P    
-888    Y888 d88P     888     Y8P     */
+/*NAV*/
 
-/* hide mobile naviation by default */
+/* hide mobile navigation by default */
 .drop-nav-btn,
 .drop-nav-items { display: none; }
 
@@ -846,15 +790,7 @@ input:checked + .theme-switch-slider:before {
   .this-page-drop { background: var(--nav-bg-this-page); }
 }
 
-/*FOOTER
-8888888888  .d88888b.   .d88888b.  88888888888 
-888        d88P" "Y88b d88P" "Y88b     888     
-888        888     888 888     888     888     
-8888888    888     888 888     888     888     
-888        888     888 888     888     888     
-888        888     888 888     888     888     
-888        Y88b. .d88P Y88b. .d88P     888     
-888         "Y88888P"   "Y88888P"      888     */
+/*FOOTER*/
 
 .foot {
   padding: 1rem 0 3rem 0;
@@ -943,15 +879,7 @@ input:checked + .theme-switch-slider:before {
   .copyright-1-line { display: flex; }
 }
 
-/* CONTENT
- .d8888b.   .d88888b.  888b    888 
-d88P  Y88b d88P" "Y88b 8888b   888 
-888    888 888     888 88888b  888 
-888        888     888 888Y88b 888 
-888        888     888 888 Y88b888 
-888    888 888     888 888  Y88888 
-Y88b  d88P Y88b. .d88P 888   Y8888 
- "Y8888P"   "Y88888P"  888    Y888 */
+/* CONTENT*/
 
 .content-wrapper {
   display: flex;
@@ -1012,15 +940,7 @@ Y88b  d88P Y88b. .d88P 888   Y8888
   .content-right-contact { width: 100%; }
 }
 
-/*HOME
-888    888  .d88888b.  888b     d888 8888888888 
-888    888 d88P" "Y88b 8888b   d8888 888        
-888    888 888     888 88888b.d88888 888        
-8888888888 888     888 888Y88888P888 8888888    
-888    888 888     888 888 Y888P 888 888        
-888    888 888     888 888  Y8P  888 888        
-888    888 Y88b. .d88P 888   "   888 888        
-888    888  "Y88888P"  888       888 8888888888 */
+/*BIO*/
 
 .headshot-wrapper {
   object-fit: contain;
@@ -1031,7 +951,7 @@ Y88b  d88P Y88b. .d88P 888   Y8888
   display: block;
 }
 
-/* hide headshot on HOME page */
+/* hide headshot on BIO page */
 @media (max-width: 800px) {
   .content-left-home { display: none; }
   .content-right-home { width: 100%; }
@@ -1055,15 +975,7 @@ Y88b  d88P Y88b. .d88P 888   Y8888
   width: 9rem; /* 144px */
 }
 
-/*RESUME
-8888888b.  8888888888  .d8888b.  
-888   Y88b 888        d88P  Y88b 
-888    888 888        Y88b.      
-888   d88P 8888888     "Y888b.   
-8888888P"  888            "Y88b. 
-888 T88b   888              "888 
-888  T88b  888        Y88b  d88P 
-888   T88b 8888888888  "Y8888P"  */
+/*RESUME*/
 
 .exl-btn:hover .exl-btn-icon-fore { background: var(--accent-hover); }
 
@@ -1198,15 +1110,7 @@ Y88b  d88P Y88b. .d88P 888   Y8888
   content: "\25cf";
 }
 
-/*WRITING
-888       888 8888888b.  8888888 88888888888 
-888   o   888 888   Y88b   888       888     
-888  d8b  888 888    888   888       888     
-888 d888b 888 888   d88P   888       888     
-888d88888b888 8888888P"    888       888     
-88888P Y88888 888 T88b     888       888     
-8888P   Y8888 888  T88b    888       888     
-888P     Y888 888   T88b 8888888     888     */
+/*WRITING*/
 
 .writing-title {
   width: 20rem;
@@ -1250,15 +1154,7 @@ Y88b  d88P Y88b. .d88P 888   Y8888
   color: var(--cyan5);
 }
 
-/*CONTACT FORM
-8888888888  .d88888b.  8888888b.  888b     d888 
-888        d88P" "Y88b 888   Y88b 8888b   d8888 
-888        888     888 888    888 88888b.d88888 
-8888888    888     888 888   d88P 888Y88888P888 
-888        888     888 8888888P"  888 Y888P 888 
-888        888     888 888 T88b   888  Y8P  888 
-888        Y88b. .d88P 888  T88b  888   "   888 
-888         "Y88888P"  888   T88b 888       888 */
+/*CONTACT FORM*/
 
 .contact-label { display: none; }
 
@@ -1322,15 +1218,7 @@ input[type=submit]:hover {
   border: 3px solid var(--accent-hover);
 }
 
-/*MISC
-888b     d888 8888888  .d8888b.   .d8888b.  
-8888b   d8888   888   d88P  Y88b d88P  Y88b 
-88888b.d88888   888   Y88b.      888    888 
-888Y88888P888   888    "Y888b.   888        
-888 Y888P 888   888       "Y88b. 888        
-888  Y8P  888   888         "888 888    888 
-888   "   888   888   Y88b  d88P Y88b  d88P 
-888       888 8888888  "Y8888P"   "Y8888P"  */
+/*MISC*/
 
 .preload,
 .preload:before {
