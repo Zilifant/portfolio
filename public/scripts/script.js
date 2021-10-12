@@ -66,13 +66,13 @@ function switchTheme(e) {
 //Footer Random Quote
 //-------------------
 
-(function newQuote() { // IIFE
-  let quotes = [
-    '<a href="https://en.wikipedia.org/wiki/Francis_Bacon">Nature to be commanded must be obeyed.</a>',
-    '<a href="https://en.wikipedia.org/wiki/Augustine_of_Hippo">Love, and do what you will.</a>',
-    '<a href="https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow">Nothing in life is as important as you think it is, while you are thinking about it.</a>',
-    '<a href="https://en.wikiquote.org/wiki/Bruce_Lee">Freedom discovers man the moment he loses concern over what impression he is making or about to make.</a>',
-  ];
-  let randomQuote = Math.floor(Math.random() * quotes.length);
-  document.getElementById("foot-quote-display").innerHTML = quotes[randomQuote];
-})();
+// (function newQuote() { // IIFE
+//   let quotes = [
+//     '<a href="https://en.wikipedia.org/wiki/Francis_Bacon">Nature to be commanded must be obeyed.</a>',
+//     '<a href="https://en.wikipedia.org/wiki/Augustine_of_Hippo">Love, and do what you will.</a>',
+//     '<a href="https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow">Nothing in life is as important as you think it is, while you are thinking about it.</a>',
+//     '<a href="https://en.wikiquote.org/wiki/Bruce_Lee">Freedom discovers man the moment he loses concern over what impression he is making or about to make.</a>',
+//   ];
+//   let randomQuote = Math.floor(Math.random() * quotes.length);
+//   document.getElementById("foot-quote-display").innerHTML = quotes[randomQuote];
+// })();
