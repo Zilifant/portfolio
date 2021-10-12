@@ -34,37 +34,37 @@
 
 <section class="partner-logo-grid">
   <img class="switchable-img" id="pax"
-       src="../assets/images/pax.png" alt="Penny Arcade Expo">
+       src={`../assets/images/pax${dark}.png`} alt="Penny Arcade Expo">
   <img class="switchable-img" id="playcrafting"
-       src="../assets/images/playcrafting.png" alt="PLaycrafting NYC">
+       src={`../assets/images/playcrafting${dark}.png`} alt="PLaycrafting NYC">
   <img class="switchable-img" id="gencon"
-       src="../assets/images/gencon.png" alt="Gen Con">
+       src={`../assets/images/gencon${dark}.png`} alt="Gen Con">
   <img class="switchable-img" id="cuny"
-       src="../assets/images/cuny.png" alt="City University of New York">
+       src={`../assets/images/cuny${dark}.png`} alt="City University of New York">
   <img class="switchable-img" id="g4c"
-       src="../assets/images/g4c.png" alt="Games for Change">
+       src={`../assets/images/g4c${dark}.png`} alt="Games for Change">
   <img class="switchable-img" id="nyu"
-       src="../assets/images/nyu.png" alt="New York University">
+       src={`../assets/images/nyu${dark}.png`} alt="New York University">
   <img class="switchable-img" id="dicetower"
-       src="../assets/images/dicetower.png" alt="The Dice Tower">
+       src={`../assets/images/dicetower${dark}.png`} alt="The Dice Tower">
   <img class="switchable-img" id="seriousplay"
-       src="../assets/images/seriousplay.png" alt="Serious Play Conference">
+       src={`../assets/images/seriousplay${dark}.png`} alt="Serious Play Conference">
   <img class="switchable-img" id="amc"
-       src="../assets/images/amc.png" alt="Appalachian Mountain Club">
+       src={`../assets/images/amc${dark}.png`} alt="Appalachian Mountain Club">
   <img class="switchable-img" id="gogame"
-       src="../assets/images/gogame.png" alt="The Go Game">
+       src={`../assets/images/gogame${dark}.png`} alt="The Go Game">
   <img class="switchable-img" id="wildrence"
-       src="../assets/images/wildrence.png" alt="Wildrence">
+       src={`../assets/images/wildrence${dark}.png`} alt="Wildrence">
   <img class="switchable-img" id="hireowl"
-       src="../assets/images/hireowl.png" alt="HireOwl">
+       src={`../assets/images/hireowl${dark}.png`} alt="HireOwl">
   <img class="switchable-img" id="marist"
-       src="../assets/images/marist.png" alt="Marist College">
+       src={`../assets/images/marist${dark}.png`} alt="Marist College">
   <img class="switchable-img" id="greenhouse"
-       src="../assets/images/greenhouse.png" alt="Greenhouse">
+       src={`../assets/images/greenhouse${dark}.png`} alt="Greenhouse">
   <img class="switchable-img" id="techday"
-       src="../assets/images/techday.png" alt="New York Tech Day">
+       src={`../assets/images/techday${dark}.png`} alt="New York Tech Day">
   <img class="switchable-img" id="technodramatists"
-       src="../assets/images/technodramatists.png" alt="TechnoDramatists">
+       src={`../assets/images/technodramatists${dark}.png`} alt="TechnoDramatists">
 </section>
 
 <div class="horz-bar section-divider"></div>
