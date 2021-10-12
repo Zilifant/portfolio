@@ -9,6 +9,12 @@
   function switchPage(pg) {
     page = pg;
     document.documentElement.id = 'page-' + pg;
+    setTimeout(function() {
+      let targetNodes = document.querySelectorAll('.preload');
+      for (let i = 0; i < targetNodes.length; i++) {
+        targetNodes[i].classList.remove('preload');
+      }
+    }, 1000);
   };
 
   const isDarkMode = () => {

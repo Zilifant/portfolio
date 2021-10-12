@@ -76,31 +76,3 @@ function switchTheme(e) {
   let randomQuote = Math.floor(Math.random() * quotes.length);
   document.getElementById("foot-quote-display").innerHTML = quotes[randomQuote];
 })();
-
-//-------------------
-//Collapsible Lists--
-//-------------------
-
-let exl = document.querySelectorAll(".exl-btn");
-
-function getNextSiblingWithClass(element, selector) {
-  // Get next sibling.
-  let sibling = element.nextElementSibling;
-  // If sibling matches selector, use it; if not, jump to next sibling and continue loop.
-  while (sibling) {
-    if (sibling.matches(selector)) return sibling;
-    sibling = sibling.nextElementSibling
-  }
-};
-
-exl.forEach(element => {
-  element.addEventListener("click", function() {
-    this.classList.toggle("rotated");
-    let content = this.nextElementSibling;
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
-});
