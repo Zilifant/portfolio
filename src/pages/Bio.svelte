@@ -12,21 +12,6 @@
   <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
   <p>Lorem ipsum dolor sit amet, con&shy;secte&shy;tur adip&shy;isc&shy;ing elit, sed do eius&shy;mod tem&shy;por in&shy;ci&shy;didunt ut la&shy;bore et do&shy;lore magna ali&shy;qua. Ut enim ad minim ve&shy;niam, quis nos&shy;trud ex&shy;erci&shy;ta&shy;tion ul&shy;lamco la&shy;boris nisi ut aliquip ex ea com&shy;modo con&shy;se&shy;quat.</p>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud.</p>
-  <p class="u35">35 Text-Rendering: Geometric Precision</p>
-  <p class="v35">35 Webkit Font Smoothing: Antialiased / Moz OSX Font Smoothing: Grayscale</p>
-  <p class="w35">35 Webkit Font Smoothing: Subpixel-Antialiased / Moz OSX Font Smoothing: Grayscale</p>
-  <p class="x35">35 Text-Rendering: Geometric Precision + Webkit Font Smoothing: Antialiased / Moz OSX Font Smoothing: Grayscale</p>
-  <p class="y35">35 Text-Rendering: Geometric Precision + Webkit Font Smoothing: Subpixel-Antialiased / Moz OSX Font Smoothing: Grayscale</p>
-  <p class="u40">40 Text-Rendering: Geometric Precision</p>
-  <p class="v40">40 Webkit Font Smoothing: Antialiased / Moz OSX Font Smoothing: Grayscale</p>
-  <p class="w40">40 Webkit Font Smoothing: Subpixel-Antialiased / Moz OSX Font Smoothing: Grayscale</p>
-  <p class="x40">40 Text-Rendering: Geometric Precision + Webkit Font Smoothing: Antialiased / Moz OSX Font Smoothing: Grayscale</p>
-  <p class="y40">40 Text-Rendering: Geometric Precision + Webkit Font Smoothing: Subpixel-Antialiased / Moz OSX Font Smoothing: Grayscale</p>
-  <p class="u45">45 Text-Rendering: Geometric Precision</p>
-  <p class="v45">45 Webkit Font Smoothing: Antialiased / Moz OSX Font Smoothing: Grayscale</p>
-  <p class="w45">45 Webkit Font Smoothing: Subpixel-Antialiased / Moz OSX Font Smoothing: Grayscale</p>
-  <p class="x45">45 Text-Rendering: Geometric Precision + Webkit Font Smoothing: Antialiased / Moz OSX Font Smoothing: Grayscale</p>
-  <p class="y45">45 Text-Rendering: Geometric Precision + Webkit Font Smoothing: Subpixel-Antialiased / Moz OSX Font Smoothing: Grayscale</p>
 </section>
 
 <div class="horz-bar section-divider"></div>
