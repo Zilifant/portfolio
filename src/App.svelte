@@ -5,9 +5,20 @@
   import Resume from './pages/Resume.svelte';
   import Writing from './pages/Writing.svelte';
   import Code from './pages/Code.svelte';
+  import Margins from './Margins.svelte';
   import Footer from './Footer.svelte';
+  import {
+    randomQuote,
+    removePreload,
+    // setThemeFromLocalStorage,
+    switchTheme,
+  } from './utilities';
 
-  import { randomQuote } from './utilities';
+  removePreload();
+  // const themeSwitch = document.querySelector('.theme-switch-bg input[type="checkbox"]');
+  // console.log(themeSwitch);
+  // console.log(document);
+  // setThemeFromLocalStorage(themeSwitch);
 
   const bio  = 'bio';
   const res  = 'resume';
@@ -22,7 +33,7 @@
 
   function switchPage(pg) {
     page = pg;
-    document.documentElement.id = 'page-' + pg;
+    document.documentElement.id = `page-${pg}`;
     quote = randomQuote();
     setTimeout(function() {
       let targetNodes = document.querySelectorAll('.preload');
@@ -45,7 +56,10 @@
     <div class='main-head-item theme-switch-text light-hidden'>Go Light</div>
     <div class='main-head-item theme-switch-text dark-hidden'>Go Dark</div>
     <label class='main-head-item theme-switch-bg'>
-      <input type='checkbox'>
+      <input
+        type='checkbox'
+        on:change={(e) => switchTheme(e)}
+        >
       <span class='theme-switch-slider preload'></span>
     </label>
   </header>
@@ -99,15 +113,11 @@
 
   <div class='content-wrapper'>
     {#if page === bio}
-      <Bio
-        isDarkMode={isDarkMode()}
-      />
+      <Bio isDarkMode={isDarkMode()}/>
     {:else if page === res}
       <Resume/>
     {:else if page === writ}
-      <Writing
-        isDarkMode={isDarkMode()}
-      />
+      <Writing isDarkMode={isDarkMode()}/>
     {:else if page === code}
       <Code/>
     {:else}
@@ -115,12 +125,7 @@
     {/if}
   </div>
 
-  <div class="main-head-left"></div>
-  <div class="main-head-right"></div>
-  <div class="side-right"></div>
-  <div class="side-left"></div>
-  <div class="foot-left"></div>
-  <div class="foot-right"></div>
+  <Margins/>
 
   <Footer quote={quote}/>
 
