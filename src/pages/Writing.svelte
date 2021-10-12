@@ -1,7 +1,17 @@
 <!-- Writing -->
 
+<script>
+  export let isDarkMode;
+  $: dark = isDarkMode ? '-alt' : '';
+</script>
+
 <section class="content">
-  <img class="switchable-img writing-title" id="closed-system-title" src="" alt="The Closed System">
+  <img
+    class="switchable-img writing-title"
+    id="closed-system-title"
+    src={`../assets/images/closed-system-title${dark}.png`}
+    alt="The Closed System"
+  >
   <h6 class="story-subtitle">A short story with no ending.</h6>
   <p class="p1">Adrenal glands primed, ears ringing, Sash opened eyes wide and choked. Braided cords filled her throat and nostrils. She pulled them out. Sash checked her general tracking implant. Habit. Five diodes glowed green beneath the skin of her right forearm. <em>Perfect health?&nbsp;</em>The ceramic cocoon was stifling, its transparent dome fogged in front of her face. Sash wiped at the steam; it peeled away. She stepped out of the pod and into the biotics lab. Bare feet found an icy floor. Chill air on bare skin intensified her awareness.</p>
   <p class="p2">Ping ping ping</p>

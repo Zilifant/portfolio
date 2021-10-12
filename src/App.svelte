@@ -6,6 +6,17 @@
   import Writing from './pages/Writing.svelte';
   import Code from './pages/Code.svelte';
 
+  function switchPage(pg) {
+    page = pg;
+    document.documentElement.id = 'page-' + pg;
+  };
+
+  const isDarkMode = () => {
+    const theme = document.documentElement.getAttribute('current-theme');
+    console.log(theme);
+    return theme === 'dark';
+  };
+
   $: isCurrent = (pg) => pg === page ? 'preload this-page' : 'other-page';
 
   const bio  = 'bio';
@@ -32,19 +43,19 @@
   <nav class='main-nav'>
     <a
       class={`main-nav-item main-nav-item-home ${isCurrent(bio)}-main`}
-      href='/' on:click|preventDefault={() => (page = bio)}
+      href='/' on:click|preventDefault={() => switchPage(bio)}
     >{bio}</a>
     <a
       class={`main-nav-item main-nav-item-resume ${isCurrent(res)}-main`}
-      href='/' on:click|preventDefault={() => (page = res)}
+      href='/' on:click|preventDefault={() => switchPage(res)}
     >{res}</a>
     <a
       class={`main-nav-item main-nav-item-writing ${isCurrent(writ)}-main`}
-      href='/' on:click|preventDefault={() => (page = writ)}
+      href='/' on:click|preventDefault={() => switchPage(writ)}
     >{writ}</a>
     <a
       class={`main-nav-item main-nav-item-contact ${isCurrent(code)}-main`}
-      href='/' on:click|preventDefault={() => (page = code)}
+      href='/' on:click|preventDefault={() => switchPage(code)}
     >{code}</a>
     <div class='drop-nav'>
       <button class='drop-nav-btn'>
@@ -58,19 +69,19 @@
       <div class='drop-nav-items'>
         <a
           class={`drop-nav-item drop-nav-item-home ${isCurrent(bio)}-drop`}
-          href='/' on:click|preventDefault={() => (page = bio)}
+          href='/' on:click|preventDefault={() => switchPage(bio)}
         ><div>{bio}</div></a>
         <a
           class={`drop-nav-item drop-nav-item-resume ${isCurrent(res)}-drop`}
-          href='/' on:click|preventDefault={() => (page = res)}
+          href='/' on:click|preventDefault={() => switchPage(res)}
         ><div>{res}</div></a>
         <a
           class={`drop-nav-item drop-nav-item-writing ${isCurrent(writ)}-drop`}
-          href='/' on:click|preventDefault={() => (page = writ)}
+          href='/' on:click|preventDefault={() => switchPage(writ)}
         ><div>{writ}</div></a>
         <a
           class={`drop-nav-item drop-nav-item-contact ${isCurrent(code)}-drop`}
-          href='/' on:click|preventDefault={() => (page = code)}
+          href='/' on:click|preventDefault={() => switchPage(code)}
         ><div>{code}</div></a>
       </div>
     </div>
@@ -78,11 +89,15 @@
 
   <div class='content-wrapper'>
     {#if page === bio}
-      <Bio/>
+      <Bio
+        isDarkMode={isDarkMode()}
+      />
     {:else if page === res}
       <Resume/>
     {:else if page === writ}
-      <Writing/>
+      <Writing
+        isDarkMode={isDarkMode()}
+      />
     {:else if page === code}
       <Code/>
     {:else}
@@ -126,6 +141,10 @@
 
 </main>
 
-<style lang='scss' global>
-  @import './styles/global.scss';
-</style>
+<!-- <style lang='scss' global>
+  // @import './styles/global.scss';
+</style> -->
+
+<!-- <style global>
+
+</style> -->

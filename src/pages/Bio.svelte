@@ -1,9 +1,19 @@
 <!-- Bio -->
 
+<script>
+  export let isDarkMode;
+  $: dark = isDarkMode ? '-alt' : '';
+</script>
+
 <div class="content content-30-left content-left-home">
   <div class="headshot-wrapper">
-    <img class="switchable-img" id="headshot"
-         src="" title="Hello there." alt="Headshot: Scott Silsbe, Cool Guy">
+    <img
+      class="switchable-img"
+      id="headshot"
+      src={`../assets/images/headshot${dark}.png`}
+      title="Hello there."
+      alt="Headshot: Scott Silsbe, Cool Guy"
+    >
   </div>
 </div>
 
