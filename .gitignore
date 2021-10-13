@@ -1,5 +1,10 @@
 /node_modules/
 /public/build/
+/zed/
 
 notes.md
 .DS_Store
+
+/src/content/svgs.js
+
+/src/utility/SVG.svelte
