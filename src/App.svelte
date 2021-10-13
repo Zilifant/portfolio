@@ -1,6 +1,7 @@
 <!-- App -->
 
 <script>
+  import { onMount } from 'svelte';
   import Bio from './pages/Bio.svelte';
   import Resume from './pages/Resume.svelte';
   import Writing from './pages/Writing.svelte';
@@ -10,15 +11,16 @@
   import {
     randomQuote,
     removePreload,
-    // setThemeFromLocalStorage,
+    setThemeFromLocalStorage,
     switchTheme,
   } from './utilities';
 
+  onMount(() => {
+    const toggle = document.querySelector('.theme-switch-bg input[type="checkbox"]');
+    setThemeFromLocalStorage(toggle);
+  });
+
   removePreload();
-  // const themeSwitch = document.querySelector('.theme-switch-bg input[type="checkbox"]');
-  // console.log(themeSwitch);
-  // console.log(document);
-  // setThemeFromLocalStorage(themeSwitch);
 
   const bio  = 'bio';
   const res  = 'resume';
@@ -121,7 +123,7 @@
     {:else if page === code}
       <Code/>
     {:else}
-      <h1>Page Not Found</h1>
+      <Bio isDarkMode={isDarkMode()}/>
     {/if}
   </div>
 

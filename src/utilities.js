@@ -1,4 +1,4 @@
-// utilities
+// Utilities
 
 import { quotes } from './content/quotes';
 
@@ -32,6 +32,18 @@ export function setThemeFromLocalStorage(themeSwitch) {
   };
 };
 
+export function switchTheme(e) {
+  if (e.target.checked) {
+    document.documentElement.setAttribute('current-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    imgsToDarkMode();
+  } else {
+    document.documentElement.setAttribute('current-theme', 'light');
+    localStorage.setItem('theme', 'light');
+    imgsToLightMode();
+  }
+}
+
 function imgsToDarkMode() {
   let imglist = document.getElementsByClassName("switchable-img");
   for (let i = 0; i < imglist.length; i++) {
@@ -43,18 +55,6 @@ function imgsToLightMode() {
   let imglist = document.getElementsByClassName("switchable-img");
   for (let i = 0; i < imglist.length; i++) {
     imglist[i].setAttribute('src', `../assets/images/${imglist[i].id}.png`);
-  }
-}
-
-export function switchTheme(e) {
-  if (e.target.checked) {
-    document.documentElement.setAttribute('current-theme', 'dark');
-    localStorage.setItem('theme', 'dark');
-    imgsToDarkMode();
-  } else {
-    document.documentElement.setAttribute('current-theme', 'light');
-    localStorage.setItem('theme', 'light');
-    imgsToLightMode();
   }
 }
 

@@ -4,7 +4,6 @@
 
 // connect js to theme-switch element
 const themeSwitch = document.querySelector('.theme-switch-bg input[type="checkbox"]');
-// console.log(document);
 // themeSwitch.addEventListener('change', switchTheme, false);
 
 function setThemeFromLocalStorage() {
