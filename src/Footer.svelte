@@ -9,7 +9,7 @@
     <a
       href={quote.url}
     >
-      {quote.text}<br>~{quote.author}
+      {quote.text}<br>{quote.author}
     </a>
   </p>
   <div class="foot-item foot-item-center">
