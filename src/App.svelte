@@ -20,7 +20,7 @@
     setThemeFromLocalStorage(toggle);
   });
 
-  removePreload();
+  removePreload({ firstLoad: true });
 
   const bio  = 'bio';
   const res  = 'resume';
@@ -37,12 +37,7 @@
     page = pg;
     document.documentElement.id = `page-${pg}`;
     quote = randomQuote();
-    setTimeout(function() {
-      let targetNodes = document.querySelectorAll('.preload');
-      for (let i = 0; i < targetNodes.length; i++) {
-        targetNodes[i].classList.remove('preload');
-      }
-    }, 1000);
+    removePreload({ firstLoad: false });
   };
 
   function isDarkMode() {

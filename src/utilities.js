@@ -8,9 +8,9 @@ import { quotes } from './content/quotes';
 
 export const randomQuote = () => quotes[Math.floor(Math.random() * quotes.length)];
 
-//---------------------//
-//Theme Switcher Slider//
-//---------------------//
+//--------------//
+//Theme Switcher//
+//--------------//
 
 export function setThemeFromLocalStorage(themeSwitch) {
   // check if any theme has been saved to local storage; assign to currentTheme if so
@@ -62,14 +62,16 @@ function imgsToLightMode() {
 //Remove Preload Class//
 //--------------------//
 
-export function removePreload() {
+export function removePreload({ firstLoad }) {
   // remove preload class after 1s (prevents animations on page load)
-  document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(function() {
+  function remove() {
+    setTimeout(() => {
       let targetNodes = document.querySelectorAll('.preload');
       for (let i = 0; i < targetNodes.length; i++) {
         targetNodes[i].classList.remove('preload');
       }
     }, 1000)
-  })
+  };
+
+  firstLoad ? document.addEventListener("DOMContentLoaded", remove) : remove();
 }
