@@ -998,6 +998,16 @@ input:checked + .theme-switch-slider:before {
   width: 9rem; /* 144px */
 }
 
+a.inline-email {
+  text-decoration: none;
+  margin-left: .5ch;
+  color: var(--cyan5);
+}
+
+a.inline-email:hover {
+  color: var(--fuch5);
+}
+
 /*RESUME*/
 
 .exl-btn:hover .exl-btn-icon-fore { background: var(--accent-hover); }

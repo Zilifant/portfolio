@@ -11,7 +11,7 @@
       class="switchable-img"
       id="headshot"
       src={`../assets/images/headshot${dark}.png`}
-      title="Hello there."
+      title="Witness me!"
       alt="Headshot: Scott Silsbe, Cool Guy"
     >
   </div>
@@ -70,5 +70,8 @@
 <div class="horz-bar section-divider"></div>
 
 <section class="content">
-  <p class="content-text-center">Want to work together? Email me.</p>
+  <p class="content-text-center">Want to work together?<a
+    href='mailto:scott.silsbe@gmail.com'
+    class='inline-email'
+    >Email me.</a></p>
 </section>
