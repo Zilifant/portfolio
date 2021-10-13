@@ -114,7 +114,7 @@
     {:else if page === res}
       <Resume/>
     {:else if page === writ}
-      <Writing isDarkMode={isDarkMode()}/>
+      <Writing/>
     {:else if page === code}
       <Code/>
     {:else}

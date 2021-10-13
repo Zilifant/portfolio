@@ -512,6 +512,29 @@ p, ul, ol, li {
   .wrapper { grid-template-columns: 1fr fit-content(800px) 1fr; }
 }
 
+/*SVG*/
+
+.svg-wrap {
+  height: 245px;
+  width: 600px;
+}
+
+.svg {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  fill: var(--text);
+}
+
+svg.svg-cstitle {
+  width: 400px;
+  fill: var(--text);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
 /*HEAD*/
 
 .main-head-bg {
