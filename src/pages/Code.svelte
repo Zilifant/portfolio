@@ -1,12 +1,21 @@
 <!-- Code -->
 
-<a
-  class='mhk-url'
-  href='https://mhk-front.herokuapp.com/'
-  target="_blank" rel="noopener noreferrer"
->
-  MHK
-</a>
+<script>
+
+  export let isCurrent;
+  $: current = isCurrent ? 'current' : '';
+
+</script>
+
+<div class={`page-wrapper code ${current}`}>
+  <a
+    class='mhk-url'
+    href='https://mhk-front.herokuapp.com/'
+    target="_blank" rel="noopener noreferrer"
+  >
+    MHK
+  </a>
+</div>
 
 <style lang="scss">
 

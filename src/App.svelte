@@ -6,7 +6,6 @@
   import Resume from './pages/Resume.svelte';
   import Writing from './pages/Writing.svelte';
   import Code from './pages/Code.svelte';
-  import Margins from './Margins.svelte';
   import Footer from './Footer.svelte';
   import {
     randomQuote,
@@ -31,7 +30,7 @@
 
   let quote = randomQuote();
 
-  $: isCurrent = (pg) => pg === page ? 'preload this-page' : 'other-page';
+  $: isCurrent = (pg) => pg === page ? 'this-page' : 'other-page';
 
   function switchPage(pg) {
     page = pg;
@@ -108,21 +107,41 @@
     </div>
   </nav>
 
-  <div class='content-wrapper'>
-    {#if page === bio}
-      <Bio isDarkMode={isDarkMode()}/>
-    {:else if page === res}
-      <Resume/>
-    {:else if page === writ}
-      <Writing/>
-    {:else if page === code}
-      <Code/>
-    {:else}
-      <Bio isDarkMode={isDarkMode()}/>
-    {/if}
-  </div>
-
-  <Margins/>
+<div class='content-wrapper'>
+  {#if page === bio}
+    <div class='view-wrapper'>
+      <Bio
+        isCurrent={page === bio}
+        isDarkMode={isDarkMode()}
+      />
+    </div>
+  {:else if page === res}
+    <div class='view-wrapper'>
+      <Resume
+        isCurrent={page === res}
+      />
+    </div>
+  {:else if page === writ}
+    <div class='view-wrapper'>
+      <Writing
+        isCurrent={page === writ}
+      />
+    </div>
+  {:else if page === code}
+    <div class='view-wrapper'>
+      <Code
+        isCurrent={page === code}
+      />
+    </div>
+  {:else}
+    <div class='view-wrapper'>
+      <Bio
+        isCurrent={page === bio}
+        isDarkMode={isDarkMode()}
+      />
+    </div>
+  {/if}
+</div>
 
   <Footer quote={quote}/>
 
@@ -135,3 +154,41 @@
 <!-- <style global>
 
 </style> -->
+
+<!-- <div class='content-wrapper'>
+  {#if page === bio}
+    <Bio isDarkMode={isDarkMode()}/>
+  {:else if page === res}
+    <Resume/>
+  {:else if page === writ}
+    <Writing/>
+  {:else if page === code}
+    <Code/>
+  {:else}
+    <Bio isDarkMode={isDarkMode()}/>
+  {/if}
+</div> -->
+
+<!-- <div class={`content-wrapper show-${page}`}>
+  <div class='view-wrapper'>
+    <Bio
+      isCurrent={page === bio}
+      isDarkMode={isDarkMode()}
+    />
+  </div>
+  <div class='view-wrapper'>
+    <Resume
+      isCurrent={page === res}
+    />
+  </div>
+  <div class='view-wrapper'>
+    <Writing
+      isCurrent={page === writ}
+    />
+  </div>
+  <div class='view-wrapper'>
+    <Code
+      isCurrent={page === code}
+    />
+  </div>
+</div> -->
