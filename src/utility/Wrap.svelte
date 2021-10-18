@@ -21,16 +21,12 @@
 
 {:else}
 
-<div
-  class='transition-wrapper'
-  in:fly='{{x:distance, delay: delay}}'
-  out:fade='{{duration: duration}}'
-  >
-  <slot></slot>
+  <div
+    class='transition-wrapper'
+    in:fly='{{x:distance, delay: delay}}'
+    out:fade='{{duration: duration}}'
+    >
+    <slot></slot>
   </div>
 
 {/if}
-
-
-<!-- in:fade='{{duration: 100, delay: 150}}'
-out:fade='{{duration: 100}}' -->

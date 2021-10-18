@@ -120,7 +120,6 @@
         <Bio
           isCurrent={page === bio}
           isDarkMode={getTheme() === 'dark'}
-
         />
       </Wrap>
     {:else if page === res}

@@ -799,7 +799,9 @@ input:checked + .theme-switch-slider:before {
   justify-content: center;
   background: var(--foot-bg);
   border-top: var(--bdr1) solid var(--foot-border);
-  transition: transform 10s ease-in-out;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer-grid {
@@ -902,13 +904,13 @@ input:checked + .theme-switch-slider:before {
   display: flex;
   flex: auto;
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: calc(1rem + 70px);
   /* position: relative; */
   /* overflow-y: scroll; */
   /* -webkit-transition: .5s ease-in-out;
-     -moz-transition: .5s ease-in-out;
-       -o-transition: .5s ease-in-out;
-          transition: .5s ease-in-out; */
+        -moz-transition: .5s ease-in-out;
+          -o-transition: .5s ease-in-out;
+             transition: .5s ease-in-out; */
 }
 
 .transition-grid {
