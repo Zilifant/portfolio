@@ -110,39 +110,41 @@
   </nav>
 
 <div class='content-wrapper'>
-  {#if page === bio}
-    <Wrap>
-      <Bio
-        isCurrent={page === bio}
-        isDarkMode={isDarkMode()}
-      />
-    </Wrap>
-  {:else if page === res}
-    <Wrap>
-      <Resume
-        isCurrent={page === res}
-      />
-    </Wrap>
-  {:else if page === writ}
-    <Wrap>
-      <Writing
-        isCurrent={page === writ}
-      />
-    </Wrap>
-  {:else if page === code}
-    <Wrap>
-      <Code
-        isCurrent={page === code}
-      />
-    </Wrap>
-  {:else}
-    <Wrap>
-      <Bio
-        isCurrent={page === bio}
-        isDarkMode={isDarkMode()}
-      />
-    </Wrap>
-  {/if}
+  <div class='transition-grid'>
+    {#if page === bio}
+      <Wrap>
+        <Bio
+          isCurrent={page === bio}
+          isDarkMode={isDarkMode()}
+        />
+      </Wrap>
+    {:else if page === res}
+      <Wrap>
+        <Resume
+          isCurrent={page === res}
+        />
+      </Wrap>
+    {:else if page === writ}
+      <Wrap>
+        <Writing
+          isCurrent={page === writ}
+        />
+      </Wrap>
+    {:else if page === code}
+      <Wrap>
+        <Code
+          isCurrent={page === code}
+        />
+      </Wrap>
+    {:else}
+      <Wrap>
+        <Bio
+          isCurrent={page === bio}
+          isDarkMode={isDarkMode()}
+        />
+      </Wrap>
+    {/if}
+  </div>
 </div>
 
   <Footer quote={quote}/>
