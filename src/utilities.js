@@ -75,3 +75,12 @@ export function removePreload({ firstLoad }) {
 
   firstLoad ? document.addEventListener("DOMContentLoaded", remove) : remove();
 }
+
+//----------------------------//
+//Fly Direction on Page Switch//
+//----------------------------//
+
+export function flyDirection(fromPg, toPg) {
+  const pgNums = { bio: 1, resume: 2, writing: 3, code: 4 };
+  return pgNums[fromPg] > pgNums[toPg] ? 'right' : 'left';
+}

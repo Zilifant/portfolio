@@ -1,13 +1,36 @@
 <!-- Wrapper -->
 
 <script>
-  import { fade } from 'svelte/transition';
+  import { fly, fade } from 'svelte/transition';
+  export let flyDirection;
+
+  const distance = 1000;
+  const delay = 0;
+  const duration = 100;
 </script>
+
+{#if flyDirection === 'right'}
+
+  <div
+    class='transition-wrapper'
+    in:fly='{{x:-distance, delay: delay}}'
+    out:fade='{{duration: duration}}'
+  >
+    <slot></slot>
+  </div>
+
+{:else}
 
 <div
   class='transition-wrapper'
-  in:fade='{{duration: 100, delay: 150}}'
-  out:fade='{{duration: 100}}'
->
+  in:fly='{{x:distance, delay: delay}}'
+  out:fade='{{duration: duration}}'
+  >
   <slot></slot>
-</div>
+  </div>
+
+{/if}
+
+
+<!-- in:fade='{{duration: 100, delay: 150}}'
+out:fade='{{duration: 100}}' -->

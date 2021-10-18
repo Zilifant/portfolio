@@ -2,7 +2,6 @@
 
 <script>
   import { onMount } from 'svelte';
-  // import { fade } from 'svelte/transition';
   import Wrap from './utility/Wrap.svelte';
   import Bio from './pages/Bio.svelte';
   import Resume from './pages/Resume.svelte';
@@ -14,6 +13,7 @@
     removePreload,
     setThemeFromLocalStorage,
     switchTheme,
+    flyDirection
   } from './utilities';
 
   onMount(() => {
@@ -28,17 +28,17 @@
   const writ = 'writing';
   const code = 'code';
 
+  let prevPg, flyTo;
   let page = bio;
-
   let theme = 'light';
-
   let quote = randomQuote();
 
   $: isCurrent = (pg) => pg === page ? 'this-page' : 'other-page';
 
   function switchPage(pg) {
+    prevPg = page;
     page = pg;
-    // document.documentElement.id = `page-${pg}`;
+    flyTo = flyDirection(prevPg, page);
     quote = randomQuote();
     removePreload({ firstLoad: false });
   };
@@ -116,32 +116,33 @@
 <div class='content-wrapper'>
   <div class='transition-grid'>
     {#if page === bio}
-      <Wrap>
+      <Wrap flyDirection={flyTo}>
         <Bio
           isCurrent={page === bio}
           isDarkMode={getTheme() === 'dark'}
+
         />
       </Wrap>
     {:else if page === res}
-      <Wrap>
+      <Wrap flyDirection={flyTo}>
         <Resume
           isCurrent={page === res}
         />
       </Wrap>
     {:else if page === writ}
-      <Wrap>
+      <Wrap flyDirection={flyTo}>
         <Writing
           isCurrent={page === writ}
         />
       </Wrap>
     {:else if page === code}
-      <Wrap>
+      <Wrap flyDirection={flyTo}>
         <Code
           isCurrent={page === code}
         />
       </Wrap>
     {:else}
-      <Wrap>
+      <Wrap flyDirection={flyTo}>
         <Bio
           isCurrent={page === bio}
           isDarkMode={getTheme() === 'dark'}
