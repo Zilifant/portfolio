@@ -927,6 +927,13 @@ input:checked + .theme-switch-slider:before {
   right: 300vw;
 } */
 
+.view-grid {
+  display: grid;
+  place-items: center;
+  grid-row: 1;
+  grid-column: 1;
+}
+
 .view-wrapper {
   display: flex;
   justify-content: center;

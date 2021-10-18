@@ -2,6 +2,8 @@
 
 <script>
   import { onMount } from 'svelte';
+  // import { fade } from 'svelte/transition';
+  import Wrap from './utility/Wrap.svelte';
   import Bio from './pages/Bio.svelte';
   import Resume from './pages/Resume.svelte';
   import Writing from './pages/Writing.svelte';
@@ -34,7 +36,7 @@
 
   function switchPage(pg) {
     page = pg;
-    document.documentElement.id = `page-${pg}`;
+    // document.documentElement.id = `page-${pg}`;
     quote = randomQuote();
     removePreload({ firstLoad: false });
   };
@@ -109,37 +111,37 @@
 
 <div class='content-wrapper'>
   {#if page === bio}
-    <div class='view-wrapper'>
+    <Wrap>
       <Bio
         isCurrent={page === bio}
         isDarkMode={isDarkMode()}
       />
-    </div>
+    </Wrap>
   {:else if page === res}
-    <div class='view-wrapper'>
+    <Wrap>
       <Resume
         isCurrent={page === res}
       />
-    </div>
+    </Wrap>
   {:else if page === writ}
-    <div class='view-wrapper'>
+    <Wrap>
       <Writing
         isCurrent={page === writ}
       />
-    </div>
+    </Wrap>
   {:else if page === code}
-    <div class='view-wrapper'>
+    <Wrap>
       <Code
         isCurrent={page === code}
       />
-    </div>
+    </Wrap>
   {:else}
-    <div class='view-wrapper'>
+    <Wrap>
       <Bio
         isCurrent={page === bio}
         isDarkMode={isDarkMode()}
       />
-    </div>
+    </Wrap>
   {/if}
 </div>
 
@@ -170,25 +172,25 @@
 </div> -->
 
 <!-- <div class={`content-wrapper show-${page}`}>
-  <div class='view-wrapper'>
+  <Wrap>
     <Bio
       isCurrent={page === bio}
       isDarkMode={isDarkMode()}
     />
-  </div>
-  <div class='view-wrapper'>
+  </Wrap>
+  <Wrap>
     <Resume
       isCurrent={page === res}
     />
-  </div>
-  <div class='view-wrapper'>
+  </Wrap>
+  <Wrap>
     <Writing
       isCurrent={page === writ}
     />
-  </div>
-  <div class='view-wrapper'>
+  </Wrap>
+  <Wrap>
     <Code
       isCurrent={page === code}
     />
-  </div>
+  </Wrap>
 </div> -->
