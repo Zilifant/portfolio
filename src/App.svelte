@@ -30,6 +30,8 @@
 
   let page = bio;
 
+  let theme = 'light';
+
   let quote = randomQuote();
 
   $: isCurrent = (pg) => pg === page ? 'this-page' : 'other-page';
@@ -41,8 +43,10 @@
     removePreload({ firstLoad: false });
   };
 
-  function isDarkMode() {
-    return document.documentElement.getAttribute('current-theme') === 'dark';
+  function getTheme() {
+    const isDark = document.documentElement.getAttribute('current-theme') === 'dark';
+    isDark ? theme = 'dark' : theme = 'light';
+    return theme;
   };
 </script>
 
@@ -115,7 +119,7 @@
       <Wrap>
         <Bio
           isCurrent={page === bio}
-          isDarkMode={isDarkMode()}
+          isDarkMode={getTheme() === 'dark'}
         />
       </Wrap>
     {:else if page === res}
@@ -140,14 +144,17 @@
       <Wrap>
         <Bio
           isCurrent={page === bio}
-          isDarkMode={isDarkMode()}
+          isDarkMode={getTheme() === 'dark'}
         />
       </Wrap>
     {/if}
   </div>
 </div>
 
-  <Footer quote={quote}/>
+  <Footer
+    page={page}
+    quote={quote}
+  />
 
 </main>
 
@@ -155,7 +162,7 @@
   // @import './styles/global.scss';
 </style> -->
 
-<!-- <style global>
+<!-- <style>
 
 </style> -->
 

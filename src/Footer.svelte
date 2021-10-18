@@ -1,10 +1,11 @@
 <!-- footer -->
 
 <script>
+  export let page = 'bio';
   export let quote;
 </script>
 
-<footer class='foot'>
+<footer class={`foot ${page}`}>
   <div class='footer-grid'>
     <p class='foot-item foot-item-left' id='foot-quote-display'>
       <a
