@@ -20,7 +20,8 @@ export function setThemeFromLocalStorage(themeSwitch) {
 
   // when page loads, if a theme has been saved to local storage, check if it's dark; if so, change theme-switch and imgs to match
   if (currentTheme) {
-    document.documentElement.setAttribute('current-theme', currentTheme);
+    // document.documentElement.setAttribute('current-theme', currentTheme);
+    document.body.setAttribute('class', currentTheme);
     if (currentTheme === 'dark') {
       themeSwitch.checked = true;
       imgsToDarkMode();
@@ -34,11 +35,13 @@ export function setThemeFromLocalStorage(themeSwitch) {
 
 export function switchTheme(e) {
   if (e.target.checked) {
-    document.documentElement.setAttribute('current-theme', 'dark');
+    // document.documentElement.setAttribute('current-theme', 'dark');
+    document.body.setAttribute('class', 'dark');
     localStorage.setItem('theme', 'dark');
     imgsToDarkMode();
   } else {
-    document.documentElement.setAttribute('current-theme', 'light');
+    // document.documentElement.setAttribute('current-theme', 'light');
+    document.body.setAttribute('class', 'light');
     localStorage.setItem('theme', 'light');
     imgsToLightMode();
   }

@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public --no-clear"
+    "build": "sass && rollup -c",
+    "dev": "sassdev -w && rollup -c -w",
+    "start": "sirv public --no-clear",
+    "sassdev": "./node_modules/.bin/node-sass src/styles/global.scss public/global.css -w",
+    "sass": "./node_modules/.bin/node-sass src/styles/global.scss public/global.css"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",

@@ -33,7 +33,7 @@
   let theme = 'light';
   let quote = randomQuote();
 
-  $: isCurrent = (pg) => pg === page ? 'this-page' : 'other-page';
+  $: isCurrent = (pg) => (pg === page) ? 'this-page' : 'other-page';
 
   function switchPage(pg) {
     prevPg = page;
@@ -55,8 +55,6 @@
   <header class='main-head'>
     <div class='main-head-bg'></div>
     <h4 class='main-head-item main-head-item-title'>Scott Silsbe</h4>
-    <div class='main-head-item theme-switch-text light-hidden'>Go Light</div>
-    <div class='main-head-item theme-switch-text dark-hidden'>Go Dark</div>
     <label class='main-head-item theme-switch-bg'>
       <input
         type='checkbox'
