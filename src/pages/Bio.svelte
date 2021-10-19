@@ -26,7 +26,7 @@
   <section class="content content-70-right content-right-home">
     <h6 class="content-title">About me</h6>
     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <p>Lorem ipsum dolor sit amet, con&shy;secte&shy;tur adip&shy;isc&shy;ing elit, sed do eius&shy;mod tem&shy;por in&shy;ci&shy;didunt ut la&shy;bore et do&shy;lore magna ali&shy;qua. Ut enim ad minim ve&shy;niam, quis nos&shy;trud ex&shy;erci&shy;ta&shy;tion ul&shy;lamco la&shy;boris nisi ut aliquip ex ea com&shy;modo con&shy;se&shy;quat.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud.</p>
   </section>
   

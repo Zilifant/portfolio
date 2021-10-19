@@ -358,6 +358,11 @@ main {
   overflow-x: hidden;
 }
 
+/* @font-face {
+  font-family: 'Rubik';
+  src: url('./assets/fonts/Rubik-VariableFont_wght.ttf') format('truetype');
+} */
+
 *, *:before, *:after {
   font-family: 'Rubik', sans-serif;
   font-size: 16px;
