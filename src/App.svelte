@@ -44,7 +44,7 @@
   };
 
   function getTheme() {
-    const isDark = document.documentElement.getAttribute('current-theme') === 'dark';
+    const isDark = document.body.getAttribute('class') === 'dark';
     isDark ? theme = 'dark' : theme = 'light';
     return theme;
   };
