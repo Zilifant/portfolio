@@ -5,15 +5,20 @@
   "scripts": {
     "sass": "./node_modules/.bin/node-sass src/styles/global.scss public/global.css",
     "sassdev": "./node_modules/.bin/node-sass src/styles/global.scss public/global.css -w",
+    "prefix": "./node_modules/.bin/postcss public/global.css --use autoprefixer -o public/prefixed.css",
     "build": "npm run sass && rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public --no-clear --host"
+    "start": "sirv public --no-clear --host",
+    "timeddeploy": "npm run build && cd public && vercel deploy && vercel --prod cd .. && echo Deployed",
+    "deploy": "time npm run timeddeploy"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
+    "autoprefixer": "^10.3.7",
     "node-sass": "^6.0.1",
     "postcss": "^8.3.9",
+    "postcss-cli": "^9.0.1",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",

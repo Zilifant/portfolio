@@ -366,10 +366,10 @@ input:checked + .theme-switch-slider:before {
     top: -144px;
     width: 100%;
     z-index: 2;
-    -webkit-transition: transform .2s;
-    -moz-transition: transform .2s;
-    -o-transition: transform .2s;
-    transition: transform .2s; }
+    -webkit-transition: transform .2s, top .2s;
+    -moz-transition: transform .2s, top .2s;
+    -o-transition: transform .2s, top .2s;
+    transition: transform .2s, top .2s; }
   .drop-nav-items > a {
     display: block;
     text-decoration: none; }
@@ -377,7 +377,11 @@ input:checked + .theme-switch-slider:before {
     display: block;
     padding: .75rem 1.5rem;
     text-decoration: none;
-    font-size: 1.25rem; }
+    font-size: 1.25rem;
+    -webkit-transition: background-color .2s;
+    -moz-transition: background-color .2s;
+    -o-transition: background-color .2s;
+    transition: background-color .2s; }
     .light .drop-nav-item > div {
       color: #171717;
       font-weight: 400; }
@@ -402,21 +406,22 @@ input:checked + .theme-switch-slider:before {
     background: #059669; }
   .drop-nav:hover .drop-nav-items {
     display: block;
-    -webkit-transform: translateY(192px);
-    -moz-transform: translateY(192px);
-    -ms-transform: translateY(192px);
-    -o-transform: translateY(192px);
-    transform: translateY(192px); }
+    top: 48px; }
     .light .drop-nav:hover .drop-nav-items {
       box-shadow: 0 0 2px 0 #d4d4d4;
       border-bottom: 1px solid white; }
     .dark .drop-nav:hover .drop-nav-items {
       box-shadow: 0 0 2px 0 #18181b;
       border-bottom: 1px solid #3f3f46; }
-  .light .drop-nav-item {
-    background: #e5e7eb; }
-  .dark .drop-nav-item {
-    background: #27272a; }
+  .drop-nav-item {
+    -webkit-transition: background-color .2s;
+    -moz-transition: background-color .2s;
+    -o-transition: background-color .2s;
+    transition: background-color .2s; }
+    .light .drop-nav-item {
+      background: #e5e7eb; }
+    .dark .drop-nav-item {
+      background: #27272a; }
   .light .this-page-drop {
     background: #d1d5db; }
   .dark .this-page-drop {

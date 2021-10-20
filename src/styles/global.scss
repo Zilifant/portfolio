@@ -7,6 +7,13 @@ $bdr1: 1px;
 $bdr2: 1px;
 $bdr3: 3px;
 
+@mixin bgTransition() {
+  -webkit-transition: background-color .2s;
+     -moz-transition: background-color .2s;
+       -o-transition: background-color .2s;
+          transition: background-color .2s;
+}
+
 $themes: (
   light: (
     accent-bio: $pink4,
@@ -540,10 +547,10 @@ input:checked + .theme-switch-slider:before {
     top: -144px;
     width: 100%;
     z-index: 2;
-    -webkit-transition: transform .2s;
-       -moz-transition: transform .2s;
-         -o-transition: transform .2s;
-            transition: transform .2s;
+    -webkit-transition: transform .2s, top .2s;
+       -moz-transition: transform .2s, top .2s;
+         -o-transition: transform .2s, top .2s;
+            transition: transform .2s, top .2s;
   }
 
   .drop-nav-items > a {
@@ -556,6 +563,7 @@ input:checked + .theme-switch-slider:before {
     padding: .75rem 1.5rem;
     text-decoration: none;
     font-size: 1.25rem;
+    @include bgTransition();
     @include theme() {
       color: th('nav-text');
       font-weight: th('theme-weight-adjust-title-text');
@@ -585,11 +593,12 @@ input:checked + .theme-switch-slider:before {
 
   .drop-nav:hover .drop-nav-items {
     display: block;
-    -webkit-transform: translateY(192px);
-       -moz-transform: translateY(192px);
-        -ms-transform: translateY(192px);
-         -o-transform: translateY(192px);
-            transform: translateY(192px);
+    top: 48px;
+    // -webkit-transform: translateY(192px);
+    //    -moz-transform: translateY(192px);
+    //     -ms-transform: translateY(192px);
+    //      -o-transform: translateY(192px);
+    //         transform: translateY(192px);
     @include theme() {
       box-shadow: 0 0 2px 0 th('exl-btn-shadow');
       border-bottom: th('exl-btn-border');
@@ -603,6 +612,7 @@ input:checked + .theme-switch-slider:before {
   }
 
   .drop-nav-item {
+    @include bgTransition();
     @include theme() {
       background: th('nav-bg');
     };
