@@ -9,7 +9,7 @@
     "build": "npm run sass && rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear --host",
-    "timeddeploy": "npm run build && cd public && vercel deploy && vercel --prod cd .. && echo Deployed",
+    "timeddeploy": "npm run build && cd public && vercel deploy && vercel --prod && cd .. && echo Deployed",
     "deploy": "time npm run timeddeploy"
   },
   "devDependencies": {
