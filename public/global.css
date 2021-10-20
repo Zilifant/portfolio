@@ -249,10 +249,10 @@ input:checked + .theme-switch-slider:before {
 .main-nav-item,
 .drop-nav-item {
   background-size: 100% 200%;
-  -webkit-transition: color .2s, background-position .2s ease-in-out;
-  -moz-transition: color .2s, background-position .2s ease-in-out;
-  -o-transition: color .2s, background-position .2s ease-in-out;
-  transition: color .2s, background-position .2s ease-in-out; }
+  -webkit-transition: background-position .2s ease-in-out;
+  -moz-transition: background-position .2s ease-in-out;
+  -o-transition: background-position .2s ease-in-out;
+  transition: background-position .2s ease-in-out; }
 
 .main-nav-item:hover,
 .drop-nav-item:hover {

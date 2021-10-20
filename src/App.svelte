@@ -30,24 +30,20 @@
 
   let prevPg, flyTo;
   let page = bio;
-  let theme = 'light';
   let quote = randomQuote();
 
   $: isCurrent = (pg) => (pg === page) ? 'this-page' : 'other-page';
+  $: getTheme = () => document.body.getAttribute('class');
 
   function switchPage(pg) {
     prevPg = page;
     page = pg;
+    document.body.setAttribute('id', `${page}-${getTheme()}`);
     flyTo = flyDirection(prevPg, page);
     quote = randomQuote();
     removePreload({ firstLoad: false });
   };
 
-  function getTheme() {
-    const isDark = document.body.getAttribute('class') === 'dark';
-    isDark ? theme = 'dark' : theme = 'light';
-    return theme;
-  };
 </script>
 
 <main class='wrapper'>
@@ -58,7 +54,7 @@
     <label class='main-head-item theme-switch-bg'>
       <input
         type='checkbox'
-        on:change={(e) => switchTheme(e)}
+        on:change={(e) => switchTheme(e, page)}
         >
       <span class='theme-switch-slider preload'></span>
     </label>

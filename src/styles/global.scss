@@ -5,6 +5,7 @@ $rad: 3px;
 $rad2: 6px;
 $bdr1: 1px;
 $bdr2: 1px;
+$bdr3: 3px;
 
 $themes: (
   light: (
@@ -108,6 +109,41 @@ $themes: (
   )
 );
 
+$pages: (
+  bio-light: (
+    accent: $pink4,
+    accent-hover: $pink3,
+  ),
+  bio-dark: (
+    accent: $pink5,
+    accent-hover: $pink4,
+  ),
+  resume-light: (
+    accent: $cyan5,
+    accent-hover: $cyan4,
+  ),
+  resume-dark: (
+    accent: $cyan6,
+    accent-hover: $cyan5,
+  ),
+  writing-light: (
+    accent: $oran4,
+    accent-hover: $oran3,
+  ),
+  writing-dark: (
+    accent: $oran5,
+    accent-hover: $oran4,
+  ),
+  code-light: (
+    accent: $emer5,
+    accent-hover: $emer4,
+  ),
+  code-dark: (
+    accent: $emer6,
+    accent-hover: $emer5,
+  )
+);
+
 @mixin theme() {
   @each $theme, $map in $themes {
     $theme-map: $map !global;
@@ -120,6 +156,20 @@ $themes: (
 
 @function th($key) {
   @return map-get($theme-map, $key);
+}
+
+@mixin page() {
+  @each $page, $map in $pages {
+    $page-map: $map !global;
+    ##{$page} & {
+      @content;
+    }
+  }
+  $page-map: null !global;
+}
+
+@function pg($key) {
+  @return map-get($page-map, $key);
 }
 
 /*RESET*/
@@ -358,10 +408,10 @@ input:checked + .theme-switch-slider:before {
 .main-nav-item,
 .drop-nav-item {
   background-size: 100% 200%;
-  -webkit-transition: color .2s, background-position .2s ease-in-out;
-     -moz-transition: color .2s, background-position .2s ease-in-out;
-       -o-transition: color .2s, background-position .2s ease-in-out;
-          transition: color .2s, background-position .2s ease-in-out;
+  -webkit-transition: background-position .2s ease-in-out;
+     -moz-transition: background-position .2s ease-in-out;
+       -o-transition: background-position .2s ease-in-out;
+          transition: background-position .2s ease-in-out;
 }
 
 .main-nav-item:hover,

@@ -6,8 +6,8 @@
     "sass": "./node_modules/.bin/node-sass src/styles/global.scss public/global.css",
     "sassdev": "./node_modules/.bin/node-sass src/styles/global.scss public/global.css -w",
     "build": "npm run sass && rollup -c",
-    "dev": "sassdev -w && rollup -c -w",
-    "start": "sirv public --no-clear"
+    "dev": "rollup -c -w",
+    "start": "sirv public --no-clear --host"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
