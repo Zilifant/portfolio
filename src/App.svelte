@@ -32,11 +32,14 @@
   let page = bio;
   let quote = randomQuote();
 
-  $: isCurrent = (pg) => (pg === page) ? 'this-page' : 'other-page';
+  $: isCurrent = (pg) => (pg === page) ? 'current' : '';
+  $: isPrev = (pg) => (pg === prevPg) ? 'prev' : 'not-prev';
   $: getTheme = () => document.body.getAttribute('class');
 
   function switchPage(pg) {
+    if (pg === page) return;
     prevPg = page;
+    // const prevPgNavItem = document.querySelector(`.mni-${prevPg}`);
     page = pg;
     document.body.setAttribute('id', `${page}-${getTheme()}`);
     flyTo = flyDirection(prevPg, page);
@@ -62,19 +65,19 @@
 
   <nav class='main-nav'>
     <a
-      class={`main-nav-item main-nav-item-home ${isCurrent(bio)}-main`}
+      class={`main-nav-item mni mni-bio ${isPrev(bio)} ${isCurrent(bio)}`}
       href='/' on:click|preventDefault={() => switchPage(bio)}
     >{bio}</a>
     <a
-      class={`main-nav-item main-nav-item-resume ${isCurrent(res)}-main`}
+      class={`main-nav-item mni mni-resume ${isPrev(res)} ${isCurrent(res)}`}
       href='/' on:click|preventDefault={() => switchPage(res)}
     >{res}</a>
     <a
-      class={`main-nav-item main-nav-item-writing ${isCurrent(writ)}-main`}
+      class={`main-nav-item mni mni-writing ${isPrev(writ)} ${isCurrent(writ)}`}
       href='/' on:click|preventDefault={() => switchPage(writ)}
     >{writ}</a>
     <a
-      class={`main-nav-item main-nav-item-contact ${isCurrent(code)}-main`}
+      class={`main-nav-item mni mni-contact ${isPrev(code)} ${isCurrent(code)}`}
       href='/' on:click|preventDefault={() => switchPage(code)}
     >{code}</a>
     <div class='drop-nav'>
@@ -88,7 +91,7 @@
       </button>
       <div class='drop-nav-items'>
         <a
-          class={`drop-nav-item drop-nav-item-home ${isCurrent(bio)}-drop`}
+          class={`drop-nav-item drop-nav-item-bio ${isCurrent(bio)}-drop`}
           href='/' on:click|preventDefault={() => switchPage(bio)}
         ><div>{bio}</div></a>
         <a

@@ -14,8 +14,39 @@ $bdr3: 3px;
           transition: background-color .2s;
 }
 
+@keyframes swapBgLi {
+  from {
+    background-size: 100% 300%;
+    background-image: linear-gradient(to bottom,
+      $cyan5 33%, $colg3 33% 67%, $colg2 67%
+    );
+  }
+  to {
+    background-size: 100% 200%;
+    background-image: linear-gradient(to bottom,
+      $cyan5 50%, $colg2 50%
+    );
+  }
+}
+
+@keyframes swapBgDk {
+  from {
+    background-size: 100% 300%;
+    background-image: linear-gradient(to bottom,
+      $cyan6 33%, $gray7 33% 67%, $gray8 67%
+    );
+  }
+  to {
+    background-size: 100% 200%;
+    background-image: linear-gradient(to bottom,
+      $cyan6 50%, $gray8 50%
+    );
+  }
+}
+
 $themes: (
   light: (
+    swapBg: swapBgLi,
     accent-bio: $pink4,
     accent-bio-hover: $pink3,
     accent-res: $cyan5,
@@ -66,6 +97,7 @@ $themes: (
   ),
 
   dark: (
+    swapBg: swapBgDk,
     accent-bio: $pink5,
     accent-bio-hover: $pink4,
     accent-res: $cyan6,
@@ -412,8 +444,8 @@ input:checked + .theme-switch-slider:before {
   };
 }
 
-.main-nav-item,
-.drop-nav-item {
+.main-nav-item {
+  background-position: bottom;
   background-size: 100% 200%;
   -webkit-transition: color .2s, background-position .2s ease-in-out;
      -moz-transition: color .2s, background-position .2s ease-in-out;
@@ -421,72 +453,105 @@ input:checked + .theme-switch-slider:before {
           transition: color .2s, background-position .2s ease-in-out;
 }
 
-.main-nav-item:hover,
-.drop-nav-item:hover {
-  background-position: 0 -100%;
+.main-nav-item:hover {
+  background-position: top;
   @include theme() {
     color: th('header-text');
     font-weight: th('theme-weight-adjust-title-text');
   };
 }
 
-.main-nav-item-home {
+.mni.not-prev {
   @include theme() {
     background-image: linear-gradient(to bottom,
-      th('nav-bg') 50%, th('accent-bio') 50%
-    );
-  };
-}
-.main-nav-item-resume {
-  @include theme() {
-    background-image: linear-gradient(to bottom,
-      th('nav-bg') 50%, th('accent-res') 50%
-    );
-  };
-}
-.main-nav-item-writing {
-  @include theme() {
-    background-image: linear-gradient(to bottom,
-      th('nav-bg') 50%, th('accent-writ') 50%
-    );
-  };
-}
-.main-nav-item-contact {
-  @include theme() {
-    background-image: linear-gradient(to bottom,
-      th('nav-bg') 50%, th('accent-code') 50%
+      th('accent-res') 50%, th('nav-bg') 50%
     );
   };
 }
 
-.main-nav-item-home.this-page-main {
+.mni.prev {
   @include theme() {
+    animation: th('swapBg') 0s;
+    animation-delay: .2s;
+    animation-fill-mode: forwards;
+    background-size: 100% 300%;
     background-image: linear-gradient(to bottom,
-      th('nav-bg-this-page') 50%, th('accent-bio') 50%
-    );
+      th('accent-res') 33%, th('nav-bg-this-page') 33% 67%, th('nav-bg') 67%
+    )
+  };
+  &:hover {
+    background-position: top;
   };
 }
-.main-nav-item-resume.this-page-main {
+
+.mni.current {
+  cursor: default;
   @include theme() {
+    background-position: center;
+    background-size: 100% 300%;
     background-image: linear-gradient(to bottom,
-      th('nav-bg-this-page') 50%, th('accent-res') 50%
-    );
+      th('accent-res') 33%, th('nav-bg-this-page') 33% 67%, th('nav-bg') 67%
+    )
+  };
+  &:hover {
+    background-position: top;
   };
 }
-.main-nav-item-writing.this-page-main {
-  @include theme() {
-    background-image: linear-gradient(to bottom,
-      th('nav-bg-this-page') 50%, th('accent-writ') 50%
-    );
-  };
-}
-.main-nav-item-contact.this-page-main {
-  @include theme() {
-    background-image: linear-gradient(to bottom,
-      th('nav-bg-this-page') 50%, th('accent-code') 50%
-    );
-  };
-}
+
+// .mni-bio.not-prev {
+//   @include theme() {
+//     background-image: linear-gradient(to bottom,
+//       th('accent-bio') 50%, th('nav-bg') 50%
+//     );
+//   };
+// }
+// .mni-resume.not-prev {
+//   @include theme() {
+//     background-image: linear-gradient(to bottom,
+//       th('accent-res') 50%, th('nav-bg') 50%
+//     );
+//   };
+// }
+// .mni-writing.not-prev {
+//   @include theme() {
+//     background-image: linear-gradient(to bottom,
+//       th('accent-writ') 50%, th('nav-bg') 50%
+//     );
+//   };
+// }
+// .mni-contact.not-prev {
+//   @include theme() {
+//     background-image: linear-gradient(to bottom,
+//       th('accent-code') 50%, th('nav-bg') 50%
+//     );
+//   };
+// }
+
+// .prev {
+//   background-position: bottom;
+// }
+
+// .mni-resume.current {
+//   @include theme() {
+//     background-image: linear-gradient(to bottom,
+//       th('accent-res') 50%, th('nav-bg-this-page') 50%
+//     );
+//   };
+// }
+// .mni-writing.current {
+//   @include theme() {
+//     background-image: linear-gradient(to bottom,
+//       th('accent-writ') 50%, th('nav-bg-this-page') 50%
+//     );
+//   };
+// }
+// .mni-contact.current {
+//   @include theme() {
+//     background-image: linear-gradient(to bottom,
+//       th('accent-code') 50%, th('nav-bg-this-page') 50%
+//     );
+//   };
+// }
 
 /* hide default nav & show mobile nav */
 @media (max-width: 600px) {
@@ -570,7 +635,7 @@ input:checked + .theme-switch-slider:before {
     };
   }
 
-  .drop-nav-item-home:hover > div    {
+  .drop-nav-item-bio:hover > div    {
     @include theme() {
       background: th('accent-bio');
     };
