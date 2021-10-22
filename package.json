@@ -5,12 +5,17 @@
   "scripts": {
     "sass": "./node_modules/.bin/node-sass src/styles/global.scss public/global.css",
     "sassdev": "./node_modules/.bin/node-sass src/styles/global.scss public/global.css -w",
-    "prefix": "./node_modules/.bin/postcss public/global.css --use autoprefixer -o public/prefixed.css",
     "build": "npm run sass && rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear --host",
-    "timeddeploy": "npm run build && cd public && vercel deploy && vercel --prod && cd .. && echo Deployed",
-    "deploy": "time npm run timeddeploy"
+    "timedeploy": "npm run build && cd public && vercel deploy && vercel --prod && cd .. && echo Deployed",
+    "deploy": "time npm run timedeploy",
+
+    "sasstoupdev": "./node_modules/.bin/node-sass src/styles/global.scss temp/unprefixed.css -w",
+    "prefixdev": "./node_modules/.bin/postcss temp/unprefixed.css --use autoprefixer -o public/global.css -w",
+    "sasstoup": "./node_modules/.bin/node-sass src/styles/global.scss temp/unprefixed.css",
+    "prefix": "./node_modules/.bin/postcss temp/unprefixed.css --use autoprefixer -o public/global.css",
+    "buildwps": "npm run sasstoup && npm run prefix && rollup -c"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
