@@ -635,11 +635,24 @@ input:checked + .theme-switch-slider:before {
 
 .main-nav-item {
   display: block;
-  padding: .75rem .5625rem;
+  text-align: center;
+  padding: 12px 0;
   text-decoration: none;
   font-size: 1.25rem;
-    color: var(--nav-text);
-    font-weight: var(--theme-weight-adjust-title-text);
+  color: var(--nav-text);
+  font-weight: var(--theme-weight-adjust-title-text);
+  &.mni-bio {
+    width: 56px;
+  };
+  &.mni-resume {
+    width: 108px;
+  };
+  &.mni-writing {
+    width: 109px;
+  };
+  &.mni-code {
+    width: 78px;
+  };
 }
 
 .main-nav-item {
