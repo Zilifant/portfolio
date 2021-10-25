@@ -351,29 +351,37 @@ body#code-dark {
   --accent: var(--emer6);
   --accent-hover: var(--emer5); }
 
-@keyframes swapBg {
+@keyframes swapBgBio {
   from {
     background-size: 100% 300%;
-    background-image: linear-gradient(to bottom, var(--accent) 33%, var(--nav-bg-this-page) 33% 67%, var(--nav-bg) 67%); }
+    background-image: linear-gradient(to bottom, var(--accent-bio) 33%, var(--nav-bg-this-page) 33% 67%, var(--nav-bg) 67%); }
   to {
     background-size: 100% 200%;
-    background-image: linear-gradient(to bottom, var(--accent) 50%, var(--nav-bg) 50%); } }
+    background-image: linear-gradient(to bottom, var(--accent-bio) 50%, var(--nav-bg) 50%); } }
 
-@keyframes swapBgLi {
+@keyframes swapBgRes {
   from {
     background-size: 100% 300%;
-    background-image: linear-gradient(to bottom, var(--cyan5) 33%, var(--colg3) 33% 67%, var(--colg2) 67%); }
+    background-image: linear-gradient(to bottom, var(--accent-res) 33%, var(--nav-bg-this-page) 33% 67%, var(--nav-bg) 67%); }
   to {
     background-size: 100% 200%;
-    background-image: linear-gradient(to bottom, var(--cyan5) 50%, var(--colg2) 50%); } }
+    background-image: linear-gradient(to bottom, var(--accent-res) 50%, var(--nav-bg) 50%); } }
 
-@keyframes swapBgDk {
+@keyframes swapBgWrit {
   from {
     background-size: 100% 300%;
-    background-image: linear-gradient(to bottom, var(--cyan6) 33%, var(--gray7) 33% 67%, var(--gray8) 67%); }
+    background-image: linear-gradient(to bottom, var(--accent-writ) 33%, var(--nav-bg-this-page) 33% 67%, var(--nav-bg) 67%); }
   to {
     background-size: 100% 200%;
-    background-image: linear-gradient(to bottom, var(--cyan6) 50%, var(--gray8) 50%); } }
+    background-image: linear-gradient(to bottom, var(--accent-writ) 50%, var(--nav-bg) 50%); } }
+
+@keyframes swapBgCode {
+  from {
+    background-size: 100% 300%;
+    background-image: linear-gradient(to bottom, var(--accent-code) 33%, var(--nav-bg-this-page) 33% 67%, var(--nav-bg) 67%); }
+  to {
+    background-size: 100% 200%;
+    background-image: linear-gradient(to bottom, var(--accent-code) 50%, var(--nav-bg) 50%); } }
 
 /*RESET*/
 html, body {
@@ -603,17 +611,39 @@ input:checked + .theme-switch-slider:before {
 .mni-writing.not-prev {
   background-image: linear-gradient(to bottom, var(--accent-writ) 50%, var(--nav-bg) 50%); }
 
-.mni-contact.not-prev {
+.mni-code.not-prev {
   background-image: linear-gradient(to bottom, var(--accent-code) 50%, var(--nav-bg) 50%); }
 
-.mni.prev {
-  animation: swapBg 0s;
+.mni.prev.mni-bio {
+  animation: swapBgBio 0s;
   animation-delay: .2s;
   animation-fill-mode: forwards;
   background-size: 100% 300%;
-  background-image: linear-gradient(to bottom, var(--accent) 33%, var(--nav-bg-this-page) 33% 67%, var(--nav-bg) 67%); }
-  .mni.prev:hover {
-    background-position: top; }
+  background-image: linear-gradient(to bottom, var(--accent-bio) 33%, var(--nav-bg-this-page) 33% 67%, var(--nav-bg) 67%); }
+
+.mni.prev.mni-resume {
+  animation: swapBgRes 0s;
+  animation-delay: .2s;
+  animation-fill-mode: forwards;
+  background-size: 100% 300%;
+  background-image: linear-gradient(to bottom, var(--accent-res) 33%, var(--nav-bg-this-page) 33% 67%, var(--nav-bg) 67%); }
+
+.mni.prev.mni-writing {
+  animation: swapBgWrit 0s;
+  animation-delay: .2s;
+  animation-fill-mode: forwards;
+  background-size: 100% 300%;
+  background-image: linear-gradient(to bottom, var(--accent-writ) 33%, var(--nav-bg-this-page) 33% 67%, var(--nav-bg) 67%); }
+
+.mni.prev.mni-code {
+  animation: swapBgCode 0s;
+  animation-delay: .2s;
+  animation-fill-mode: forwards;
+  background-size: 100% 300%;
+  background-image: linear-gradient(to bottom, var(--accent-code) 33%, var(--nav-bg-this-page) 33% 67%, var(--nav-bg) 67%); }
+
+.mni.prev:hover {
+  background-position: top; }
 
 .mni.current {
   cursor: default;

@@ -77,7 +77,7 @@
       href='/' on:click|preventDefault={() => switchPage(writ)}
     >{writ}</a>
     <a
-      class={`main-nav-item mni mni-contact ${isPrev(code)} ${isCurrent(code)}`}
+      class={`main-nav-item mni mni-code ${isPrev(code)} ${isCurrent(code)}`}
       href='/' on:click|preventDefault={() => switchPage(code)}
     >{code}</a>
     <div class='drop-nav'>
@@ -103,7 +103,7 @@
           href='/' on:click|preventDefault={() => switchPage(writ)}
         ><div>{writ}</div></a>
         <a
-          class={`drop-nav-item drop-nav-item-contact ${isCurrent(code)}-drop`}
+          class={`drop-nav-item drop-nav-item-code ${isCurrent(code)}-drop`}
           href='/' on:click|preventDefault={() => switchPage(code)}
         ><div>{code}</div></a>
       </div>
