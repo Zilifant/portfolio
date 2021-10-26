@@ -39,7 +39,6 @@
   function switchPage(pg) {
     if (pg === page) return;
     prevPg = page;
-    // const prevPgNavItem = document.querySelector(`.mni-${prevPg}`);
     page = pg;
     document.body.setAttribute('id', `${page}-${getTheme()}`);
     flyTo = flyDirection(prevPg, page);
@@ -162,41 +161,3 @@
 <!-- <style>
 
 </style> -->
-
-<!-- <div class='content-wrapper'>
-  {#if page === bio}
-    <Bio isDarkMode={isDarkMode()}/>
-  {:else if page === res}
-    <Resume/>
-  {:else if page === writ}
-    <Writing/>
-  {:else if page === code}
-    <Code/>
-  {:else}
-    <Bio isDarkMode={isDarkMode()}/>
-  {/if}
-</div> -->
-
-<!-- <div class={`content-wrapper show-${page}`}>
-  <Wrap>
-    <Bio
-      isCurrent={page === bio}
-      isDarkMode={isDarkMode()}
-    />
-  </Wrap>
-  <Wrap>
-    <Resume
-      isCurrent={page === res}
-    />
-  </Wrap>
-  <Wrap>
-    <Writing
-      isCurrent={page === writ}
-    />
-  </Wrap>
-  <Wrap>
-    <Code
-      isCurrent={page === code}
-    />
-  </Wrap>
-</div> -->
