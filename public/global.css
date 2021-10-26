@@ -585,7 +585,8 @@ input:checked + .th-switch-slider {
   justify-content: center;
   align-items: center;
   background: var(--nav-bg);
-  border-bottom: var(--bdr1) solid var(--nav-border); }
+  border-bottom: var(--bdr1) solid var(--nav-border);
+  box-shadow: 0 0 2px 0 var(--exl-btn-shadow); }
 
 .main-nav-item {
   display: block;
@@ -708,7 +709,7 @@ input:checked + .th-switch-slider {
   .drop-nav-items {
     display: block;
     position: absolute;
-    top: -144px;
+    top: -192px;
     width: 100%;
     z-index: 2;
     -webkit-transition: transform .2s, top .2s;
@@ -729,15 +730,21 @@ input:checked + .th-switch-slider {
     transition: background-color .2s;
     color: var(--nav-text);
     font-weight: var(--theme-weight-adjust-title-text); }
-  .drop-nav-item:hover > div {
-    background: var(--accent); }
+  .drop-nav-item-bio:hover > div {
+    background: var(--accent-bio); }
+  .drop-nav-item-resume:hover > div {
+    background: var(--accent-res); }
+  .drop-nav-item-writing:hover > div {
+    background: var(--accent-writ); }
+  .drop-nav-item-code:hover > div {
+    background: var(--accent-code); }
   .drop-nav:hover .drop-nav-items {
     display: block;
     top: 48px;
     box-shadow: 0 0 2px 0 var(--exl-btn-shadow);
     border-bottom: var(--exl-btn-border); }
   .drop-nav:hover .drop-nav-btn-icon-bar {
-    background: var(--accent-hover); }
+    background: var(--accent); }
   .drop-nav-item {
     -webkit-transition: background-color .2s;
     -moz-transition: background-color .2s;
@@ -752,7 +759,8 @@ input:checked + .th-switch-slider {
   display: flex;
   justify-content: center;
   background: var(--foot-bg);
-  border-top: var(--bdr1) solid var(--foot-border); }
+  border-top: var(--bdr1) solid var(--foot-border);
+  box-shadow: 0 0 2px 0 var(--exl-btn-shadow); }
 
 .footer-grid {
   padding: 1rem 0;
@@ -760,7 +768,7 @@ input:checked + .th-switch-slider {
   grid-template-columns: 1fr min-content 1fr;
   justify-content: center;
   align-items: center;
-  min-width: 800px; }
+  width: 100%; }
 
 .foot-item {
   display: flex; }
