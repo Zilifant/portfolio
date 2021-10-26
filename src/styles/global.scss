@@ -534,7 +534,7 @@ svg.svg-cstitle {
 .main-head-item {
   background: -webkit-linear-gradient(var(--header-text), var(--colg3));
   -webkit-background-clip: text;
-      -moz-background-clip: text;
+     -moz-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
   z-index: 0;
@@ -550,16 +550,6 @@ svg.svg-cstitle {
 
 /*LIGHT-DARK SWITCH*/
 
-.theme-switch-text {
-  position: absolute;
-  right: 85px;
-  font-weight: 450;
-  font-size: 1rem;
-  text-justify: left;
-  text-transform: uppercase;
-  letter-spacing: .1rem;
-}
-
 .theme-switch-bg {
   position: absolute;
   right: 0;
@@ -567,44 +557,68 @@ svg.svg-cstitle {
   height: 30px;
   margin-right: 1.5rem;
   border-radius: var(--rad);
+  border-radius: 15px;
   overflow: hidden;
 }
 
 .theme-switch-bg input { display: none; }
 
-.theme-switch-slider {
+.th-switch-base {
   position: absolute;
   cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--colg3);
-  -webkit-transition: transform .2s;
-     -moz-transition: transform .2s;
-       -o-transition: transform .2s;
-          transition: transform .2s;
+  background-color: var(--gray7);
 }
 
-.theme-switch-slider:before {
+.th-switch-slider {
   position: absolute;
-  content: "";
+  z-index: 999;
+  cursor: pointer;
+  overflow: hidden;
   height: 20px;
   width: 20px;
   right: 25px;
   bottom: 5px;
   border-radius: var(--rad);
-  background-color: white;
-  box-shadow: 0 0 3px .25px var(--colg4);
-  -webkit-transition: transform .2s;
-     -moz-transition: transform .2s;
-       -o-transition: transform .2s;
-          transition: transform .2s;
+  background-color: var(--gray7);
+  -webkit-transition: transform .5s;
+     -moz-transition: transform .5s;
+       -o-transition: transform .5s;
+          transition: transform .5s;
 }
 
-input:checked + .theme-switch-slider { background-color: var(--colg3); }
+@mixin circle($size: 10px) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
 
-input:checked + .theme-switch-slider:before {
+.eclipse-animation {
+  @include circle(100%);
+  transition: all .5s;
+  &.moon {
+    // background-color: var(--colg1);
+    background: -webkit-linear-gradient(var(--colg0), var(--colg3));
+  };
+  &.earth {
+    background-color: var(--gray7);
+    transform:translate(33%, -125%);
+  };
+  input:checked + .th-switch-slider & {
+    &.moon {
+      // background-color: var(--ambr5);
+      background: -webkit-linear-gradient(var(--ambr4), var(--ambr5));
+    };
+    &.earth {
+      transform:translate(100%, -175%);
+    };
+  };
+}
+
+input:checked + .th-switch-slider {
   -webkit-transform: translateX(20px);
      -moz-transform: translateX(20px);
       -ms-transform: translateX(20px);
@@ -641,18 +655,10 @@ input:checked + .theme-switch-slider:before {
   font-size: 1.25rem;
   color: var(--nav-text);
   font-weight: var(--theme-weight-adjust-title-text);
-  &.mni-bio {
-    width: 56px;
-  };
-  &.mni-resume {
-    width: 108px;
-  };
-  &.mni-writing {
-    width: 109px;
-  };
-  &.mni-code {
-    width: 78px;
-  };
+  &.mni-bio { width: 56px; };
+  &.mni-resume { width: 108px; };
+  &.mni-writing { width: 109px; };
+  &.mni-code { width: 78px; };
 }
 
 .main-nav-item {
@@ -669,12 +675,6 @@ input:checked + .theme-switch-slider:before {
     color: var(--header-text);
     font-weight: var(--theme-weight-adjust-title-text);
 }
-
-// .mni.not-prev {
-//   background-image: linear-gradient(to bottom,
-//     var(--accent) 50%, var(--nav-bg) 50%
-//   );
-// }
 
 .mni-bio.not-prev {
   background-image: linear-gradient(to bottom,
@@ -869,6 +869,8 @@ input:checked + .theme-switch-slider:before {
 }
 
 /*FOOTER*/
+
+// TODO: fix scaling
 
 .foot {
   display: flex;
@@ -1297,6 +1299,19 @@ a.inline-email:hover {
   font-size: 1rem;
   font-family: monospace;
   color: var(--cyan5);
+}
+
+// CODE
+
+.mhk-url {
+  font-size: 50px;
+  font-weight: bold;
+  color: var(--fuch4);
+  text-decoration: none;
+}
+
+.mhk-url:hover {
+  color: var(--fuch3);
 }
 
 /*CONTACT FORM*/

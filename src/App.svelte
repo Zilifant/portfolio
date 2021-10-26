@@ -58,7 +58,11 @@
         type='checkbox'
         on:change={(e) => switchTheme(e, page)}
         >
-      <span class='theme-switch-slider preload'></span>
+      <span class='th-switch-slider preload'>
+        <div class='eclipse-animation moon preload'></div>
+        <div class='eclipse-animation earth preload'></div>
+      </span>
+      <span class='th-switch-base preload'></span>
     </label>
   </header>
 
@@ -109,43 +113,43 @@
     </div>
   </nav>
 
-<div class='content-wrapper'>
-  <div class='transition-grid'>
-    {#if page === bio}
-      <Wrap flyDirection={flyTo}>
-        <Bio
-          isCurrent={page === bio}
-          isDarkMode={getTheme() === 'dark'}
-        />
-      </Wrap>
-    {:else if page === res}
-      <Wrap flyDirection={flyTo}>
-        <Resume
-          isCurrent={page === res}
-        />
-      </Wrap>
-    {:else if page === writ}
-      <Wrap flyDirection={flyTo}>
-        <Writing
-          isCurrent={page === writ}
-        />
-      </Wrap>
-    {:else if page === code}
-      <Wrap flyDirection={flyTo}>
-        <Code
-          isCurrent={page === code}
-        />
-      </Wrap>
-    {:else}
-      <Wrap flyDirection={flyTo}>
-        <Bio
-          isCurrent={page === bio}
-          isDarkMode={getTheme() === 'dark'}
-        />
-      </Wrap>
-    {/if}
+  <div class='content-wrapper'>
+    <div class='transition-grid'>
+      {#if page === bio}
+        <Wrap flyDirection={flyTo}>
+          <Bio
+            isCurrent={page === bio}
+            isDarkMode={getTheme() === 'dark'}
+          />
+        </Wrap>
+      {:else if page === res}
+        <Wrap flyDirection={flyTo}>
+          <Resume
+            isCurrent={page === res}
+          />
+        </Wrap>
+      {:else if page === writ}
+        <Wrap flyDirection={flyTo}>
+          <Writing
+            isCurrent={page === writ}
+          />
+        </Wrap>
+      {:else if page === code}
+        <Wrap flyDirection={flyTo}>
+          <Code
+            isCurrent={page === code}
+          />
+        </Wrap>
+      {:else}
+        <Wrap flyDirection={flyTo}>
+          <Bio
+            isCurrent={page === bio}
+            isDarkMode={getTheme() === 'dark'}
+          />
+        </Wrap>
+      {/if}
+    </div>
   </div>
-</div>
 
   <Footer
     page={page}
