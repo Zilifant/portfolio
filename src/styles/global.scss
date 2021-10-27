@@ -602,11 +602,27 @@ svg.svg-cstitle {
   border-radius: 50%;
 }
 
+@keyframes movingGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .eclipse-animation {
   @include circle(100%);
   transition: all .5s;
   &.moon {
-    background: -webkit-linear-gradient(var(--colg0), var(--colg3));
+    animation: movingGradient 8s ease infinite;
+    background: linear-gradient(
+      45deg, var(--white), var(--colg0), var(--colg3), var(--colg4)
+    );
+    background-size: 400% 400%; // must be last in property list
   };
   &.earth {
     background-color: var(--gray7);
@@ -614,7 +630,11 @@ svg.svg-cstitle {
   };
   input:checked + .th-switch-slider & {
     &.moon {
-      background: -webkit-linear-gradient(var(--ambr4), var(--ambr5));
+      animation: movingGradient 8s ease infinite;
+      background: linear-gradient(
+        45deg, var(--ambr3), var(--ambr4), var(--ambr5), var(--ambr6)
+      );
+      background-size: 400% 400%; // must be last in property list
     };
     &.earth {
       transform:translate(100%, -175%);
@@ -677,8 +697,8 @@ input:checked + .th-switch-slider {
 
 .main-nav-item:hover {
   background-position: top;
-    color: var(--header-text);
-    font-weight: var(--theme-weight-adjust-title-text);
+  color: var(--header-text);
+  font-weight: var(--theme-weight-adjust-title-text);
 }
 
 .mni-bio.not-prev {

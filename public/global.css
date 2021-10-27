@@ -552,18 +552,30 @@ svg.svg-cstitle {
   -o-transition: transform .5s;
   transition: transform .5s; }
 
+@keyframes movingGradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
 .eclipse-animation {
   height: 100%;
   width: 100%;
   border-radius: 50%;
   transition: all .5s; }
   .eclipse-animation.moon {
-    background: -webkit-linear-gradient(var(--colg0), var(--colg3)); }
+    animation: movingGradient 8s ease infinite;
+    background: linear-gradient(45deg, var(--white), var(--colg0), var(--colg3), var(--colg4));
+    background-size: 400% 400%; }
   .eclipse-animation.earth {
     background-color: var(--gray7);
     transform: translate(33%, -125%); }
   input:checked + .th-switch-slider .eclipse-animation.moon {
-    background: -webkit-linear-gradient(var(--ambr4), var(--ambr5)); }
+    animation: movingGradient 8s ease infinite;
+    background: linear-gradient(45deg, var(--ambr3), var(--ambr4), var(--ambr5), var(--ambr6));
+    background-size: 400% 400%; }
   input:checked + .th-switch-slider .eclipse-animation.earth {
     transform: translate(100%, -175%); }
 
