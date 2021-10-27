@@ -52,18 +52,19 @@
 
   <header class='main-head'>
     <div class='main-head-bg'></div>
-    <h4 class='main-head-item main-head-item-title'>Scott Silsbe</h4>
-    <label class='main-head-item theme-switch-bg'>
-      <input
-        type='checkbox'
-        on:change={(e) => switchTheme(e, page)}
+    <div class='main-head-grid'>
+      <h4 class='main-head-item main-head-item-title'>Scott Silsbe</h4>
+      <label class='main-head-item theme-switch-bg'>
+        <input
+          type='checkbox'
+          on:change={(e) => switchTheme(e, page)}
         >
-      <span class='th-switch-slider preload'>
-        <div class='eclipse-animation moon preload'></div>
-        <div class='eclipse-animation earth preload'></div>
-      </span>
-      <span class='th-switch-base preload'></span>
-    </label>
+        <div class='th-switch-slider preload'>
+          <div class='eclipse-animation moon preload'></div>
+          <div class='eclipse-animation earth preload'></div>
+        </div>
+      </label>
+    </div>
   </header>
 
   <nav class='main-nav'>
