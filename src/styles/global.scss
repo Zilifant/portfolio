@@ -535,6 +535,17 @@ svg.svg-cstitle {
   fill: var(--text);
 }
 
+@media (max-width: 440px) {
+  svg.svg-cstitle {
+    width: 86vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    fill: var(--text);
+  }
+}
+
 /*HEAD*/
 
 .main-head-bg {
