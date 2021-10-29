@@ -7,7 +7,7 @@
     "sassdev": "./node_modules/.bin/node-sass src/styles/global.scss public/global.css -w",
     "build": "npm run sass && rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public --no-clear --host",
+    "start": "sirv public --no-clear --host --port 5555",
     "timedeploy": "npm run build && cd public && vercel deploy && vercel --prod && cd .. && echo Deployed",
     "deploy": "time npm run timedeploy",
 
