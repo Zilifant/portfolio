@@ -934,11 +934,12 @@ input:checked + .th-switch-slider {
 /*BIO*/
 .headshot-wrapper {
   object-fit: contain;
-  border: var(--bdr1) solid var(--horz-bar); }
-
-.headshot-wrapper > img {
-  width: 100%;
-  display: block; }
+  overflow: hidden;
+  border: var(--bdr1) solid var(--horz-bar);
+  border-radius: var(--rad2); }
+  .headshot-wrapper > img {
+    width: 100%;
+    display: block; }
 
 /* hide headshot on BIO page */
 @media (max-width: 800px) {
