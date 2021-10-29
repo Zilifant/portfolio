@@ -388,13 +388,16 @@ body#code-dark {
   from {
     background-size: 100% 300%;
     background-image: linear-gradient(to bottom,
-      var(--accent-bio) 33%, var(--nav-bg-this-page) 33% 67%, var(--nav-bg) 67%
+      var(--accent-bio) 33%,
+      var(--nav-bg-this-page) 33% 67%,
+      var(--nav-bg) 67%
     );
   }
   to {
     background-size: 100% 200%;
     background-image: linear-gradient(to bottom,
-      var(--accent-bio) 50%, var(--nav-bg) 50%
+      var(--accent-bio) 50%,
+      var(--nav-bg) 50%
     );
   }
 }
@@ -403,13 +406,16 @@ body#code-dark {
   from {
     background-size: 100% 300%;
     background-image: linear-gradient(to bottom,
-      var(--accent-res) 33%, var(--nav-bg-this-page) 33% 67%, var(--nav-bg) 67%
+      var(--accent-res) 33%,
+      var(--nav-bg-this-page) 33% 67%,
+      var(--nav-bg) 67%
     );
   }
   to {
     background-size: 100% 200%;
     background-image: linear-gradient(to bottom,
-      var(--accent-res) 50%, var(--nav-bg) 50%
+      var(--accent-res) 50%,
+      var(--nav-bg) 50%
     );
   }
 }
@@ -418,13 +424,16 @@ body#code-dark {
   from {
     background-size: 100% 300%;
     background-image: linear-gradient(to bottom,
-      var(--accent-writ) 33%, var(--nav-bg-this-page) 33% 67%, var(--nav-bg) 67%
+      var(--accent-writ) 33%,
+      var(--nav-bg-this-page) 33% 67%,
+      var(--nav-bg) 67%
     );
   }
   to {
     background-size: 100% 200%;
     background-image: linear-gradient(to bottom,
-      var(--accent-writ) 50%, var(--nav-bg) 50%
+      var(--accent-writ) 50%,
+      var(--nav-bg) 50%
     );
   }
 }
@@ -433,13 +442,16 @@ body#code-dark {
   from {
     background-size: 100% 300%;
     background-image: linear-gradient(to bottom,
-      var(--accent-code) 33%, var(--nav-bg-this-page) 33% 67%, var(--nav-bg) 67%
+      var(--accent-code) 33%,
+      var(--nav-bg-this-page) 33% 67%,
+      var(--nav-bg) 67%
     );
   }
   to {
     background-size: 100% 200%;
     background-image: linear-gradient(to bottom,
-      var(--accent-code) 50%, var(--nav-bg) 50%
+      var(--accent-code) 50%,
+      var(--nav-bg) 50%
     );
   }
 }
