@@ -372,6 +372,18 @@ body#code-dark {
           transition: background-color .2s;
 }
 
+@mixin circle($size: 10px) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+@keyframes movingGradient {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
 @keyframes swapBgBio {
   from {
     background-size: 100% 300%;
@@ -594,24 +606,6 @@ svg.svg-cstitle {
      -moz-transition: transform .5s;
        -o-transition: transform .5s;
           transition: transform .5s;
-}
-
-@mixin circle($size: 10px) {
-  height: $size;
-  width: $size;
-  border-radius: 50%;
-}
-
-@keyframes movingGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .eclipse-animation {

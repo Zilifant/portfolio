@@ -358,6 +358,14 @@ body#code-dark {
   --accent: var(--emer6);
   --accent-hover: var(--emer5); }
 
+@keyframes movingGradient {
+  0% {
+    background-position: 0%   50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0%   50%; } }
+
 @keyframes swapBgBio {
   from {
     background-size: 100% 300%;
@@ -551,14 +559,6 @@ svg.svg-cstitle {
   -moz-transition: transform .5s;
   -o-transition: transform .5s;
   transition: transform .5s; }
-
-@keyframes movingGradient {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
 
 .eclipse-animation {
   height: 100%;
