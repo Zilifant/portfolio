@@ -250,7 +250,7 @@ body.light {
   --content-bg: var(--newG1);
   --header-text: var(--colg2);
   --header-bg: var(--trug9);
-  --header-bg-img: url("./assets/backgrounds/dflowers-clear-1280.png");
+  --header-bg-img: url("./assets/backgrounds/escheresque_ste.png");
   --header-bg-img-size: 1280px;
   --nav-text: var(--trug9);
   --nav-bg: var(--colg2);
@@ -501,8 +501,7 @@ svg.svg-cstitle {
   width: 100vw;
   background-position: left;
   background-repeat: repeat;
-  background-image: var(--header-bg-img);
-  background-size: var(--header-bg-img-size); }
+  background-image: var(--header-bg-img); }
 
 .main-head {
   display: flex;
@@ -542,7 +541,7 @@ svg.svg-cstitle {
 /*LIGHT-DARK SWITCH*/
 .theme-switch-bg {
   justify-self: right;
-  margin: 0 1rem;
+  margin: 0 1.5rem;
   grid-area: switch;
   padding: 5px;
   width: 50px;
