@@ -16,6 +16,8 @@
     flyDirection
   } from './utilities';
 
+  const version = '0.5';
+
   onMount(() => {
     const toggle = document.querySelector('.theme-switch-bg input[type="checkbox"]');
     setThemeFromLocalStorage(toggle);
@@ -155,6 +157,7 @@
   <Footer
     page={page}
     quote={quote}
+    version={version}
   />
 
 </main>

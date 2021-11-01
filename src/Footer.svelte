@@ -3,6 +3,7 @@
 <script>
   export let page = 'bio';
   export let quote;
+  export let version;
 </script>
 
 <footer class={`foot ${page}`}>
@@ -34,10 +35,10 @@
       </a>
     </div>
     <p class='foot-item foot-item-right copyright-2-line'>
-      © 2020 Scott Silsbe<br>All Rights Reserved
+      © 2020 Scott Silsbe<br>All Rights Reserved<br>v{version}
     </p>
     <p class='foot-item foot-item-right copyright-1-line'>
-      © 2020 Scott Silsbe. All Rights Reserved
+      © 2020 Scott Silsbe. All Rights Reserved<br>v{version}
     </p>
   </div>
 </footer>
