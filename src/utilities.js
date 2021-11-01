@@ -45,6 +45,12 @@ export function switchTheme(e, page) {
     localStorage.setItem('theme', 'light');
     imgsToLightMode();
   }
+  safariNavFix();
+}
+
+function safariNavFix() {
+  const prevPage = document.getElementsByClassName('prev');
+  if (prevPage[0]) prevPage[0].classList.replace('prev', 'not-prev');
 }
 
 function imgsToDarkMode() {
