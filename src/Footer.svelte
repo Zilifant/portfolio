@@ -35,10 +35,10 @@
       </a>
     </div>
     <p class='foot-item foot-item-right copyright-2-line'>
-      © 2020 Scott Silsbe<br>All Rights Reserved<br>v{version}
+      © 2020 Scott Silsbe<br>All Rights Reserved<br>version {version}
     </p>
     <p class='foot-item foot-item-right copyright-1-line'>
-      © 2020 Scott Silsbe. All Rights Reserved<br>v{version}
+      © 2020 Scott Silsbe. All Rights Reserved<br>version {version}
     </p>
   </div>
 </footer>
