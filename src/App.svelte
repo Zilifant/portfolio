@@ -25,13 +25,21 @@
 
   removePreload({ firstLoad: true });
 
+  const pages = [
+    { id: 'bio', color: 'pink' },
+    { id: 'resume', color: 'blue' },
+    { id: 'writing', color: 'orange' },
+    { id: 'code', color: 'green' },
+  ];
+
   const bio  = 'bio';
   const res  = 'resume';
   const writ = 'writing';
   const code = 'code';
 
   let prevPg, flyTo;
-  let page = bio;
+  let dropNavState = 'hidden';
+  let page = pages[0].id;
   let quote = randomQuote();
 
   $: isCurrent = (pg) => (pg === page) ? 'current' : '';
@@ -46,6 +54,13 @@
     flyTo = flyDirection(prevPg, page);
     quote = randomQuote();
     removePreload({ firstLoad: false });
+    toggleDropNav();
+  };
+
+  function toggleDropNav() {
+    if (document.documentElement.clientWidth > 600) return;
+    if (dropNavState === 'hidden') return dropNavState = 'visible';
+    dropNavState = 'hidden';
   };
 
 </script>
@@ -70,48 +85,31 @@
   </header>
 
   <nav class='main-nav'>
-    <a
-      class={`main-nav-item mni mni-bio ${isPrev(bio)} ${isCurrent(bio)}`}
-      href='/' on:click|preventDefault={() => switchPage(bio)}
-    >{bio}</a>
-    <a
-      class={`main-nav-item mni mni-resume ${isPrev(res)} ${isCurrent(res)}`}
-      href='/' on:click|preventDefault={() => switchPage(res)}
-    >{res}</a>
-    <a
-      class={`main-nav-item mni mni-writing ${isPrev(writ)} ${isCurrent(writ)}`}
-      href='/' on:click|preventDefault={() => switchPage(writ)}
-    >{writ}</a>
-    <a
-      class={`main-nav-item mni mni-code ${isPrev(code)} ${isCurrent(code)}`}
-      href='/' on:click|preventDefault={() => switchPage(code)}
-    >{code}</a>
+    {#each pages as { id }}
+      <a
+        class={`main-nav-item mni mni-${id} ${isPrev(id)} ${isCurrent(id)}`}
+        href='/' on:click|preventDefault={() => switchPage(id)}
+      >{id}</a>
+    {/each}
     <div class='drop-nav'>
-      <button class='drop-nav-btn'>
+      <button
+        class='drop-nav-btn'
+        on:click|preventDefault={toggleDropNav}
+      >
         <div class='drop-nav-btn-icon'>
           <div class='drop-nav-btn-icon-bar'></div>
           <div class='drop-nav-btn-icon-bar'></div>
           <div class='drop-nav-btn-icon-bar'></div>
         </div>
-        <div>Scott Silsbe</div>
+        <div class='drop-nav-title'>Scott Silsbe</div>
       </button>
-      <div class='drop-nav-items'>
-        <a
-          class={`drop-nav-item drop-nav-item-bio ${isCurrent(bio)}-drop`}
-          href='/' on:click|preventDefault={() => switchPage(bio)}
-        ><div>{bio}</div></a>
-        <a
-          class={`drop-nav-item drop-nav-item-resume ${isCurrent(res)}-drop`}
-          href='/' on:click|preventDefault={() => switchPage(res)}
-        ><div>{res}</div></a>
-        <a
-          class={`drop-nav-item drop-nav-item-writing ${isCurrent(writ)}-drop`}
-          href='/' on:click|preventDefault={() => switchPage(writ)}
-        ><div>{writ}</div></a>
-        <a
-          class={`drop-nav-item drop-nav-item-code ${isCurrent(code)}-drop`}
-          href='/' on:click|preventDefault={() => switchPage(code)}
-        ><div>{code}</div></a>
+      <div class={`drop-nav-items ${dropNavState}`}>
+        {#each pages as { id }}
+          <a
+            class={`drop-nav-item ${isPrev(id)} ${isCurrent(id)}`}
+            href='/' on:click|preventDefault={() => switchPage(id)}
+          ><div>{id}</div></a>
+        {/each}
       </div>
     </div>
   </nav>
