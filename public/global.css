@@ -459,8 +459,6 @@ p, ul, ol, li {
 
 /*WRAPPER*/
 .wrapper {
-  background-attachment: fixed;
-  background-position: left;
   background-color: var(--bgcolor);
   background-image: var(--content-bg-img);
   background-size: var(--content-bg-img-size); }
@@ -499,8 +497,6 @@ svg.svg-cstitle {
   z-index: 0;
   height: 100%;
   width: 100vw;
-  background-position: left;
-  background-repeat: repeat;
   background-image: var(--header-bg-img); }
 
 .main-head {
