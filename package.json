@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "sass": "./node_modules/.bin/node-sass src/styles -o public",
-    "sassdev": "./node_modules/.bin/node-sass src/styles -o public -w",
+    "sass": "./node_modules/.bin/node-sass src/styles -o temp",
+    "postsass": "./node_modules/.bin/postcss temp -u autoprefixer -d public",
+    "sassdev": "./node_modules/.bin/node-sass src/styles -o temp -w",
+    "prefixdev": "./node_modules/.bin/postcss temp -u autoprefixer -d public -w",
     "prebuild": "npm run sass",
     "build": "rollup -c",
     "dev": "rollup -c -w",
