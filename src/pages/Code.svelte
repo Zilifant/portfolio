@@ -10,7 +10,7 @@
 <div class={`page-wrapper code ${current}`}>
   <a
     class='mhk-url'
-    href='https://mhk-front.herokuapp.com/'
+    href='https://mhk.vercel.app/'
     target="_blank" rel="noopener noreferrer"
   >
     MHK
