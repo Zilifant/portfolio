@@ -16,7 +16,7 @@
     flyDirection
   } from './utilities';
 
-  const version = '0.5';
+  const version = '0.6';
 
   onMount(() => {
     const toggle = document.querySelector('.theme-switch-bg input[type="checkbox"]');
@@ -36,15 +36,23 @@
   const res  = 'resume';
   const writ = 'writing';
   const code = 'code';
+  const pgList = [bio, res, writ, code];
 
   let prevPg, flyTo;
   let dropNavState = 'hidden';
-  let page = pages[0].id;
+  let page = initPage();
   let quote = randomQuote();
 
   $: isCurrent = (pg) => (pg === page) ? 'current' : '';
   $: isPrev = (pg) => (pg === prevPg) ? 'prev' : 'not-prev';
   $: getTheme = () => document.body.getAttribute('class');
+
+  function initPage() {
+    const targetPg = window.location.hash.substring(1);
+    const isViablePg = pgList.includes(targetPg);
+    if (isViablePg) return targetPg;
+    return bio;
+  };
 
   function switchPage(pg) {
     if (pg === page) return;
@@ -88,7 +96,7 @@
     {#each pages as { id }}
       <a
         class={`main-nav-item mni mni-${id} ${isPrev(id)} ${isCurrent(id)}`}
-        href='/' on:click|preventDefault={() => switchPage(id)}
+        href={`#${id}`} on:click={() => switchPage(id)}
       >{id}</a>
     {/each}
     <div class='drop-nav'>
@@ -107,7 +115,7 @@
         {#each pages as { id }}
           <a
             class={`drop-nav-item ${isPrev(id)} ${isCurrent(id)}`}
-            href='/' on:click|preventDefault={() => switchPage(id)}
+            href={`#${id}`} on:click={() => switchPage(id)}
           ><div>{id}</div></a>
         {/each}
       </div>
