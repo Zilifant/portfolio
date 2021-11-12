@@ -3,11 +3,11 @@
 <script>
   import { onMount } from 'svelte';
   import Wrap from './utility/Wrap.svelte';
+  import Footer from './utility/Footer.svelte';
   import Bio from './pages/Bio.svelte';
   import Resume from './pages/Resume.svelte';
   import Writing from './pages/Writing.svelte';
   import Code from './pages/Code.svelte';
-  import Footer from './Footer.svelte';
   import {
     randomQuote,
     removePreload,
