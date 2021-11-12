@@ -76,7 +76,7 @@
 <main class='wrapper'>
 
   <header class='main-head'>
-    <div class='main-head-bg'></div>
+    <!-- <div class='main-head-bg'></div> -->
     <div class='main-head-grid'>
       <h4 class='main-head-item main-head-item-title'>Scott Silsbe</h4>
       <label class='main-head-item theme-switch-bg'>

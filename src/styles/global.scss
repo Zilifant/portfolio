@@ -212,7 +212,7 @@
   --colg7: rgba(55,65,81,1);
   --colg8: rgba(31,41,55,1);
   --colg9: rgba(17,24,39,1);
-  --newG1: rgba(240,243,245,1);
+  --newg1: rgba(240,243,245,1);
   --blug0: rgba(248,250,252,1);
   --blug1: rgba(241,245,249,1);
   --blug2: rgba(226,232,240,1);
@@ -231,6 +231,7 @@
   --bdr1: 1px;
   --bdr2: 1px;
   --bdr3: 3px;
+  // --bg-img: url("./assets/backgrounds/big-floral-tile.png");
 }
 
 body.light {
@@ -246,11 +247,10 @@ body.light {
   --text-hover: var(--trug6);
   --content-bg-img: none;
   --content-bg-img-size: 0;
-  --content-bg: var(--newG1);
+  --content-bg: var(--newg1);
   --header-text: var(--colg2);
-  --header-bg: var(--trug9);
-  --header-bg-img: url("./assets/backgrounds/escheresque_ste.png");
-  --header-bg-img-size: 1280px;
+  --header-bg: var(--gray9);
+  --header-bg-img: var(--bg-img);
   --nav-text: var(--trug9);
   --nav-bg: var(--colg2);
   --nav-bg-this-page: var(--colg3);
@@ -293,20 +293,13 @@ body.dark {
   --text-alt-bright: var(--libl3);
   --text-alt-title: var(--colg2);
   --text-hover: var(--colg1);
-  // --content-bg-img: url("./assets/backgrounds/dflowers-clear-1280.png");
-  // --content-bg-img-size: 1280px;
-  // --content-bg-img: var(--bgsvg);
-  // --content-bg-img-size: 200px;
-  --content-bg-img: url("./assets/backgrounds/escheresque_ste.png");
-  // --content-bg-img-width: 29px;
-  // --content-bg-img-height: 46px;
-  --content-bg: none;
+  --content-bg-img: var(--bg-img);
+  --content-bg: var(--gray8);
   --header-text: var(--colg2);
-  --header-bg: var(--gray9);
-  --header-bg-img: none;
-  --header-bg-img-size: 0;
+  --header-bg: black;
+  --header-bg-img: var(--bg-img);
   --nav-text: var(--colg2);
-  --nav-bg: var(--gray8);
+  --nav-bg: var(--gray9);
   --nav-bg-this-page: var(--gray7);
   --nav-border: var(--gray7);
   --drop-nav-btn-text: var(--colg2);
@@ -315,7 +308,7 @@ body.dark {
   --foot-social-icon-bg-hover: var(--accent);
   --foot-social-icon-bg: var(--gray7);
   --foot-text: var(--gray6);
-  --foot-bg: var(--gray9);
+  --foot-bg: black;
   --foot-border: var(--gray7);
   --button-text: var(--colg2);
   --form-bg: var(--gray8);
@@ -510,8 +503,8 @@ p, ul, ol, li {
 
 .wrapper {
   background-color: var(--bgcolor);
-  background-image: var(--content-bg-img);
-  background-size: var(--content-bg-img-size);
+  // background-image: var(--content-bg-img);
+  // background-size: 400px;
 }
 
 /*SVG*/
@@ -573,7 +566,7 @@ svg.svg-cstitle {
   z-index: 0;
   height: 100%;
   width: 100vw;
-  background-image: var(--header-bg-img);
+  // background-image: var(--header-bg-img);
 }
 
 .main-head {
