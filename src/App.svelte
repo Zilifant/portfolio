@@ -16,7 +16,7 @@
     flyDirection
   } from './utilities';
 
-  const version = '0.6';
+  const version = '0.6.7';
 
   onMount(() => {
     const toggle = document.querySelector('.theme-switch-bg input[type="checkbox"]');
