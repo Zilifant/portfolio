@@ -317,9 +317,9 @@ body.dark {
   --form-text-placeholder: var(--colg5);
   --partner-logo-bg: var(--colg2);
   --horz-bar: var(--gray7);
-  --exl-btn-bg: var(--gray8);
-  --exl-btn-bg-hover: var(--gray8);
-  --exl-content-bg: var(--gray8);
+  --exl-btn-bg: var(--gray9);
+  --exl-btn-bg-hover: var(--exl-btn-bg);
+  --exl-content-bg: var(--exl-btn-bg);
   --exl-btn-shadow: var(--gray9);
   --exl-btn-border: var(--bdr2) solid var(--gray7);
   --exl-btn-icon-fore: var(--text);
@@ -452,6 +452,28 @@ body#code-dark {
       var(--nav-bg) 50%
     );
   }
+}
+
+@mixin shadow() {
+  box-shadow:
+    rgba(0, 0, 0, 0.03) 0px 1px 2px 0px,
+    rgba(0, 0, 0, 0.03) 0px 2px 6px 2px,
+    rgba(0, 0, 0, 0.03) 0px -1px 2px 0px,
+    rgba(0, 0, 0, 0.03) 0px -2px 6px 2px;
+}
+
+@mixin shadow2() {
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+@mixin colorfade($t: .2s) {
+  transition:
+    color $t,
+    background-color $t,
+    border-color $t,
+    fill $t;
 }
 
 /*RESET*/
@@ -691,12 +713,13 @@ input:checked + .th-switch-slider {
 }
 
 .main-nav {
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   background: var(--nav-bg);
   border-bottom: var(--bdr1) solid var(--nav-border);
-  box-shadow: 0 0 2px 0 var(--exl-btn-shadow);
+  @include shadow();
 }
 
 .main-nav-item {
@@ -1169,9 +1192,12 @@ a.inline-email:hover {
 
 .exl-wrapper {
   overflow: hidden;
-  border-radius: var(--rad);
-  box-shadow: 0 0 2px 0 var(--exl-btn-shadow);
+  border-radius: var(--rad2);
   border: var(--exl-btn-border);
+  @include shadow();
+  body.light & {
+    box-shadow: 0 0 2px 0 var(--exl-btn-shadow);
+  };
 }
 
 .exl-btn {
