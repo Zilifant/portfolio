@@ -583,13 +583,13 @@ svg.svg-cstitle {
 
 /*HEAD*/
 
-.main-head-bg {
-  position: absolute;
-  z-index: 0;
-  height: 100%;
-  width: 100vw;
-  // background-image: var(--header-bg-img);
-}
+// .main-head-bg {
+//   position: absolute;
+//   z-index: 0;
+//   height: 100%;
+//   width: 100vw;
+//   background-image: var(--header-bg-img);
+// }
 
 .main-head {
   display: flex;
@@ -598,6 +598,7 @@ svg.svg-cstitle {
   align-items: center;
   position: relative;
   background: var(--header-bg);
+  @include colorfade();
 }
 
 .main-head-grid {
@@ -720,6 +721,7 @@ input:checked + .th-switch-slider {
   background: var(--nav-bg);
   border-bottom: var(--bdr1) solid var(--nav-border);
   @include shadow();
+  // @include colorfade();
 }
 
 .main-nav-item {
@@ -930,6 +932,7 @@ input:checked + .th-switch-slider {
   background: var(--foot-bg);
   border-top: var(--bdr1) solid var(--foot-border);
   box-shadow: 0 0 2px 0 var(--exl-btn-shadow);
+  @include colorfade();
 }
 
 .footer-grid {
@@ -960,10 +963,7 @@ input:checked + .th-switch-slider {
   left: 0;
   font-style: italic;
   text-decoration: none;
-  -webkit-transition: color .2s;
-     -moz-transition: color .2s;
-       -o-transition: color .2s;
-          transition: color .2s;
+  @include colorfade();
 }
 
 .foot-item-left > a:hover {
@@ -990,10 +990,7 @@ input:checked + .th-switch-slider {
 .foot-social-icon svg {
   margin: auto;
   fill: var(--foot-social-icon-bg);
-  -webkit-transition: fill .2s;
-     -moz-transition: fill .2s;
-       -o-transition: fill .2s;
-          transition: fill .2s;
+  @include colorfade();
   &:hover {
     fill: var(--accent);
   }
@@ -1049,7 +1046,8 @@ input:checked + .th-switch-slider {
 .content-wrapper,
 .side-right,
 .side-left {
-    background: var(--content-bg);
+  background: var(--content-bg);
+  @include colorfade();
 }
 
 .content > * {
@@ -1165,7 +1163,7 @@ a.inline-email:hover {
   width: 1.25rem;
   clip-path: polygon(40% 0, 60% 0, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0 60%, 0 40%, 40% 40%);
   position: relative;
-  transition: background-color .2s;
+  @include colorfade();
   background: var(--foot-social-icon-bg);
 }
 
@@ -1195,6 +1193,7 @@ a.inline-email:hover {
   border-radius: var(--rad2);
   border: var(--exl-btn-border);
   @include shadow();
+  @include colorfade();
   body.light & {
     box-shadow: 0 0 2px 0 var(--exl-btn-shadow);
   };
@@ -1205,6 +1204,7 @@ a.inline-email:hover {
   display: flex;
   padding: 1rem;
   background: var(--exl-btn-bg);
+  @include colorfade();
 }
 
 /* .exl-btn:hover { background-color: var(--exl-btn-bg-hover); } */
@@ -1240,7 +1240,7 @@ a.inline-email:hover {
      -moz-transition: max-height .4s ease-in-out;
        -o-transition: max-height .4s ease-in-out;
           transition: max-height .4s ease-in-out;
-    background: var(--exl-content-bg);
+  background: var(--exl-content-bg);
 }
 
 .exl-content-ul {

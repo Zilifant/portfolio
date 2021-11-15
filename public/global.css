@@ -540,19 +540,14 @@ svg.svg-cstitle {
     fill: var(--text); } }
 
 /*HEAD*/
-.main-head-bg {
-  position: absolute;
-  z-index: 0;
-  height: 100%;
-  width: 100vw; }
-
 .main-head {
   display: flex;
   padding: .75rem 0;
   justify-content: center;
   align-items: center;
   position: relative;
-  background: var(--header-bg); }
+  background: var(--header-bg);
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s; }
 
 .main-head-grid {
   display: grid;
@@ -813,7 +808,8 @@ input:checked + .th-switch-slider {
   justify-content: center;
   background: var(--foot-bg);
   border-top: var(--bdr1) solid var(--foot-border);
-  box-shadow: 0 0 2px 0 var(--exl-btn-shadow); }
+  box-shadow: 0 0 2px 0 var(--exl-btn-shadow);
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s; }
 
 .footer-grid {
   padding: 1rem 0;
@@ -843,7 +839,7 @@ input:checked + .th-switch-slider {
   left: 0;
   font-style: italic;
   text-decoration: none;
-  transition: color .2s; }
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s; }
 
 .foot-item-left > a:hover {
   color: var(--accent); }
@@ -867,7 +863,7 @@ input:checked + .th-switch-slider {
 .foot-social-icon svg {
   margin: auto;
   fill: var(--foot-social-icon-bg);
-  transition: fill .2s; }
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s; }
   .foot-social-icon svg:hover {
     fill: var(--accent); }
 
@@ -912,7 +908,8 @@ input:checked + .th-switch-slider {
 .content-wrapper,
 .side-right,
 .side-left {
-  background: var(--content-bg); }
+  background: var(--content-bg);
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s; }
 
 .content > * {
   margin: 1rem 1.5rem;
@@ -1024,7 +1021,7 @@ a.inline-email:hover {
   -webkit-clip-path: polygon(40% 0, 60% 0, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0 60%, 0 40%, 40% 40%);
           clip-path: polygon(40% 0, 60% 0, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0 60%, 0 40%, 40% 40%);
   position: relative;
-  transition: background-color .2s;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s;
   background: var(--foot-social-icon-bg); }
 
 /* .exl-btn-icon-back {
@@ -1046,7 +1043,8 @@ a.inline-email:hover {
   overflow: hidden;
   border-radius: var(--rad2);
   border: var(--exl-btn-border);
-  box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 2px 6px 2px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px, rgba(0, 0, 0, 0.03) 0px -2px 6px 2px; }
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 2px 6px 2px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px, rgba(0, 0, 0, 0.03) 0px -2px 6px 2px;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s; }
   body.light .exl-wrapper {
     box-shadow: 0 0 2px 0 var(--exl-btn-shadow); }
 
@@ -1054,7 +1052,8 @@ a.inline-email:hover {
   cursor: pointer;
   display: flex;
   padding: 1rem;
-  background: var(--exl-btn-bg); }
+  background: var(--exl-btn-bg);
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s; }
 
 /* .exl-btn:hover { background-color: var(--exl-btn-bg-hover); } */
 .exl-btn-text {
