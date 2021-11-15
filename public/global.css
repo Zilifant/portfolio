@@ -252,8 +252,7 @@ body.light {
   --nav-bg-this-page: var(--colg3);
   --nav-border: var(--colg3);
   --drop-nav-btn-text: var(--colg2);
-  --drop-nav-btn-bg: var(--trug9);
-  --drop-nav-btn-bg-hover: var(--colg3);
+  --drop-nav-btn-bg: var(--gray9);
   --foot-social-icon-bg-hover: var(--accent);
   --foot-social-icon-bg: var(--colg4);
   --foot-text: var(--colg5);
@@ -298,8 +297,7 @@ body.dark {
   --nav-bg-this-page: var(--gray7);
   --nav-border: var(--gray7);
   --drop-nav-btn-text: var(--colg2);
-  --drop-nav-btn-bg: var(--trug9);
-  --drop-nav-btn-bg-hover: var(--bg);
+  --drop-nav-btn-bg: black;
   --foot-social-icon-bg-hover: var(--accent);
   --foot-social-icon-bg: var(--gray7);
   --foot-text: var(--gray6);
@@ -757,7 +755,8 @@ input:checked + .th-switch-slider {
     padding: .75rem 1.5rem;
     border: none;
     z-index: 3;
-    background: var(--drop-nav-btn-bg); }
+    background: var(--drop-nav-btn-bg);
+    cursor: pointer; }
   .drop-nav-btn-icon {
     height: 20px;
     width: 30px;
@@ -781,7 +780,7 @@ input:checked + .th-switch-slider {
     position: absolute;
     width: 100%;
     z-index: 2;
-    transition: transform .2s, top .2s; }
+    transition: top .4s; }
     .drop-nav-items.hidden {
       top: -192px; }
     .drop-nav-items.visible {

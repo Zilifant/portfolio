@@ -256,8 +256,7 @@ body.light {
   --nav-bg-this-page: var(--colg3);
   --nav-border: var(--colg3);
   --drop-nav-btn-text: var(--colg2);
-  --drop-nav-btn-bg: var(--trug9);
-  --drop-nav-btn-bg-hover: var(--colg3);
+  --drop-nav-btn-bg: var(--gray9);
   --foot-social-icon-bg-hover: var(--accent);
   --foot-social-icon-bg: var(--colg4);
   --foot-text: var(--colg5);
@@ -303,8 +302,7 @@ body.dark {
   --nav-bg-this-page: var(--gray7);
   --nav-border: var(--gray7);
   --drop-nav-btn-text: var(--colg2);
-  --drop-nav-btn-bg: var(--trug9);
-  --drop-nav-btn-bg-hover: var(--bg);
+  --drop-nav-btn-bg: black;
   --foot-social-icon-bg-hover: var(--accent);
   --foot-social-icon-bg: var(--gray7);
   --foot-text: var(--gray6);
@@ -863,6 +861,7 @@ input:checked + .th-switch-slider {
     border: none;
     z-index: 3;
     background: var(--drop-nav-btn-bg);
+    cursor: pointer;
   }
 
   .drop-nav-btn-icon {
@@ -892,10 +891,10 @@ input:checked + .th-switch-slider {
     position: absolute;
     width: 100%;
     z-index: 2;
-    -webkit-transition: transform .2s, top .2s;
-       -moz-transition: transform .2s, top .2s;
-         -o-transition: transform .2s, top .2s;
-            transition: transform .2s, top .2s;
+    -webkit-transition: top .4s;
+       -moz-transition: top .4s;
+         -o-transition: top .4s;
+            transition: top .4s;
     &.hidden {
       top: -192px;
     };
