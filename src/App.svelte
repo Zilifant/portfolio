@@ -19,7 +19,7 @@
   const version = '0.6.7';
 
   onMount(() => {
-    const toggle = document.querySelector('.theme-switch-bg input[type="checkbox"]');
+    const toggle = document.querySelector('.theme-switch-checkbox');
     setThemeFromLocalStorage(toggle);
   });
 
@@ -81,6 +81,7 @@
       <h4 class='main-head-item main-head-item-title'>Scott Silsbe</h4>
       <label class='main-head-item theme-switch-bg'>
         <input
+          class='theme-switch-checkbox'
           type='checkbox'
           on:change={(e) => switchTheme(e, page)}
         >
