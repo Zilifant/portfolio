@@ -1158,15 +1158,6 @@ a.inline-email:hover {
   font-family: monospace;
   color: var(--cyan5); }
 
-.mhk-url {
-  font-size: 50px;
-  font-weight: bold;
-  color: var(--fuch4);
-  text-decoration: none; }
-
-.mhk-url:hover {
-  color: var(--fuch3); }
-
 /*CONTACT FORM*/
 /*MISC*/
 .preload,
