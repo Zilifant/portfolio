@@ -1,0 +1,30 @@
+// Component Styles
+
+@import 'global.scss';
+
+// Grid
+
+.grd {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    'title title'
+    'app github';
+}
+
+.project-title { grid-area: title; }
+.app { grid-area: app; }
+.github { grid-area: github; }
+
+// Card
+
+.url-pseudo-btn {
+  background-color: var(--bg);
+  border-radius: var(--rad2);
+  border: var(--exl-btn-border);
+  @include shadow();
+  @include colorfade();
+  body.light & {
+    box-shadow: 0 0 2px 0 var(--exl-btn-shadow);
+  };
+}
