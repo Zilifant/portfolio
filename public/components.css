@@ -1165,6 +1165,7 @@ a.inline-email:hover {
   transition: none; }
 
 .grd {
+  margin: 1rem 1.5rem;
   display: grid;
   gap: 1rem;
   grid-template-areas: 'title title' 'app github'; }
@@ -1172,13 +1173,17 @@ a.inline-email:hover {
 .project-title {
   grid-area: title; }
 
-.app {
+.app-url {
   grid-area: app; }
 
-.github {
+.github-url {
   grid-area: github; }
 
 .url-pseudo-btn {
+  text-decoration: none;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
   background-color: var(--bg);
   border-radius: var(--rad2);
   border: var(--exl-btn-border);

@@ -5,6 +5,7 @@
 // Grid
 
 .grd {
+  margin: 1rem 1.5rem;
   display: grid;
   gap: 1rem;
   grid-template-areas:
@@ -13,12 +14,16 @@
 }
 
 .project-title { grid-area: title; }
-.app { grid-area: app; }
-.github { grid-area: github; }
+.app-url { grid-area: app; }
+.github-url { grid-area: github; }
 
 // Card
 
 .url-pseudo-btn {
+  text-decoration: none;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
   background-color: var(--bg);
   border-radius: var(--rad2);
   border: var(--exl-btn-border);
@@ -28,3 +33,10 @@
     box-shadow: 0 0 2px 0 var(--exl-btn-shadow);
   };
 }
+
+// .app-url.mhk {
+//   background-color: var(--rose5);
+//   &:hover {
+//     background-color: var(--rose4);
+//   };
+// }
