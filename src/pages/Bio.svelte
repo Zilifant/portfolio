@@ -23,9 +23,9 @@
     </div>
   </div>
 
-  <section class="content content-70-right content-right-bio">
-    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud.</p>
+  <section class="content content-70-right content-right-bio large-text">
+    <p>Freedom discovers man the moment he loses concern over what impression he is making or about to make.</p>
+    <p>A full-stack applicaton. A React app connected to a Node.js server using socket.io.</p>
   </section>
 
   <div class='text-divider'>
