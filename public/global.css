@@ -890,6 +890,24 @@ input:checked + .th-switch-slider {
 .large-text > :not(:first-child) {
   margin-top: 1rem; }
 
+.text-divider {
+  width: 100%;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .text-divider > p.text-divider-text {
+    font-size: 1.5rem;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    margin: 0 .5rem; }
+  .text-divider > .text-divider-bar {
+    display: flex;
+    flex-grow: 1;
+    height: var(--bdr2);
+    background: var(--horz-bar); }
+
 .content-wrapper,
 .page-wrapper {
   display: flex;
@@ -947,7 +965,7 @@ input:checked + .th-switch-slider {
 
 .horz-bar {
   height: var(--bdr2);
-  margin: 1rem 1.5rem;
+  margin: 1rem 0;
   background: var(--horz-bar); }
 
 .section-divider {
@@ -1146,8 +1164,8 @@ a.inline-email:hover {
 .p1 > em,
 .p2,
 .p2 > em {
-  font-size: 17px;
-  line-height: 1.75rem;
+  font-size: 20px;
+  line-height: 2rem;
   font-weight: var(--theme-weight-adjust-text); }
 
 .p1,
@@ -1172,3 +1190,37 @@ a.inline-email:hover {
 .preload,
 .preload:before {
   transition: none; }
+
+.grd {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-areas: 'title title' 'live live' 'front back'; }
+  @media (max-width: 600px) {
+    .grd {
+      grid-template-areas: 'title' 'live' 'front' 'back'; } }
+
+.project-title {
+  grid-area: title; }
+
+.app-url {
+  grid-area: live; }
+
+.github-url.frontend {
+  grid-area: front; }
+
+.github-url.backend {
+  grid-area: back; }
+
+.url-pseudo-btn {
+  text-decoration: none;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--bg);
+  border-radius: var(--rad2);
+  border: var(--exl-btn-border);
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 2px 6px 2px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px, rgba(0, 0, 0, 0.03) 0px -2px 6px 2px;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s; }
+  body.light .url-pseudo-btn {
+    box-shadow: 0 0 2px 0 var(--exl-btn-shadow); }
