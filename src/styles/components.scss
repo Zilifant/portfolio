@@ -34,9 +34,25 @@
   };
 }
 
-// .app-url.mhk {
-//   background-color: var(--rose5);
-//   &:hover {
-//     background-color: var(--rose4);
-//   };
-// }
+// Text-Divider
+
+.text-divider {
+  width: 100%;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > p.text-divider-text {
+    font-size: 1.5rem;
+    // font-style: italic;
+    // color: var(--gray5);
+    width: max-content;
+    margin: 0 .5rem;
+  };
+  & > .text-divider-bar {
+    display: flex;
+    flex-grow: 1;
+    height: var(--bdr2);
+    background: var(--horz-bar);
+  };
+}

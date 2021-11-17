@@ -11,7 +11,7 @@
 </script>
 
 <div class={`page-wrapper bio ${current}`}>
-  <div class="content content-30-left content-left-home">
+  <div class="content content-30-left content-left-bio">
     <div class="headshot-wrapper">
       <img
         class="switchable-img"
@@ -23,20 +23,16 @@
     </div>
   </div>
 
-  <section class="content content-70-right content-right-home">
-    <h6 class="content-title">About me</h6>
+  <section class="content content-70-right content-right-bio">
     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud.</p>
   </section>
 
-  <div class="horz-bar section-divider"></div>
-
-  <section class="content">
-    <p class="content-text-center">
-      Some of the companies and organizations I've worked with...
-    </p>
-  </section>
+  <div class='text-divider'>
+    <div class="text-divider-bar"></div>
+    <p class="text-divider-text">Who I've worked with</p>
+    <div class="text-divider-bar"></div>
+  </div>
 
   <section class="partner-logo-grid">
     <img class="switchable-img" id="pax"
@@ -69,16 +65,5 @@
         src={`../assets/images/greenhouse${dark}.png`} alt="Greenhouse">
     <img class="switchable-img" id="techday"
         src={`../assets/images/techday${dark}.png`} alt="New York Tech Day">
-    <img class="switchable-img" id="technodramatists"
-        src={`../assets/images/technodramatists${dark}.png`} alt="TechnoDramatists">
-  </section>
-
-  <div class="horz-bar section-divider"></div>
-
-  <section class="content">
-    <p class="content-text-center">Want to work together?<a
-      href='mailto:scott.silsbe@gmail.com'
-      class='inline-email'
-      >Email me.</a></p>
   </section>
 </div>

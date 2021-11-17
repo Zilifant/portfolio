@@ -309,7 +309,7 @@ body.dark {
   --form-text: var(--colg4);
   --form-text-placeholder: var(--colg5);
   --partner-logo-bg: var(--colg2);
-  --horz-bar: var(--gray7);
+  --horz-bar: var(--gray5);
   --exl-btn-bg: var(--gray9);
   --exl-btn-bg-hover: var(--exl-btn-bg);
   --exl-content-bg: var(--exl-btn-bg);
@@ -902,7 +902,8 @@ input:checked + .th-switch-slider {
   grid-column: 1; }
 
 .page-wrapper {
-  max-width: 800px; }
+  max-width: 800px;
+  margin: 1rem 1.5rem; }
 
 .content-wrapper,
 .side-right,
@@ -911,7 +912,7 @@ input:checked + .th-switch-slider {
   transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s; }
 
 .content > * {
-  margin: 1rem 1.5rem;
+  margin: 1rem 0;
   line-height: 1.75rem; }
 
 .content-30-left {
@@ -960,6 +961,10 @@ input:checked + .th-switch-slider {
     width: 100%; } }
 
 /*BIO*/
+.page-wrapper.bio p {
+  font-size: 1.75rem;
+  line-height: 2.25rem; }
+
 .headshot-wrapper {
   -o-object-fit: contain;
      object-fit: contain;
@@ -972,11 +977,11 @@ input:checked + .th-switch-slider {
 
 /* hide headshot on BIO page */
 @media (max-width: 800px) {
-  .content-left-home {
+  .content-left-bio {
     display: none; }
-  .content-right-home {
+  .content-right-bio {
     width: 100%; }
-  .content-right-home > * {
+  .content-right-bio > * {
     margin-left: 1.5rem; } }
 
 .partner-logo-grid {
