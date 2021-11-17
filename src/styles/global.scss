@@ -631,7 +631,7 @@ svg.svg-cstitle {
 
 .theme-switch-bg {
   justify-self: right;
-  margin: 0 1.5rem;
+  margin: 0 1rem;
   grid-area: switch;
   padding: 5px;
   width: 50px;
@@ -1015,6 +1015,16 @@ input:checked + .th-switch-slider {
 
 /* CONTENT*/
 
+.large-text p,
+.large-text p em {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+}
+
+.large-text > :not(:first-child) {
+  margin-top: 1rem;
+}
+
 .content-wrapper,
 .page-wrapper {
   display: flex;
@@ -1098,11 +1108,6 @@ input:checked + .th-switch-slider {
 }
 
 /*BIO*/
-
-.page-wrapper.bio p {
-  font-size: 1.75rem;
-  line-height: 2.25rem;
-}
 
 .headshot-wrapper {
   object-fit: contain;

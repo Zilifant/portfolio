@@ -5,17 +5,32 @@
 // Grid
 
 .grd {
-  margin: 1rem 1.5rem;
+  margin-top: 1rem;
   display: grid;
   gap: 1rem;
   grid-template-areas:
     'title title'
-    'app github';
+    'live live'
+    'front back';
+  @media (max-width: 600px) {
+    grid-template-areas:
+    'title'
+    'live'
+    'front'
+    'back';
+  };
 }
 
 .project-title { grid-area: title; }
-.app-url { grid-area: app; }
-.github-url { grid-area: github; }
+.app-url { grid-area: live; }
+.github-url {
+    &.frontend {
+      grid-area: front;
+    };
+    &.backend {
+      grid-area: back;
+    };
+}
 
 // Card
 

@@ -578,7 +578,7 @@ svg.svg-cstitle {
 /*LIGHT-DARK SWITCH*/
 .theme-switch-bg {
   justify-self: right;
-  margin: 0 1.5rem;
+  margin: 0 1rem;
   grid-area: switch;
   padding: 5px;
   width: 50px;
@@ -882,6 +882,14 @@ input:checked + .th-switch-slider {
     display: flex; } }
 
 /* CONTENT*/
+.large-text p,
+.large-text p em {
+  font-size: 1.75rem;
+  line-height: 2.25rem; }
+
+.large-text > :not(:first-child) {
+  margin-top: 1rem; }
+
 .content-wrapper,
 .page-wrapper {
   display: flex;
@@ -961,10 +969,6 @@ input:checked + .th-switch-slider {
     width: 100%; } }
 
 /*BIO*/
-.page-wrapper.bio p {
-  font-size: 1.75rem;
-  line-height: 2.25rem; }
-
 .headshot-wrapper {
   -o-object-fit: contain;
      object-fit: contain;
@@ -1170,19 +1174,25 @@ a.inline-email:hover {
   transition: none; }
 
 .grd {
-  margin: 1rem 1.5rem;
+  margin-top: 1rem;
   display: grid;
   gap: 1rem;
-  grid-template-areas: 'title title' 'app github'; }
+  grid-template-areas: 'title title' 'live live' 'front back'; }
+  @media (max-width: 600px) {
+    .grd {
+      grid-template-areas: 'title' 'live' 'front' 'back'; } }
 
 .project-title {
   grid-area: title; }
 
 .app-url {
-  grid-area: app; }
+  grid-area: live; }
 
-.github-url {
-  grid-area: github; }
+.github-url.frontend {
+  grid-area: front; }
+
+.github-url.backend {
+  grid-area: back; }
 
 .url-pseudo-btn {
   text-decoration: none;
