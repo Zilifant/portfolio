@@ -255,7 +255,7 @@ body.light {
   --nav-text: var(--trug9);
   --nav-bg: var(--colg2);
   --nav-bg-this-page: var(--colg3);
-  --nav-border: var(--colg3);
+  --nav-border: var(--white);
   --drop-nav-btn-text: var(--colg2);
   --drop-nav-btn-bg: var(--gray9);
   --foot-social-icon-bg-hover: var(--accent);
@@ -274,7 +274,7 @@ body.light {
   --exl-btn-bg-hover: var(--white);
   --exl-content-bg: var(--white);
   --exl-btn-shadow: var(--trug3);
-  --exl-btn-border: var(--bdr2) solid var(--exl-btn-bg);
+  --exl-btn-border: var(--bdr2) solid var(--white);
   --exl-btn-icon-fore: var(--text);
   --exl-btn-icon-border-fix: var(--exl-btn-bg);
   --dark-shadow: var(--gray9);
@@ -301,14 +301,14 @@ body.dark {
   --content-bg-img: var(--bg-img);
   --content-bg: var(--chlg7);
   --header-text: var(--colg2);
-  --header-bg: black;
+  --header-bg: var(--black);
   --header-bg-img: var(--bg-img);
   --nav-text: var(--colg2);
   --nav-bg: var(--chlg9);
   --nav-bg-this-page: var(--chlg6);
   --nav-border: var(--chlg6);
   --drop-nav-btn-text: var(--colg2);
-  --drop-nav-btn-bg: black;
+  --drop-nav-btn-bg: var(--black);
   --foot-social-icon-bg-hover: var(--accent);
   --foot-social-icon-bg: var(--chlg1);
   --foot-text: var(--chlg1);
@@ -320,7 +320,7 @@ body.dark {
   --form-text: var(--colg4);
   --form-text-placeholder: var(--colg5);
   --partner-logo-bg: var(--colg2);
-  --horz-bar: var(--gray5);
+  --horz-bar: var(--chlg1);
   --exl-btn-bg: var(--chlg9);
   --exl-btn-bg-hover: var(--exl-btn-bg);
   --exl-content-bg: var(--exl-btn-bg);
@@ -1008,8 +1008,12 @@ input:checked + .th-switch-slider {
   -o-object-fit: contain;
      object-fit: contain;
   overflow: hidden;
-  border: var(--bdr1) solid var(--horz-bar);
-  border-radius: var(--rad2); }
+  border: var(--exl-btn-border);
+  border-radius: var(--rad2);
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 2px 6px 2px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px, rgba(0, 0, 0, 0.03) 0px -2px 6px 2px;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s; }
+  body.light .headshot-wrapper {
+    box-shadow: 0 0 2px 0 var(--exl-btn-shadow); }
   .headshot-wrapper > img {
     width: 100%;
     display: block; }
