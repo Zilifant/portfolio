@@ -1206,16 +1206,20 @@ a.inline-email:hover {
 .grd {
   margin-top: 1rem;
   display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: 'title title' 'live live' 'front back'; }
+  gap: .5rem 1rem;
+  grid-template-columns: 30% 1fr;
+  grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content 1fr;
+  grid-template-rows: min-content min-content min-content 1fr;
+  grid-template-areas: 'live intro' 'front intro' 'back intro' '. intro'; }
   @media (max-width: 600px) {
     .grd {
       grid-template-columns: 1fr;
-      grid-template-areas: 'title' 'live' 'front' 'back'; } }
+      grid-template-rows: repeat(4, -webkit-min-content);
+      grid-template-rows: repeat(4, min-content);
+      grid-template-areas: 'intro' 'live' 'front' 'back'; } }
 
-.project-title {
-  grid-area: title; }
+.project-intro {
+  grid-area: intro; }
 
 .app-url {
   grid-area: live; }
@@ -1226,7 +1230,7 @@ a.inline-email:hover {
 .github-url.backend {
   grid-area: back; }
 
-.project-title.mhk p {
+.project-intro.mhk p {
   margin-left: var(--rad2);
   margin-right: var(--rad2); }
 
@@ -1236,7 +1240,6 @@ a.inline-email:hover {
   min-width: -webkit-max-content;
   min-width: -moz-max-content;
   min-width: max-content;
-  padding: 1rem;
   background-color: var(--btn-bg);
   border-radius: var(--rad2);
   border: var(--exl-btn-border);
@@ -1247,13 +1250,9 @@ a.inline-email:hover {
     box-shadow: 0 0 2px 0 var(--exl-btn-shadow); }
   .url-pseudo-btn svg {
     transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s;
-    height: 50px;
-    width: 50px;
-    fill: var(--btn-fg);
-    margin-right: 1rem; }
+    fill: var(--btn-fg); }
   .url-pseudo-btn p {
     transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s;
-    font-size: 2rem;
     color: var(--btn-fg); }
   .url-pseudo-btn:hover {
     background-color: var(--btn-bg-hover); }
@@ -1267,3 +1266,34 @@ a.inline-email:hover {
       fill: var(--btn-fg-active); }
     .url-pseudo-btn:active p {
       color: var(--btn-fg-active); }
+
+.url-pseudo-btn .upb-content-wrap {
+  display: flex;
+  align-items: center; }
+
+.url-pseudo-btn.app-url {
+  padding: 1rem; }
+  .url-pseudo-btn.app-url svg {
+    margin-right: .75rem;
+    height: 50px;
+    width: 50px; }
+  .url-pseudo-btn.app-url p {
+    font-size: 2rem; }
+  @media (max-width: 600px) {
+    .url-pseudo-btn.app-url {
+      margin-top: 1rem;
+      max-width: 238px; } }
+
+.url-pseudo-btn.github-url {
+  padding: .25rem 1rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content; }
+  .url-pseudo-btn.github-url svg {
+    margin-right: .5rem;
+    height: 18px;
+    width: 18px; }
+  .url-pseudo-btn.github-url p {
+    font-size: 1rem;
+    position: relative;
+    bottom: -1px; }

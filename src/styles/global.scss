@@ -1468,23 +1468,26 @@ a.inline-email:hover {
 .grd {
   margin-top: 1rem;
   display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1fr;
+  gap: .5rem 1rem;
+  grid-template-columns: 30% 1fr;
+  grid-template-rows: min-content min-content min-content 1fr;
   grid-template-areas:
-    'title title'
-    'live live'
-    'front back';
+    'live intro'
+    'front intro'
+    'back intro'
+    '. intro';
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, min-content);
     grid-template-areas:
-    'title'
+    'intro'
     'live'
     'front'
     'back';
   };
 }
 
-.project-title { grid-area: title; }
+.project-intro { grid-area: intro; }
 .app-url { grid-area: live; }
 .github-url {
     &.frontend {
@@ -1495,7 +1498,7 @@ a.inline-email:hover {
     };
 }
 
-.project-title.mhk p {
+.project-intro.mhk p {
   margin-left: var(--rad2);
   margin-right: var(--rad2);
 }
@@ -1504,7 +1507,6 @@ a.inline-email:hover {
   display: flex;
   align-items: center;
   min-width: max-content;
-  padding: 1rem;
   background-color: var(--btn-bg);
   border-radius: var(--rad2);
   border: var(--exl-btn-border);
@@ -1516,13 +1518,10 @@ a.inline-email:hover {
   };
   & svg {
     @include colorfade();
-    @include square(50px);
     fill: var(--btn-fg);
-    margin-right: 1rem;
   };
   & p {
     @include colorfade();
-    font-size: 2rem;
     color: var(--btn-fg);
   };
   &:hover {
@@ -1542,5 +1541,39 @@ a.inline-email:hover {
     & p {
       color: var(--btn-fg-active);
     };
+  };
+}
+
+.url-pseudo-btn .upb-content-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.url-pseudo-btn.app-url {
+  padding: 1rem;
+  & svg {
+    margin-right: .75rem;
+    @include square(50px);
+  }
+  & p {
+    font-size: 2rem;
+  };
+  @media (max-width: 600px) {
+    margin-top: 1rem;
+    max-width: 238px;
+  }
+}
+
+.url-pseudo-btn.github-url {
+  padding: .25rem 1rem;
+  width: max-content;
+  & svg {
+    margin-right: .5rem;
+    @include square(18px);
+  }
+  & p {
+    font-size: 1rem;
+    position: relative;
+    bottom: -1px;
   };
 }
