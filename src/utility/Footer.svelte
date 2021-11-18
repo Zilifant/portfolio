@@ -1,4 +1,4 @@
-<!-- footer -->
+<!-- Footer -->
 
 <script>
   import { socials } from '../content/socials';
