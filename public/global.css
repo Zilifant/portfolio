@@ -273,6 +273,12 @@ body.light {
   --exl-btn-icon-fore: var(--text);
   --exl-btn-icon-border-fix: var(--exl-btn-bg);
   --dark-shadow: var(--gray9);
+  --btn-fg: var(--text);
+  --btn-fg-hover: var(--black);
+  --btn-fg-active: var(--gray7);
+  --btn-bg: var(--bg);
+  --btn-bg-hover: var(--white);
+  --btn-bg-active: var(--gray2);
   --theme-weight-adjust-text: 350;
   --theme-weight-adjust-title-text: 400; }
 
@@ -318,6 +324,12 @@ body.dark {
   --exl-btn-icon-fore: var(--text);
   --exl-btn-icon-border-fix: var(--exl-btn-bg);
   --dark-shadow: var(--black);
+  --btn-fg: var(--text);
+  --btn-fg-hover: var(--white);
+  --btn-fg-active: var(--gray1);
+  --btn-bg: var(--bg);
+  --btn-bg-hover: var(--black);
+  --btn-bg-active: var(--gray6);
   --theme-weight-adjust-text: 350;
   --theme-weight-adjust-title-text: 400; }
 
@@ -884,7 +896,7 @@ input:checked + .th-switch-slider {
 /* CONTENT*/
 .large-text p,
 .large-text p em {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   line-height: 2.25rem; }
 
 .large-text > :not(:first-child) {
@@ -1195,9 +1207,11 @@ a.inline-email:hover {
   margin-top: 1rem;
   display: grid;
   gap: 1rem;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas: 'title title' 'live live' 'front back'; }
   @media (max-width: 600px) {
     .grd {
+      grid-template-columns: 1fr;
       grid-template-areas: 'title' 'live' 'front' 'back'; } }
 
 .project-title {
@@ -1212,15 +1226,44 @@ a.inline-email:hover {
 .github-url.backend {
   grid-area: back; }
 
+.project-title.mhk p {
+  margin-left: var(--rad2);
+  margin-right: var(--rad2); }
+
 .url-pseudo-btn {
-  text-decoration: none;
-  font-size: 2rem;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
   padding: 1rem;
-  background-color: var(--bg);
+  background-color: var(--btn-bg);
   border-radius: var(--rad2);
   border: var(--exl-btn-border);
   box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 2px 6px 2px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px, rgba(0, 0, 0, 0.03) 0px -2px 6px 2px;
-  transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s; }
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s;
+  text-decoration: none; }
   body.light .url-pseudo-btn {
     box-shadow: 0 0 2px 0 var(--exl-btn-shadow); }
+  .url-pseudo-btn svg {
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s;
+    height: 50px;
+    width: 50px;
+    fill: var(--btn-fg);
+    margin-right: 1rem; }
+  .url-pseudo-btn p {
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s;
+    font-size: 2rem;
+    color: var(--btn-fg); }
+  .url-pseudo-btn:hover {
+    background-color: var(--btn-bg-hover); }
+    .url-pseudo-btn:hover svg {
+      fill: var(--btn-fg-hover); }
+    .url-pseudo-btn:hover p {
+      color: var(--btn-fg-hover); }
+  .url-pseudo-btn:active {
+    background-color: var(--btn-bg-active); }
+    .url-pseudo-btn:active svg {
+      fill: var(--btn-fg-active); }
+    .url-pseudo-btn:active p {
+      color: var(--btn-fg-active); }

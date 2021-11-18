@@ -277,6 +277,12 @@ body.light {
   --exl-btn-icon-fore: var(--text);
   --exl-btn-icon-border-fix: var(--exl-btn-bg);
   --dark-shadow: var(--gray9);
+  --btn-fg: var(--text);
+  --btn-fg-hover: var(--black);
+  --btn-fg-active: var(--gray7);
+  --btn-bg: var(--bg);
+  --btn-bg-hover: var(--white);
+  --btn-bg-active: var(--gray2);
   --theme-weight-adjust-text: 350;
   --theme-weight-adjust-title-text: 400;
 }
@@ -323,6 +329,12 @@ body.dark {
   --exl-btn-icon-fore: var(--text);
   --exl-btn-icon-border-fix: var(--exl-btn-bg);
   --dark-shadow: var(--black);
+  --btn-fg: var(--text);
+  --btn-fg-hover: var(--white);
+  --btn-fg-active: var(--gray1);
+  --btn-bg: var(--bg);
+  --btn-bg-hover: var(--black);
+  --btn-bg-active: var(--gray6);
   --theme-weight-adjust-text: 350;
   --theme-weight-adjust-title-text: 400;
 }
@@ -472,6 +484,11 @@ body#code-dark {
     background-color $t,
     border-color $t,
     fill $t;
+}
+
+@mixin square($size) {
+  height: $size;
+  width: $size;
 }
 
 /*RESET*/
@@ -1017,7 +1034,7 @@ input:checked + .th-switch-slider {
 
 .large-text p,
 .large-text p em {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   line-height: 2.25rem;
 }
 
@@ -1452,11 +1469,13 @@ a.inline-email:hover {
   margin-top: 1rem;
   display: grid;
   gap: 1rem;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
     'title title'
     'live live'
     'front back';
   @media (max-width: 600px) {
+    grid-template-columns: 1fr;
     grid-template-areas:
     'title'
     'live'
@@ -1476,17 +1495,52 @@ a.inline-email:hover {
     };
 }
 
+.project-title.mhk p {
+  margin-left: var(--rad2);
+  margin-right: var(--rad2);
+}
+
 .url-pseudo-btn {
-  text-decoration: none;
-  font-size: 2rem;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  min-width: max-content;
   padding: 1rem;
-  background-color: var(--bg);
+  background-color: var(--btn-bg);
   border-radius: var(--rad2);
   border: var(--exl-btn-border);
   @include shadow();
   @include colorfade();
+  text-decoration: none;
   body.light & {
     box-shadow: 0 0 2px 0 var(--exl-btn-shadow);
+  };
+  & svg {
+    @include colorfade();
+    @include square(50px);
+    fill: var(--btn-fg);
+    margin-right: 1rem;
+  };
+  & p {
+    @include colorfade();
+    font-size: 2rem;
+    color: var(--btn-fg);
+  };
+  &:hover {
+    background-color: var(--btn-bg-hover);
+    & svg {
+      fill: var(--btn-fg-hover);
+    };
+    & p {
+      color: var(--btn-fg-hover);
+    };
+  };
+  &:active {
+    background-color: var(--btn-bg-active);
+    & svg {
+      fill: var(--btn-fg-active);
+    };
+    & p {
+      color: var(--btn-fg-active);
+    };
   };
 }
