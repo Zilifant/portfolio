@@ -225,7 +225,7 @@
   --blug9: rgba(15,23,42,1);
   --chlg0: #DCECEF;
   --chlg1: #99A4A9;
-  --chlg5: #4F575B;
+  --chlg6: #343a3d;
   --chlg7: #23242D;
   --chlg9: #111216;
 }
@@ -310,15 +310,15 @@ body.dark {
   --header-bg-img: var(--bg-img);
   --nav-text: var(--colg2);
   --nav-bg: var(--chlg9);
-  --nav-bg-this-page: var(--chlg5);
-  --nav-border: var(--chlg5);
+  --nav-bg-this-page: var(--chlg6);
+  --nav-border: var(--chlg6);
   --drop-nav-btn-text: var(--colg2);
   --drop-nav-btn-bg: black;
   --foot-social-icon-bg-hover: var(--accent);
   --foot-social-icon-bg: var(--chlg1);
   --foot-text: var(--chlg1);
   --foot-bg: black;
-  --foot-border: var(--chlg5);
+  --foot-border: var(--chlg6);
   --button-text: var(--colg2);
   --form-bg: var(--chlg7);
   --form-bg-focus: var(--chlg9);
@@ -330,7 +330,7 @@ body.dark {
   --exl-btn-bg-hover: var(--exl-btn-bg);
   --exl-content-bg: var(--exl-btn-bg);
   --exl-btn-shadow: var(--chlg9);
-  --exl-btn-border: var(--bdr2) solid var(--chlg5);
+  --exl-btn-border: var(--bdr2) solid var(--chlg6);
   --exl-btn-icon-fore: var(--text);
   --exl-btn-icon-border-fix: var(--exl-btn-bg);
   --dark-shadow: var(--black);
@@ -661,7 +661,7 @@ svg.svg-cstitle {
   border-radius: 15px;
   overflow: hidden;
   cursor: pointer;
-  background-color: var(--chlg5);
+  background-color: var(--chlg6);
   box-shadow: 0 0 2px 0 var(--dark-shadow);
   -webkit-transition: box-shadow .5s;
      -moz-transition: box-shadow .5s;
@@ -695,7 +695,7 @@ svg.svg-cstitle {
     background-size: 400% 400%; // must be last in property list
   };
   &.earth {
-    background-color: var(--chlg5);
+    background-color: var(--chlg6);
     transform:translate(33%, -125%);
   };
   input:checked + .th-switch-slider & {
