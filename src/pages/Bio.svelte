@@ -2,6 +2,8 @@
 
 <script>
 
+  import { partners } from '../content/partners';
+
   export let isCurrent;
   $: current = isCurrent ? 'current' : '';
 
@@ -35,35 +37,9 @@
   </div>
 
   <section class="partner-logo-grid">
-    <img class="switchable-img" id="pax"
-        src={`../assets/images/pax${dark}.png`} alt="Penny Arcade Expo">
-    <img class="switchable-img" id="playcrafting"
-        src={`../assets/images/playcrafting${dark}.png`} alt="PLaycrafting NYC">
-    <img class="switchable-img" id="gencon"
-        src={`../assets/images/gencon${dark}.png`} alt="Gen Con">
-    <img class="switchable-img" id="cuny"
-        src={`../assets/images/cuny${dark}.png`} alt="City University of New York">
-    <img class="switchable-img" id="g4c"
-        src={`../assets/images/g4c${dark}.png`} alt="Games for Change">
-    <img class="switchable-img" id="nyu"
-        src={`../assets/images/nyu${dark}.png`} alt="New York University">
-    <img class="switchable-img" id="dicetower"
-        src={`../assets/images/dicetower${dark}.png`} alt="The Dice Tower">
-    <img class="switchable-img" id="seriousplay"
-        src={`../assets/images/seriousplay${dark}.png`} alt="Serious Play Conference">
-    <img class="switchable-img" id="amc"
-        src={`../assets/images/amc${dark}.png`} alt="Appalachian Mountain Club">
-    <img class="switchable-img" id="gogame"
-        src={`../assets/images/gogame${dark}.png`} alt="The Go Game">
-    <img class="switchable-img" id="wildrence"
-        src={`../assets/images/wildrence${dark}.png`} alt="Wildrence">
-    <img class="switchable-img" id="hireowl"
-        src={`../assets/images/hireowl${dark}.png`} alt="HireOwl">
-    <img class="switchable-img" id="marist"
-        src={`../assets/images/marist${dark}.png`} alt="Marist College">
-    <img class="switchable-img" id="greenhouse"
-        src={`../assets/images/greenhouse${dark}.png`} alt="Greenhouse">
-    <img class="switchable-img" id="techday"
-        src={`../assets/images/techday${dark}.png`} alt="New York Tech Day">
+    {#each partners as { id, alt }}
+      <img class="switchable-img" id={id}
+        src={`../assets/images/${id}${dark}.png`} alt={alt}>
+    {/each}
   </section>
 </div>
