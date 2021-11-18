@@ -221,7 +221,12 @@
   --blug6: rgba(71,85,105,1);
   --blug7: rgba(51,65,85,1);
   --blug8: rgba(30,41,59,1);
-  --blug9: rgba(15,23,42,1); }
+  --blug9: rgba(15,23,42,1);
+  --chlg0: #DCECEF;
+  --chlg1: #99A4A9;
+  --chlg5: #4F575B;
+  --chlg7: #23242D;
+  --chlg9: #111216; }
 
 :root {
   --rad: 3px;
@@ -287,40 +292,40 @@ body.dark {
   --accent-res: var(--cyan6);
   --accent-writ: var(--oran5);
   --accent-code: var(--emer6);
-  --bg: var(--gray9);
-  --text: var(--colg3);
+  --bg: var(--chlg9);
+  --text: var(--chlg0);
   --text-alt-faded: var(--colg4);
   --text-alt-bright: var(--libl3);
   --text-alt-title: var(--colg2);
   --text-hover: var(--colg1);
   --content-bg-img: var(--bg-img);
-  --content-bg: var(--gray8);
+  --content-bg: var(--chlg7);
   --header-text: var(--colg2);
   --header-bg: black;
   --header-bg-img: var(--bg-img);
   --nav-text: var(--colg2);
-  --nav-bg: var(--gray9);
-  --nav-bg-this-page: var(--gray7);
-  --nav-border: var(--gray7);
+  --nav-bg: var(--chlg9);
+  --nav-bg-this-page: var(--chlg5);
+  --nav-border: var(--chlg5);
   --drop-nav-btn-text: var(--colg2);
   --drop-nav-btn-bg: black;
   --foot-social-icon-bg-hover: var(--accent);
-  --foot-social-icon-bg: var(--gray7);
-  --foot-text: var(--gray6);
+  --foot-social-icon-bg: var(--chlg1);
+  --foot-text: var(--chlg1);
   --foot-bg: black;
-  --foot-border: var(--gray7);
+  --foot-border: var(--chlg5);
   --button-text: var(--colg2);
-  --form-bg: var(--gray8);
-  --form-bg-focus: var(--gray9);
+  --form-bg: var(--chlg7);
+  --form-bg-focus: var(--chlg9);
   --form-text: var(--colg4);
   --form-text-placeholder: var(--colg5);
   --partner-logo-bg: var(--colg2);
   --horz-bar: var(--gray5);
-  --exl-btn-bg: var(--gray9);
+  --exl-btn-bg: var(--chlg9);
   --exl-btn-bg-hover: var(--exl-btn-bg);
   --exl-content-bg: var(--exl-btn-bg);
-  --exl-btn-shadow: var(--gray9);
-  --exl-btn-border: var(--bdr2) solid var(--gray7);
+  --exl-btn-shadow: var(--chlg9);
+  --exl-btn-border: var(--bdr2) solid var(--chlg5);
   --exl-btn-icon-fore: var(--text);
   --exl-btn-icon-border-fix: var(--exl-btn-bg);
   --dark-shadow: var(--black);
@@ -576,7 +581,7 @@ svg.svg-cstitle {
   grid-area: title;
   text-transform: uppercase;
   letter-spacing: .1rem;
-  background: -webkit-linear-gradient(var(--header-text), var(--colg3));
+  background: -webkit-linear-gradient(var(--header-text), var(--chlg0));
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
@@ -598,7 +603,7 @@ svg.svg-cstitle {
   border-radius: 15px;
   overflow: hidden;
   cursor: pointer;
-  background-color: var(--gray7);
+  background-color: var(--chlg5);
   box-shadow: 0 0 2px 0 var(--dark-shadow);
   transition: box-shadow .5s; }
 
@@ -625,7 +630,7 @@ svg.svg-cstitle {
     background: linear-gradient(45deg, var(--white), var(--colg0), var(--colg3), var(--colg4));
     background-size: 400% 400%; }
   .eclipse-animation.earth {
-    background-color: var(--gray7);
+    background-color: var(--chlg5);
     transform: translate(33%, -125%); }
   input:checked + .th-switch-slider .eclipse-animation.moon {
     -webkit-animation: movingGradient 8s ease infinite;
