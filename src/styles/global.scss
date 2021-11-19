@@ -1237,6 +1237,17 @@ a.inline-email:hover {
 
 /*RESUME*/
 
+.page-wrapper.resume {
+  & > :not(:first-child) {
+    margin-top: 2rem;
+  };
+  & .resume-text {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 20px;
+  };
+}
+
 .exl-btn:hover .exl-btn-icon-fore {
   background: var(--accent-hover);
 }
@@ -1375,13 +1386,6 @@ a.inline-email:hover {
   margin-bottom: 0;
   border-radius: var(--rad);
   overflow: hidden;
-}
-
-.story-subtitle {
-  text-align: center;
-  margin-top: .5rem;
-  margin-bottom: 2rem;
-  font-size: 17px;
 }
 
 .p1,
