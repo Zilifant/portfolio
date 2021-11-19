@@ -21,6 +21,9 @@
   onMount(() => {
     const toggle = document.querySelector('.theme-switch-checkbox');
     setThemeFromLocalStorage(toggle);
+    const th = document.body.getAttribute('class');
+    const tr = initPage();
+    document.body.setAttribute('id', `${tr}-${th}`);
   });
 
   removePreload({ firstLoad: true });
@@ -38,14 +41,14 @@
   const code = 'code';
   const pgList = [bio, res, writ, code];
 
+  $: isCurrent = (pg) => (pg === page) ? 'current' : '';
+  $: isPrev = (pg) => (pg === prevPg) ? 'prev' : 'not-prev';
+  $: getTheme = () => document.body.getAttribute('class');
+
   let prevPg, flyTo;
   let dropNavState = 'hidden';
   let page = initPage();
   let quote = randomQuote();
-
-  $: isCurrent = (pg) => (pg === page) ? 'current' : '';
-  $: isPrev = (pg) => (pg === prevPg) ? 'prev' : 'not-prev';
-  $: getTheme = () => document.body.getAttribute('class');
 
   function initPage() {
     const targetPg = window.location.hash.substring(1);
