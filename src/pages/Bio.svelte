@@ -38,7 +38,7 @@
   </div> -->
 
   <section class='partner-logo-grid'>
-      {#each partners as { id, alt }}
+    {#each partners as { id, alt }}
       <div class='partner-logo-wrapper'>
         <img
           class='switchable-img'
