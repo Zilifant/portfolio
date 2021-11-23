@@ -6,6 +6,14 @@
   export let isCurrent;
   $: current = isCurrent ? 'current' : '';
 
+  let highlightedCat = 'webdev';
+
+  const skills = res.skills.skills.sort((a, b) => {
+    return a.name.localeCompare(b.name);
+  })
+
+  $: isHighlighted = (cats) => (cats.includes(highlightedCat)) ? 'highlighted' : '';
+
   function expand() {
     this.classList.toggle("rotated");
     let content = this.nextElementSibling;
@@ -19,7 +27,11 @@
   function renderYears(start, end) {
     if (!end || (start === end)) return start;
     return `${start}-${end}`;
-  }
+  };
+
+  function highlightCat(cat) {
+    highlightedCat = cat;
+  };
 
 </script>
 
@@ -28,7 +40,7 @@
   <section class="content res-achievements">
     <ul>
       {#each res.intro.achievements as achieve}
-        <li class='resume-text achievement'>{achieve}</li>
+        <li class='achievement'>{achieve}</li>
       {/each}
     </ul>
   </section>
@@ -37,17 +49,27 @@
     <ul>
       {#each res.intro.endorsements as {name, title, quote}}
         <li class='endorsement'>
-          <p class='resume-text endorse-quote'>{quote}</p>
-          <p class='resume-text endorse-person'>{name}<br>{title}</p>
+          <p class='endorse-quote'>{quote}</p>
+          <p class='endorse-person'>{name}<br>{title}</p>
         </li>
       {/each}
     </ul>
   </section>
 
   <section class="content res-skills">
+    <div class='skill-btns'>
+      {#each res.skills.categories as {id, displayName}}
+        <button
+          class={`skill-btn ${id}`}
+          on:click={() => highlightCat(id)}
+        >
+          {displayName}
+        </button>
+      {/each}
+    </div>
     <ul>
-      {#each res.skills as {name, category}}
-        <li class={`resume-text skill ${category}`}>{name}</li>
+      {#each skills as {name, categories}}
+        <li class={`skill ${isHighlighted(categories)}`}>{name}</li>
       {/each}
     </ul>
   </section>
@@ -96,7 +118,7 @@
 
   <section class="content res-interests">
     {#each res.interests as interest}
-      <p class='resume-text interest'>{interest}</p>
+      <p class='interest'>{interest}</p>
     {/each}
   </section>
 </div>

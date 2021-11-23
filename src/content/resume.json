@@ -26,56 +26,108 @@
       }
     ]
   },
-  "skills": [
-    {
-      "name": "Project Management",
-      "categories": []
-    },
-    {
-      "name": "Experience Design",
-      "categories": []
-    },
-    {
-      "name": "Client Relations",
-      "categories": []
-    },
-    {
-      "name": "Event Coordination",
-      "categories": []
-    },
-    {
-      "name": "Game Design + Development",
-      "categories": []
-    },
-    {
-      "name": "Strategic Partnerships",
-      "categories": []
-    },
-    {
-      "name": "Event Design",
-      "categories": []
-    },
-    {
-      "name": "Gamification / GBL",
-      "categories": []
-    },
-    {
-      "name": "Business Communication",
-      "categories": []
-    },
-    {
-      "name": "Operations / Logistics",
-      "categories": []
-    },
-    {
-      "name": "Playtesting / Prototyping",
-      "categories": []
-    },
-    {
-      "name": "Community Management",
-      "categories": []
-    }
-  ],
+  "skills": {
+    "categories": [
+      {
+        "id": "events",
+        "displayName": "Events"
+      },
+      {
+        "id": "biz",
+        "displayName": "Business"
+      },
+      {
+        "id": "webdev",
+        "displayName": "Web Development"
+      },
+      {
+        "id": "games",
+        "displayName": "Games"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Project Management",
+        "categories": ["events", "biz"]
+      },
+      {
+        "name": "Experience Design",
+        "categories": ["events", "games"]
+      },
+      {
+        "name": "Client Relations",
+        "categories": ["biz"]
+      },
+      {
+        "name": "Event Coordination",
+        "categories": ["events"]
+      },
+      {
+        "name": "Game Design + Development",
+        "categories": ["games"]
+      },
+      {
+        "name": "Strategic Partnerships",
+        "categories": ["biz"]
+      },
+      {
+        "name": "Event Design",
+        "categories": ["events"]
+      },
+      {
+        "name": "Gamification / GBL",
+        "categories": ["games"]
+      },
+      {
+        "name": "Business Communication",
+        "categories": ["events", "biz"]
+      },
+      {
+        "name": "Operations / Logistics",
+        "categories": ["events", "biz"]
+      },
+      {
+        "name": "Playtesting / Prototyping",
+        "categories": ["games"]
+      },
+      {
+        "name": "Community Management",
+        "categories": ["events"]
+      },
+      {
+        "name": "Javascript",
+        "categories": ["webdev"]
+      },
+      {
+        "name": "ReactJS",
+        "categories": ["webdev"]
+      },
+      {
+        "name": "Node.js",
+        "categories": ["webdev"]
+      },
+      {
+        "name": "Svelte",
+        "categories": ["webdev"]
+      },
+      {
+        "name": "CSS",
+        "categories": ["webdev"]
+      },
+      {
+        "name": "HTML5",
+        "categories": ["webdev"]
+      },
+      {
+        "name": "SCSS/SASS",
+        "categories": ["webdev"]
+      },
+      {
+        "name": "REST APIs",
+        "categories": ["webdev"]
+      }
+    ]
+  },
   "education": [
     {
       "name": "New York University",
@@ -254,7 +306,7 @@
           "text": "Gathered and organized survey results from 200+ users as well as engagement metrics and feedback from stakeholders, producing a detailed report for 4GoodDigital founders and development team."
         },
         {
-          "lead": "Digital Event Production",
+          "lead": "Digital events",
           "text": "Oversaw 7 day development sprint (including UI updates and bug fixes) and managed launch of 3 POC digital campaigns, raising over $4,000 for charity."
         },
         {

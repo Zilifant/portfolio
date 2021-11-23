@@ -272,6 +272,7 @@ body.light {
   --form-text-placeholder: var(--colg5);
   --partner-logo-bg: var(--colg1);
   --horz-bar: var(--colg3);
+  --res-item-bg: var(--white);
   --exl-btn-bg: var(--white);
   --exl-btn-bg-hover: var(--white);
   --exl-content-bg: var(--white);
@@ -323,6 +324,7 @@ body.dark {
   --form-text-placeholder: var(--colg5);
   --partner-logo-bg: var(--chlg9);
   --horz-bar: var(--chlg1);
+  --res-item-bg: var(--chlg8);
   --exl-btn-bg: var(--chlg9);
   --exl-btn-bg-hover: var(--exl-btn-bg);
   --exl-content-bg: var(--exl-btn-bg);
@@ -1261,7 +1263,8 @@ a.inline-email:hover {
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     'ach edr'
-    'skl edu'
+    'skl skl'
+    'edu edu'
     'exp exp'
     'int int';
   & * {
@@ -1269,15 +1272,9 @@ a.inline-email:hover {
   };
 }
 
-.resume-text {
-  margin-left: 5px;
-  margin-right: 5px;
-  font-size: 20px;
-}
-
 .achievement {
   padding: 1rem;
-  background-color: var(--chlg8);
+  background-color: var(--res-item-bg);
   &:not(:first-child) {
     margin-top: 1rem;
   };
@@ -1285,7 +1282,7 @@ a.inline-email:hover {
 
 .endorsement {
   padding: 1rem;
-  background-color: var(--chlg8);
+  background-color: var(--res-item-bg);
   &:not(:first-child) {
     margin-top: 1rem;
   };
@@ -1297,7 +1294,7 @@ a.inline-email:hover {
 
 .edu {
   padding: 1rem;
-  background-color: var(--chlg8);
+  background-color: var(--res-item-bg);
   &:not(:first-child) {
     margin-top: 1rem;
   };
@@ -1309,17 +1306,38 @@ a.inline-email:hover {
 }
 
 .res-skills ul {
-  display: grid;
-  gap: .5rem;
+  margin: -.25rem;
   & .skill {
-    display: flex;
+    @include colorfade();
+    display: inline-flex;
     width: max-content;
+    margin: .25rem;
     padding: .5rem;
-    background-color: var(--chlg8);
+    background-color: var(--res-item-bg);
     &.highlighted {
+      color: var(--white);
       background-color: var(--accent);
-    }
+    };
   };
+}
+
+.skill-btns {
+  margin-bottom: 1rem;
+}
+
+.skill-btn {
+  background-color: var(--exl-btn-bg);
+  padding: .5rem;
+  border: var(--exl-btn-border);
+  cursor: pointer;
+  @include colorfade();
+  border-radius: var(--rad);
+  &:not(:first-child) {
+    margin-left: .5rem;
+  };
+  &:hover {
+    border: 1px solid var(--accent);
+  }
 }
 
 .exl-btn:hover .exl-btn-icon-fore {

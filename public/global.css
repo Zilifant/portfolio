@@ -268,6 +268,7 @@ body.light {
   --form-text-placeholder: var(--colg5);
   --partner-logo-bg: var(--colg1);
   --horz-bar: var(--colg3);
+  --res-item-bg: var(--white);
   --exl-btn-bg: var(--white);
   --exl-btn-bg-hover: var(--white);
   --exl-content-bg: var(--white);
@@ -317,6 +318,7 @@ body.dark {
   --form-text-placeholder: var(--colg5);
   --partner-logo-bg: var(--chlg9);
   --horz-bar: var(--chlg1);
+  --res-item-bg: var(--chlg8);
   --exl-btn-bg: var(--chlg9);
   --exl-btn-bg-hover: var(--exl-btn-bg);
   --exl-content-bg: var(--exl-btn-bg);
@@ -1084,24 +1086,19 @@ a.inline-email:hover {
   display: grid;
   gap: 2rem;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: 'ach edr' 'skl edu' 'exp exp' 'int int'; }
+  grid-template-areas: 'ach edr' 'skl skl' 'edu edu' 'exp exp' 'int int'; }
   .page-wrapper.resume * {
     list-style: none; }
 
-.resume-text {
-  margin-left: 5px;
-  margin-right: 5px;
-  font-size: 20px; }
-
 .achievement {
   padding: 1rem;
-  background-color: var(--chlg8); }
+  background-color: var(--res-item-bg); }
   .achievement:not(:first-child) {
     margin-top: 1rem; }
 
 .endorsement {
   padding: 1rem;
-  background-color: var(--chlg8); }
+  background-color: var(--res-item-bg); }
   .endorsement:not(:first-child) {
     margin-top: 1rem; }
   .endorsement .endorse-person {
@@ -1110,24 +1107,41 @@ a.inline-email:hover {
 
 .edu {
   padding: 1rem;
-  background-color: var(--chlg8); }
+  background-color: var(--res-item-bg); }
   .edu:not(:first-child) {
     margin-top: 1rem; }
   .edu span.degree, .edu span.name {
     font-weight: bold; }
 
 .res-skills ul {
-  display: grid;
-  gap: .5rem; }
+  margin: -.25rem; }
   .res-skills ul .skill {
-    display: flex;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s;
+    display: inline-flex;
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
+    margin: .25rem;
     padding: .5rem;
-    background-color: var(--chlg8); }
+    background-color: var(--res-item-bg); }
     .res-skills ul .skill.highlighted {
+      color: var(--white);
       background-color: var(--accent); }
+
+.skill-btns {
+  margin-bottom: 1rem; }
+
+.skill-btn {
+  background-color: var(--exl-btn-bg);
+  padding: .5rem;
+  border: var(--exl-btn-border);
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s;
+  border-radius: var(--rad); }
+  .skill-btn:not(:first-child) {
+    margin-left: .5rem; }
+  .skill-btn:hover {
+    border: 1px solid var(--accent); }
 
 .exl-btn:hover .exl-btn-icon-fore {
   background: var(--accent-hover); }
