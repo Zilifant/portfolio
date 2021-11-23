@@ -1,6 +1,7 @@
 <!-- Resume -->
 
 <script>
+  import res from '../content/resume.json';
 
   export let isCurrent;
   $: current = isCurrent ? 'current' : '';
