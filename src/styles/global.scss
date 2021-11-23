@@ -1359,6 +1359,9 @@ a.inline-email:hover {
   margin-bottom: .25rem;
   padding-left: 2px;
   text-indent: -18px;
+  .lead {
+    font-weight: bold;
+  }
 }
 
 .exl-content-li:last-child { margin-bottom: 0; }

@@ -24,39 +24,39 @@
         "title": "Festival Producer at Games for Change",
         "quote": "A detail-oriented team player who thrives in collaborative environments with a proactive attitude on organizational development, always searching for ways to increase efficiency and output to match the needs of large productions."
       }
-    ],
-    "skills": [
-      "Project Management",
-      "Experience Design",
-      "Client Relations",
-      "Event Coordination",
-      "Game Design + Development",
-      "Strategic Partnerships",
-      "Event Design",
-      "Gamification / GBL",
-      "Business Communication",
-      "Operations / Logistics",
-      "Playtesting / Prototyping",
-      "Community Management"
     ]
   },
+  "skills": [
+    "Project Management",
+    "Experience Design",
+    "Client Relations",
+    "Event Coordination",
+    "Game Design + Development",
+    "Strategic Partnerships",
+    "Event Design",
+    "Gamification / GBL",
+    "Business Communication",
+    "Operations / Logistics",
+    "Playtesting / Prototyping",
+    "Community Management"
+  ],
   "education": [
     {
-      "schoolNameFull": "New York University",
-      "schoolNameShort": "NYU",
+      "name": "New York University",
+      "nameShort": "NYU",
       "department": "Draper Interdisciplinary Master’s Program",
       "year": 2014,
       "degree": "MA",
-      "subject": "Interdisciplinary Studies",
-      "concentration": "Interactive Media",
+      "subject": "Interactive Media",
+      "concentration": "Social Media, Political Science",
       "extras": [
         "President, Draper Student Organization",
         "Nonfiction Editor, Anamesa Interdisciplinary Journal"
       ]
     },
     {
-      "schoolNameFull": "Stony Brook University",
-      "schoolNameShort": "SBU",
+      "name": "Stony Brook University",
+      "nameShort": "SBU",
       "department": "History",
       "year": 2008,
       "degree": "BA",
@@ -67,10 +67,7 @@
   ],
   "interests": [
     "Regular presenter at conferences on live action gaming events, conflict sims, and interactive media — including talks and workshops at Serious Play, GEN CON, NYU, CUNY, Rutgers, Brooklyn College, and The New School.",
-    "Occasional adventurer with experience in foreign cultures and untamed wilds, including treks to Mt. Kilimanjaro and Mount Everest Base Camp.",
-    "Planned and completed solo 45 day trek to Kala Patthar and Mount Everest Base Camp.",
-    "Supported self in Bangkok, Thailand for 6 months working as a freelance English business writer and instructor.",
-    "Studied in Tanzania; tutored underprivileged students in writing, computer literacy, and game design."
+    "Occasional adventurer with experience in foreign cultures and untamed wilds, including treks to Mt. Kilimanjaro and Mount Everest Base Camp."
   ],
   "experience": [
     {
@@ -85,31 +82,31 @@
       "summary": "",
       "bullets": [
         {
-          "leadText": "Creative Design + Production",
+          "lead": "Creative Design + Production",
           "text": "Led the design, development, and execution of over 40 live events for 3800+ total attendees, ranging from escape rooms and wedding receptions to geopolitical simulations and team-building events."
         },
         {
-          "leadText": "Project Management",
+          "lead": "Project Management",
           "text": "Assembled and led teams of multi-disciplinary professionals to produce and run complex gaming events at 8 major conventions and expos, regularly selling out."
         },
         {
-          "leadText": "Narrative + Interaction Design",
+          "lead": "Narrative + Interaction Design",
           "text": "Specialist in interactive, gamified events using narrative and theme to achieve event objectives within given space, time, and budgetary constraints."
         },
         {
-          "leadText": "Game + Puzzle Design",
+          "lead": "Game + Puzzle Design",
           "text": "Contracted by 5 companies (to-date) to produce games, puzzles, and quizzes for live events and proprietary digital platforms, resulting in successful products experienced by thousands of players."
         },
         {
-          "leadText": "Talent + Influencer Relations",
+          "lead": "Talent + Influencer Relations",
           "text": "Built relationships with top-tier media influencers in tabletop gaming, leading to product plugs and positive reviews in 10+ podcasts and on YouTube."
         },
         {
-          "leadText": "Partnerships",
+          "lead": "Partnerships",
           "text": "On strength of event offerings at 2019 gaming conventions, invited to run events at Gen Con 2020, securing a 200,000 square foot space. (Planning was well underway when the convention was cancelled due to COVID-19.)"
         },
         {
-          "leadText": "Simultaneous Projects",
+          "lead": "Simultaneous Projects",
           "text": "5 years spent balancing multiple creative projects, in addition to business development, branding, marketing, social media, budgeting, etc."
         }
       ]
@@ -126,19 +123,19 @@
       "summary": "Collaborated on a cross-functional team to produce the 2019 G4C Festival with attendance of over 1200.",
       "bullets": [
         {
-          "leadText": "Project Management",
+          "lead": "Project Management",
           "text": "Coordinated work of 12 junior producers, event team members, and ‘super-volunteers’ during 7 day pre-Festival production sprint."
         },
         {
-          "leadText": "Content Management",
+          "lead": "Content Management",
           "text": "Oversaw production of Festival collateral including website and program content, session descriptions, press releases, speaker bios, sponsor/partner assets, etc., serving as final checkpoint for content accuracy and quality."
         },
         {
-          "leadText": "Team Leadership + Community Management",
+          "lead": "Team Leadership + Community Management",
           "text": "Recruited, trained 150 volunteers, maintaining motivation and engagement over 2 months through email outreach, digital meet-ups, and live events, resulting in smallest volunteer falloff of any G4C Festival."
         },
         {
-          "leadText": "Live Event Coordination",
+          "lead": "Live Event Coordination",
           "text": "Managed volunteer teams (organized into over 500 shifts and 10 distinct roles) throughout the Festival, allocating personnel, overseeing output, and problem solving as necessary."
         }
       ]
@@ -155,19 +152,19 @@
       "summary": "Career guidance and ESL startup based in China. Recruited as Project Manager; transitioned to product design and development role in early 2018. (Changing geopolitical situation led to closure of US office.)",
       "bullets": [
         {
-          "leadText": "Digital Product Development",
+          "lead": "Digital Product Development",
           "text": "Collaborated with curriculum lead to oversee team of 16 remote developers, resulting in creation of over 200 interactive ESL lessons on the Articulate web-learning platform."
         },
         {
-          "leadText": "Interactive Design",
+          "lead": "Interactive Design",
           "text": "Produced 24 ‘concept’ lessons (and supporting documentation) featuring complex gamification and narrative design for POC demonstration to financiers and other stakeholders."
         },
         {
-          "leadText": "Quality Assurance",
+          "lead": "Quality Assurance",
           "text": "Served as final check on lessons, documentation, and other collateral for accuracy, functionality, and adherence to SOPs before delivery."
         },
         {
-          "leadText": "Project Management",
+          "lead": "Project Management",
           "text": "Managed and mentored 26 junior analysts on multiple teams to produce 7 50-100 page equity and market research reports."
         }
       ]
@@ -184,23 +181,23 @@
       "summary": "Worked closely with founders of this small edtech startup; involved in all aspects of the business.",
       "bullets": [
         {
-          "leadText": "Product Development",
+          "lead": "Product Development",
           "text": "Used market research, user surveys, A/B tests, and case studies to iterate and refine platform features, and prioritize development given budget and time limits."
         },
         {
-          "leadText": "Technical Project Management",
+          "lead": "Technical Project Management",
           "text": "Oversaw and coordinated work of 3 remote front and back-end developers and designers, including 3 major feature updates, a rebrand/front-end overhaul, and numerous minor updates."
         },
         {
-          "leadText": "Partnerships",
+          "lead": "Partnerships",
           "text": "Worked with founders to build partnerships with career centers at over 40 schools, growing active student user base to over 30,000."
         },
         {
-          "leadText": "Project Management",
+          "lead": "Project Management",
           "text": "Recruited and managed team of 15 students to source and begin outreach to 3,300 key decision makers at more than 1,000 colleges and universities, ultimately bringing 12 new institutions to the platform."
         },
         {
-          "leadText": "Business Development",
+          "lead": "Business Development",
           "text": "Spearheaded coworking space outreach, resulting in partnerships with 5 offices in NYC and Boston."
         }
       ]
@@ -217,15 +214,15 @@
       "summary": "Short-term position at the Noise4Good startup, intended as a web-platform for musicians to host digital fundraising campaigns for nonprofit organizations. Responsibilities included product management, digital and live events, branding, and whatever else needed doing.",
       "bullets": [
         {
-          "leadText": "Product Design",
+          "lead": "Product Design",
           "text": "Gathered and organized survey results from 200+ users as well as engagement metrics and feedback from stakeholders, producing a detailed report for 4GoodDigital founders and development team."
         },
         {
-          "leadText": "Digital Event Production",
+          "lead": "Digital Event Production",
           "text": "Oversaw 7 day development sprint (including UI updates and bug fixes) and managed launch of 3 POC digital campaigns, raising over $4,000 for charity."
         },
         {
-          "leadText": "Event Coordination",
+          "lead": "Event Coordination",
           "text": "Produced 5 intimate gatherings for strategic partners, investors (both onboard and prospective), and musicians, featuring live performances and product demos at high-end venues and coworking spaces, with total attendance of over 250."
         }
       ]

@@ -1158,6 +1158,8 @@ a.inline-email:hover {
   margin-bottom: .25rem;
   padding-left: 2px;
   text-indent: -18px; }
+  .exl-content-li .lead {
+    font-weight: bold; }
 
 .exl-content-li:last-child {
   margin-bottom: 0; }
