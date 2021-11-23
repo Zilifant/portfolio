@@ -62,27 +62,3 @@
     <p class='resume-text'>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
   </section>
 </div>
-
-<!-- <section class="content">
-  <div class="exl-btn" type="button">
-    <div class="exl-btn-icon-wrap">
-      <div class="exl-btn-icon-fore preload"></div>
-      <div class="exl-btn-icon-back"></div>
-    </div>
-    <div class="exl-btn-text">
-      <div class="exl-btn-text-head">
-        <h6>Position 2</h6>
-        <h6>2016-2018</h6>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <ul class="exl-content-ul">
-        <li class="exl-content-li li1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-        <li class="exl-content-li li2">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-        <li class="exl-content-li li3">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
-        <li class="exl-content-li li4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-        <li class="exl-content-li li5">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-        <li class="exl-content-li li6">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
-      </ul>
-    </div>
-  </div>
-</section> -->
