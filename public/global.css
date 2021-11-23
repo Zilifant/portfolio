@@ -935,8 +935,8 @@ input:checked + .th-switch-slider {
 .content-wrapper {
   display: flex;
   flex: auto;
-  padding-top: 2rem;
-  padding-bottom: 2rem; }
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
 
 .transition-grid {
   display: grid; }
@@ -1038,7 +1038,7 @@ input:checked + .th-switch-slider {
   gap: 2rem;
   width: 100%;
   justify-items: center;
-  margin: 3rem 0 2rem 0; }
+  margin-top: 3rem; }
   .partner-logo-grid .partner-logo-wrapper {
     display: flex;
     padding: 1rem;
@@ -1229,7 +1229,6 @@ a.inline-email:hover {
   transition: none; }
 
 .grd {
-  margin-top: 1rem;
   display: grid;
   gap: .5rem 1rem;
   grid-template-columns: 30% 1fr;

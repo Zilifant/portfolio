@@ -1095,8 +1095,8 @@ input:checked + .th-switch-slider {
 .content-wrapper {
   display: flex;
   flex: auto;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .transition-grid {
@@ -1210,7 +1210,7 @@ input:checked + .th-switch-slider {
   gap: 2rem;
   width: 100%;
   justify-items: center;
-  margin: 3rem 0 2rem 0;
+  margin-top: 3rem;
   // @media (max-width: 600px) {
   //   width: 80%;
   // };
@@ -1522,7 +1522,6 @@ a.inline-email:hover {
 // Grid
 
 .grd {
-  margin-top: 1rem;
   display: grid;
   gap: .5rem 1rem;
   grid-template-columns: 30% 1fr;
