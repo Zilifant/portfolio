@@ -6,9 +6,6 @@
   export let isCurrent;
   $: current = isCurrent ? 'current' : '';
 
-  const exp = res.experience;
-
-  // Collapsible Lists
   function expand() {
     this.classList.toggle("rotated");
     let content = this.nextElementSibling;
