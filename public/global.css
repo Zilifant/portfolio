@@ -1062,7 +1062,6 @@ a.inline-email {
 a.inline-email:hover {
   color: var(--fuch5); }
 
-/*RESUME*/
 .page-wrapper.resume > :not(:first-child) {
   margin-top: 2rem; }
 

@@ -24,13 +24,17 @@
 </script>
 
 <div class={`page-wrapper resume ${current}`}>
-  <section class="content res-intro">
-    <ul class='achievements'>selected achievements
+
+  <section class="content res-achievements">
+    <ul>
       {#each res.intro.achievements as achieve}
         <li class='resume-text res-achieve'>{achieve}</li>
       {/each}
     </ul>
-    <ul class='endorsements'>
+  </section>
+
+  <section class="content res-endorsements">
+    <ul>
       {#each res.intro.endorsements as {name, title, quote}}
         <li class='endorsement'>
           <p class='resume-text endorse-quote'>{quote}</p>
@@ -61,37 +65,39 @@
     </ul>
   </section>
 
-  {#each res.experience as exp}
-    <section class='content res-exp'>
-      <div class="exl-wrapper">
-        <div
-          class="exl-btn"
-          type="button"
-          on:click|preventDefault={expand}
-        >
-          <div class="exl-btn-icon-wrap">
-            <div class="exl-btn-icon-fore preload"></div>
-            <div class="exl-btn-icon-back"></div>
-          </div>
-          <div class="exl-btn-text">
-            <div class="exl-btn-text-head">
-              <h6>{exp.title}</h6>
-              <h6>{renderYears(exp.startYear, exp.endYear)}</h6>
+  <section class='content res-exp'>
+    <ul>
+      {#each res.experience as exp}
+        <li class="exl-wrapper">
+          <div
+            class="exl-btn"
+            type="button"
+            on:click|preventDefault={expand}
+          >
+            <div class="exl-btn-icon-wrap">
+              <div class="exl-btn-icon-fore preload"></div>
+              <div class="exl-btn-icon-back"></div>
             </div>
-            <p>{exp.organization}</p>
-            <p>{exp.summary}</p>
+            <div class="exl-btn-text">
+              <div class="exl-btn-text-head">
+                <h6>{exp.title}</h6>
+                <h6>{renderYears(exp.startYear, exp.endYear)}</h6>
+              </div>
+              <p>{exp.organization}</p>
+              <p>{exp.summary}</p>
+            </div>
           </div>
-        </div>
-        <div class="exl-content">
-          <ul class="exl-content-ul">
-            {#each exp.bullets as {lead, text}}
-              <li class="exl-content-li"><span class='lead'>{lead}:</span> {text}</li>
-            {/each}
-          </ul>
-        </div>
-      </div>
-    </section>
-  {/each}
+          <div class="exl-content">
+            <ul class="exl-content-ul">
+              {#each exp.bullets as {lead, text}}
+                <li class="exl-content-li"><span class='lead'>{lead}:</span> {text}</li>
+              {/each}
+            </ul>
+          </div>
+        </li>
+      {/each}
+    </ul>
+  </section>
 
   <section class="content res-interests">
     {#each res.interests as interest}
