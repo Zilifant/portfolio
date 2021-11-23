@@ -25,37 +25,39 @@
 
 <div class={`page-wrapper resume ${current}`}>
   <section class="content res-intro">
-    <div class='achievements'>
+    <ul class='achievements'>selected achievements
       {#each res.intro.achievements as achieve}
-        <p class='resume-text res-achieve'>{achieve}</p>
+        <li class='resume-text res-achieve'>{achieve}</li>
       {/each}
-    </div>
-    <div class='endorsements'>
+    </ul>
+    <ul class='endorsements'>
       {#each res.intro.endorsements as {name, title, quote}}
-        <div class='endorsement'>
+        <li class='endorsement'>
           <p class='resume-text endorse-quote'>{quote}</p>
           <p class='resume-text endorse-person'>- {name}, {title}</p>
-        </div>
+        </li>
       {/each}
-    </div>
+    </ul>
   </section>
 
   <section class="content res-skills">
     <ul>skills
       {#each res.skills as skill}
-        <p class='resume-text res-skill'>{skill}</p>
+        <li class='resume-text res-skill'>{skill}</li>
       {/each}
     </ul>
   </section>
 
   <section class="content res-edu">
     <ul>education
-      {#each res.education as {degree, subject, name, year}}
-        <p class='resume-text edu-degree'>{degree}</p>
-        <p class='resume-text edu-subject'>{subject}</p>
-        <p class='resume-text edu-name'>{name}</p>
-        <p class='resume-text edu-year'>{year}</p>
-      {/each}
+      <li class='edu'>
+        {#each res.education as {degree, subject, name, year}}
+          <p class='resume-text edu-degree'>{degree}</p>
+          <p class='resume-text edu-subject'>{subject}</p>
+          <p class='resume-text edu-name'>{name}</p>
+          <p class='resume-text edu-year'>{year}</p>
+        {/each}
+      </li>
     </ul>
   </section>
 
