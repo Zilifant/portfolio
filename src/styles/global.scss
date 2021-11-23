@@ -1248,14 +1248,77 @@ a.inline-email:hover {
 
 // RESUME
 
+.res-achievements { grid-area: ach }
+.res-endorsements { grid-area: edr }
+.res-skills { grid-area: skl }
+.res-edu { grid-area: edu }
+.res-exp { grid-area: exp }
+.res-interests { grid-area: int }
+
 .page-wrapper.resume {
-  & > :not(:first-child) {
-    margin-top: 2rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'ach edr'
+    'skl edu'
+    'exp exp'
+    'int int';
+  & * {
+    list-style: none;
   };
-  & .resume-text {
-    margin-left: 5px;
-    margin-right: 5px;
-    font-size: 20px;
+}
+
+.resume-text {
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.achievement {
+  padding: 1rem;
+  background-color: var(--chlg8);
+  &:not(:first-child) {
+    margin-top: 1rem;
+  };
+}
+
+.endorsement {
+  padding: 1rem;
+  background-color: var(--chlg8);
+  &:not(:first-child) {
+    margin-top: 1rem;
+  };
+  & .endorse-person {
+    margin-top: 1rem;
+    font-size: 1rem;
+  };
+}
+
+.edu {
+  padding: 1rem;
+  background-color: var(--chlg8);
+  &:not(:first-child) {
+    margin-top: 1rem;
+  };
+  & span {
+    &.degree, &.name {
+      font-weight: bold;
+    }
+  }
+}
+
+.res-skills ul {
+  display: grid;
+  gap: .5rem;
+  & .skill {
+    display: flex;
+    width: max-content;
+    padding: .5rem;
+    background-color: var(--chlg8);
+    &.highlighted {
+      background-color: var(--accent);
+    }
   };
 }
 

@@ -28,7 +28,7 @@
   <section class="content res-achievements">
     <ul>
       {#each res.intro.achievements as achieve}
-        <li class='resume-text res-achieve'>{achieve}</li>
+        <li class='resume-text achievement'>{achieve}</li>
       {/each}
     </ul>
   </section>
@@ -38,37 +38,32 @@
       {#each res.intro.endorsements as {name, title, quote}}
         <li class='endorsement'>
           <p class='resume-text endorse-quote'>{quote}</p>
-          <p class='resume-text endorse-person'>- {name}, {title}</p>
+          <p class='resume-text endorse-person'>{name}<br>{title}</p>
         </li>
       {/each}
     </ul>
   </section>
 
   <section class="content res-skills">
-    <ul>skills
-      {#each res.skills as skill}
-        <li class='resume-text res-skill'>{skill}</li>
+    <ul>
+      {#each res.skills as {name, category}}
+        <li class={`resume-text skill ${category}`}>{name}</li>
       {/each}
     </ul>
   </section>
 
   <section class="content res-edu">
-    <ul>education
-      <li class='edu'>
-        {#each res.education as {degree, subject, name, year}}
-          <p class='resume-text edu-degree'>{degree}</p>
-          <p class='resume-text edu-subject'>{subject}</p>
-          <p class='resume-text edu-name'>{name}</p>
-          <p class='resume-text edu-year'>{year}</p>
-        {/each}
-      </li>
+    <ul>
+      {#each res.education as {degree, subject, name, year}}
+        <li class='edu'><span class='degree'>{degree} </span><span class='subject'>{subject}</span><br><span class='name'>{name}</span> <span class='year'>{year}</span></li>
+      {/each}
     </ul>
   </section>
 
   <section class='content res-exp'>
     <ul>
       {#each res.experience as exp}
-        <li class="exl-wrapper">
+        <li class="exl-wrapper exp">
           <div
             class="exl-btn"
             type="button"
@@ -101,7 +96,7 @@
 
   <section class="content res-interests">
     {#each res.interests as interest}
-      <p class='resume-text res-interest'>{interest}</p>
+      <p class='resume-text interest'>{interest}</p>
     {/each}
   </section>
 </div>

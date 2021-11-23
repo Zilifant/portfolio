@@ -27,18 +27,54 @@
     ]
   },
   "skills": [
-    "Project Management",
-    "Experience Design",
-    "Client Relations",
-    "Event Coordination",
-    "Game Design + Development",
-    "Strategic Partnerships",
-    "Event Design",
-    "Gamification / GBL",
-    "Business Communication",
-    "Operations / Logistics",
-    "Playtesting / Prototyping",
-    "Community Management"
+    {
+      "name": "Project Management",
+      "categories": []
+    },
+    {
+      "name": "Experience Design",
+      "categories": []
+    },
+    {
+      "name": "Client Relations",
+      "categories": []
+    },
+    {
+      "name": "Event Coordination",
+      "categories": []
+    },
+    {
+      "name": "Game Design + Development",
+      "categories": []
+    },
+    {
+      "name": "Strategic Partnerships",
+      "categories": []
+    },
+    {
+      "name": "Event Design",
+      "categories": []
+    },
+    {
+      "name": "Gamification / GBL",
+      "categories": []
+    },
+    {
+      "name": "Business Communication",
+      "categories": []
+    },
+    {
+      "name": "Operations / Logistics",
+      "categories": []
+    },
+    {
+      "name": "Playtesting / Prototyping",
+      "categories": []
+    },
+    {
+      "name": "Community Management",
+      "categories": []
+    }
   ],
   "education": [
     {

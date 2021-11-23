@@ -1062,13 +1062,72 @@ a.inline-email {
 a.inline-email:hover {
   color: var(--fuch5); }
 
-.page-wrapper.resume > :not(:first-child) {
-  margin-top: 2rem; }
+.res-achievements {
+  grid-area: ach; }
 
-.page-wrapper.resume .resume-text {
+.res-endorsements {
+  grid-area: edr; }
+
+.res-skills {
+  grid-area: skl; }
+
+.res-edu {
+  grid-area: edu; }
+
+.res-exp {
+  grid-area: exp; }
+
+.res-interests {
+  grid-area: int; }
+
+.page-wrapper.resume {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'ach edr' 'skl edu' 'exp exp' 'int int'; }
+  .page-wrapper.resume * {
+    list-style: none; }
+
+.resume-text {
   margin-left: 5px;
   margin-right: 5px;
   font-size: 20px; }
+
+.achievement {
+  padding: 1rem;
+  background-color: var(--chlg8); }
+  .achievement:not(:first-child) {
+    margin-top: 1rem; }
+
+.endorsement {
+  padding: 1rem;
+  background-color: var(--chlg8); }
+  .endorsement:not(:first-child) {
+    margin-top: 1rem; }
+  .endorsement .endorse-person {
+    margin-top: 1rem;
+    font-size: 1rem; }
+
+.edu {
+  padding: 1rem;
+  background-color: var(--chlg8); }
+  .edu:not(:first-child) {
+    margin-top: 1rem; }
+  .edu span.degree, .edu span.name {
+    font-weight: bold; }
+
+.res-skills ul {
+  display: grid;
+  gap: .5rem; }
+  .res-skills ul .skill {
+    display: flex;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    padding: .5rem;
+    background-color: var(--chlg8); }
+    .res-skills ul .skill.highlighted {
+      background-color: var(--accent); }
 
 .exl-btn:hover .exl-btn-icon-fore {
   background: var(--accent-hover); }
