@@ -29,10 +29,6 @@
     return `${start}-${end}`;
   };
 
-  function highlightCat(cat) {
-    highlightedCat = cat;
-  };
-
 </script>
 
 <div class={`page-wrapper resume ${current}`}>
@@ -61,7 +57,7 @@
       {#each res.skills.categories as {id, displayName}}
         <button
           class={`skill-btn ${id}`}
-          on:click={() => highlightCat(id)}
+          on:click={() => highlightedCat = id}
         >
           {displayName}
         </button>
