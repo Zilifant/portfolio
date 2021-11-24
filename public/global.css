@@ -238,9 +238,15 @@
 
 body.light {
   --accent-bio: var(--pink4);
+  --accent-bio-hover: var(--pink3);
   --accent-res: var(--cyan5);
+  --accent-res-hover: var(--cyan4);
   --accent-writ: var(--oran4);
+  --accent-writ-hover: var(--oran3);
   --accent-code: var(--emer5);
+  --accent-code-hover: var(--emer4);
+  --accent-create: var(--redd5);
+  --accent-create-hover: var(--redd4);
   --bg: var(--colg2);
   --text: var(--trug6);
   --text-alt-faded: var(--colg4);
@@ -288,9 +294,15 @@ body.light {
 
 body.dark {
   --accent-bio: var(--pink5);
+  --accent-bio-hover: var(--pink4);
   --accent-res: var(--cyan6);
+  --accent-res-hover: var(--cyan5);
   --accent-writ: var(--oran5);
+  --accent-writ-hover: var(--oran4);
   --accent-code: var(--emer6);
+  --accent-code-hover: var(--emer5);
+  --accent-create: var(--redd6);
+  --accent-create-hover: var(--redd5);
   --bg: var(--chlg9);
   --text: var(--chlg0);
   --text-alt-faded: var(--colg4);
@@ -448,7 +460,6 @@ body#code-dark {
     background-size: 100% 200%;
     background-image: linear-gradient(to bottom, var(--accent-code) 50%, var(--nav-bg) 50%); } }
 
-/*RESET*/
 html, body {
   margin: 0;
   padding: 0;
@@ -472,6 +483,16 @@ main {
   padding: 0;
   box-sizing: border-box;
   color: var(--text); }
+
+button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 0; }
+  button:focus {
+    outline: none; }
 
 h1, h2, h3, h4, h5, h6, li, ol, p, ul {
   font-style: normal;
@@ -1124,24 +1145,52 @@ a.inline-email:hover {
     margin: .25rem;
     padding: .5rem;
     background-color: var(--res-item-bg); }
-    .res-skills ul .skill.highlighted {
-      color: var(--white);
-      background-color: var(--accent); }
+    .res-skills ul .skill.highlight {
+      color: var(--white); }
+    .res-skills ul .skill.biz {
+      background-color: var(--accent-res); }
+    .res-skills ul .skill.coding {
+      background-color: var(--accent-bio); }
+    .res-skills ul .skill.events {
+      background-color: var(--accent-code); }
+    .res-skills ul .skill.games {
+      background-color: var(--accent-writ); }
+    .res-skills ul .skill.creative {
+      background-color: var(--accent-create); }
 
 .skill-btns {
   margin-bottom: 1rem; }
 
 .skill-btn {
-  background-color: var(--exl-btn-bg);
+  color: var(--white);
   padding: .5rem;
-  border: var(--exl-btn-border);
-  cursor: pointer;
-  transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s;
-  border-radius: var(--rad); }
+  font-size: 17px;
+  line-height: 1.75rem;
+  letter-spacing: .02rem;
+  font-weight: var(--theme-weight-adjust-text);
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s; }
   .skill-btn:not(:first-child) {
     margin-left: .5rem; }
-  .skill-btn:hover {
-    border: 1px solid var(--accent); }
+  .skill-btn:hover.biz {
+    background-color: var(--accent-res-hover); }
+  .skill-btn:hover.coding {
+    background-color: var(--accent-bio-hover); }
+  .skill-btn:hover.events {
+    background-color: var(--accent-code-hover); }
+  .skill-btn:hover.games {
+    background-color: var(--accent-writ-hover); }
+  .skill-btn:hover.creative {
+    background-color: var(--accent-create-hover); }
+  .skill-btn.biz, .skill-btn.biz:active {
+    background-color: var(--accent-res); }
+  .skill-btn.coding, .skill-btn.coding:active {
+    background-color: var(--accent-bio); }
+  .skill-btn.events, .skill-btn.events:active {
+    background-color: var(--accent-code); }
+  .skill-btn.games, .skill-btn.games:active {
+    background-color: var(--accent-writ); }
+  .skill-btn.creative, .skill-btn.creative:active {
+    background-color: var(--accent-create); }
 
 .exl-btn:hover .exl-btn-icon-fore {
   background: var(--accent-hover); }

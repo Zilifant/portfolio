@@ -242,9 +242,15 @@
 
 body.light {
   --accent-bio: var(--pink4);
+  --accent-bio-hover: var(--pink3);
   --accent-res: var(--cyan5);
+  --accent-res-hover: var(--cyan4);
   --accent-writ: var(--oran4);
+  --accent-writ-hover: var(--oran3);
   --accent-code: var(--emer5);
+  --accent-code-hover: var(--emer4);
+  --accent-create: var(--redd5);
+  --accent-create-hover: var(--redd4);
   --bg: var(--colg2);
   --text: var(--trug6);
   --text-alt-faded: var(--colg4);
@@ -293,9 +299,15 @@ body.light {
 
 body.dark {
   --accent-bio: var(--pink5);
+  --accent-bio-hover: var(--pink4);
   --accent-res: var(--cyan6);
+  --accent-res-hover: var(--cyan5);
   --accent-writ: var(--oran5);
+  --accent-writ-hover: var(--oran4);
   --accent-code: var(--emer6);
+  --accent-code-hover: var(--emer5);
+  --accent-create: var(--redd6);
+  --accent-create-hover: var(--redd5);
   --bg: var(--chlg9);
   --text: var(--chlg0);
   --text-alt-faded: var(--colg4);
@@ -377,19 +389,6 @@ body#code-dark {
   --accent-hover: var(--emer5);
 }
 
-@mixin bgTransition() {
-  -webkit-transition: background-color .2s;
-     -moz-transition: background-color .2s;
-       -o-transition: background-color .2s;
-          transition: background-color .2s;
-}
-
-@mixin circle($size: 10px) {
-  height: $size;
-  width: $size;
-  border-radius: 50%;
-}
-
 @keyframes movingGradient {
   0%   { background-position: 0%   50%; }
   50%  { background-position: 100% 50%; }
@@ -468,6 +467,19 @@ body#code-dark {
   }
 }
 
+@mixin bgTransition() {
+  -webkit-transition: background-color .2s;
+     -moz-transition: background-color .2s;
+       -o-transition: background-color .2s;
+          transition: background-color .2s;
+}
+
+@mixin circle($size: 10px) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
 @mixin shadow() {
   box-shadow:
     rgba(0, 0, 0, 0.03) 0px 1px 2px 0px,
@@ -510,7 +522,14 @@ body#code-dark {
   };
 }
 
-/*RESET*/
+@mixin font-adjust() {
+  font-size: 17px;
+  line-height: 1.75rem;
+  letter-spacing: .02rem;
+  font-weight: var(--theme-weight-adjust-text);
+}
+
+// RESET
 
 html, body {
   margin: 0;
@@ -533,10 +552,16 @@ main {
   font-size: 16px;
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: var(--text);
+}
+
+button {
+  appearance: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 0;
+  &:focus { outline: none; };
 }
 
 h1,h2,h3,h4,h5,h6,li,ol,p,ul{font-style:normal;text-decoration:none}
@@ -549,10 +574,7 @@ h5{font-size:1.5rem}
 h6{font-size:1.25rem}
 
 p, ul, ol, li {
-  font-size: 17px;
-  line-height: 1.75rem;
-  letter-spacing: .02rem;
-  font-weight: var(--theme-weight-adjust-text);
+  @include font-adjust();
 }
 
 /*WRAPPER*/
@@ -1314,10 +1336,12 @@ a.inline-email:hover {
     margin: .25rem;
     padding: .5rem;
     background-color: var(--res-item-bg);
-    &.highlighted {
-      color: var(--white);
-      background-color: var(--accent);
-    };
+    &.highlight { color: var(--white); };
+    &.biz { background-color: var(--accent-res); };
+    &.coding { background-color: var(--accent-bio); };
+    &.events { background-color: var(--accent-code); };
+    &.games { background-color: var(--accent-writ); };
+    &.creative { background-color: var(--accent-create); };
   };
 }
 
@@ -1326,18 +1350,30 @@ a.inline-email:hover {
 }
 
 .skill-btn {
-  background-color: var(--exl-btn-bg);
+  color: var(--white);
   padding: .5rem;
-  border: var(--exl-btn-border);
-  cursor: pointer;
-  @include colorfade();
-  border-radius: var(--rad);
   &:not(:first-child) {
     margin-left: .5rem;
   };
+  @include font-adjust();
+  @include colorfade();
   &:hover {
-    border: 1px solid var(--accent);
-  }
+    &.biz { background-color: var(--accent-res-hover); };
+    &.coding { background-color: var(--accent-bio-hover); };
+    &.events { background-color: var(--accent-code-hover); };
+    &.games { background-color: var(--accent-writ-hover); };
+    &.creative { background-color: var(--accent-create-hover); };
+  };
+  &.biz,
+  &.biz:active { background-color: var(--accent-res); };
+  &.coding,
+  &.coding:active { background-color: var(--accent-bio); };
+  &.events,
+  &.events:active { background-color: var(--accent-code); };
+  &.games,
+  &.games:active { background-color: var(--accent-writ); };
+  &.creative,
+  &.creative:active { background-color: var(--accent-create); };
 }
 
 .exl-btn:hover .exl-btn-icon-fore {

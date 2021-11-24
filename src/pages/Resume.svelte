@@ -6,13 +6,16 @@
   export let isCurrent;
   $: current = isCurrent ? 'current' : '';
 
-  let highlightedCat = 'webdev';
+  let highCat = 'coding';
 
   const skills = res.skills.skills.sort((a, b) => {
     return a.name.localeCompare(b.name);
   })
 
-  $: isHighlighted = (cats) => (cats.includes(highlightedCat)) ? 'highlighted' : '';
+  $: skillColor = (cats) => {
+    if (cats.includes(highCat)) return `highlight ${highCat}`;
+    return '';
+  };
 
   function expand() {
     this.classList.toggle("rotated");
@@ -24,7 +27,7 @@
     };
   };
 
-  function renderYears(start, end) {
+  function renderDates(start, end) {
     if (!end || (start === end)) return start;
     return `${start}-${end}`;
   };
@@ -57,7 +60,7 @@
       {#each res.skills.categories as {id, displayName}}
         <button
           class={`skill-btn ${id}`}
-          on:click={() => highlightedCat = id}
+          on:click={() => highCat = id}
         >
           {displayName}
         </button>
@@ -65,7 +68,7 @@
     </div>
     <ul>
       {#each skills as {name, categories}}
-        <li class={`skill ${isHighlighted(categories)}`}>{name}</li>
+        <li class={`skill ${skillColor(categories)}`}>{name}</li>
       {/each}
     </ul>
   </section>
@@ -94,7 +97,7 @@
             <div class="exl-btn-text">
               <div class="exl-btn-text-head">
                 <h6>{exp.title}</h6>
-                <h6>{renderYears(exp.startYear, exp.endYear)}</h6>
+                <h6>{renderDates(exp.startYear, exp.endYear)}</h6>
               </div>
               <p>{exp.organization}</p>
               <p>{exp.summary}</p>

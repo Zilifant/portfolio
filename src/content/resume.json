@@ -29,20 +29,24 @@
   "skills": {
     "categories": [
       {
-        "id": "events",
-        "displayName": "Events"
-      },
-      {
-        "id": "biz",
-        "displayName": "Business"
-      },
-      {
-        "id": "webdev",
+        "id": "coding",
         "displayName": "Web Development"
       },
       {
+        "id": "events",
+        "displayName": "Live Events"
+      },
+      {
+        "id": "creative",
+        "displayName": "Creative Production"
+      },
+      {
         "id": "games",
-        "displayName": "Games"
+        "displayName": "Game Design"
+      },
+      {
+        "id": "biz",
+        "displayName": "Business Operations"
       }
     ],
     "skills": [
@@ -52,11 +56,23 @@
       },
       {
         "name": "Experience Design",
-        "categories": ["events", "games"]
+        "categories": ["events", "games", "creative"]
       },
       {
         "name": "Client Relations",
         "categories": ["biz"]
+      },
+      {
+        "name": "Copywriting + Editing",
+        "categories": ["creative"]
+      },
+      {
+        "name": "Creative Writing",
+        "categories": ["creative"]
+      },
+      {
+        "name": "Narrative Design",
+        "categories": ["creative", "games"]
       },
       {
         "name": "Event Coordination",
@@ -64,7 +80,7 @@
       },
       {
         "name": "Game Design + Development",
-        "categories": ["games"]
+        "categories": ["games", "creative"]
       },
       {
         "name": "Strategic Partnerships",
@@ -75,20 +91,28 @@
         "categories": ["events"]
       },
       {
-        "name": "Gamification / GBL",
+        "name": "Gamification",
         "categories": ["games"]
+      },
+      {
+        "name": "Game-Based Learning",
+        "categories": ["games"]
+      },
+      {
+        "name": "Market Research",
+        "categories": ["biz"]
       },
       {
         "name": "Business Communication",
         "categories": ["events", "biz"]
       },
       {
-        "name": "Operations / Logistics",
+        "name": "Logistics",
         "categories": ["events", "biz"]
       },
       {
-        "name": "Playtesting / Prototyping",
-        "categories": ["games"]
+        "name": "Playtesting + Prototyping",
+        "categories": ["games", "creative"]
       },
       {
         "name": "Community Management",
@@ -96,35 +120,35 @@
       },
       {
         "name": "Javascript",
-        "categories": ["webdev"]
+        "categories": ["coding"]
       },
       {
         "name": "ReactJS",
-        "categories": ["webdev"]
+        "categories": ["coding"]
       },
       {
         "name": "Node.js",
-        "categories": ["webdev"]
+        "categories": ["coding"]
       },
       {
         "name": "Svelte",
-        "categories": ["webdev"]
+        "categories": ["coding"]
       },
       {
         "name": "CSS",
-        "categories": ["webdev"]
+        "categories": ["coding"]
       },
       {
         "name": "HTML5",
-        "categories": ["webdev"]
+        "categories": ["coding"]
       },
       {
         "name": "SCSS/SASS",
-        "categories": ["webdev"]
+        "categories": ["coding"]
       },
       {
         "name": "REST APIs",
-        "categories": ["webdev"]
+        "categories": ["coding"]
       }
     ]
   },
