@@ -329,7 +329,7 @@ body.dark {
   --form-bg-focus: var(--chlg9);
   --form-text: var(--colg4);
   --form-text-placeholder: var(--colg5);
-  --partner-logo-bg: var(--chlg9);
+  --partner-logo-bg: var(--chlg8);
   --horz-bar: var(--chlg1);
   --res-item-bg: var(--chlg8);
   --x-btn-bg: var(--chlg9);
@@ -344,7 +344,7 @@ body.dark {
   --btn-fg-hover: var(--white);
   --btn-fg-active: var(--gray1);
   --btn-bg: var(--bg);
-  --btn-bg-hover: var(--black);
+  --btn-bg-hover: var(--chlg8);
   --btn-bg-active: var(--gray6);
   --theme-weight-adjust-text: 350;
   --theme-weight-adjust-title-text: 400; }
@@ -1032,11 +1032,10 @@ input:checked + .th-switch-slider {
      object-fit: contain;
   overflow: hidden;
   border: var(--x-btn-border);
-  border-radius: var(--rad2);
   box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 2px 6px 2px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px, rgba(0, 0, 0, 0.03) 0px -2px 6px 2px;
   transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time); }
   body.light .headshot-wrapper {
-    box-shadow: 0 0 2px 0 var(--x-btn-shadow); }
+    box-shadow: var(--x-btn-shadow) 0 0 2px 0; }
   .headshot-wrapper > img {
     width: 100%;
     display: block; }
@@ -1063,8 +1062,7 @@ input:checked + .th-switch-slider {
   .partner-logo-grid .partner-logo-wrapper {
     display: flex;
     padding: 1rem;
-    background-color: var(--x-btn-bg);
-    border-radius: var(--rad2);
+    background-color: var(--res-item-bg);
     border: var(--x-btn-border);
     transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time);
     box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 2px 6px 2px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px, rgba(0, 0, 0, 0.03) 0px -2px 6px 2px; }
@@ -1111,13 +1109,21 @@ a.inline-email:hover {
 
 .achievement {
   padding: 1rem;
-  background-color: var(--res-item-bg); }
+  background-color: var(--res-item-bg);
+  border: var(--x-btn-border);
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 2px 6px 2px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px, rgba(0, 0, 0, 0.03) 0px -2px 6px 2px; }
+  body.light .achievement {
+    box-shadow: var(--x-btn-shadow) 0 0 2px 0; }
   .achievement:not(:first-child) {
     margin-top: 1rem; }
 
 .endorsement {
   padding: 1rem;
-  background-color: var(--res-item-bg); }
+  background-color: var(--res-item-bg);
+  border: var(--x-btn-border);
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 2px 6px 2px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px, rgba(0, 0, 0, 0.03) 0px -2px 6px 2px; }
+  body.light .endorsement {
+    box-shadow: var(--x-btn-shadow) 0 0 2px 0; }
   .endorsement:not(:first-child) {
     margin-top: 1rem; }
   .endorsement .endorse-person {
@@ -1127,8 +1133,12 @@ a.inline-email:hover {
 
 .edu {
   display: inline-block;
-  padding: 1rem;
-  background-color: var(--res-item-bg); }
+  padding: .5rem 1rem;
+  background-color: var(--res-item-bg);
+  border: var(--x-btn-border);
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 2px 6px 2px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px, rgba(0, 0, 0, 0.03) 0px -2px 6px 2px; }
+  body.light .edu {
+    box-shadow: var(--x-btn-shadow) 0 0 2px 0; }
   .edu:not(:first-child) {
     margin-left: 1rem; }
   .edu span {
@@ -1141,32 +1151,45 @@ a.inline-email:hover {
 
 .interest {
   padding: 1rem;
-  background-color: var(--res-item-bg); }
+  background-color: var(--res-item-bg);
+  border: var(--x-btn-border);
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 2px 6px 2px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px, rgba(0, 0, 0, 0.03) 0px -2px 6px 2px; }
+  body.light .interest {
+    box-shadow: var(--x-btn-shadow) 0 0 2px 0; }
   .interest:not(:first-child) {
     margin-top: 1rem; }
 
 .res-skills ul {
   margin: -.25rem; }
   .res-skills ul .skill {
+    border: var(--x-btn-border);
+    box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 2px 6px 2px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px, rgba(0, 0, 0, 0.03) 0px -2px 6px 2px;
     transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time);
     display: inline-flex;
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
     margin: .25rem;
-    padding: .5rem;
+    padding: .5rem 1rem;
     background-color: var(--res-item-bg); }
+    body.light .res-skills ul .skill {
+      box-shadow: var(--x-btn-shadow) 0 0 2px 0; }
     .res-skills ul .skill.highlight {
       color: var(--white); }
     .res-skills ul .skill.biz {
+      border-color: var(--accent-res);
       background-color: var(--accent-res); }
     .res-skills ul .skill.coding {
+      border-color: var(--accent-bio);
       background-color: var(--accent-bio); }
     .res-skills ul .skill.events {
+      border-color: var(--accent-code);
       background-color: var(--accent-code); }
     .res-skills ul .skill.games {
+      border-color: var(--accent-writ);
       background-color: var(--accent-writ); }
     .res-skills ul .skill.creative {
+      border-color: var(--accent-create);
       background-color: var(--accent-create); }
 
 .skill-btns {
@@ -1175,22 +1198,31 @@ a.inline-email:hover {
 .skill-btn {
   color: var(--white);
   padding: .5rem;
+  border: var(--x-btn-border);
   font-size: 17px;
   line-height: 1.75rem;
   letter-spacing: .02rem;
   font-weight: var(--theme-weight-adjust-text);
-  transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time); }
+  transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time);
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 2px 6px 2px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px, rgba(0, 0, 0, 0.03) 0px -2px 6px 2px; }
   .skill-btn:not(:first-child) {
     margin-left: .5rem; }
+  body.light .skill-btn {
+    box-shadow: var(--x-btn-shadow) 0 0 2px 0; }
   .skill-btn.biz {
+    border-color: var(--accent-res);
     background-color: var(--accent-res); }
   .skill-btn.coding {
+    border-color: var(--accent-bio);
     background-color: var(--accent-bio); }
   .skill-btn.events {
+    border-color: var(--accent-code);
     background-color: var(--accent-code); }
   .skill-btn.games {
+    border-color: var(--accent-writ);
     background-color: var(--accent-writ); }
   .skill-btn.creative {
+    border-color: var(--accent-create);
     background-color: var(--accent-create); }
   .skill-btn:not(:active):hover.biz {
     background-color: var(--accent-res-hover); }
@@ -1203,8 +1235,13 @@ a.inline-email:hover {
   .skill-btn:not(:active):hover.creative {
     background-color: var(--accent-create-hover); }
 
-.exp:not(:first-child) {
-  margin-top: 1rem; }
+.exp {
+  border: var(--x-btn-border);
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 2px 6px 2px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px, rgba(0, 0, 0, 0.03) 0px -2px 6px 2px; }
+  body.light .exp {
+    box-shadow: var(--x-btn-shadow) 0 0 2px 0; }
+  .exp:not(:first-child) {
+    margin-top: 1rem; }
 
 .x-wrapper {
   overflow: hidden; }
@@ -1212,7 +1249,7 @@ a.inline-email:hover {
 .x-btn-icon-wrap {
   grid-area: ico; }
 
-.x-btn-text {
+.x-btn-text-head {
   grid-area: hed; }
 
 .res-org {
@@ -1228,9 +1265,9 @@ a.inline-email:hover {
   gap: .5rem 1rem;
   background: var(--res-item-bg);
   transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time);
-  grid-template-columns: -webkit-max-content 1fr;
-  grid-template-columns: max-content 1fr;
-  grid-template-areas: 'ico hed' '. org' '. sum'; }
+  grid-template-columns: -webkit-max-content 1fr -webkit-max-content;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-areas: 'ico hed hed' '.   sum org' '.   sum .  '; }
 
 .x-btn-icon-wrap {
   display: flex;
@@ -1265,9 +1302,11 @@ a.inline-email:hover {
   margin-bottom: .25rem;
   font-size: 1rem;
   text-align: end;
-  font-weight: var(--theme-weight-adjust-title-text); }
+  font-weight: var(--theme-weight-adjust-title-text);
+  color: var(--text-alt-faded); }
 
 .res-summary {
+  margin-top: .5rem;
   font-size: 17px;
   line-height: 1.75rem;
   letter-spacing: .02rem;
@@ -1358,9 +1397,15 @@ a.inline-email:hover {
 .github-url.backend {
   grid-area: back; }
 
-.project-intro.mhk p {
-  margin-left: var(--rad2);
-  margin-right: var(--rad2); }
+.project-intro.mhk {
+  padding: 1rem;
+  background-color: var(--res-item-bg);
+  border: var(--x-btn-border);
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 2px 6px 2px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px, rgba(0, 0, 0, 0.03) 0px -2px 6px 2px; }
+  body.light .project-intro.mhk {
+    box-shadow: var(--x-btn-shadow) 0 0 2px 0; }
+  .project-intro.mhk:not(:first-child) {
+    margin-top: 1rem; }
 
 .url-pseudo-btn {
   display: flex;
@@ -1368,8 +1413,7 @@ a.inline-email:hover {
   min-width: -webkit-max-content;
   min-width: -moz-max-content;
   min-width: max-content;
-  background-color: var(--btn-bg);
-  border-radius: var(--rad2);
+  background-color: var(--res-item-bg);
   border: var(--x-btn-border);
   box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) 0px 2px 6px 2px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px, rgba(0, 0, 0, 0.03) 0px -2px 6px 2px;
   transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time);
@@ -1404,13 +1448,20 @@ a.inline-email:hover {
   .url-pseudo-btn.app-url svg {
     margin-right: .75rem;
     height: 50px;
-    width: 50px; }
+    width: 50px;
+    fill: var(--rose6); }
   .url-pseudo-btn.app-url p {
     font-size: 2rem; }
   @media (max-width: 600px) {
     .url-pseudo-btn.app-url {
       margin-top: 1rem;
       max-width: 238px; } }
+  .url-pseudo-btn.app-url:hover {
+    background-color: var(--btn-bg-hover); }
+    .url-pseudo-btn.app-url:hover svg {
+      fill: var(--rose5); }
+    .url-pseudo-btn.app-url:hover p {
+      color: var(--btn-fg-hover); }
 
 .url-pseudo-btn.github-url {
   padding: .25rem 1rem;

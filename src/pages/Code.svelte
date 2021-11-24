@@ -8,7 +8,7 @@
 
 <div class={`page-wrapper code ${current}`}>
   <section class='grd'>
-    <div class='project-intro mhk large-text'>
+    <div class='project-intro mhk'>
       <p>MHK. A web implementation of the popular social deduction game, <em>Deception: Murder in Hong Kong</em>.</p>
       <p>A full-stack applicaton. A React app connected to a Node.js server using socket.io.</p>
     </div>

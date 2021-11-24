@@ -335,7 +335,7 @@ body.dark {
   --form-bg-focus: var(--chlg9);
   --form-text: var(--colg4);
   --form-text-placeholder: var(--colg5);
-  --partner-logo-bg: var(--chlg9);
+  --partner-logo-bg: var(--chlg8);
   --horz-bar: var(--chlg1);
   --res-item-bg: var(--chlg8);
   --x-btn-bg: var(--chlg9);
@@ -350,7 +350,7 @@ body.dark {
   --btn-fg-hover: var(--white);
   --btn-fg-active: var(--gray1);
   --btn-bg: var(--bg);
-  --btn-bg-hover: var(--black);
+  --btn-bg-hover: var(--chlg8);
   --btn-bg-active: var(--gray6);
   --theme-weight-adjust-text: 350;
   --theme-weight-adjust-title-text: 400;
@@ -1200,12 +1200,8 @@ input:checked + .th-switch-slider {
   object-fit: contain;
   overflow: hidden;
   border: var(--x-btn-border);
-  border-radius: var(--rad2);
-  @include shadow();
+  @include light-dark-shadows();
   @include colorfade();
-  body.light & {
-    box-shadow: 0 0 2px 0 var(--x-btn-shadow);
-  };
   & > img {
     width: 100%;
     display: block;
@@ -1213,7 +1209,6 @@ input:checked + .th-switch-slider {
 }
 
 .content-right-bio {
-  // background-color: black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1238,10 +1233,7 @@ input:checked + .th-switch-slider {
   & .partner-logo-wrapper {
     display: flex;
     padding: 1rem;
-    // border-radius: var(--rad2);
-    background-color: var(--x-btn-bg);
-    // background-color: var(--colg2);
-    border-radius: var(--rad2);
+    background-color: var(--res-item-bg);
     border: var(--x-btn-border);
     @include colorfade();
     @include light-dark-shadows();
@@ -1251,11 +1243,6 @@ input:checked + .th-switch-slider {
     };
   };
 }
-
-// .partner-logo-grid > img {
-//   height: 65px;
-//   width: 9rem; /* 144px */
-// }
 
 a.inline-email {
   text-decoration: none;
@@ -1294,6 +1281,8 @@ a.inline-email:hover {
 @mixin res-list-item() {
   padding: 1rem;
   background-color: var(--res-item-bg);
+  border: var(--x-btn-border);
+  @include light-dark-shadows();
   &:not(:first-child) {
     margin-top: 1rem;
   };
@@ -1314,8 +1303,10 @@ a.inline-email:hover {
 
 .edu {
   display: inline-block;
-  padding: 1rem;
+  padding: .5rem 1rem;
   background-color: var(--res-item-bg);
+  border: var(--x-btn-border);
+  @include light-dark-shadows();
   &:not(:first-child) {
     margin-left: 1rem;
   };
@@ -1332,21 +1323,37 @@ a.inline-email:hover {
   @include res-list-item();
 }
 
+.skill, .skill-btn {
+  
+}
+
 .res-skills ul {
   margin: -.25rem;
   & .skill {
+    border: var(--x-btn-border);
+    @include light-dark-shadows();
     @include colorfade();
     display: inline-flex;
     width: max-content;
     margin: .25rem;
-    padding: .5rem;
+    padding: .5rem 1rem;
     background-color: var(--res-item-bg);
     &.highlight { color: var(--white); };
-    &.biz { background-color: var(--accent-res); };
-    &.coding { background-color: var(--accent-bio); };
-    &.events { background-color: var(--accent-code); };
-    &.games { background-color: var(--accent-writ); };
-    &.creative { background-color: var(--accent-create); };
+    &.biz { 
+      border-color: var(--accent-res);
+      background-color: var(--accent-res); };
+    &.coding { 
+      border-color: var(--accent-bio);
+      background-color: var(--accent-bio); };
+    &.events { 
+      border-color: var(--accent-code);
+      background-color: var(--accent-code); };
+    &.games { 
+      border-color: var(--accent-writ);
+      background-color: var(--accent-writ); };
+    &.creative { 
+      border-color: var(--accent-create);
+      background-color: var(--accent-create); };
   };
 }
 
@@ -1357,16 +1364,28 @@ a.inline-email:hover {
 .skill-btn {
   color: var(--white);
   padding: .5rem;
+  border: var(--x-btn-border);
   &:not(:first-child) {
     margin-left: .5rem;
   };
   @include font-adjust();
   @include colorfade();
-  &.biz { background-color: var(--accent-res); };
-  &.coding { background-color: var(--accent-bio); };
-  &.events { background-color: var(--accent-code); };
-  &.games { background-color: var(--accent-writ); };
-  &.creative { background-color: var(--accent-create); };
+  @include light-dark-shadows();
+  &.biz { 
+    border-color: var(--accent-res);
+    background-color: var(--accent-res); };
+  &.coding { 
+    border-color: var(--accent-bio);
+    background-color: var(--accent-bio); };
+  &.events { 
+    border-color: var(--accent-code);
+    background-color: var(--accent-code); };
+  &.games { 
+    border-color: var(--accent-writ);
+    background-color: var(--accent-writ); };
+  &.creative { 
+    border-color: var(--accent-create);
+    background-color: var(--accent-create); };
   &:not(:active):hover {
     &.biz { background-color: var(--accent-res-hover); };
     &.coding { background-color: var(--accent-bio-hover); };
@@ -1377,6 +1396,8 @@ a.inline-email:hover {
 }
 
 .exp {
+  border: var(--x-btn-border);
+  @include light-dark-shadows();
   &:not(:first-child) {
     margin-top: 1rem;
   };
@@ -1384,11 +1405,10 @@ a.inline-email:hover {
 
 .x-wrapper {
   overflow: hidden;
-  // @include card();
 }
 
 .x-btn-icon-wrap { grid-area: ico; };
-.x-btn-text { grid-area: hed; };
+.x-btn-text-head { grid-area: hed; };
 .res-org { grid-area: org; };
 .res-summary { grid-area: sum; };
 
@@ -1399,11 +1419,11 @@ a.inline-email:hover {
   gap: .5rem 1rem;
   background: var(--res-item-bg);
   @include colorfade();
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: max-content 1fr max-content;
   grid-template-areas:
-    'ico hed'
-    '. org'
-    '. sum';
+    'ico hed hed'
+    '.   sum org'
+    '.   sum .  ';
 }
 
 .x-btn-icon-wrap {
@@ -1450,10 +1470,11 @@ a.inline-email:hover {
   font-size: 1rem;
   text-align: end;
   font-weight: var(--theme-weight-adjust-title-text);
+  color: var(--text-alt-faded);
 }
 
 .res-summary {
-  // color: var(--text-alt-faded);
+  margin-top: .5rem;
   @include font-adjust();
 }
 
@@ -1612,8 +1633,6 @@ a.inline-email:hover {
           transition: none;
 }
 
-// Code
-
 // Grid
 
 .grd {
@@ -1640,26 +1659,21 @@ a.inline-email:hover {
 .project-intro { grid-area: intro; }
 .app-url { grid-area: live; }
 .github-url {
-    &.frontend {
-      grid-area: front;
-    };
-    &.backend {
-      grid-area: back;
-    };
+  &.frontend { grid-area: front; };
+  &.backend { grid-area: back; };
 }
 
-.project-intro.mhk p {
-  margin-left: var(--rad2);
-  margin-right: var(--rad2);
+.project-intro.mhk {
+  @include res-list-item();
 }
 
 .url-pseudo-btn {
   display: flex;
   align-items: center;
   min-width: max-content;
-  background-color: var(--btn-bg);
-  border-radius: var(--rad2);
+  background-color: var(--res-item-bg);
   border: var(--x-btn-border);
+  // border: var(--bdr1) solid var(--rose5);
   @include shadow();
   @include colorfade();
   text-decoration: none;
@@ -1704,14 +1718,24 @@ a.inline-email:hover {
   & svg {
     margin-right: .75rem;
     @include square(50px);
-  }
+    fill: var(--rose6);
+  };
   & p {
     font-size: 2rem;
   };
   @media (max-width: 600px) {
     margin-top: 1rem;
     max-width: 238px;
-  }
+  };
+  &:hover {
+    background-color: var(--btn-bg-hover);
+    & svg {
+      fill: var(--rose5);
+    };
+    & p {
+      color: var(--btn-fg-hover);
+    };
+  };
 }
 
 .url-pseudo-btn.github-url {
