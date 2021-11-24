@@ -2,6 +2,7 @@
 
 <script>
   import res from '../content/resume.json';
+  import SVGIcon from '../utility/SVGIcon.svelte';
 
   export let isCurrent;
   $: current = isCurrent ? 'current' : '';
@@ -90,18 +91,16 @@
             type="button"
             on:click|preventDefault={expand}
           >
-            <div class="exl-btn-icon-wrap">
-              <div class="exl-btn-icon-fore preload"></div>
-              <div class="exl-btn-icon-back"></div>
+            <SVGIcon
+              ico='plus'
+              cls='exl-btn-icon-wrap preload'
+            />
+            <div class="exl-btn-text-head">
+              <h6>{exp.title}</h6>
+              <h6>{renderDates(exp.startYear, exp.endYear)}</h6>
             </div>
-            <div class="exl-btn-text">
-              <div class="exl-btn-text-head">
-                <h6>{exp.title}</h6>
-                <h6>{renderDates(exp.startYear, exp.endYear)}</h6>
-              </div>
-              <p>{exp.organization}</p>
-              <p>{exp.summary}</p>
-            </div>
+            <div class='res-org'>{exp.organization}</div>
+            <div class='res-summary'>{exp.summary}</div>
           </div>
           <div class="exl-content">
             <ul class="exl-content-ul">

@@ -536,6 +536,7 @@ p, ul, ol, li {
   bottom: 0;
   right: 100px; }
 
+.svg-wrap svg,
 .svg-icon svg {
   height: 100%;
   width: 100%;
@@ -545,10 +546,6 @@ p, ul, ol, li {
   stroke-miterlimit: 2;
   margin: 0;
   fill: var(--text); }
-
-.svg-wrap {
-  height: 245px;
-  width: 600px; }
 
 .svg {
   height: 100%;
@@ -1171,60 +1168,26 @@ a.inline-email:hover {
   transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s; }
   .skill-btn:not(:first-child) {
     margin-left: .5rem; }
-  .skill-btn:hover.biz {
-    background-color: var(--accent-res-hover); }
-  .skill-btn:hover.coding {
-    background-color: var(--accent-bio-hover); }
-  .skill-btn:hover.events {
-    background-color: var(--accent-code-hover); }
-  .skill-btn:hover.games {
-    background-color: var(--accent-writ-hover); }
-  .skill-btn:hover.creative {
-    background-color: var(--accent-create-hover); }
-  .skill-btn.biz, .skill-btn.biz:active {
+  .skill-btn.biz {
     background-color: var(--accent-res); }
-  .skill-btn.coding, .skill-btn.coding:active {
+  .skill-btn.coding {
     background-color: var(--accent-bio); }
-  .skill-btn.events, .skill-btn.events:active {
+  .skill-btn.events {
     background-color: var(--accent-code); }
-  .skill-btn.games, .skill-btn.games:active {
+  .skill-btn.games {
     background-color: var(--accent-writ); }
-  .skill-btn.creative, .skill-btn.creative:active {
+  .skill-btn.creative {
     background-color: var(--accent-create); }
-
-.exl-btn:hover .exl-btn-icon-fore {
-  background: var(--accent-hover); }
-
-.exl-btn-icon-wrap {
-  margin-right: 0;
-  height: 1.25rem;
-  width: 1.25rem;
-  background: none;
-  transition: transform .4s ease-in-out; }
-
-.exl-btn-icon-fore {
-  height: 1.25rem;
-  width: 1.25rem;
-  -webkit-clip-path: polygon(40% 0, 60% 0, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0 60%, 0 40%, 40% 40%);
-          clip-path: polygon(40% 0, 60% 0, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0 60%, 0 40%, 40% 40%);
-  position: relative;
-  transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s;
-  background: var(--foot-social-icon-bg); }
-
-/* .exl-btn-icon-back {
-  -webkit-box-sizing: content-box;
-     -moz-box-sizing: content-box;
-          box-sizing: content-box;
-  position: relative;
-  top: calc(-1.25rem - 1px);
-  left: -1px;
-  height: 18px;
-  width: 18px;
-  border: 2px solid var(--exl-btn-icon-border-fix);
-  z-index: 1;
-} */
-.rotated .exl-btn-icon-wrap {
-  transform: rotate(135deg); }
+  .skill-btn:not(:active):hover.biz {
+    background-color: var(--accent-res-hover); }
+  .skill-btn:not(:active):hover.coding {
+    background-color: var(--accent-bio-hover); }
+  .skill-btn:not(:active):hover.events {
+    background-color: var(--accent-code-hover); }
+  .skill-btn:not(:active):hover.games {
+    background-color: var(--accent-writ-hover); }
+  .skill-btn:not(:active):hover.creative {
+    background-color: var(--accent-create-hover); }
 
 .exl-wrapper {
   overflow: hidden;
@@ -1235,12 +1198,47 @@ a.inline-email:hover {
   body.light .exl-wrapper {
     box-shadow: var(--exl-btn-shadow) 0 0 2px 0; }
 
+.exl-btn-icon-wrap {
+  grid-area: ico; }
+
+.exl-btn-text {
+  grid-area: hed; }
+
+.res-org {
+  grid-area: org; }
+
+.res-summary {
+  grid-area: sum; }
+
 .exl-btn {
   cursor: pointer;
-  display: flex;
+  display: grid;
   padding: 1rem;
+  gap: 1rem;
   background: var(--exl-btn-bg);
-  transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s; }
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-template-areas: 'ico hed' '. org' '. sum'; }
+
+.exl-btn-icon-wrap {
+  height: 1.25rem;
+  width: 1.25rem;
+  background: var(--accent-code);
+  border-radius: 50%;
+  padding: 3px;
+  transition: transform .4s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .exl-btn:hover .exl-btn-icon-wrap {
+    background-color: var(--accent-code-hover); }
+  .exl-btn-icon-wrap svg {
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s, fill 0.2s;
+    fill: var(--black); }
+
+.rotated .exl-btn-icon-wrap {
+  transform: rotate(135deg); }
 
 /* .exl-btn:hover { background-color: var(--exl-btn-bg-hover); } */
 .exl-btn-text {
