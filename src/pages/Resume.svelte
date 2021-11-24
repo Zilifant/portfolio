@@ -19,12 +19,12 @@
   };
 
   function expand() {
-    this.classList.toggle("rotated");
+    this.classList.toggle('rotated');
     let content = this.nextElementSibling;
     if (content.style.maxHeight) {
       content.style.maxHeight = null;
     } else {
-      content.style.maxHeight = content.scrollHeight + "px";
+      content.style.maxHeight = content.scrollHeight + 'px';
     };
   };
 
@@ -37,7 +37,7 @@
 
 <div class={`page-wrapper resume ${current}`}>
 
-  <section class="content res-achievements">
+  <section class='content res-achievements'>
     <ul>
       {#each res.intro.achievements as achieve}
         <li class='achievement'>{achieve}</li>
@@ -45,7 +45,7 @@
     </ul>
   </section>
 
-  <section class="content res-endorsements">
+  <section class='content res-endorsements'>
     <ul>
       {#each res.intro.endorsements as {name, title, quote}}
         <li class='endorsement'>
@@ -56,7 +56,7 @@
     </ul>
   </section>
 
-  <section class="content res-skills">
+  <section class='content res-skills'>
     <div class='skill-btns'>
       {#each res.skills.categories as {id, displayName}}
         <button
@@ -74,7 +74,7 @@
     </ul>
   </section>
 
-  <section class="content res-edu">
+  <section class='content res-edu'>
     <ul>
       {#each res.education as {degree, subject, name, year}}
         <li class='edu'><span class='degree'>{degree} </span><span class='subject'>{subject}</span><br><span class='name'>{name}</span> <span class='year'>{year}</span></li>
@@ -85,27 +85,27 @@
   <section class='content res-exp'>
     <ul>
       {#each res.experience as exp}
-        <li class="exl-wrapper exp">
+        <li class='x-wrapper exp'>
           <div
-            class="exl-btn"
-            type="button"
+            class='x-btn'
+            type='button'
             on:click|preventDefault={expand}
           >
             <SVGIcon
               ico='plus'
-              cls='exl-btn-icon-wrap preload'
+              cls='x-btn-icon-wrap preload'
             />
-            <div class="exl-btn-text-head">
+            <div class='x-btn-text-head'>
               <h6>{exp.title}</h6>
-              <h6>{renderDates(exp.startYear, exp.endYear)}</h6>
+              <h6>{exp.organization}</h6>
             </div>
-            <div class='res-org'>{exp.organization}</div>
+            <div class='res-org'>{renderDates(exp.startYear, exp.endYear)}</div>
             <div class='res-summary'>{exp.summary}</div>
           </div>
-          <div class="exl-content">
-            <ul class="exl-content-ul">
+          <div class={`x-content blts-${exp.bullets.length}`}>
+            <ul class='x-content-ul'>
               {#each exp.bullets as {lead, text}}
-                <li class="exl-content-li"><span class='lead'>{lead}:</span> {text}</li>
+                <li class='x-content-li'><span class='lead'>{lead}</span><br>{text}</li>
               {/each}
             </ul>
           </div>
@@ -114,9 +114,11 @@
     </ul>
   </section>
 
-  <section class="content res-interests">
-    {#each res.interests as interest}
-      <p class='interest'>{interest}</p>
-    {/each}
+  <section class='content res-interests'>
+    <ul>
+      {#each res.interests as interest}
+        <li class='interest'>{interest}</li>
+      {/each}
+    </ul>
   </section>
 </div>
