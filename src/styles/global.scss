@@ -1357,23 +1357,18 @@ a.inline-email:hover {
   };
   @include font-adjust();
   @include colorfade();
-  &:hover {
+  &.biz { background-color: var(--accent-res); };
+  &.coding { background-color: var(--accent-bio); };
+  &.events { background-color: var(--accent-code); };
+  &.games { background-color: var(--accent-writ); };
+  &.creative { background-color: var(--accent-create); };
+  &:not(:active):hover {
     &.biz { background-color: var(--accent-res-hover); };
     &.coding { background-color: var(--accent-bio-hover); };
     &.events { background-color: var(--accent-code-hover); };
     &.games { background-color: var(--accent-writ-hover); };
     &.creative { background-color: var(--accent-create-hover); };
   };
-  &.biz,
-  &.biz:active { background-color: var(--accent-res); };
-  &.coding,
-  &.coding:active { background-color: var(--accent-bio); };
-  &.events,
-  &.events:active { background-color: var(--accent-code); };
-  &.games,
-  &.games:active { background-color: var(--accent-writ); };
-  &.creative,
-  &.creative:active { background-color: var(--accent-create); };
 }
 
 .exl-btn:hover .exl-btn-icon-fore {
