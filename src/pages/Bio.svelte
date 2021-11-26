@@ -26,9 +26,11 @@
   </div>
 
   <section class='content content-70-right content-right-bio large-text'>
-    <p>Freedom discovers man the moment he loses concern over what impression he is making or about to make. A React app connected to a Node.js server using socket.io.</p>
-    <p>A full-stack applicaton. A React app connected to a Node.js server using socket.io.</p>
-    <p>Some companies and organizations I've worked with...</p>
+    <p>Hello, I'm Scott.</p>
+    <p>I design, produce, and run large-scale live gaming events.</p>
+    <p>Or rather, I did. Then 2020 happened. &#x1F610;</p>
+    <p>While I continue to explore opportunities in the events space, my focus is now full-stack web development.</p>
+    <p>Companies and organizations I've worked with...</p>
   </section>
 
   <!-- <div class='text-divider'>
