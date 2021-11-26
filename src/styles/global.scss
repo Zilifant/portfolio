@@ -1095,9 +1095,9 @@ input:checked + .th-switch-slider {
   line-height: 2.25rem;
 }
 
-.large-text > :not(:first-child) {
-  margin-top: 1rem;
-}
+// .large-text > :not(:first-child) {
+//   margin-top: 1rem;
+// }
 
 // Text-Divider
 
@@ -1715,6 +1715,10 @@ a.inline-email:hover {
 
 .project-intro.mhk {
   @include res-list-item();
+  @include colorfade();
+  & :not(:first-child) {
+    margin-top: 1rem;
+  };
 }
 
 .url-pseudo-btn {

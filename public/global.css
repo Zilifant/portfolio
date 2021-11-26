@@ -916,9 +916,6 @@ input:checked + .th-switch-slider {
   font-size: 1.5rem;
   line-height: 2.25rem; }
 
-.large-text > :not(:first-child) {
-  margin-top: 1rem; }
-
 .text-divider {
   width: 100%;
   margin: 1rem 0;
@@ -1386,8 +1383,11 @@ a.inline-email:hover {
 .project-intro.mhk {
   padding: 1rem;
   background-color: var(--res-item-bg);
-  border: var(--x-btn-border); }
+  border: var(--x-btn-border);
+  transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time); }
   .project-intro.mhk:not(:first-child) {
+    margin-top: 1rem; }
+  .project-intro.mhk :not(:first-child) {
     margin-top: 1rem; }
 
 .url-pseudo-btn {
