@@ -3,7 +3,6 @@
 <script>
   export let isCurrent;
   $: current = isCurrent ? 'current' : '';
-
 </script>
 
 <div class={`page-wrapper code ${current}`}>

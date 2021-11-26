@@ -238,6 +238,8 @@
   --bdr2: 1px;
   --bdr3: 3px;
   --time: .2s;
+  --shadow: rgba(0, 0, 0, 0.03);
+  --shadow2: rgba(0, 0, 0, 0.1);
   // --bg-img: url("./assets/backgrounds/big-floral-tile.png");
 }
 
@@ -288,12 +290,10 @@ body.light {
   --x-btn-icon-fore: var(--text);
   --x-btn-icon-border-fix: var(--x-btn-bg);
   --dark-shadow: var(--gray9);
-  --btn-fg: var(--text);
-  --btn-fg-hover: var(--black);
-  --btn-fg-active: var(--gray7);
-  --btn-bg: var(--bg);
-  --btn-bg-hover: var(--white);
-  --btn-bg-active: var(--gray2);
+  --btn-fg: var(--white);
+  --btn-fg-hover: var(--white);
+  --btn-bg: var(--accent-res);
+  --btn-bg-hover: var(--accent-res-hover);
   --theme-weight-adjust-text: 350;
   --theme-weight-adjust-title-text: 400;
 }
@@ -348,10 +348,8 @@ body.dark {
   --dark-shadow: var(--black);
   --btn-fg: var(--text);
   --btn-fg-hover: var(--white);
-  --btn-fg-active: var(--gray1);
-  --btn-bg: var(--bg);
-  --btn-bg-hover: var(--chlg8);
-  --btn-bg-active: var(--gray6);
+  --btn-bg: var(--accent-res);
+  --btn-bg-hover: var(--accent-res-hover);
   --theme-weight-adjust-text: 350;
   --theme-weight-adjust-title-text: 400;
 }
@@ -483,14 +481,32 @@ body#code-dark {
 
 @mixin shadow() {
   box-shadow:
-    rgba(0, 0, 0, 0.03) 0px 1px 2px 0px,
-    rgba(0, 0, 0, 0.03) 0px 2px 6px 2px,
-    rgba(0, 0, 0, 0.03) 0px -1px 2px 0px,
-    rgba(0, 0, 0, 0.03) 0px -2px 6px 2px;
+    var(--shadow) 0px 1px 2px 0px,
+    var(--shadow) 0px 2px 6px 2px,
+    var(--shadow) 0px -1px 2px 0px,
+    var(--shadow) 0px -2px 6px 2px;
+}
+
+@mixin shadow-inset() {
+  box-shadow:
+    var(--shadow) 0px 1px 2px 0px,
+    var(--shadow) 0px 2px 6px 2px,
+    var(--shadow) 0px -1px 2px 0px,
+    var(--shadow) 0px -2px 6px 2px,
+    var(--shadow) 0px 1px 2px 0px inset,
+    var(--shadow) 0px 2px 6px 2px inset,
+    var(--shadow) 0px -1px 2px 0px inset,
+    var(--shadow) 0px -2px 6px 2px inset;
 }
 
 @mixin shadow-small() {
-  box-shadow: var(--x-btn-shadow) 0 0 2px 0;
+  box-shadow: var(--shadow2) 0 0 2px 0;
+}
+
+@mixin shadow-small-inset() {
+  box-shadow:
+  var(--shadow2) 0 0 2px 0,
+  var(--shadow2) 0 0 2px 0 inset;
 }
 
 @mixin colorfade($t: var(--time)) {
@@ -520,6 +536,13 @@ body#code-dark {
   @include shadow();
   body.light & {
     @include shadow-small();
+  };
+}
+
+@mixin light-dark-shadows-inset() {
+  @include shadow-inset();
+  body.light & {
+    @include shadow-small-inset();
   };
 }
 
@@ -695,11 +718,6 @@ svg.svg-cstitle {
   overflow: hidden;
   cursor: pointer;
   background-color: var(--chlg7);
-  box-shadow: 0 0 2px 0 var(--dark-shadow);
-  -webkit-transition: box-shadow .5s;
-     -moz-transition: box-shadow .5s;
-       -o-transition: box-shadow .5s;
-          transition: box-shadow .5s;
 }
 
 .theme-switch-bg input { display: none; }
@@ -773,8 +791,7 @@ input:checked + .th-switch-slider {
   align-items: center;
   background: var(--nav-bg);
   border-bottom: var(--bdr1) solid var(--nav-border);
-  // @include shadow-small();
-  @include light-dark-shadows();
+  // @include light-dark-shadows();
 }
 
 .main-nav-item {
@@ -955,8 +972,7 @@ input:checked + .th-switch-slider {
     };
     &.visible {
       top: 48px;
-      @include shadow-small();
-      // box-shadow: 0 0 2px 0 var(--x-btn-shadow);
+      // @include shadow-small();
       border-bottom: var(--x-btn-border);
     };
   }
@@ -986,8 +1002,7 @@ input:checked + .th-switch-slider {
   justify-content: center;
   background: var(--foot-bg);
   border-top: var(--bdr1) solid var(--foot-border);
-  // @include shadow-small();
-  @include light-dark-shadows();
+  // @include light-dark-shadows();
   @include colorfade();
 }
 
@@ -1200,7 +1215,7 @@ input:checked + .th-switch-slider {
   object-fit: contain;
   overflow: hidden;
   border: var(--x-btn-border);
-  @include light-dark-shadows();
+  // @include light-dark-shadows();
   @include colorfade();
   & > img {
     width: 100%;
@@ -1236,7 +1251,7 @@ input:checked + .th-switch-slider {
     background-color: var(--res-item-bg);
     border: var(--x-btn-border);
     @include colorfade();
-    @include light-dark-shadows();
+    // @include light-dark-shadows();
     & img {
       height: 65px;
       width: 9rem; /* 144px */
@@ -1282,7 +1297,7 @@ a.inline-email:hover {
   padding: 1rem;
   background-color: var(--res-item-bg);
   border: var(--x-btn-border);
-  @include light-dark-shadows();
+  // @include light-dark-shadows();
   &:not(:first-child) {
     margin-top: 1rem;
   };
@@ -1306,7 +1321,7 @@ a.inline-email:hover {
   padding: .5rem 1rem;
   background-color: var(--res-item-bg);
   border: var(--x-btn-border);
-  @include light-dark-shadows();
+  // @include light-dark-shadows();
   &:not(:first-child) {
     margin-left: 1rem;
   };
@@ -1331,7 +1346,7 @@ a.inline-email:hover {
   margin: -.25rem;
   & .skill {
     border: var(--x-btn-border);
-    @include light-dark-shadows();
+    // @include light-dark-shadows();
     @include colorfade();
     display: inline-flex;
     width: max-content;
@@ -1364,13 +1379,13 @@ a.inline-email:hover {
 .skill-btn {
   color: var(--white);
   padding: .5rem;
-  border: var(--x-btn-border);
+  // border: var(--x-btn-border);
   &:not(:first-child) {
     margin-left: .5rem;
   };
   @include font-adjust();
   @include colorfade();
-  @include light-dark-shadows();
+  // @include light-dark-shadows();
   &.biz { 
     border-color: var(--accent-res);
     background-color: var(--accent-res); };
@@ -1397,7 +1412,7 @@ a.inline-email:hover {
 
 .exp {
   border: var(--x-btn-border);
-  @include light-dark-shadows();
+  // @include light-dark-shadows();
   &:not(:first-child) {
     margin-top: 1rem;
   };
@@ -1643,8 +1658,7 @@ a.inline-email:hover {
   grid-template-areas:
     'live intro'
     'front intro'
-    'back intro'
-    '. intro';
+    'back intro';
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, min-content);
@@ -1671,15 +1685,11 @@ a.inline-email:hover {
   display: flex;
   align-items: center;
   min-width: max-content;
-  background-color: var(--res-item-bg);
-  border: var(--x-btn-border);
-  // border: var(--bdr1) solid var(--rose5);
-  @include shadow();
-  @include colorfade();
   text-decoration: none;
-  body.light & {
-    box-shadow: 0 0 2px 0 var(--x-btn-shadow);
-  };
+  background-color: var(--btn-bg);
+  // border: var(--x-btn-border);
+  // @include light-dark-shadows();
+  @include colorfade();
   & svg {
     @include colorfade();
     fill: var(--btn-fg);
@@ -1688,22 +1698,13 @@ a.inline-email:hover {
     @include colorfade();
     color: var(--btn-fg);
   };
-  &:hover {
+  &:not(:active):hover {
     background-color: var(--btn-bg-hover);
     & svg {
       fill: var(--btn-fg-hover);
     };
     & p {
       color: var(--btn-fg-hover);
-    };
-  };
-  &:active {
-    background-color: var(--btn-bg-active);
-    & svg {
-      fill: var(--btn-fg-active);
-    };
-    & p {
-      color: var(--btn-fg-active);
     };
   };
 }
@@ -1713,12 +1714,31 @@ a.inline-email:hover {
   align-items: center;
 }
 
+// .url-pseudo-btn {
+//   & p, svg {
+//     color: var(--white);
+//     // font-weight: var(--theme-weight-adjust-title-text);
+//     fill: var(--white);
+//   };
+//   &.frontend {
+//     background-color: #3ab8e6;
+//   };
+//   &.backend {
+//     background-color: #76bd47;
+//   };
+// }
+
 .url-pseudo-btn.app-url {
-  padding: 1rem;
+  padding: 1rem .5rem;
+  border: none;
+  background-color: var(--rose7);
+  body.light & {
+    background-color: var(--rose6);
+  };
   & svg {
-    margin-right: .75rem;
-    @include square(50px);
-    fill: var(--rose6);
+    margin-right: .5rem;
+    @include square(40px);
+    fill: var(--btn-fg);
   };
   & p {
     font-size: 2rem;
@@ -1727,24 +1747,23 @@ a.inline-email:hover {
     margin-top: 1rem;
     max-width: 238px;
   };
-  &:hover {
-    background-color: var(--btn-bg-hover);
-    & svg {
-      fill: var(--rose5);
-    };
-    & p {
-      color: var(--btn-fg-hover);
+  &:not(:active):hover {
+    background-color: var(--rose6);
+    body.light & {
+      background-color: var(--rose5);
     };
   };
 }
 
 .url-pseudo-btn.github-url {
-  padding: .25rem 1rem;
+  color: var(--white);
+  padding: .5rem;
+  @include font-adjust();
   width: max-content;
   & svg {
     margin-right: .5rem;
     @include square(18px);
-  }
+  };
   & p {
     font-size: 1rem;
     position: relative;
