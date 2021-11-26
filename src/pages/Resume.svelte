@@ -9,6 +9,11 @@
 
   let highCat = 'coding';
 
+  const summaryItems = [
+    ...res.intro.achievements,
+    res.education
+  ];
+
   const skills = res.skills.skills.sort((a, b) => {
     return a.name.localeCompare(b.name);
   })
@@ -38,9 +43,18 @@
 <div class={`page-wrapper resume ${current}`}>
 
   <section class='content res-achievements'>
+    <h2 class='res-sec-title'>At A Glance</h2>
     <ul>
-      {#each res.intro.achievements as achieve}
-        <li class='achievement'>{achieve}</li>
+      {#each summaryItems as item}
+        {#if typeof item === 'string'}
+          <li class='achievement'>{item}</li>
+        {:else if typeof item === 'object'}
+          <li class='edu'>
+            {#each res.education as {degree, subject, name, year}}
+              <p><span class='degree'>{degree} </span><span class='subject'>{subject}</span><br><span class='name'>{name}</span> <span class='year'>{year}</span></p>
+            {/each}
+          </li>
+        {/if}
       {/each}
     </ul>
   </section>
@@ -57,6 +71,7 @@
   </section>
 
   <section class='content res-skills'>
+    <h2 class='res-sec-title'>Skills</h2>
     <div class='skill-btns'>
       {#each res.skills.categories as {id, displayName}}
         <button
@@ -74,15 +89,17 @@
     </ul>
   </section>
 
-  <section class='content res-edu'>
+  <!-- <section class='content res-edu'>
+    <h2 class='res-sec-title'>Education</h2>
     <ul>
       {#each res.education as {degree, subject, name, year}}
         <li class='edu'><span class='degree'>{degree} </span><span class='subject'>{subject}</span><br><span class='name'>{name}</span> <span class='year'>{year}</span></li>
       {/each}
     </ul>
-  </section>
+  </section> -->
 
   <section class='content res-exp'>
+    <h2 class='res-sec-title'>Experience</h2>
     <ul>
       {#each res.experience as exp}
         <li class='x-wrapper exp'>
@@ -115,6 +132,7 @@
   </section>
 
   <section class='content res-interests'>
+    <h2 class='res-sec-title'>Also...</h2>
     <ul>
       {#each res.interests as interest}
         <li class='interest'>{interest}</li>

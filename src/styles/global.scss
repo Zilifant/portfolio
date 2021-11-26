@@ -237,7 +237,7 @@
   --bdr1: 1px;
   --bdr2: 1px;
   --bdr3: 3px;
-  --time: .2s;
+  --time: .4s;
   --shadow: rgba(0, 0, 0, 0.03);
   --shadow2: rgba(0, 0, 0, 0.1);
   // --bg-img: url("./assets/backgrounds/big-floral-tile.png");
@@ -1283,9 +1283,10 @@ a.inline-email:hover {
   gap: 1rem;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    'ach edr'
+    'ach ach'
+    'edr edr'
     'skl skl'
-    'edu edu'
+    // 'edu edu'
     'exp exp'
     'int int';
   & * {
@@ -1293,37 +1294,53 @@ a.inline-email:hover {
   };
 }
 
-@mixin res-list-item() {
+@mixin res-list-item($dis: 'block') {
   padding: 1rem;
   background-color: var(--res-item-bg);
   border: var(--x-btn-border);
   // @include light-dark-shadows();
-  &:not(:first-child) {
-    margin-top: 1rem;
-  };
+  @if $dis == 'inline' {
+    display: inline-block;
+    height: max-content;
+    width: 50%;
+    &:not(:first-child) {
+      margin-left: 1rem;
+    };
+  }
+  @else if $dis == 'in-grid' {
+    // add nothing
+  }
+  @else {
+    &:not(:first-child) {
+      margin-top: 1rem;
+    };
+  }
+}
+
+.res-achievements ul {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  // & :nth-child(1) { grid-area: a1 };
+  // & :nth-child(2) { grid-area: a2 };
+  // & :nth-child(3) { grid-area: a3 };
+  // & :nth-child(4) { grid-area: ed };
+  // grid-template-areas:
+  //   'a1 a2'
+  //   'a3 ed';
 }
 
 .achievement {
-  @include res-list-item();
-}
-
-.endorsement {
-  @include res-list-item();
-  & .endorse-person {
-    color: var(--text-alt-faded);
-    margin-top: 1rem;
-    font-size: 1rem;
-  };
+  @include res-list-item('in-grid');
+  height: max-content;
 }
 
 .edu {
-  display: inline-block;
-  padding: .5rem 1rem;
-  background-color: var(--res-item-bg);
-  border: var(--x-btn-border);
+  @include res-list-item('in-grid');
+  // width: max-content;
   // @include light-dark-shadows();
-  &:not(:first-child) {
-    margin-left: 1rem;
+  & p:not(:first-child) {
+    margin-top: 1rem;
   };
   & span {
     @include font-adjust();
@@ -1334,12 +1351,31 @@ a.inline-email:hover {
   };
 }
 
-.interest {
-  @include res-list-item();
+.res-interests ul,
+.res-endorsements ul {
+  display: flex;
 }
 
-.skill, .skill-btn {
-  
+.endorsement {
+  @include res-list-item('inline');
+  & .endorse-person {
+    color: var(--text-alt-faded);
+    margin-top: 1rem;
+    font-size: 1rem;
+  };
+}
+
+.res-sec-title {
+  // background-color: var(--res-item-bg);
+  margin: .25rem 0 1rem 1px;
+  font-size: 1.5rem;
+  // padding: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+}
+
+.interest {
+  @include res-list-item('inline');
 }
 
 .res-skills ul {

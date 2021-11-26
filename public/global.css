@@ -235,7 +235,7 @@
   --bdr1: 1px;
   --bdr2: 1px;
   --bdr3: 3px;
-  --time: .2s;
+  --time: .4s;
   --shadow: rgba(0, 0, 0, 0.03);
   --shadow2: rgba(0, 0, 0, 0.1); }
 
@@ -1086,35 +1086,29 @@ a.inline-email:hover {
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: 'ach edr' 'skl skl' 'edu edu' 'exp exp' 'int int'; }
+  grid-template-areas: "ach ach" "edr edr" "skl skl" "exp exp" "int int"; }
   .page-wrapper.resume * {
     list-style: none; }
+
+.res-achievements ul {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr; }
 
 .achievement {
   padding: 1rem;
   background-color: var(--res-item-bg);
-  border: var(--x-btn-border); }
-  .achievement:not(:first-child) {
-    margin-top: 1rem; }
+  border: var(--x-btn-border);
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content; }
 
-.endorsement {
+.edu {
   padding: 1rem;
   background-color: var(--res-item-bg);
   border: var(--x-btn-border); }
-  .endorsement:not(:first-child) {
+  .edu p:not(:first-child) {
     margin-top: 1rem; }
-  .endorsement .endorse-person {
-    color: var(--text-alt-faded);
-    margin-top: 1rem;
-    font-size: 1rem; }
-
-.edu {
-  display: inline-block;
-  padding: .5rem 1rem;
-  background-color: var(--res-item-bg);
-  border: var(--x-btn-border); }
-  .edu:not(:first-child) {
-    margin-left: 1rem; }
   .edu span {
     font-size: 17px;
     line-height: 1.75rem;
@@ -1123,12 +1117,43 @@ a.inline-email:hover {
     .edu span.degree, .edu span.name {
       font-weight: bold; }
 
+.res-interests ul,
+.res-endorsements ul {
+  display: flex; }
+
+.endorsement {
+  padding: 1rem;
+  background-color: var(--res-item-bg);
+  border: var(--x-btn-border);
+  display: inline-block;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: 50%; }
+  .endorsement:not(:first-child) {
+    margin-left: 1rem; }
+  .endorsement .endorse-person {
+    color: var(--text-alt-faded);
+    margin-top: 1rem;
+    font-size: 1rem; }
+
+.res-sec-title {
+  margin: .25rem 0 1rem 1px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem; }
+
 .interest {
   padding: 1rem;
   background-color: var(--res-item-bg);
-  border: var(--x-btn-border); }
+  border: var(--x-btn-border);
+  display: inline-block;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: 50%; }
   .interest:not(:first-child) {
-    margin-top: 1rem; }
+    margin-left: 1rem; }
 
 .res-skills ul {
   margin: -.25rem; }
