@@ -89,15 +89,6 @@
     </ul>
   </section>
 
-  <!-- <section class='content res-edu'>
-    <h2 class='res-sec-title'>Education</h2>
-    <ul>
-      {#each res.education as {degree, subject, name, year}}
-        <li class='edu'><span class='degree'>{degree} </span><span class='subject'>{subject}</span><br><span class='name'>{name}</span> <span class='year'>{year}</span></li>
-      {/each}
-    </ul>
-  </section> -->
-
   <section class='content res-exp'>
     <h2 class='res-sec-title'>Experience</h2>
     <ul>
