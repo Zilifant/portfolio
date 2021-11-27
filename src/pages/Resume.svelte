@@ -75,7 +75,7 @@
     <div class='skill-btns'>
       {#each res.skills.categories as {id, displayName}}
         <button
-          class={`skill-btn ${id}`}
+          class={`btn skill-btn ${id}`}
           on:click={() => highCat = id}
         >
           {displayName}
