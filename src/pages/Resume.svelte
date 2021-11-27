@@ -9,11 +9,6 @@
 
   let highCat = 'coding';
 
-  const summaryItems = [
-    ...res.intro.achievements,
-    res.education
-  ];
-
   const skills = res.skills.skills.sort((a, b) => {
     return a.name.localeCompare(b.name);
   })
@@ -43,18 +38,10 @@
 <div class={`page-wrapper resume ${current}`}>
 
   <section class='content res-achievements'>
-    <h2 class='res-sec-title'>At A Glance</h2>
+    <h2 class='res-sec-title first-sec'>At A Glance</h2>
     <ul>
-      {#each summaryItems as item}
-        {#if typeof item === 'string'}
-          <li class='achievement'>{item}</li>
-        {:else if typeof item === 'object'}
-          <li class='edu'>
-            {#each res.education as {degree, subject, name, year}}
-              <p><span class='degree'>{degree} </span><span class='subject'>{subject}</span><br><span class='name'>{name}</span> <span class='year'>{year}</span></p>
-            {/each}
-          </li>
-        {/if}
+      {#each res.intro.achievements as item}
+        <li class='achievement'>{item}</li>
       {/each}
     </ul>
   </section>
@@ -68,6 +55,15 @@
         </li>
       {/each}
     </ul>
+  </section>
+
+  <section class='content res-edu'>
+    <div class='edu'>
+      <h3>Education</h3>
+      {#each res.education as {degree, subject, name, year}}
+        <p><span class='degree'>{degree} </span><span class='subject'>{subject}</span><br><span class='name'>{name}</span> <span class='year'>{year}</span></p>
+      {/each}
+    </div>
   </section>
 
   <section class='content res-skills'>
