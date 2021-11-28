@@ -239,7 +239,6 @@
   --time: .4s;
   --shadow: rgba(0, 0, 0, 0.03);
   --shadow2: rgba(0, 0, 0, 0.1);
-  // --bg-img: url("./assets/backgrounds/big-floral-tile.png");
 }
 
 body.light {
@@ -369,7 +368,6 @@ body#code-light {
   --accent: var(--emer5);
   --accent-hover: var(--emer4);
 }
-
 body#bio-dark {
   --accent: var(--pink5);
   --accent-hover: var(--pink4);
@@ -504,8 +502,8 @@ body#code-dark {
 
 @mixin shadow-small-inset() {
   box-shadow:
-  var(--shadow2) 0 0 2px 0,
-  var(--shadow2) 0 0 2px 0 inset;
+    var(--shadow2) 0 0 2px 0,
+    var(--shadow2) 0 0 2px 0 inset;
 }
 
 @mixin colorfade($t: var(--time)) {
@@ -552,6 +550,8 @@ body#code-dark {
   font-weight: var(--theme-weight-adjust-text);
 }
 
+// UTILITY
+
 .btn {
   border-radius: var(--rad);
 }
@@ -559,11 +559,13 @@ body#code-dark {
 // RESET
 
 html, body {
-  margin: 0;
-  padding: 0;
   overflow: overlay;
   height: 100%;
 }
+
+// body {
+//   -webkit-font-smoothing: antialiased;
+// }
 
 main {
   min-height: 100%;
@@ -591,7 +593,12 @@ button {
   &:focus { outline: none; };
 }
 
-h1,h2,h3,h4,h5,h6,li,ol,p,ul{font-style:normal;text-decoration:none}
+h1,h2,h3,h4,h5,h6,li,ol,p,ul {
+  font-style:normal;
+  text-decoration:none;
+  overflow-wrap: break-word;
+}
+
 h1,h2,h3,h4,h5,h6{font-weight:400}
 h1{font-size:2.5rem}
 h2{font-size:2.25rem}
@@ -608,8 +615,6 @@ p, ul, ol, li {
 
 .wrapper {
   background-color: var(--bgcolor);
-  // background-image: var(--content-bg-img);
-  // background-size: 400px;
 }
 
 /*SVG*/
@@ -750,7 +755,7 @@ svg.svg-cstitle {
   };
   &.earth {
     background-color: var(--chlg7);
-    transform:translate(33%, -125%);
+    transform: translate(33%, -125%);
   };
   input:checked + .th-switch-slider & {
     &.moon {
@@ -761,7 +766,7 @@ svg.svg-cstitle {
       background-size: 400% 400%; // must be last in property list
     };
     &.earth {
-      transform:translate(100%, -175%);
+      transform: translate(100%, -175%);
     };
   };
 }
