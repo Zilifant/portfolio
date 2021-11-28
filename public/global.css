@@ -234,7 +234,7 @@
   --rad2: 6px;
   --bdr1: 1px;
   --bdr3: 3px;
-  --time: .4s;
+  --time: .5s;
   --shadow: rgba(0, 0, 0, 0.03);
   --shadow2: rgba(0, 0, 0, 0.1); }
 
@@ -613,10 +613,11 @@ svg.svg-cstitle {
 .theme-switch-bg {
   justify-self: right;
   grid-area: switch;
-  padding: 5px;
+  padding: 4px;
   width: 50px;
   height: 30px;
   border-radius: 15px;
+  border: 1px solid var(--chlg6);
   overflow: hidden;
   cursor: pointer;
   background-color: var(--chlg7); }
@@ -1154,7 +1155,7 @@ a.inline-email:hover {
   line-height: 1.75rem;
   letter-spacing: .02rem;
   font-weight: var(--theme-weight-adjust-text);
-  transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time); }
+  transition: color var(--time), background-color var(--time), border-color var(--time), transform var(--time); }
   @media (max-width: 830px) {
     .skill-btn {
       flex-grow: 0; } }
@@ -1168,6 +1169,8 @@ a.inline-email:hover {
     background-color: var(--accent-writ); }
   .skill-btn.creative {
     background-color: var(--accent-create); }
+  .skill-btn:hover {
+    transform: translateY(-5px); }
   .skill-btn:not(:active):hover.biz {
     background-color: var(--accent-res-hover); }
   .skill-btn:not(:active):hover.coding {
@@ -1204,9 +1207,12 @@ a.inline-email:hover {
       background-color: var(--accent-create); }
 
 .exp {
-  border: var(--x-btn-border); }
+  border: var(--x-btn-border);
+  transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time); }
   .exp:not(:first-child) {
     margin-top: 1rem; }
+  .exp:hover {
+    border-color: var(--accent-hover); }
 
 .x-wrapper {
   overflow: hidden; }
@@ -1238,24 +1244,24 @@ a.inline-email:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 1.25rem;
-  width: 1.25rem;
-  border-radius: 50%;
-  padding: 3px;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: var(--rad);
+  padding: 5px;
   background: var(--accent);
   transition: transform 0.5s ease-in-out, color var(--time), background-color var(--time), border-color var(--time); }
   .x-btn:hover .x-btn-icon-wrap {
     background-color: var(--accent-hover); }
   .x-btn-icon-wrap svg {
-    transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time);
-    fill: var(--res-item-bg); }
-  .rotated .x-btn-icon-wrap {
+    transition: fill var(--time), transform 0.5s ease-in-out;
+    fill: var(--white); }
+  .rotated .x-btn-icon-wrap svg {
     transform: rotate(135deg); }
 
-/* .x-btn:hover { background-color: var(--x-btn-bg-hover); } */
 .x-btn-text-head {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  padding-top: .125rem; }
   .x-btn-text-head > h6 {
     margin-bottom: 0;
     line-height: 1em;
@@ -1285,7 +1291,7 @@ a.inline-email:hover {
 
 .x-content-ul {
   list-style-type: none;
-  padding: 0 1rem 1rem 3.25rem; }
+  padding: 0 1rem 1rem 3.5rem; }
 
 .x-content-li {
   color: var(--text-alt-faded); }
@@ -1391,7 +1397,9 @@ a.inline-email:hover {
   min-width: max-content;
   text-decoration: none;
   background-color: var(--btn-bg);
-  transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time); }
+  transition: color var(--time), background-color var(--time), border-color var(--time), transform var(--time); }
+  .url-pseudo-btn:hover {
+    transform: translateX(5px); }
   .url-pseudo-btn svg {
     transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time);
     fill: var(--btn-fg); }

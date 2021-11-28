@@ -236,7 +236,7 @@
   --rad2: 6px;
   --bdr1: 1px;
   --bdr3: 3px;
-  --time: .4s;
+  --time: .5s;
   --shadow: rgba(0, 0, 0, 0.03);
   --shadow2: rgba(0, 0, 0, 0.1);
 }
@@ -719,10 +719,11 @@ svg.svg-cstitle {
 .theme-switch-bg {
   justify-self: right;
   grid-area: switch;
-  padding: 5px;
+  padding: 4px;
   width: 50px;
   height: 30px;
   border-radius: 15px;
+  border: 1px solid var(--chlg6);
   overflow: hidden;
   cursor: pointer;
   background-color: var(--chlg7);
@@ -1407,23 +1408,31 @@ a.inline-email:hover {
     flex-grow: 0;
   };
   @include font-adjust();
-  @include colorfade();
+  $t: var(--time);
+  transition:
+    color $t,
+    background-color $t,
+    border-color $t,
+    transform $t;
   // @include light-dark-shadows();
-  &.biz { 
+  &.biz {
     // border-color: var(--accent-res);
     background-color: var(--accent-res); };
-  &.coding { 
+  &.coding {
     // border-color: var(--accent-bio);
     background-color: var(--accent-bio); };
-  &.events { 
+  &.events {
     // border-color: var(--accent-code);
     background-color: var(--accent-code); };
-  &.games { 
+  &.games {
     // border-color: var(--accent-writ);
     background-color: var(--accent-writ); };
-  &.creative { 
+  &.creative {
     // border-color: var(--accent-create);
     background-color: var(--accent-create); };
+  &:hover {
+    transform: translateY(-5px);
+  };
   &:not(:active):hover {
     &.biz { background-color: var(--accent-res-hover); };
     &.coding { background-color: var(--accent-bio-hover); };
@@ -1474,8 +1483,12 @@ a.inline-email:hover {
 .exp {
   border: var(--x-btn-border);
   // @include light-dark-shadows();
+  @include colorfade();
   &:not(:first-child) {
     margin-top: 1rem;
+  };
+  &:hover {
+    border-color: var(--accent-hover);
   };
 }
 
@@ -1506,9 +1519,9 @@ a.inline-email:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  @include square(1.25rem);
-  border-radius: 50%;
-  padding: 3px;
+  @include square(1.5rem);
+  border-radius: var(--rad);
+  padding: 5px;
   background: var(--accent);
   transition:
     transform .5s ease-in-out,
@@ -1519,19 +1532,20 @@ a.inline-email:hover {
     background-color: var(--accent-hover);
   };
   & svg {
-    @include colorfade();
-    fill: var(--res-item-bg);
+    transition:
+      fill var(--time),
+      transform .5s ease-in-out;
+    fill: var(--white);
   };
-  .rotated & {
+  .rotated & svg {
     transform: rotate(135deg);
   };
 }
 
-/* .x-btn:hover { background-color: var(--x-btn-bg-hover); } */
-
 .x-btn-text-head {
   display: flex;
   justify-content: space-between;
+  padding-top: .125rem;
   & > h6 { // title & dates
     margin-bottom: 0;
     line-height: 1em;
@@ -1569,7 +1583,7 @@ a.inline-email:hover {
 
 .x-content-ul {
   list-style-type: none;
-  padding: 0 1rem 1rem 3.25rem;
+  padding: 0 1rem 1rem 3.5rem;
 }
 
 .x-content-li {
@@ -1758,7 +1772,15 @@ a.inline-email:hover {
   background-color: var(--btn-bg);
   // border: var(--x-btn-border);
   // @include light-dark-shadows();
-  @include colorfade();
+  $t: var(--time);
+  transition:
+    color $t,
+    background-color $t,
+    border-color $t,
+    transform $t;
+  &:hover {
+    transform: translateX(5px);
+  };
   & svg {
     @include colorfade();
     fill: var(--btn-fg);
