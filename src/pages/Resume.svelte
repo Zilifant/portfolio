@@ -11,7 +11,7 @@
 
   const skills = res.skills.skills.sort((a, b) => {
     return a.name.localeCompare(b.name);
-  })
+  });
 
   $: skillColor = (cats) => {
     if (cats.includes(highCat)) return `highlight ${highCat}`;
