@@ -31,15 +31,15 @@
   const pages = [
     { id: 'bio', color: 'pink' },
     { id: 'resume', color: 'blue' },
-    { id: 'writing', color: 'orange' },
     { id: 'code', color: 'green' },
+    { id: 'writing', color: 'orange' },
   ];
 
   const bio  = 'bio';
   const res  = 'resume';
-  const writ = 'writing';
   const code = 'code';
-  const pgList = [bio, res, writ, code];
+  const writ = 'writing';
+  const pgList = [bio, res, code, writ];
 
   $: isCurrent = (pg) => (pg === page) ? 'current' : '';
   $: isPrev = (pg) => (pg === prevPg) ? 'prev' : 'not-prev';
