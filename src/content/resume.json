@@ -51,40 +51,44 @@
       },
       {
         "id": "biz",
-        "displayName": "Business Operations"
+        "displayName": "Business"
       }
     ],
     "skills": [
       {
         "name": "Project Management",
-        "categories": ["events", "biz"]
+        "categories": ["events", "biz", "coding"]
       },
       {
-        "name": "Experience Design",
-        "categories": ["events", "games", "creative"]
+        "name": "Problem Solving",
+        "categories": ["events", "biz", "coding", "creative"]
+      },
+      {
+        "name": "Experiential / Interaction Design",
+        "categories": ["events", "games", "creative", "coding"]
       },
       {
         "name": "Client Relations",
         "categories": ["biz"]
       },
       {
-        "name": "Copywriting + Editing",
-        "categories": ["creative"]
+        "name": "Copywriting / Editing",
+        "categories": ["creative", "biz", "games"]
       },
       {
         "name": "Creative Writing",
-        "categories": ["creative"]
+        "categories": ["creative", "games"]
       },
       {
         "name": "Narrative Design",
         "categories": ["creative", "games"]
       },
       {
-        "name": "Event Coordination",
-        "categories": ["events"]
+        "name": "Recruiting / Staffing",
+        "categories": ["events", "biz"]
       },
       {
-        "name": "Game Design + Development",
+        "name": "Game Design / Development",
         "categories": ["games", "creative"]
       },
       {
@@ -92,8 +96,8 @@
         "categories": ["biz"]
       },
       {
-        "name": "Event Design",
-        "categories": ["events"]
+        "name": "Graphic Design",
+        "categories": ["biz", "creative", "coding", "games"]
       },
       {
         "name": "Gamification",
@@ -108,19 +112,15 @@
         "categories": ["biz"]
       },
       {
-        "name": "Business Communication",
-        "categories": ["events", "biz"]
-      },
-      {
         "name": "Logistics",
         "categories": ["events", "biz"]
       },
       {
-        "name": "Playtesting + Prototyping",
+        "name": "Playtesting / Prototyping",
         "categories": ["games", "creative"]
       },
       {
-        "name": "Community Management",
+        "name": "Community Engagement",
         "categories": ["events"]
       },
       {
@@ -128,11 +128,11 @@
         "categories": ["coding"]
       },
       {
-        "name": "ReactJS",
+        "name": "React",
         "categories": ["coding"]
       },
       {
-        "name": "Node.js",
+        "name": "Node",
         "categories": ["coding"]
       },
       {
@@ -144,16 +144,56 @@
         "categories": ["coding"]
       },
       {
+        "name": "CRUD",
+        "categories": ["coding"]
+      },
+      {
         "name": "HTML5",
         "categories": ["coding"]
       },
       {
-        "name": "SCSS/SASS",
+        "name": "SCSS / SASS",
         "categories": ["coding"]
       },
       {
-        "name": "REST APIs",
+        "name": "REST",
         "categories": ["coding"]
+      },
+      {
+        "name": "Heroku",
+        "categories": ["coding"]
+      },
+      {
+        "name": "Vercel",
+        "categories": ["coding"]
+      },
+      {
+        "name": "NPM Packages / CLI / Scripts",
+        "categories": ["coding"]
+      },
+      {
+        "name": "MongoDB / Mongoose",
+        "categories": ["coding"]
+      },
+      {
+        "name": "Express",
+        "categories": ["coding"]
+      },
+      {
+        "name": "Git / Github",
+        "categories": ["coding"]
+      },
+      {
+        "name": "JSON",
+        "categories": ["coding"]
+      },
+      {
+        "name": "Express",
+        "categories": ["coding"]
+      },
+      {
+        "name": "Affinity Suite",
+        "categories": ["coding", "creative", "biz"]
       }
     ]
   },
