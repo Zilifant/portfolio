@@ -50,8 +50,14 @@
     <ul>
       {#each res.intro.endorsements as {name, title, quote}}
         <li class='endorsement'>
-          <p class='endorse-quote'>{quote}</p>
-          <p class='endorse-person'>{name}<br>{title}</p>
+          <SVGIcon
+            ico='quote'
+            cls='endorsement-icon preload'
+          />
+          <div class='endorsement-text'>
+            <p class='endorse-quote'>{quote}</p>
+            <p class='endorse-person'>{name}<br>{title}</p>
+          </div>
         </li>
       {/each}
     </ul>

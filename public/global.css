@@ -1089,7 +1089,7 @@ a.inline-email:hover {
   padding: 1rem;
   background-color: var(--res-item-bg);
   border: var(--x-btn-border);
-  display: inline-block;
+  display: inline-flex;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content; }
@@ -1127,12 +1127,18 @@ a.inline-email:hover {
   padding: 1rem;
   background-color: var(--res-item-bg);
   border: var(--x-btn-border);
-  display: inline-block;
+  display: inline-flex;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content; }
   .endorsement:not(:first-child) {
     margin-left: 1rem; }
+  .endorsement .endorsement-icon svg {
+    margin-top: 7px;
+    margin-right: .5rem;
+    align-self: flex-start;
+    height: 15px;
+    width: 24px; }
   .endorsement .endorse-person {
     color: var(--text-alt-faded);
     margin-top: .5rem; }
@@ -1304,7 +1310,7 @@ a.inline-email:hover {
   padding: 1rem;
   background-color: var(--res-item-bg);
   border: var(--x-btn-border);
-  display: inline-block;
+  display: inline-flex;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content; }

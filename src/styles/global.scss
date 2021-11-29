@@ -1336,7 +1336,7 @@ a.inline-email:hover {
   border: var(--x-btn-border);
   // @include light-dark-shadows();
   @if $dis == 'inline' {
-    display: inline-block;
+    display: inline-flex;
     height: max-content;
     &:not(:first-child) {
       margin-left: 1rem;
@@ -1385,6 +1385,13 @@ a.inline-email:hover {
 
 .endorsement {
   @include res-list-item('inline');
+  & .endorsement-icon svg {
+    margin-top: 7px;
+    margin-right: .5rem;
+    align-self: flex-start;
+    height: 15px;
+    width: 24px;
+  };
   & .endorse-person {
     color: var(--text-alt-faded);
     margin-top: .5rem;
