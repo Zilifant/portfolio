@@ -1743,25 +1743,36 @@ a.inline-email:hover {
           transition: none;
 }
 
-// Grid
-
-.grd {
+.code-project {
   display: grid;
+  width: 100%;
   gap: .5rem 1rem;
   grid-template-columns: 30% 1fr;
-  grid-template-rows: min-content min-content min-content 1fr;
   grid-template-areas:
     'live intro'
     'front intro'
     'back intro';
+  &.port {
+    grid-template-areas:
+      'live intro'
+      'front intro';
+  }
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, min-content);
     grid-template-areas:
-    'intro'
     'live'
     'front'
-    'back';
+    'back'
+    'intro';
+    &.port {
+      grid-template-areas:
+      'live'
+      'front'
+      'intro';
+    };
+  };
+  &:not(:first-child) {
+    margin-top: 2rem;
   };
 }
 
@@ -1772,7 +1783,7 @@ a.inline-email:hover {
   &.backend { grid-area: back; };
 }
 
-.project-intro.mhk {
+.project-intro {
   @include res-list-item();
   @include colorfade();
   & :not(:first-child) {
@@ -1851,7 +1862,6 @@ a.inline-email:hover {
     font-size: 2rem;
   };
   @media (max-width: 600px) {
-    margin-top: 1rem;
     max-width: 238px;
   };
   &:not(:active):hover {

@@ -1366,19 +1366,22 @@ a.inline-email:hover {
 .preload:before {
   transition: none; }
 
-.grd {
+.code-project {
   display: grid;
+  width: 100%;
   gap: .5rem 1rem;
   grid-template-columns: 30% 1fr;
-  grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content 1fr;
-  grid-template-rows: min-content min-content min-content 1fr;
   grid-template-areas: 'live intro' 'front intro' 'back intro'; }
+  .code-project.port {
+    grid-template-areas: 'live intro' 'front intro'; }
   @media (max-width: 600px) {
-    .grd {
+    .code-project {
       grid-template-columns: 1fr;
-      grid-template-rows: repeat(4, -webkit-min-content);
-      grid-template-rows: repeat(4, min-content);
-      grid-template-areas: 'intro' 'live' 'front' 'back'; } }
+      grid-template-areas: 'live' 'front' 'back' 'intro'; }
+      .code-project.port {
+        grid-template-areas: 'live' 'front' 'intro'; } }
+  .code-project:not(:first-child) {
+    margin-top: 2rem; }
 
 .project-intro {
   grid-area: intro; }
@@ -1392,14 +1395,14 @@ a.inline-email:hover {
 .github-url.backend {
   grid-area: back; }
 
-.project-intro.mhk {
+.project-intro {
   padding: 1rem;
   background-color: var(--res-item-bg);
   border: var(--x-btn-border);
   transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time); }
-  .project-intro.mhk:not(:first-child) {
+  .project-intro:not(:first-child) {
     margin-top: 1rem; }
-  .project-intro.mhk :not(:first-child) {
+  .project-intro :not(:first-child) {
     margin-top: 1rem; }
 
 .url-pseudo-btn {
@@ -1445,7 +1448,6 @@ a.inline-email:hover {
     font-size: 2rem; }
   @media (max-width: 600px) {
     .url-pseudo-btn.app-url {
-      margin-top: 1rem;
       max-width: 238px; } }
   .url-pseudo-btn.app-url:not(:active):hover {
     background-color: var(--rose6); }
