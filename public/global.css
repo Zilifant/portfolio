@@ -1085,6 +1085,9 @@ a.inline-email:hover {
 .res-interests ul {
   display: flex; }
 
+.res-endorsements ul {
+  flex-wrap: wrap; }
+
 .achievement {
   padding: 1rem;
   background-color: var(--res-item-bg);
@@ -1130,9 +1133,13 @@ a.inline-email:hover {
   display: inline-flex;
   height: -webkit-max-content;
   height: -moz-max-content;
-  height: max-content; }
+  height: max-content;
+  flex: 1 0 33%; }
   .endorsement:not(:first-child) {
     margin-left: 1rem; }
+  .endorsement:last-child {
+    margin-left: 0;
+    margin-top: 1rem; }
   .endorsement .endorsement-icon svg {
     margin-top: 7px;
     margin-right: .5rem;
