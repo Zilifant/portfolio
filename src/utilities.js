@@ -90,6 +90,6 @@ export function removePreload({ firstLoad }) {
 //----------------------------//
 
 export function flyDirection(fromPg, toPg) {
-  const pgNums = { bio: 1, resume: 2, writing: 3, code: 4 };
+  const pgNums = { bio: 1, resume: 2, code: 3, writing: 4 };
   return pgNums[fromPg] > pgNums[toPg] ? 'right' : 'left';
 }
