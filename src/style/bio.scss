@@ -14,10 +14,15 @@
   };
 }
 
-// hide headshot on BIO page
 @media (max-width: 800px) {
+  // hide headshot
   .content-left-bio { display: none; }
-  .content-right-bio { width: 100%; }
+  .content-right-bio {
+    width: 100%;
+    & :not(:first-child) {
+      margin-top: 1rem;
+    };
+  };
 }
 
 .content-right-bio {
