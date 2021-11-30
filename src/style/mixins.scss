@@ -1,0 +1,88 @@
+// Mixins
+
+@mixin bgTransition() {
+  -webkit-transition: background-color .2s;
+     -moz-transition: background-color .2s;
+       -o-transition: background-color .2s;
+          transition: background-color .2s;
+}
+
+@mixin circle($size: 10px) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+@mixin shadow() {
+  box-shadow:
+    var(--shadow) 0px 1px 2px 0px,
+    var(--shadow) 0px 2px 6px 2px,
+    var(--shadow) 0px -1px 2px 0px,
+    var(--shadow) 0px -2px 6px 2px;
+}
+
+@mixin shadow-inset() {
+  box-shadow:
+    var(--shadow) 0px 1px 2px 0px,
+    var(--shadow) 0px 2px 6px 2px,
+    var(--shadow) 0px -1px 2px 0px,
+    var(--shadow) 0px -2px 6px 2px,
+    var(--shadow) 0px 1px 2px 0px inset,
+    var(--shadow) 0px 2px 6px 2px inset,
+    var(--shadow) 0px -1px 2px 0px inset,
+    var(--shadow) 0px -2px 6px 2px inset;
+}
+
+@mixin shadow-small() {
+  box-shadow: var(--shadow2) 0 0 2px 0;
+}
+
+@mixin shadow-small-inset() {
+  box-shadow:
+    var(--shadow2) 0 0 2px 0,
+    var(--shadow2) 0 0 2px 0 inset;
+}
+
+@mixin colorfade($t: var(--time)) {
+  transition:
+    color $t,
+    background-color $t,
+    border-color $t,
+    fill $t;
+}
+
+@mixin square($size) {
+  height: $size;
+  width: $size;
+}
+
+@mixin card() {
+  border-radius: var(--rad2);
+  border: var(--x-btn-border);
+  @include colorfade();
+  @include shadow();
+  body.light & {
+    @include shadow-small();
+  };
+}
+
+@mixin light-dark-shadows() {
+  @include shadow();
+  body.light & {
+    @include shadow-small();
+  };
+}
+
+@mixin light-dark-shadows-inset() {
+  @include shadow-inset();
+  body.light & {
+    @include shadow-small-inset();
+  };
+}
+
+@mixin font-adjust() {
+  font-size: 17px;
+  line-height: 1.75rem;
+  letter-spacing: .02rem;
+  font-weight: var(--theme-weight-adjust-text);
+}

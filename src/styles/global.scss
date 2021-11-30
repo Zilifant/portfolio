@@ -1,5 +1,7 @@
 // Global
 
+@import '../style/mixins.scss';
+
 @keyframes movingGradient {
   0%   { background-position: 0%   50%; }
   50%  { background-position: 100% 50%; }
@@ -76,93 +78,6 @@
       var(--nav-bg) 50%
     );
   }
-}
-
-@mixin bgTransition() {
-  -webkit-transition: background-color .2s;
-     -moz-transition: background-color .2s;
-       -o-transition: background-color .2s;
-          transition: background-color .2s;
-}
-
-@mixin circle($size: 10px) {
-  height: $size;
-  width: $size;
-  border-radius: 50%;
-}
-
-@mixin shadow() {
-  box-shadow:
-    var(--shadow) 0px 1px 2px 0px,
-    var(--shadow) 0px 2px 6px 2px,
-    var(--shadow) 0px -1px 2px 0px,
-    var(--shadow) 0px -2px 6px 2px;
-}
-
-@mixin shadow-inset() {
-  box-shadow:
-    var(--shadow) 0px 1px 2px 0px,
-    var(--shadow) 0px 2px 6px 2px,
-    var(--shadow) 0px -1px 2px 0px,
-    var(--shadow) 0px -2px 6px 2px,
-    var(--shadow) 0px 1px 2px 0px inset,
-    var(--shadow) 0px 2px 6px 2px inset,
-    var(--shadow) 0px -1px 2px 0px inset,
-    var(--shadow) 0px -2px 6px 2px inset;
-}
-
-@mixin shadow-small() {
-  box-shadow: var(--shadow2) 0 0 2px 0;
-}
-
-@mixin shadow-small-inset() {
-  box-shadow:
-    var(--shadow2) 0 0 2px 0,
-    var(--shadow2) 0 0 2px 0 inset;
-}
-
-@mixin colorfade($t: var(--time)) {
-  transition:
-    color $t,
-    background-color $t,
-    border-color $t,
-    fill $t;
-}
-
-@mixin square($size) {
-  height: $size;
-  width: $size;
-}
-
-@mixin card() {
-  border-radius: var(--rad2);
-  border: var(--x-btn-border);
-  @include colorfade();
-  @include shadow();
-  body.light & {
-    @include shadow-small();
-  };
-}
-
-@mixin light-dark-shadows() {
-  @include shadow();
-  body.light & {
-    @include shadow-small();
-  };
-}
-
-@mixin light-dark-shadows-inset() {
-  @include shadow-inset();
-  body.light & {
-    @include shadow-small-inset();
-  };
-}
-
-@mixin font-adjust() {
-  font-size: 17px;
-  line-height: 1.75rem;
-  letter-spacing: .02rem;
-  font-weight: var(--theme-weight-adjust-text);
 }
 
 // UTILITY
@@ -831,66 +746,6 @@ input:checked + .th-switch-slider {
 @media (max-width: 800px) {
   .content-left-contact,
   .content-right-contact { width: 100%; }
-}
-
-/*BIO*/
-
-.headshot-wrapper {
-  object-fit: contain;
-  overflow: hidden;
-  border: var(--x-btn-border);
-  // @include light-dark-shadows();
-  @include colorfade();
-  & > img {
-    width: 100%;
-    display: block;
-  };
-}
-
-.content-right-bio {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-/* hide headshot on BIO page */
-@media (max-width: 800px) {
-  .content-left-bio { display: none; }
-  .content-right-bio { width: 100%; }
-}
-
-.partner-logo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 2rem;
-  width: 100%;
-  justify-items: center;
-  margin-top: 3rem;
-  // @media (max-width: 600px) {
-  //   width: 80%;
-  // };
-  & .partner-logo-wrapper {
-    display: flex;
-    padding: 1rem;
-    background-color: var(--res-item-bg);
-    border: var(--x-btn-border);
-    @include colorfade();
-    // @include light-dark-shadows();
-    & img {
-      height: 65px;
-      width: 9rem; /* 144px */
-    };
-  };
-}
-
-a.inline-email {
-  text-decoration: none;
-  margin-left: .5ch;
-  color: var(--cyan5);
-}
-
-a.inline-email:hover {
-  color: var(--fuch5);
 }
 
 // RESUME

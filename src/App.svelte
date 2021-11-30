@@ -173,4 +173,5 @@
 
 <style lang='scss' global>
   @import './style/variables.scss';
+  @import './style/mixins.scss';
 </style>

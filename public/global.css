@@ -634,55 +634,6 @@ input:checked + .th-switch-slider {
   .content-right-contact {
     width: 100%; } }
 
-/*BIO*/
-.headshot-wrapper {
-  -o-object-fit: contain;
-     object-fit: contain;
-  overflow: hidden;
-  border: var(--x-btn-border);
-  transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time); }
-  .headshot-wrapper > img {
-    width: 100%;
-    display: block; }
-
-.content-right-bio {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; }
-
-/* hide headshot on BIO page */
-@media (max-width: 800px) {
-  .content-left-bio {
-    display: none; }
-  .content-right-bio {
-    width: 100%; } }
-
-.partner-logo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 2rem;
-  width: 100%;
-  justify-items: center;
-  margin-top: 3rem; }
-  .partner-logo-grid .partner-logo-wrapper {
-    display: flex;
-    padding: 1rem;
-    background-color: var(--res-item-bg);
-    border: var(--x-btn-border);
-    transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time); }
-    .partner-logo-grid .partner-logo-wrapper img {
-      height: 65px;
-      width: 9rem;
-      /* 144px */ }
-
-a.inline-email {
-  text-decoration: none;
-  margin-left: .5ch;
-  color: var(--cyan5); }
-
-a.inline-email:hover {
-  color: var(--fuch5); }
-
 .page-wrapper.resume * {
   list-style: none; }
 
