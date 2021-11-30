@@ -33,12 +33,6 @@
     <p>Companies and organizations I've worked with...</p>
   </section>
 
-  <!-- <div class='text-divider'>
-    <div class='text-divider-bar'></div>
-    <p class='text-divider-text'>Who I've worked with...</p>
-    <div class='text-divider-bar'></div>
-  </div> -->
-
   <section class='partner-logo-grid'>
     {#each partners as { id, alt }}
       <div class='partner-logo-wrapper'>
