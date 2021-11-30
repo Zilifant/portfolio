@@ -750,24 +750,7 @@ input:checked + .th-switch-slider {
 
 // RESUME
 
-// .res-achievements { grid-area: ach }
-// .res-endorsements { grid-area: edr }
-// .res-skills { grid-area: skl }
-// .res-edu { grid-area: edu }
-// .res-exp { grid-area: exp }
-// .res-interests { grid-area: int }
-
 .page-wrapper.resume {
-  // display: grid;
-  // gap: 1rem;
-  // grid-template-columns: 1fr 1fr;
-  // grid-template-areas:
-  //   'ach ach'
-  //   'edr edr'
-  //   'edu edu'
-  //   'skl skl'
-  //   'exp exp'
-  //   'int int';
   & * {
     list-style: none;
   };
@@ -780,11 +763,6 @@ input:checked + .th-switch-slider {
 }
 
 .res-sec-title {
-  // background-color: var(--chlg9);
-  // border: var(--x-btn-border);
-  // padding: .5rem;
-  // padding-bottom: .5rem;
-  // border-bottom: 1px solid var(--chlg9);
   margin: 1rem 0 1rem 2px;
   font-size: 1.5rem;
   text-transform: uppercase;
