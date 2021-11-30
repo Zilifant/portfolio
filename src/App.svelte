@@ -171,10 +171,6 @@
 
 </main>
 
-<!-- <style lang='scss' global>
-  // @import './styles/global.scss';
-</style> -->
-
-<!-- <style>
-
-</style> -->
+<style lang='scss' global>
+  @import './style/variables.scss';
+</style>
