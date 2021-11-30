@@ -133,3 +133,7 @@
     </ul>
   </section>
 </div>
+
+<style lang='scss'>
+  @import '../style/resume.scss';
+</style>
