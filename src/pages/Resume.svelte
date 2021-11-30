@@ -105,12 +105,12 @@
               ico='plus'
               cls='x-btn-icon-wrap preload'
             />
-            <div class='x-btn-text-head'>
-              <h6>{exp.title}</h6>
-              <h6>{exp.organization}</h6>
+            <h6 class='exp-title'>{exp.title}</h6>
+            <div class='exp-org-ano-wrap'>
+              <h6 class='exp-org'>{exp.organization}</h6>
+              <div class='exp-year'>{renderDates(exp.startYear, exp.endYear)}</div>
             </div>
-            <div class='res-org'>{renderDates(exp.startYear, exp.endYear)}</div>
-            <div class='res-summary'>{exp.summary}</div>
+            <div class='exp-summary'>{exp.summary}</div>
           </div>
           <div class={`x-content blts-${exp.bullets.length}`}>
             <ul class='x-content-ul'>
