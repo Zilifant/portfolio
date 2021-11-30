@@ -1254,7 +1254,9 @@ input:checked + .th-switch-slider {
 }
 
 .project-intro {
-  @include res-list-item();
+  padding: 1rem;
+  background-color: var(--res-item-bg);
+  border: var(--x-btn-border);
   @include colorfade();
   & :not(:first-child) {
     margin-top: 1rem;

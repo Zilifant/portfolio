@@ -971,8 +971,6 @@ input:checked + .th-switch-slider {
   background-color: var(--res-item-bg);
   border: var(--x-btn-border);
   transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time); }
-  .project-intro:not(:first-child) {
-    margin-top: 1rem; }
   .project-intro :not(:first-child) {
     margin-top: 1rem; }
 
