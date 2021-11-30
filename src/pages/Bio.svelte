@@ -52,3 +52,7 @@
     {/each}
   </section>
 </div>
+
+<style lang='scss'>
+  @import '../style/bio.scss';
+</style>

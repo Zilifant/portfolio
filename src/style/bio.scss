@@ -1,0 +1,48 @@
+// Bio
+
+@import './mixins.scss';
+
+.headshot-wrapper {
+  object-fit: contain;
+  overflow: hidden;
+  border: var(--x-btn-border);
+  // @include light-dark-shadows();
+  @include colorfade();
+  & > img {
+    width: 100%;
+    display: block;
+  };
+}
+
+// hide headshot on BIO page
+@media (max-width: 800px) {
+  .content-left-bio { display: none; }
+  .content-right-bio { width: 100%; }
+}
+
+.content-right-bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.partner-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  justify-items: center;
+  margin-top: 3rem;
+  & .partner-logo-wrapper {
+    display: flex;
+    padding: 1rem;
+    background-color: var(--res-item-bg);
+    border: var(--x-btn-border);
+    @include colorfade();
+    // @include light-dark-shadows();
+    & img {
+      height: 65px;
+      width: 144px;
+    };
+  };
+}
