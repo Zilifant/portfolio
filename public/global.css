@@ -838,11 +838,12 @@ input:checked + .th-switch-slider {
 
 .exp {
   border: var(--x-btn-border);
-  transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time); }
+  transition: border-color var(--time), border-radius var(--time); }
   .exp:not(:first-child) {
     margin-top: 1rem; }
   .exp:hover {
-    border-color: var(--accent-hover); }
+    border-color: var(--accent-hover);
+    border-radius: var(--rad2); }
 
 .x-wrapper {
   overflow: hidden; }
@@ -880,8 +881,6 @@ input:checked + .th-switch-slider {
   padding: 5px;
   background: var(--accent);
   transition: transform 0.5s ease-in-out, color var(--time), background-color var(--time), border-color var(--time); }
-  .x-btn:hover .x-btn-icon-wrap {
-    background-color: var(--accent-hover); }
   .x-btn-icon-wrap svg {
     transition: fill var(--time), transform 0.5s ease-in-out;
     fill: var(--white); }

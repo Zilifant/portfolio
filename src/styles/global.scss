@@ -980,12 +980,15 @@ input:checked + .th-switch-slider {
 .exp {
   border: var(--x-btn-border);
   // @include light-dark-shadows();
-  @include colorfade();
+  transition:
+    border-color var(--time),
+    border-radius var(--time);
   &:not(:first-child) {
     margin-top: 1rem;
   };
   &:hover {
     border-color: var(--accent-hover);
+    border-radius: var(--rad2);
   };
 }
 
@@ -1026,9 +1029,9 @@ input:checked + .th-switch-slider {
     color var(--time),
     background-color var(--time),
     border-color var(--time);
-  .x-btn:hover & {
-    background-color: var(--accent-hover);
-  };
+  // .x-btn:hover & {
+  //   background-color: var(--accent-hover);
+  // };
   & svg {
     transition:
       fill var(--time),
