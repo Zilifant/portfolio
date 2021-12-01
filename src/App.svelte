@@ -16,7 +16,7 @@
     flyDirection
   } from './utilities';
 
-  const version = '0.7.4';
+  const version = '0.7.5';
 
   onMount(() => {
     const toggle = document.querySelector('.theme-switch-checkbox');
