@@ -796,7 +796,7 @@ input:checked + .th-switch-slider {
   @media (max-width: 830px) {
     .skill-btn {
       flex-grow: 0;
-      padding: .5rem 1rem;
+      padding: 1rem;
       transform: none; } }
 
 .res-skills ul {
