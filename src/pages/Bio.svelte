@@ -2,7 +2,7 @@
 
 <script>
 
-  import { partners } from '../content/partners';
+  import partners from '../content/partners.json';
 
   export let isCurrent;
   $: current = isCurrent ? 'current' : '';
