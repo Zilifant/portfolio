@@ -2,13 +2,11 @@
 
 <script>
 
-  import { randomQuote } from '../utilities';
   import { socials } from '../content/socials';
 
   export let page = 'bio';
   export let version;
-
-  const quote = randomQuote();
+  export let quote;
 
 </script>
 
