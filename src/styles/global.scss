@@ -762,6 +762,7 @@ input:checked + .th-switch-slider {
 }
 
 .res-sec-title {
+  @include colorfade();
   margin: 1rem 0 1rem 2px;
   font-size: 1.5rem;
   text-transform: uppercase;
@@ -774,6 +775,7 @@ input:checked + .th-switch-slider {
 .res-achievements ul,
 .res-endorsements ul,
 .res-interests ul {
+  @include colorfade();
   display: flex;
   @media (max-width: 700px) {
     display: block;
@@ -788,6 +790,7 @@ input:checked + .th-switch-slider {
   padding: 1rem;
   background-color: var(--res-item-bg);
   border: var(--x-btn-border);
+  @include colorfade();
   // @include light-dark-shadows();
   @if $dis == 'inline' {
     display: inline-flex;
@@ -819,6 +822,7 @@ input:checked + .th-switch-slider {
     margin-top: 1rem;
   };
   & .endorsement-icon svg {
+    @include colorfade();
     margin-top: 7px;
     margin-right: .5rem;
     align-self: flex-start;
@@ -827,9 +831,11 @@ input:checked + .th-switch-slider {
     fill: var(--accent);
   };
   & .endorse-quote {
+    @include colorfade();
     font-style: italic;
   };
   & .endorse-person {
+    @include colorfade();
     color: var(--text-alt-faded);
     margin-top: .5rem;
   };
@@ -839,6 +845,9 @@ input:checked + .th-switch-slider {
   @include res-list-item();
   width: max-content;
   // @include light-dark-shadows();
+  & * {
+    @include colorfade();
+  };
   & h3 {
     font-size: 1.25rem;
     text-transform: uppercase;
