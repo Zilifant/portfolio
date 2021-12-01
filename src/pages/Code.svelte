@@ -9,7 +9,7 @@
   <section class='code-project mhk'>
     <div class='project-intro mhk'>
       <p>A web implementation of the popular social deduction game, <em>Deception: Murder in Hong Kong</em>.</p>
-      <p>A full-stack applicaton. A React app connected to a Node.js server using socket.io.</p>
+      <p>Full-stack applicaton. A React app connected to a Node.js server using socket.io.</p>
     </div>
     <a
       class='btn url-pseudo-btn app-url mhk'
@@ -29,7 +29,7 @@
     </a>
     <a
       class='btn url-pseudo-btn github-url frontend mhk'
-      href='https://mhk.vercel.app/'
+      href='https://github.com/Zilifant/mhk-front'
       target="_blank" rel="noopener noreferrer"
     >
       <svg width='100%' height='100%' viewBox='0 0 171 167'>
@@ -39,7 +39,7 @@
     </a>
     <a
     class='btn url-pseudo-btn github-url backend mhk'
-    href='https://mhk.vercel.app/'
+    href='https://github.com/Zilifant/mhk-back'
     target="_blank" rel="noopener noreferrer"
     >
       <svg width='100%' height='100%' viewBox='0 0 171 167'>
@@ -72,7 +72,7 @@
     </a>
     <a
       class='btn url-pseudo-btn github-url frontend port'
-      href='https://www.scottsilsbe.com/'
+      href='https://github.com/Zilifant/portfolio'
       target="_blank" rel="noopener noreferrer"
     >
       <svg width='100%' height='100%' viewBox='0 0 171 167'>
