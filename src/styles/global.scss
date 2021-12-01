@@ -1305,7 +1305,7 @@ input:checked + .th-switch-slider {
 .code-project {
   display: grid;
   width: 100%;
-  gap: 1rem;
+  gap: .5rem;
   grid-template-columns: 30% 1fr;
   grid-template-areas:
     'live intro'
@@ -1346,6 +1346,7 @@ input:checked + .th-switch-slider {
   background-color: var(--res-item-bg);
   border: var(--x-btn-border);
   @include colorfade();
+  @include font-adjust();
   & :not(:first-child) {
     margin-top: 1rem;
   };

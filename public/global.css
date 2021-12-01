@@ -994,7 +994,7 @@ body.dark .x-content-li {
 .code-project {
   display: grid;
   width: 100%;
-  gap: 1rem;
+  gap: .5rem;
   grid-template-columns: 30% 1fr;
   grid-template-areas: 'live intro' 'front intro' 'back intro'; }
   .code-project.port {
@@ -1025,7 +1025,11 @@ body.dark .x-content-li {
   padding: 1rem;
   background-color: var(--res-item-bg);
   border: var(--x-btn-border);
-  transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time); }
+  transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time);
+  font-size: 17px;
+  line-height: 1.75rem;
+  letter-spacing: .02rem;
+  font-weight: var(--theme-weight-adjust-text); }
   .project-intro :not(:first-child) {
     margin-top: 1rem; }
 
