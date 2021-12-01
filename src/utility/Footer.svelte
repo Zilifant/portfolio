@@ -1,11 +1,15 @@
 <!-- Footer -->
 
 <script>
+
+  import { randomQuote } from '../utilities';
   import { socials } from '../content/socials';
 
   export let page = 'bio';
-  export let quote;
   export let version;
+
+  const quote = randomQuote();
+
 </script>
 
 <footer class={`foot ${page}`}>

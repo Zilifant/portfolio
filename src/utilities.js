@@ -1,6 +1,6 @@
 // Utilities
 
-import { quotes } from './content/quotes';
+import quotes from './content/quotes.json';
 
 //-------------------//
 //Footer Random Quote//
