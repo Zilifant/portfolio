@@ -9,14 +9,13 @@
   import Writing from './pages/Writing.svelte';
   import Code from './pages/Code.svelte';
   import {
-    randomQuote,
     removePreload,
     setThemeFromLocalStorage,
     switchTheme,
     flyDirection
   } from './utilities';
 
-  const version = '0.7.3';
+  const version = '0.7.4';
 
   onMount(() => {
     const toggle = document.querySelector('.theme-switch-checkbox');
@@ -48,7 +47,6 @@
   let prevPg, flyTo;
   let dropNavState = 'hidden';
   let page = initPage();
-  let quote = randomQuote();
 
   function initPage() {
     const targetPg = window.location.hash.substring(1);
@@ -165,7 +163,6 @@
 
   <Footer
     page={page}
-    quote={quote}
     version={version}
   />
 
