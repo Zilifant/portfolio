@@ -513,7 +513,7 @@ input:checked + .th-switch-slider {
   fill: var(--foot-social-icon-bg);
   transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time); }
   .foot-social-icon svg:hover {
-    fill: var(--accent); }
+    fill: var(--accent-hover); }
 
 /* center all footer content for mobile */
 @media (max-width: 600px) {
@@ -692,7 +692,10 @@ input:checked + .th-switch-slider {
     margin-right: .5rem;
     align-self: flex-start;
     height: 15px;
-    width: 24px; }
+    width: 24px;
+    fill: var(--accent); }
+  .endorsement .endorse-quote {
+    font-style: italic; }
   .endorsement .endorse-person {
     color: var(--text-alt-faded);
     margin-top: .5rem; }
@@ -782,15 +785,15 @@ input:checked + .th-switch-slider {
   .skill-btn:hover {
     transform: translateY(-5px); }
   .skill-btn:not(:active):hover.biz {
-    background-color: var(--accent-res-hover); }
+    background-color: var(--accent-res-hover-dark); }
   .skill-btn:not(:active):hover.coding {
-    background-color: var(--accent-bio-hover); }
+    background-color: var(--accent-bio-hover-dark); }
   .skill-btn:not(:active):hover.events {
-    background-color: var(--accent-code-hover); }
+    background-color: var(--accent-code-hover-dark); }
   .skill-btn:not(:active):hover.games {
-    background-color: var(--accent-writ-hover); }
+    background-color: var(--accent-writ-hover-dark); }
   .skill-btn:not(:active):hover.creative {
-    background-color: var(--accent-create-hover); }
+    background-color: var(--accent-create-hover-dark); }
   @media (max-width: 830px) {
     .skill-btn {
       flex-grow: 0;
@@ -921,12 +924,18 @@ input:checked + .th-switch-slider {
   list-style-type: none;
   padding: 0 1rem 1rem 3.5rem; }
 
-.x-content-li {
+body.dark .x-content-li {
   color: var(--text-alt-faded); }
-  .x-content-li:not(:first-child) {
-    margin-top: .25rem; }
-  .x-content-li .lead {
-    font-weight: var(--theme-weight-adjust-title-text); }
+
+.x-content-li:not(:first-child) {
+  margin-top: .25rem; }
+
+.x-content-li .lead {
+  font-size: 17px;
+  line-height: 1.75rem;
+  letter-spacing: .02rem;
+  font-weight: var(--theme-weight-adjust-text);
+  font-weight: bold; }
 
 /*WRITING*/
 .writing-title {

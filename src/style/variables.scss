@@ -188,6 +188,7 @@
   --trug2: rgba(229,229,229,1);
   --trug3: rgba(212,212,212,1);
   --trug4: rgba(163,163,163,1);
+  --trug4p5: #707070;
   --trug5: rgba(115,115,115,1);
   --trug6: rgba(82,82,82,1);
   --trug7: rgba(64,64,64,1);
@@ -245,17 +246,22 @@
 body.light {
   --accent-bio: var(--pink4);
   --accent-bio-hover: var(--pink3);
+  --accent-bio-hover-dark: var(--pink5);
   --accent-res: var(--cyan5);
   --accent-res-hover: var(--cyan4);
+  --accent-res-hover-dark: var(--cyan6);
   --accent-writ: var(--oran4);
   --accent-writ-hover: var(--oran3);
+  --accent-writ-hover-dark: var(--oran5);
   --accent-code: var(--emer5);
   --accent-code-hover: var(--emer4);
+  --accent-code-hover-dark: var(--emer6);
   --accent-create: var(--redd5);
   --accent-create-hover: var(--redd4);
+  --accent-create-hover-dark: var(--redd6);
   --bg: var(--colg2);
   --text: var(--trug6);
-  --text-alt-faded: var(--colg4);
+  --text-alt-faded: var(--trug4);
   --text-alt-bright: var(--indi5);
   --text-alt-title: var(--trug9);
   --text-hover: var(--trug6);
@@ -300,14 +306,19 @@ body.light {
 body.dark {
   --accent-bio: var(--pink5);
   --accent-bio-hover: var(--pink4);
+  --accent-bio-hover-dark: var(--pink6);
   --accent-res: var(--cyan6);
   --accent-res-hover: var(--cyan5);
+  --accent-res-hover-dark: var(--cyan7);
   --accent-writ: var(--oran5);
   --accent-writ-hover: var(--oran4);
+  --accent-writ-hover-dark: var(--oran6);
   --accent-code: var(--emer6);
   --accent-code-hover: var(--emer5);
+  --accent-code-hover-dark: var(--emer7);
   --accent-create: var(--redd6);
   --accent-create-hover: var(--redd5);
+  --accent-create-hover-dark: var(--redd7);
   --bg: var(--chlg9);
   --text: var(--chlg0);
   --text-alt-faded: var(--chlg1);

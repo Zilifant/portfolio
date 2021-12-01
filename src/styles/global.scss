@@ -603,7 +603,7 @@ input:checked + .th-switch-slider {
   fill: var(--foot-social-icon-bg);
   @include colorfade();
   &:hover {
-    fill: var(--accent);
+    fill: var(--accent-hover);
   }
 }
 
@@ -824,6 +824,10 @@ input:checked + .th-switch-slider {
     align-self: flex-start;
     height: 15px;
     width: 24px;
+    fill: var(--accent);
+  };
+  & .endorse-quote {
+    font-style: italic;
   };
   & .endorse-person {
     color: var(--text-alt-faded);
@@ -913,11 +917,11 @@ input:checked + .th-switch-slider {
     transform: translateY(-5px);
   };
   &:not(:active):hover {
-    &.biz { background-color: var(--accent-res-hover); };
-    &.coding { background-color: var(--accent-bio-hover); };
-    &.events { background-color: var(--accent-code-hover); };
-    &.games { background-color: var(--accent-writ-hover); };
-    &.creative { background-color: var(--accent-create-hover); };
+    &.biz { background-color: var(--accent-res-hover-dark); };
+    &.coding { background-color: var(--accent-bio-hover-dark); };
+    &.events { background-color: var(--accent-code-hover-dark); };
+    &.games { background-color: var(--accent-writ-hover-dark); };
+    &.creative { background-color: var(--accent-create-hover-dark); };
   };
   @media (max-width: 830px) {
     flex-grow: 0;
@@ -1110,12 +1114,15 @@ input:checked + .th-switch-slider {
 }
 
 .x-content-li {
-  color: var(--text-alt-faded);
+  body.dark & {
+    color: var(--text-alt-faded);
+  };
   &:not(:first-child) {
     margin-top: .25rem;
   };
   .lead {
-    font-weight: var(--theme-weight-adjust-title-text);
+    @include font-adjust();
+    font-weight: bold;
   };
 }
 
