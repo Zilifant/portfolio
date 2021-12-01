@@ -451,7 +451,6 @@ input:checked + .th-switch-slider {
       color: var(--nav-text);
       font-weight: var(--theme-weight-adjust-title-text); } }
 
-/*FOOTER*/
 .foot {
   display: flex;
   justify-content: center;
@@ -460,37 +459,36 @@ input:checked + .th-switch-slider {
   transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time); }
 
 .footer-grid {
-  padding: 1rem 0;
   display: grid;
   grid-template-columns: 1fr -webkit-min-content 1fr;
   grid-template-columns: 1fr min-content 1fr;
   justify-content: center;
   align-items: center;
-  width: 100%;
   margin: 0 1.5rem;
-  max-width: 800px; }
+  padding: 1rem 0;
+  width: 100%;
+  max-width: 800px;
+  min-height: 100px; }
 
 .foot-item {
   display: flex; }
 
 .foot-item-right,
-.foot-item-left > a {
+.foot-item-left a {
   position: relative;
   font-size: .75rem;
   line-height: 17px;
-  opacity: 75%;
-  letter-spacing: 0;
   color: var(--foot-text);
   font-weight: var(--theme-weight-adjust-text); }
 
-.foot-item-left > a {
+.foot-item-left a {
   left: 0;
   font-style: italic;
   text-decoration: none;
   margin-right: 2rem;
   transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time); }
 
-.foot-item-left > a:hover {
+.foot-item-left a:hover {
   color: var(--accent); }
 
 .foot-item-right {
