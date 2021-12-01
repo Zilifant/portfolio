@@ -18,32 +18,32 @@ export function setThemeFromLocalStorage(themeSwitch) {
     ? localStorage.getItem('theme')
     : null;
 
-  // when page loads, if a theme has been saved to local storage, check if it's dark; if so, change theme-switch and imgs to match
+  // when page loads, if a theme has been saved to local storage, check if it's light; if so, change theme-switch and imgs to match
   if (currentTheme) {
     document.body.setAttribute('class', currentTheme);
     document.body.setAttribute('id', `bio-${currentTheme}`);
-    if (currentTheme === 'dark') {
+    if (currentTheme === 'light') {
       themeSwitch.checked = true;
-      imgsToDarkMode();
-    } else {
       imgsToLightMode();
+    } else {
+      imgsToDarkMode();
     }
   } else {
-    imgsToLightMode();
+    imgsToDarkMode();
   };
 };
 
 export function switchTheme(e, page) {
   if (e.target.checked) {
-    document.body.setAttribute('class', 'dark');
-    document.body.setAttribute('id', `${page}-dark`);
-    localStorage.setItem('theme', 'dark');
-    imgsToDarkMode();
-  } else {
     document.body.setAttribute('class', 'light');
     document.body.setAttribute('id', `${page}-light`);
     localStorage.setItem('theme', 'light');
     imgsToLightMode();
+  } else {
+    document.body.setAttribute('class', 'dark');
+    document.body.setAttribute('id', `${page}-dark`);
+    localStorage.setItem('theme', 'dark');
+    imgsToDarkMode();
   }
   safariNavFix();
 }

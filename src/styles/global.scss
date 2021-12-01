@@ -264,6 +264,7 @@ svg.svg-cstitle {
 .th-switch-slider {
   cursor: pointer;
   position: relative;
+  right: -20px;
   z-index: 999;
   overflow: hidden;
   height: 20px;
@@ -274,40 +275,76 @@ svg.svg-cstitle {
           transition: transform .5s;
 }
 
+// .eclipse-animation {
+//   @include circle(100%);
+//   transition: all .5s;
+//   &.moon {
+//     animation: movingGradient 8s ease infinite;
+//     background: linear-gradient(
+//       45deg, var(--white), var(--colg0), var(--colg3), var(--colg4)
+//     );
+//     background-size: 400% 400%; // must be last in property list
+//   };
+//   &.earth {
+//     background-color: var(--chlg7);
+//     transform: translate(33%, -125%);
+//   };
+//   input:checked + .th-switch-slider & {
+//     &.moon {
+//       animation: movingGradient 8s ease infinite;
+//       background: linear-gradient(
+//         45deg, var(--ambr3), var(--ambr4), var(--ambr5), var(--ambr6)
+//       );
+//       background-size: 400% 400%; // must be last in property list
+//     };
+//     &.earth {
+//       transform: translate(100%, -175%);
+//     };
+//   };
+// }
+
+// input:checked + .th-switch-slider {
+//   -webkit-transform: translateX(20px);
+//      -moz-transform: translateX(20px);
+//       -ms-transform: translateX(20px);
+//        -o-transform: translateX(20px);
+//           transform: translateX(20px);
+// }
+
 .eclipse-animation {
   @include circle(100%);
   transition: all .5s;
   &.moon {
     animation: movingGradient 8s ease infinite;
     background: linear-gradient(
-      45deg, var(--white), var(--colg0), var(--colg3), var(--colg4)
+      45deg, var(--ambr3), var(--ambr4), var(--ambr5), var(--ambr6)
     );
     background-size: 400% 400%; // must be last in property list
   };
   &.earth {
     background-color: var(--chlg7);
-    transform: translate(33%, -125%);
+    transform: translate(100%, -175%);
   };
   input:checked + .th-switch-slider & {
     &.moon {
       animation: movingGradient 8s ease infinite;
       background: linear-gradient(
-        45deg, var(--ambr3), var(--ambr4), var(--ambr5), var(--ambr6)
+        45deg, var(--white), var(--colg0), var(--colg3), var(--colg4)
       );
       background-size: 400% 400%; // must be last in property list
     };
     &.earth {
-      transform: translate(100%, -175%);
+      transform: translate(33%, -125%);
     };
   };
 }
 
 input:checked + .th-switch-slider {
-  -webkit-transform: translateX(20px);
-     -moz-transform: translateX(20px);
-      -ms-transform: translateX(20px);
-       -o-transform: translateX(20px);
-          transform: translateX(20px);
+  -webkit-transform: translateX(-20px);
+     -moz-transform: translateX(-20px);
+      -ms-transform: translateX(-20px);
+       -o-transform: translateX(-20px);
+          transform: translateX(-20px);
 }
 
 /*NAV*/

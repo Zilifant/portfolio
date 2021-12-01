@@ -248,6 +248,7 @@ svg.svg-cstitle {
 .th-switch-slider {
   cursor: pointer;
   position: relative;
+  right: -20px;
   z-index: 999;
   overflow: hidden;
   height: 20px;
@@ -262,21 +263,21 @@ svg.svg-cstitle {
   .eclipse-animation.moon {
     -webkit-animation: movingGradient 8s ease infinite;
             animation: movingGradient 8s ease infinite;
-    background: linear-gradient(45deg, var(--white), var(--colg0), var(--colg3), var(--colg4));
+    background: linear-gradient(45deg, var(--ambr3), var(--ambr4), var(--ambr5), var(--ambr6));
     background-size: 400% 400%; }
   .eclipse-animation.earth {
     background-color: var(--chlg7);
-    transform: translate(33%, -125%); }
+    transform: translate(100%, -175%); }
   input:checked + .th-switch-slider .eclipse-animation.moon {
     -webkit-animation: movingGradient 8s ease infinite;
             animation: movingGradient 8s ease infinite;
-    background: linear-gradient(45deg, var(--ambr3), var(--ambr4), var(--ambr5), var(--ambr6));
+    background: linear-gradient(45deg, var(--white), var(--colg0), var(--colg3), var(--colg4));
     background-size: 400% 400%; }
   input:checked + .th-switch-slider .eclipse-animation.earth {
-    transform: translate(100%, -175%); }
+    transform: translate(33%, -125%); }
 
 input:checked + .th-switch-slider {
-  transform: translateX(20px); }
+  transform: translateX(-20px); }
 
 /*NAV*/
 /* hide mobile navigation by default */
