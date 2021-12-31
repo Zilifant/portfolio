@@ -1,6 +1,6 @@
 // General Site Info
 
-export const version = '0.7.7';
+export const version = '0.7.8';
 
 export const pages = [
   { id: 'bio',     color: 'pink',   pos: 1 },
