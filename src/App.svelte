@@ -8,7 +8,7 @@
   import Resume from './pages/Resume.svelte';
   import Writing from './pages/Writing.svelte';
   import Code from './pages/Code.svelte';
-  import { version, pages, res, code, writ, pgList, } from './content/site-info';
+  import { version, pages, res, code, writ, } from './content/site-info';
   import {
     getRandomQuote,
     setThemeFromLocalStorage,
@@ -26,7 +26,7 @@
 
   let prevPage, flyTo;
   let dropNavState = 'hidden';
-  let page = initPage(pgList);
+  let page = initPage();
   let quote = getRandomQuote();
 
   onMount(() => setThemeFromLocalStorage(page));

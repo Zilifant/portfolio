@@ -1,6 +1,7 @@
 // Utilities
 
 import quotes from './content/quotes.json';
+import { pgList } from './content/site-info';
 
 //-------------------//
 //Footer Random Quote//
@@ -81,7 +82,7 @@ export function setFlyDirection(fromPg, toPg) {
 //Identify Initial Page//
 //---------------------//
 
-export function initPage(pgList) {
+export function initPage() {
   const targetPg = window.location.hash.substring(1);
   const isViablePg = pgList.includes(targetPg);
   if (isViablePg) return targetPg;
