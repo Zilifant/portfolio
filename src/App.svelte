@@ -32,13 +32,19 @@
   onMount(() => setThemeFromLocalStorage(page));
 
   function switchPage(newPg) {
+    // If link to current page triggered, do nothing.
     if (newPg === page) return;
+
+    // Update state.
     prevPage = page;
     page = newPg;
-    document.body.setAttribute('id', `${page}-${getTheme()}`);
     flyTo = setFlyDirection(prevPage, page);
     quote = getRandomQuote();
+
+    document.body.setAttribute('id', `${page}-${getTheme()}`);
     removePreloadClass({ firstLoad: false });
+
+    // If viewing dropNav, minimize it.
     if (document.documentElement.clientWidth <= 600) toggleDropNav();
   };
 
@@ -71,7 +77,8 @@
     {#each pages as { id }}
       <a
         class={`main-nav-item mni mni-${id} ${isPrevPage(id)} ${isCurrentPage(id)}`}
-        href={`#${id}`} on:click={() => switchPage(id)}
+        href={`#${id}`}
+        on:click={() => switchPage(id)}
       >{id}</a>
     {/each}
     <div class='drop-nav'>
@@ -90,7 +97,8 @@
         {#each pages as { id }}
           <a
             class={`drop-nav-item ${isPrevPage(id)} ${isCurrentPage(id)}`}
-            href={`#${id}`} on:click={() => switchPage(id)}
+            href={`#${id}`}
+            on:click={() => switchPage(id)}
           ><div>{id}</div></a>
         {/each}
       </div>
