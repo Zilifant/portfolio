@@ -1,7 +1,12 @@
 <!-- Wrapper -->
+<!--
+When switching pages, previous page's content fades out while new page's content flys in
+from right or left, depending on the pages' relative positions in the navbar.
+-->
 
 <script>
   import { fly, fade } from 'svelte/transition';
+
   export let flyDirection;
 
   const distance = 3000;
