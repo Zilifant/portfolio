@@ -1,7 +1,7 @@
 // Utilities
 
 import quotes from './content/quotes.json';
-import { pgList } from './content/site-info';
+import { pageIds } from './content/site-info';
 
 //-------------------//
 //Footer Random Quote//
@@ -70,7 +70,7 @@ function swapImagesToTheme(theme) {
 
 export function setFlyDirection(fromPg, toPg) {
   // Create reference object from array of page ids.
-  const pageOrderRef = pgList.reduce((obj, val, idx) => {
+  const pageOrderRef = pageIds.reduce((obj, val, idx) => {
     obj[val] = idx;
     return obj;
   }, {});
@@ -87,9 +87,9 @@ export function setFlyDirection(fromPg, toPg) {
 // otherwise, return the first page in `pageIds` array (the default/landing page).
 export function getInitialPageId() {
   const targetPg = window.location.hash.substring(1);
-  const isViablePg = pgList.includes(targetPg);
+  const isViablePg = pageIds.includes(targetPg);
   if (isViablePg) return targetPg;
-  return pgList[0];
+  return pageIds[0];
 };
 
 //--------------------//
