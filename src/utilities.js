@@ -26,13 +26,13 @@ export function setThemeFromLocalStorage(page) {
     document.body.setAttribute('id', `${page}-${currentTheme}`);
     if (currentTheme === 'light') {
       document.querySelector('.theme-switch-checkbox').checked = true;
-      imgsToLightMode();
+      swapImagesToTheme('light');
     } else {
-      imgsToDarkMode();
+      swapImagesToTheme('dark');
     };
   } else {
     // FIXME: Default theme is now dark; but img file names still need to be updated.
-    imgsToDarkMode();
+    swapImagesToTheme('dark');
   };
 };
 
@@ -42,34 +42,32 @@ export function switchTheme(e, page) {
     document.body.setAttribute('class', 'light');
     document.body.setAttribute('id', `${page}-light`);
     localStorage.setItem('theme', 'light');
-    imgsToLightMode();
+    swapImagesToTheme('light');
   } else {
     document.body.setAttribute('class', 'dark');
     document.body.setAttribute('id', `${page}-dark`);
     localStorage.setItem('theme', 'dark');
-    imgsToDarkMode();
+    swapImagesToTheme('dark');
   };
 
-  safariNavFix();
+  applySafariNavFix();
 };
 
 // TODO: Check if this is still needed with current version of Safari.
-function safariNavFix() {
+function applySafariNavFix() {
   const prevPage = document.getElementsByClassName('prev');
   if (prevPage[0]) prevPage[0].classList.replace('prev', 'not-prev');
 };
 
-function imgsToDarkMode() {
-  let imglist = document.getElementsByClassName("switchable-img");
-  for (let i = 0; i < imglist.length; i++) {
-    imglist[i].setAttribute('src', `../assets/images/${imglist[i].id}-alt.png`);
-  };
-};
+// All img elements that change on theme (should):
+//   1) have the `switchable-img` class
+//   2) have an id matching their filename (+/- '-alt' for the theme-switched version)
+function swapImagesToTheme(theme) {
+  const imgList = document.getElementsByClassName('switchable-img');
+  const suffix = (theme === 'dark') ? '-alt' : '';
 
-function imgsToLightMode() {
-  let imglist = document.getElementsByClassName("switchable-img");
-  for (let i = 0; i < imglist.length; i++) {
-    imglist[i].setAttribute('src', `../assets/images/${imglist[i].id}.png`);
+  for (let i = 0; i < imgList.length; i++) {
+    imgList[i].setAttribute('src', `../assets/images/${imgList[i].id}${suffix}.png`);
   };
 };
 
