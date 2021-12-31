@@ -19,8 +19,7 @@
   } from './utilities';
 
   onMount(() => {
-    const toggle = document.querySelector('.theme-switch-checkbox');
-    setThemeFromLocalStorage(toggle);
+    setThemeFromLocalStorage();
     const theme = document.body.getAttribute('class');
     const page = initPage(pgList);
     document.body.setAttribute('id', `${page}-${theme}`);

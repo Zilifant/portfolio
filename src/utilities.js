@@ -13,17 +13,18 @@ export const randomQuote = () => quotes[Math.floor(Math.random() * quotes.length
 //--------------//
 
 export function setThemeFromLocalStorage(themeSwitch) {
-  // check if any theme has been saved to local storage; assign to currentTheme if so
+  // Check if any theme has been saved to local storage; if so, assign to currentTheme.
   const currentTheme = localStorage.getItem('theme')
     ? localStorage.getItem('theme')
     : null;
 
-  // when page loads, if a theme has been saved to local storage, check if it's light; if so, change theme-switch and imgs to match
+  // When page loads, if a theme has been saved to local storage, check if it's
+  // light; if so, change theme-switch and imgs to match
   if (currentTheme) {
     document.body.setAttribute('class', currentTheme);
     document.body.setAttribute('id', `bio-${currentTheme}`);
     if (currentTheme === 'light') {
-      themeSwitch.checked = true;
+      document.querySelector('.theme-switch-checkbox').checked = true;
       imgsToLightMode();
     } else {
       imgsToDarkMode();
