@@ -4,9 +4,6 @@
   import res from '../content/resume.json';
   import SVGIcon from '../utility/SVGIcon.svelte';
 
-  export let isCurrent;
-  $: current = isCurrent ? 'current' : '';
-
   let highCat = 'coding';
 
   const skills = res.skills.skills.sort((a, b) => {
@@ -32,10 +29,9 @@
     if (!end || (start === end)) return start;
     return `${start}-${end}`;
   };
-
 </script>
 
-<div class={`page-wrapper resume ${current}`}>
+<div class={'page-wrapper resume'}>
 
   <section class='content res-achievements'>
     <h2 class='res-sec-title first-sec'>At A Glance</h2>

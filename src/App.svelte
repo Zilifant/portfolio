@@ -47,7 +47,6 @@
     if (dropNavState === 'hidden') return dropNavState = 'visible';
     dropNavState = 'hidden';
   };
-
 </script>
 
 <main class='wrapper'>
@@ -103,35 +102,23 @@
     <div class='transition-grid'>
       {#if page === bio}
         <Wrap flyDirection={flyTo}>
-          <Bio
-            isCurrent={page === bio}
-            isDarkMode={getTheme() === 'dark'}
-          />
+          <Bio isDarkMode={getTheme() === 'dark'} />
         </Wrap>
       {:else if page === res}
         <Wrap flyDirection={flyTo}>
-          <Resume
-            isCurrent={page === res}
-          />
+          <Resume/>
         </Wrap>
       {:else if page === writ}
         <Wrap flyDirection={flyTo}>
-          <Writing
-            isCurrent={page === writ}
-          />
+          <Writing/>
         </Wrap>
       {:else if page === code}
         <Wrap flyDirection={flyTo}>
-          <Code
-            isCurrent={page === code}
-          />
+          <Code/>
         </Wrap>
       {:else}
         <Wrap flyDirection={flyTo}>
-          <Bio
-            isCurrent={page === bio}
-            isDarkMode={getTheme() === 'dark'}
-          />
+          <Bio isDarkMode={getTheme() === 'dark'} />
         </Wrap>
       {/if}
     </div>

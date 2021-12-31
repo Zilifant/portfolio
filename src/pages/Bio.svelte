@@ -1,18 +1,13 @@
 <!-- Bio -->
 
 <script>
-
   import partners from '../content/partners.json';
-
-  export let isCurrent;
-  $: current = isCurrent ? 'current' : '';
 
   export let isDarkMode;
   $: dark = isDarkMode ? '-alt' : '';
-
 </script>
 
-<div class={`page-wrapper bio ${current}`}>
+<div class={'page-wrapper bio'}>
   <div class='content content-30-left content-left-bio'>
     <div class='headshot-wrapper'>
       <img

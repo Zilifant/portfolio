@@ -1,11 +1,10 @@
 <!-- Code -->
 
 <script>
-  export let isCurrent;
-  $: current = isCurrent ? 'current' : '';
+  // Nothing right now...
 </script>
 
-<div class={`page-wrapper code ${current}`}>
+<div class={'page-wrapper code'}>
   <section class='code-project mhk'>
     <div class='project-intro mhk'>
       <p>A web implementation of the popular social deduction game, <em>Deception: Murder in Hong Kong</em>.</p>
