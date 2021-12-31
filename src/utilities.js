@@ -12,7 +12,7 @@ export const randomQuote = () => quotes[Math.floor(Math.random() * quotes.length
 //Theme Switcher//
 //--------------//
 
-export function setThemeFromLocalStorage() {
+export function setThemeFromLocalStorage(page) {
   // Check if any theme has been saved to local storage; if so, assign to currentTheme.
   const currentTheme = localStorage.getItem('theme')
     ? localStorage.getItem('theme')
@@ -22,7 +22,7 @@ export function setThemeFromLocalStorage() {
   // light; if so, change theme-switch and imgs to match
   if (currentTheme) {
     document.body.setAttribute('class', currentTheme);
-    document.body.setAttribute('id', `bio-${currentTheme}`);
+    document.body.setAttribute('id', `${page}-${currentTheme}`);
     if (currentTheme === 'light') {
       document.querySelector('.theme-switch-checkbox').checked = true;
       imgsToLightMode();

@@ -18,13 +18,6 @@
     removePreload,
   } from './utilities';
 
-  onMount(() => {
-    setThemeFromLocalStorage();
-    const theme = document.body.getAttribute('class');
-    const page = initPage(pgList);
-    document.body.setAttribute('id', `${page}-${theme}`);
-  });
-
   removePreload({ firstLoad: true });
 
   $: isCurrent = (pg) => (pg === page) ? 'current' : '';
@@ -35,6 +28,8 @@
   let dropNavState = 'hidden';
   let page = initPage(pgList);
   let quote = randomQuote();
+
+  onMount(() => setThemeFromLocalStorage(page));
 
   function switchPage(newPg) {
     if (newPg === page) return;
