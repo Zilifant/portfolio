@@ -87,7 +87,7 @@ export function initPage() {
   const targetPg = window.location.hash.substring(1);
   const isViablePg = pgList.includes(targetPg);
   if (isViablePg) return targetPg;
-  return pgList[0].id;
+  return pgList[0];
 };
 
 //--------------------//
