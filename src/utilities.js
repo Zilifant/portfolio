@@ -83,6 +83,8 @@ export function setFlyDirection(fromPg, toPg) {
 //Identify Initial Page//
 //---------------------//
 
+// Check if URL includes a hash associated with a specific page. If so, return that page id,
+// otherwise, return the first page in `pageIds` array (the default/landing page).
 export function getInitialPageId() {
   const targetPg = window.location.hash.substring(1);
   const isViablePg = pgList.includes(targetPg);
@@ -94,8 +96,9 @@ export function getInitialPageId() {
 //Remove Preload Class//
 //--------------------//
 
+// Remove `preload` CSS class from all elements after 1 second.
+// The `preload` class disables animations.
 export function removePreloadClass({ firstLoad }) {
-  // remove preload class after 1s (prevents animations on page load)
   function remove() {
     setTimeout(() => {
       let targetNodes = document.querySelectorAll('.preload');
