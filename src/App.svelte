@@ -10,10 +10,11 @@
   import Code from './pages/Code.svelte';
   import {
     randomQuote,
-    removePreload,
     setThemeFromLocalStorage,
     switchTheme,
-    flyDirection
+    flyDirection,
+    initPage,
+    removePreload,
   } from './utilities';
 
   const version = '0.7.6';
@@ -21,9 +22,9 @@
   onMount(() => {
     const toggle = document.querySelector('.theme-switch-checkbox');
     setThemeFromLocalStorage(toggle);
-    const th = document.body.getAttribute('class');
-    const tr = initPage();
-    document.body.setAttribute('id', `${tr}-${th}`);
+    const theme = document.body.getAttribute('class');
+    const page = initPage(pgList);
+    document.body.setAttribute('id', `${page}-${theme}`);
   });
 
   removePreload({ firstLoad: true });
@@ -47,15 +48,8 @@
 
   let prevPg, flyTo;
   let dropNavState = 'hidden';
-  let page = initPage();
+  let page = initPage(pgList);
   let quote = randomQuote();
-
-  function initPage() {
-    const targetPg = window.location.hash.substring(1);
-    const isViablePg = pgList.includes(targetPg);
-    if (isViablePg) return targetPg;
-    return bio;
-  };
 
   function switchPage(pg) {
     if (pg === page) return;

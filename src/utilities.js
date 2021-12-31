@@ -67,6 +67,26 @@ function imgsToLightMode() {
   }
 }
 
+//----------------------------//
+//Fly Direction on Page Switch//
+//----------------------------//
+
+export function flyDirection(fromPg, toPg) {
+  const pgNums = { bio: 1, resume: 2, code: 3, writing: 4 };
+  return pgNums[fromPg] > pgNums[toPg] ? 'right' : 'left';
+}
+
+//---------------------//
+//Identify Initial Page//
+//---------------------//
+
+export function initPage(pgList) {
+  const targetPg = window.location.hash.substring(1);
+  const isViablePg = pgList.includes(targetPg);
+  if (isViablePg) return targetPg;
+  return pgList[0].id;
+};
+
 //--------------------//
 //Remove Preload Class//
 //--------------------//
@@ -83,13 +103,4 @@ export function removePreload({ firstLoad }) {
   };
 
   firstLoad ? document.addEventListener("DOMContentLoaded", remove) : remove();
-}
-
-//----------------------------//
-//Fly Direction on Page Switch//
-//----------------------------//
-
-export function flyDirection(fromPg, toPg) {
-  const pgNums = { bio: 1, resume: 2, code: 3, writing: 4 };
-  return pgNums[fromPg] > pgNums[toPg] ? 'right' : 'left';
 }
