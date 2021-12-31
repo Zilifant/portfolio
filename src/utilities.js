@@ -31,10 +31,12 @@ export function setThemeFromLocalStorage(page) {
       imgsToDarkMode();
     };
   } else {
+    // FIXME: Default theme is now dark; but img file names still need to be updated.
     imgsToDarkMode();
   };
 };
 
+// FIXME: Tracking theme in both class and id is redundant.
 export function switchTheme(e, page) {
   if (e.target.checked) {
     document.body.setAttribute('class', 'light');
@@ -47,9 +49,11 @@ export function switchTheme(e, page) {
     localStorage.setItem('theme', 'dark');
     imgsToDarkMode();
   };
+
   safariNavFix();
 };
 
+// TODO: Check if this is still needed with current version of Safari.
 function safariNavFix() {
   const prevPage = document.getElementsByClassName('prev');
   if (prevPage[0]) prevPage[0].classList.replace('prev', 'not-prev');
