@@ -100,11 +100,7 @@
 
   <div class='content-wrapper'>
     <div class='transition-grid'>
-      {#if page === bio}
-        <Wrap flyDirection={flyTo}>
-          <Bio isDarkMode={getTheme() === 'dark'} />
-        </Wrap>
-      {:else if page === res}
+      {#if page === res}
         <Wrap flyDirection={flyTo}>
           <Resume/>
         </Wrap>
