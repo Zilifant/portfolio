@@ -12,7 +12,7 @@ export const randomQuote = () => quotes[Math.floor(Math.random() * quotes.length
 //Theme Switcher//
 //--------------//
 
-export function setThemeFromLocalStorage(themeSwitch) {
+export function setThemeFromLocalStorage() {
   // Check if any theme has been saved to local storage; if so, assign to currentTheme.
   const currentTheme = localStorage.getItem('theme')
     ? localStorage.getItem('theme')
