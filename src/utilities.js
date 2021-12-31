@@ -30,9 +30,6 @@ export function setThemeFromLocalStorage(page) {
     } else {
       swapImagesToTheme('dark');
     };
-  } else {
-    // FIXME: Default theme is now dark; but img file names still need to be updated.
-    swapImagesToTheme('dark');
   };
 };
 
