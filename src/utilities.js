@@ -83,7 +83,7 @@ export function setFlyDirection(fromPg, toPg) {
 //Identify Initial Page//
 //---------------------//
 
-export function initPage() {
+export function getInitialPageId() {
   const targetPg = window.location.hash.substring(1);
   const isViablePg = pgList.includes(targetPg);
   if (isViablePg) return targetPg;

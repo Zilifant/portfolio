@@ -14,7 +14,7 @@
     setThemeFromLocalStorage,
     switchTheme,
     setFlyDirection,
-    initPage,
+    getInitialPageId,
     removePreloadClass,
   } from './utilities';
 
@@ -26,7 +26,7 @@
 
   let prevPage, flyTo;
   let dropNavState = 'hidden';
-  let page = initPage();
+  let page = getInitialPageId();
   let quote = getRandomQuote();
 
   onMount(() => setThemeFromLocalStorage(page));
