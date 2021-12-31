@@ -33,19 +33,15 @@ export function setThemeFromLocalStorage(page) {
   };
 };
 
-// FIXME: Tracking theme in both class and id is redundant.
 export function switchTheme(e, page) {
-  if (e.target.checked) {
-    document.body.setAttribute('class', 'light');
-    document.body.setAttribute('id', `${page}-light`);
-    localStorage.setItem('theme', 'light');
-    swapImagesToTheme('light');
-  } else {
-    document.body.setAttribute('class', 'dark');
-    document.body.setAttribute('id', `${page}-dark`);
-    localStorage.setItem('theme', 'dark');
-    swapImagesToTheme('dark');
-  };
+  const newTheme = e.target.checked ? 'light' : 'dark';
+
+  // FIXME: Tracking theme in both class and id is redundant.
+  document.body.setAttribute('class', newTheme);
+  document.body.setAttribute('id', `${page}-${newTheme}`);
+
+  localStorage.setItem('theme', newTheme);
+  swapImagesToTheme(newTheme);
 
   applySafariNavFix();
 };
