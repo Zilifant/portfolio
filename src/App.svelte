@@ -37,10 +37,10 @@
   let page = initPage(pgList);
   let quote = randomQuote();
 
-  function switchPage(pg) {
-    if (pg === page) return;
+  function switchPage(newPg) {
+    if (newPg === page) return;
     prevPg = page;
-    page = pg;
+    page = newPg;
     document.body.setAttribute('id', `${page}-${getTheme()}`);
     flyTo = flyDirection(prevPg, page);
     quote = randomQuote();
