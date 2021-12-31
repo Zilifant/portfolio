@@ -28,7 +28,7 @@ export function setThemeFromLocalStorage() {
       imgsToLightMode();
     } else {
       imgsToDarkMode();
-    }
+    };
   } else {
     imgsToDarkMode();
   };
@@ -45,28 +45,28 @@ export function switchTheme(e, page) {
     document.body.setAttribute('id', `${page}-dark`);
     localStorage.setItem('theme', 'dark');
     imgsToDarkMode();
-  }
+  };
   safariNavFix();
-}
+};
 
 function safariNavFix() {
   const prevPage = document.getElementsByClassName('prev');
   if (prevPage[0]) prevPage[0].classList.replace('prev', 'not-prev');
-}
+};
 
 function imgsToDarkMode() {
   let imglist = document.getElementsByClassName("switchable-img");
   for (let i = 0; i < imglist.length; i++) {
     imglist[i].setAttribute('src', `../assets/images/${imglist[i].id}-alt.png`);
-  }
-}
+  };
+};
 
 function imgsToLightMode() {
   let imglist = document.getElementsByClassName("switchable-img");
   for (let i = 0; i < imglist.length; i++) {
     imglist[i].setAttribute('src', `../assets/images/${imglist[i].id}.png`);
-  }
-}
+  };
+};
 
 //----------------------------//
 //Fly Direction on Page Switch//
@@ -75,7 +75,7 @@ function imgsToLightMode() {
 export function flyDirection(fromPg, toPg) {
   const pgNums = { bio: 1, resume: 2, code: 3, writing: 4 };
   return pgNums[fromPg] > pgNums[toPg] ? 'right' : 'left';
-}
+};
 
 //---------------------//
 //Identify Initial Page//
@@ -99,9 +99,9 @@ export function removePreload({ firstLoad }) {
       let targetNodes = document.querySelectorAll('.preload');
       for (let i = 0; i < targetNodes.length; i++) {
         targetNodes[i].classList.remove('preload');
-      }
-    }, 1000)
+      };
+    }, 1000);
   };
 
   firstLoad ? document.addEventListener("DOMContentLoaded", remove) : remove();
-}
+};
