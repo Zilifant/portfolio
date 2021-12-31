@@ -39,11 +39,10 @@
     flyTo = setFlyDirection(prevPage, page);
     quote = getRandomQuote();
     removePreloadClass({ firstLoad: false });
-    toggleDropNav();
+    if (document.documentElement.clientWidth <= 600) toggleDropNav();
   };
 
   function toggleDropNav() {
-    if (document.documentElement.clientWidth > 600) return;
     if (dropNavState === 'hidden') return dropNavState = 'visible';
     dropNavState = 'hidden';
   };
