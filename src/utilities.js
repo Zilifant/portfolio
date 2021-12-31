@@ -9,9 +9,9 @@ import { pgList } from './content/site-info';
 
 export const getRandomQuote = () => quotes[Math.floor(Math.random() * quotes.length)];
 
-//--------------//
-//Theme Switcher//
-//--------------//
+//---------------//
+//Theme Switchers//
+//---------------//
 
 export function setThemeFromLocalStorage(page) {
   // Check if any theme has been saved to local storage; if so, assign to currentTheme.
