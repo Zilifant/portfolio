@@ -4,7 +4,7 @@
   import partners from '../content/partners.json';
 
   export let isDarkMode;
-  $: dark = isDarkMode ? '-alt' : '';
+  $: suffix = isDarkMode ? '-alt' : '';
 </script>
 
 <div class={'page-wrapper bio'}>
@@ -13,7 +13,7 @@
       <img
         class='switchable-img'
         id='headshot'
-        src={`../assets/images/headshot${dark}.png`}
+        src={`../assets/images/headshot${suffix}.png`}
         title='Witness me!'
         alt='Headshot: Scott Silsbe, Cool Guy'
       >
@@ -33,7 +33,7 @@
       <div class='partner-logo-wrapper'>
         <img
           class='switchable-img'
-          src={`../assets/images/${id}${dark}.png`}
+          src={`../assets/images/${id}${suffix}.png`}
           id={id}
           alt={alt}
         >
