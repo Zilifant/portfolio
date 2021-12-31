@@ -8,6 +8,7 @@
   import Resume from './pages/Resume.svelte';
   import Writing from './pages/Writing.svelte';
   import Code from './pages/Code.svelte';
+  import { version, pages, bio, res, code, writ, pgList, } from './content/site-info';
   import {
     randomQuote,
     setThemeFromLocalStorage,
@@ -16,8 +17,6 @@
     initPage,
     removePreload,
   } from './utilities';
-
-  const version = '0.7.6';
 
   onMount(() => {
     const toggle = document.querySelector('.theme-switch-checkbox');
@@ -28,19 +27,6 @@
   });
 
   removePreload({ firstLoad: true });
-
-  const pages = [
-    { id: 'bio', color: 'pink' },
-    { id: 'resume', color: 'blue' },
-    { id: 'code', color: 'green' },
-    { id: 'writing', color: 'orange' },
-  ];
-
-  const bio  = 'bio';
-  const res  = 'resume';
-  const code = 'code';
-  const writ = 'writing';
-  const pgList = [bio, res, code, writ];
 
   $: isCurrent = (pg) => (pg === page) ? 'current' : '';
   $: isPrev = (pg) => (pg === prevPg) ? 'prev' : 'not-prev';
