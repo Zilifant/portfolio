@@ -8,37 +8,37 @@
   import Resume from './pages/Resume.svelte';
   import Writing from './pages/Writing.svelte';
   import Code from './pages/Code.svelte';
-  import { version, pages, bio, res, code, writ, pgList, } from './content/site-info';
+  import { version, pages, res, code, writ, pgList, } from './content/site-info';
   import {
-    randomQuote,
+    getRandomQuote,
     setThemeFromLocalStorage,
     switchTheme,
-    flyDirection,
+    setFlyDirection,
     initPage,
-    removePreload,
+    removePreloadClass,
   } from './utilities';
 
-  removePreload({ firstLoad: true });
+  removePreloadClass({ firstLoad: true });
 
-  $: isCurrent = (pg) => (pg === page) ? 'current' : '';
-  $: isPrev = (pg) => (pg === prevPg) ? 'prev' : 'not-prev';
+  $: isCurrentPage = (pg) => (pg === page) ? 'current' : '';
+  $: isPrevPage = (pg) => (pg === prevPage) ? 'prev' : 'not-prev';
   $: getTheme = () => document.body.getAttribute('class');
 
-  let prevPg, flyTo;
+  let prevPage, flyTo;
   let dropNavState = 'hidden';
   let page = initPage(pgList);
-  let quote = randomQuote();
+  let quote = getRandomQuote();
 
   onMount(() => setThemeFromLocalStorage(page));
 
   function switchPage(newPg) {
     if (newPg === page) return;
-    prevPg = page;
+    prevPage = page;
     page = newPg;
     document.body.setAttribute('id', `${page}-${getTheme()}`);
-    flyTo = flyDirection(prevPg, page);
-    quote = randomQuote();
-    removePreload({ firstLoad: false });
+    flyTo = setFlyDirection(prevPage, page);
+    quote = getRandomQuote();
+    removePreloadClass({ firstLoad: false });
     toggleDropNav();
   };
 
@@ -71,7 +71,7 @@
   <nav class='main-nav'>
     {#each pages as { id }}
       <a
-        class={`main-nav-item mni mni-${id} ${isPrev(id)} ${isCurrent(id)}`}
+        class={`main-nav-item mni mni-${id} ${isPrevPage(id)} ${isCurrentPage(id)}`}
         href={`#${id}`} on:click={() => switchPage(id)}
       >{id}</a>
     {/each}
@@ -90,7 +90,7 @@
       <div class={`drop-nav-items ${dropNavState}`}>
         {#each pages as { id }}
           <a
-            class={`drop-nav-item ${isPrev(id)} ${isCurrent(id)}`}
+            class={`drop-nav-item ${isPrevPage(id)} ${isCurrentPage(id)}`}
             href={`#${id}`} on:click={() => switchPage(id)}
           ><div>{id}</div></a>
         {/each}

@@ -6,7 +6,7 @@ import quotes from './content/quotes.json';
 //Footer Random Quote//
 //-------------------//
 
-export const randomQuote = () => quotes[Math.floor(Math.random() * quotes.length)];
+export const getRandomQuote = () => quotes[Math.floor(Math.random() * quotes.length)];
 
 //--------------//
 //Theme Switcher//
@@ -72,7 +72,7 @@ function imgsToLightMode() {
 //Fly Direction on Page Switch//
 //----------------------------//
 
-export function flyDirection(fromPg, toPg) {
+export function setFlyDirection(fromPg, toPg) {
   const pgNums = { bio: 1, resume: 2, code: 3, writing: 4 };
   return pgNums[fromPg] > pgNums[toPg] ? 'right' : 'left';
 };
@@ -92,7 +92,7 @@ export function initPage(pgList) {
 //Remove Preload Class//
 //--------------------//
 
-export function removePreload({ firstLoad }) {
+export function removePreloadClass({ firstLoad }) {
   // remove preload class after 1s (prevents animations on page load)
   function remove() {
     setTimeout(() => {
