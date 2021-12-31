@@ -1,4 +1,4 @@
-// Social Media Data
+// Social Media Info
 
 export const socials = {
   email: {
