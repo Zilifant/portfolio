@@ -69,8 +69,14 @@ function swapImagesToTheme(theme) {
 //----------------------------//
 
 export function setFlyDirection(fromPg, toPg) {
-  const pgNums = { bio: 1, resume: 2, code: 3, writing: 4 };
-  return pgNums[fromPg] > pgNums[toPg] ? 'right' : 'left';
+  // Create reference object from array of page ids.
+  const pageOrderRef = pgList.reduce((obj, val, idx) => {
+    obj[val] = idx;
+    return obj;
+  }, {});
+
+  // Use reference object to compare relative 'position' of pages to determine fly direction.
+  return pageOrderRef[fromPg] > pageOrderRef[toPg] ? 'right' : 'left';
 };
 
 //---------------------//
