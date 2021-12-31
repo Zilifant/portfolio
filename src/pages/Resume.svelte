@@ -4,17 +4,22 @@
   import res from '../content/resume.json';
   import SVGIcon from '../utility/SVGIcon.svelte';
 
-  let highCat = 'coding';
+  let highlightedCat = 'coding';
 
+  // Alphabetize skills.
   const skills = res.skills.skills.sort((a, b) => {
     return a.name.localeCompare(b.name);
   });
 
+  // Takes an array of categories. If one of those is the highlighted category, add the
+  // CSS class to apply that category's unique color.
   $: skillColor = (cats) => {
-    if (cats.includes(highCat)) return `highlight ${highCat}`;
+    if (cats.includes(highlightedCat)) return `highlight ${highlightedCat}`;
     return '';
   };
 
+  // Connected to `onClick`. Expands (or hides) div to show/hide content, and toggles
+  // CSS class that causes child SVG element to rotate.
   function expand() {
     this.classList.toggle('rotated');
     let content = this.nextElementSibling;
@@ -25,6 +30,7 @@
     };
   };
 
+  // Return a string of either one or two dates.
   function renderDates(start, end) {
     if (!end || (start === end)) return start;
     return `${start}-${end}`;
@@ -74,7 +80,7 @@
       {#each res.skills.categories as {id, displayName}}
         <button
           class={`btn skill-btn ${id}`}
-          on:click={() => highCat = id}
+          on:click={() => highlightedCat = id}
         >
           {displayName}
         </button>
