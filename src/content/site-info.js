@@ -1,6 +1,8 @@
 // General Site Info
 
-export const version = '0.7.8';
+import pkg from '../../package.json';
+
+export const version = pkg.version;
 
 export const pages = [
   { id: 'bio',     color: 'pink',   pos: 1 },
