@@ -13,7 +13,7 @@
       },
       {
         "type": "github",
-        "text": "Github",
+        "text": "GitHub",
         "icon": "github",
         "href": "https://github.com/Zilifant/mhk-front"
       }
@@ -27,7 +27,7 @@
     "links": [
       {
         "type": "github",
-        "text": "Github",
+        "text": "GitHub",
         "icon": "github",
         "href": "https://github.com/Zilifant/mhk-back"
       }
@@ -41,7 +41,7 @@
     "links": [
       {
         "type": "github",
-        "text": "Github",
+        "text": "GitHub",
         "icon": "github",
         "href": "https://github.com/Zilifant/portfolio"
       }
