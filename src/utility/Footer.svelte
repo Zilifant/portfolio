@@ -2,7 +2,7 @@
 
 <script>
 
-  import { socials } from '../content/socials';
+  import socials from '../content/socials.json';
 
   export let page = 'bio';
   export let version;
@@ -24,7 +24,7 @@
     <div class='foot-item foot-item-center'>
       <a
         class='foot-social-icon foot-social-icon-github'
-        href={socials?.github?.url}
+        href={socials.github.url}
         target="_blank" rel="noopener noreferrer"
       >
         <svg width='100%' height='100%' viewBox='0 0 171 167'>
@@ -33,7 +33,7 @@
       </a>
       <a
         class='foot-social-icon foot-social-icon-linkedin'
-        href={socials?.linkedin?.url}
+        href={socials.linkedin.url}
         target="_blank" rel="noopener noreferrer"
       >
         <svg width='100%' height='100%' viewBox='0 0 165 167'>
@@ -42,7 +42,7 @@
       </a>
       <a
         class='foot-social-icon foot-social-icon-email'
-        href={socials?.email?.url}
+        href={socials.email.url}
         target="_blank" rel="noopener noreferrer"
       >
         <svg width='100%' height='100%' viewBox='0 0 164 165'>
