@@ -2,7 +2,6 @@
   "name": "svelte-app",
   "version": "0.7.9",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "sass": "./node_modules/.bin/node-sass src/style-global -o temp",
     "postsass": "./node_modules/.bin/postcss temp -u autoprefixer -d public --no-map",
