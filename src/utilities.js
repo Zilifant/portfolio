@@ -3,9 +3,9 @@
 import quotes from './content/quotes.json';
 import { pageIds } from './content/site-info';
 
-//-------------------//
-//Footer Random Quote//
-//-------------------//
+//------------//
+//Random Quote//
+//------------//
 
 export const getRandomQuote = () => quotes[Math.floor(Math.random() * quotes.length)];
 
