@@ -4,9 +4,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "sass": "./node_modules/.bin/node-sass src/styles -o temp",
+    "sass": "./node_modules/.bin/node-sass src/style-global -o temp",
     "postsass": "./node_modules/.bin/postcss temp -u autoprefixer -d public --no-map",
-    "sassdev": "./node_modules/.bin/node-sass src/styles -o temp -w",
+    "sassdev": "./node_modules/.bin/node-sass src/style-global -o temp -w",
     "prefixdev": "./node_modules/.bin/postcss temp -u autoprefixer -d public --no-map -w",
     "prebuild": "npm run sass",
     "build": "rollup -c",
