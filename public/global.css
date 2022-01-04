@@ -167,6 +167,9 @@ p, ul, ol, li {
   margin: 0;
   fill: var(--text); }
 
+.svg-wrap.flex {
+  display: flex; }
+
 .svg {
   height: 100%;
   width: 100%;
@@ -991,38 +994,14 @@ body.dark .x-content-li {
 .preload:before {
   transition: none; }
 
+.page-wrapper.code > :not(:first-child) {
+  margin-top: 1rem; }
+
+.page-wrapper.code > section {
+  width: 100%; }
+
 .code-project {
-  display: grid;
-  width: 100%;
-  gap: .5rem;
-  grid-template-columns: 30% 1fr;
-  grid-template-areas: 'live intro' 'front intro' 'back intro'; }
-  .code-project.port {
-    grid-template-areas: 'live intro' 'front intro'; }
-  @media (max-width: 700px) {
-    .code-project {
-      grid-template-columns: -webkit-max-content 1fr;
-      grid-template-columns: max-content 1fr;
-      grid-template-areas: 'live live' 'front back' 'intro intro'; }
-      .code-project.port {
-        grid-template-areas: 'live live' 'front front' 'intro intro'; } }
-  .code-project:not(:first-child) {
-    margin-top: 2rem; }
-
-.project-intro {
-  grid-area: intro; }
-
-.app-url {
-  grid-area: live; }
-
-.github-url.frontend {
-  grid-area: front; }
-
-.github-url.backend {
-  grid-area: back; }
-
-.project-intro {
-  padding: 1rem;
+  padding: 1.25rem 1rem;
   background-color: var(--res-item-bg);
   border: var(--x-btn-border);
   transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time);
@@ -1030,8 +1009,25 @@ body.dark .x-content-li {
   line-height: 1.75rem;
   letter-spacing: .02rem;
   font-weight: var(--theme-weight-adjust-text); }
-  .project-intro :not(:first-child) {
+  .code-project > :not(:first-child) {
     margin-top: 1rem; }
+  .code-project .code-project-title > :not(:first-child),
+  .code-project .code-project-links > :not(:first-child) {
+    margin-left: .5rem; }
+  .code-project .code-project-title {
+    display: flex;
+    align-items: center; }
+    .code-project .code-project-title .code-project-icon {
+      height: 30px;
+      width: 30px; }
+      .code-project .code-project-title .code-project-icon svg {
+        transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time);
+        fill: var(--accent); }
+  .code-project .code-project-description > p:not(:first-child) {
+    margin-top: .5rem; }
+  .code-project .code-project-links {
+    display: flex;
+    align-items: center; }
 
 .url-pseudo-btn {
   display: flex;
@@ -1043,7 +1039,7 @@ body.dark .x-content-li {
   background-color: var(--btn-bg);
   transition: color var(--time), background-color var(--time), border-color var(--time), transform var(--time); }
   .url-pseudo-btn:hover {
-    transform: translateX(5px); }
+    transform: translateY(-5px); }
   .url-pseudo-btn svg {
     transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time);
     fill: var(--btn-fg); }
@@ -1057,34 +1053,9 @@ body.dark .x-content-li {
     .url-pseudo-btn:not(:active):hover p {
       color: var(--btn-fg-hover); }
 
-.url-pseudo-btn .upb-content-wrap {
-  display: flex;
-  align-items: center; }
-
-.url-pseudo-btn.app-url {
-  padding: 1rem .5rem;
-  border: none;
-  background-color: var(--rose7); }
-  body.light .url-pseudo-btn.app-url {
-    background-color: var(--rose6); }
-  .url-pseudo-btn.app-url svg {
-    margin-right: .5rem;
-    height: 40px;
-    width: 40px;
-    fill: var(--btn-fg); }
-  .url-pseudo-btn.app-url p {
-    font-size: 2rem; }
-  @media (max-width: 700px) {
-    .url-pseudo-btn.app-url {
-      max-width: 238px; } }
-  .url-pseudo-btn.app-url:not(:active):hover {
-    background-color: var(--rose6); }
-    body.light .url-pseudo-btn.app-url:not(:active):hover {
-      background-color: var(--rose5); }
-
-.url-pseudo-btn.github-url {
+.url-pseudo-btn {
   color: var(--white);
-  padding: .5rem;
+  padding: .5rem 1rem;
   font-size: 17px;
   line-height: 1.75rem;
   letter-spacing: .02rem;
@@ -1092,11 +1063,10 @@ body.dark .x-content-li {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content; }
-  .url-pseudo-btn.github-url svg {
+  .url-pseudo-btn svg {
     margin-right: .5rem;
-    height: 18px;
-    width: 18px; }
-  .url-pseudo-btn.github-url p {
-    font-size: 1rem;
-    position: relative;
-    bottom: -1px; }
+    height: 20px;
+    width: 20px; }
+  .url-pseudo-btn p {
+    font-size: 1.25rem;
+    position: relative; }
