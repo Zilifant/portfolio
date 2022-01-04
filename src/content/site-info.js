@@ -13,4 +13,5 @@ export const bio  = 'bio';
 export const res  = 'resume';
 export const code = 'code';
 export const writ = 'writing';
+
 export const pageIds = pages.map(page => page.id);
