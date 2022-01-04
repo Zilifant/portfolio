@@ -51,10 +51,10 @@
       </a>
     </div>
     <p class='foot-item foot-item-right copyright-2-line'>
-      © 2021 Scott Silsbe<br>All Rights Reserved<br>version {version}
+      © 2022 Scott Silsbe<br>All Rights Reserved<br>version {version}
     </p>
     <p class='foot-item foot-item-right copyright-1-line'>
-      © 2021 Scott Silsbe. All Rights Reserved<br>version {version}
+      © 2022 Scott Silsbe. All Rights Reserved<br>version {version}
     </p>
   </div>
 </footer>
