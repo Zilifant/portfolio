@@ -2,7 +2,7 @@
 
 <script>
   import Wrap from './utility/Wrap.svelte';
-  import Header from './pages/Header.svelte';
+  import Header from './utility/Header.svelte';
   import Footer from './utility/Footer.svelte';
   import Bio from './pages/Bio.svelte';
   import Resume from './pages/Resume.svelte';
