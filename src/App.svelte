@@ -11,7 +11,7 @@
   import Code from './pages/Code.svelte';
   import {
     version, bio, res, code, writ, dark,
-  } from './content/site-info';
+  } from './constants';
   import {
     getRandomQuote, getInitialPageId, removePreloadClass,
   } from './utilities';

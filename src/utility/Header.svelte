@@ -2,7 +2,7 @@
 
 <script>
 
-  import { light, dark } from '../content/site-info';
+  import { light, dark } from '../constants';
   import { applySafariNavFix } from '../utilities';
 
   export let theme;

@@ -2,7 +2,7 @@
 
 <script>
 
-  import { pages } from '../content/site-info';
+  import { pages } from '../constants';
   import {
     setFlyDirection, getRandomQuote, removePreloadClass
   } from '../utilities';

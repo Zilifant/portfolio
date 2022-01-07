@@ -1,7 +1,7 @@
 // Utilities
 
 import quotes from './content/quotes.json';
-import { pageIds } from './content/constants';
+import { pageIds } from './constants';
 
 //------------//
 //Random Quote//
