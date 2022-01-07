@@ -124,15 +124,15 @@
         "categories": ["events"]
       },
       {
-        "name": "Javascript",
+        "name": "JavaScript",
         "categories": ["coding"]
       },
       {
-        "name": "React",
+        "name": "ReactJS",
         "categories": ["coding"]
       },
       {
-        "name": "Node",
+        "name": "Node.js",
         "categories": ["coding"]
       },
       {
@@ -156,7 +156,7 @@
         "categories": ["coding"]
       },
       {
-        "name": "REST",
+        "name": "REST APIs",
         "categories": ["coding"]
       },
       {
@@ -188,12 +188,28 @@
         "categories": ["coding"]
       },
       {
+        "name": "VSCode",
+        "categories": ["coding"]
+      },
+      {
+        "name": "Regex",
+        "categories": ["coding"]
+      },
+      {
         "name": "Express",
         "categories": ["coding"]
       },
       {
         "name": "Affinity Suite",
         "categories": ["coding", "creative", "biz"]
+      },
+      {
+        "name": "Google Sheets",
+        "categories": ["coding", "biz"]
+      },
+      {
+        "name": "Google Fu",
+        "categories": ["coding"]
       }
     ]
   },
@@ -201,10 +217,10 @@
     {
       "name": "New York University",
       "nameShort": "NYU",
-      "department": "Draper Interdisciplinary Master’s Program",
+      "department": "Draper Interdisciplinary Master's Program",
       "year": 2014,
       "degree": "MA",
-      "subject": "Interactive Media",
+      "subject": "Digital Media",
       "concentration": "Social Media, Political Science",
       "extras": [
         "President, Draper Student Organization",
@@ -281,11 +297,11 @@
       "bullets": [
         {
           "lead": "Project Management",
-          "text": "Coordinated work of 12 junior producers, event team members, and ‘super-volunteers’ during 7 day pre-Festival production sprint."
+          "text": "Coordinated work of 12 junior producers, event team members, and 'super-volunteers' during 7 day pre-Festival production sprint."
         },
         {
-          "lead": "Content Management",
-          "text": "Oversaw production of Festival collateral including website and program content, session descriptions, press releases, speaker bios, sponsor/partner assets, etc., serving as final checkpoint for content accuracy and quality."
+          "lead": "Digital Content Management",
+          "text": "Oversaw production and organization of digital Festival content and collateral, managing databases, deploying content updates to the live website, and serving as final checkpoint for accuracy and quality."
         },
         {
           "lead": "Team Leadership + Community Management",
@@ -314,7 +330,7 @@
         },
         {
           "lead": "Interactive Design",
-          "text": "Produced 24 ‘concept’ lessons (and supporting documentation) featuring complex gamification and narrative design for POC demonstration to financiers and other stakeholders."
+          "text": "Produced 24 'concept' lessons (and supporting documentation) featuring complex gamification and narrative design for POC demonstration to financiers and other stakeholders."
         },
         {
           "lead": "Quality Assurance",
