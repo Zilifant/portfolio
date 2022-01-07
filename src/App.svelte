@@ -88,7 +88,7 @@
   <nav class='main-nav'>
     {#each pages as { id }}
       <a
-        class={`main-nav-item mni mni-${id} ${isPrevPage(id)} ${isCurrentPage(id)}`}
+        class={`main-nav-item mni-${id} ${isPrevPage(id)} ${isCurrentPage(id)}`}
         href={`#${id}`}
         on:click={() => switchPage(id)}
       >{id}</a>
