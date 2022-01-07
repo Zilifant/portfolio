@@ -3,8 +3,9 @@
 <script>
 
   import socials from '../content/socials.json';
+  import { bio } from '../content/site-info';
 
-  export let page = 'bio';
+  export let page = bio;
   export let version;
   export let quote;
 
