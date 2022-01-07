@@ -2,8 +2,7 @@
   "basicInfo": {
     "firstName": "scott",
     "lastName": "silsbe",
-    "email": "scott.silsbe@gmail.com",
-    "phoneNumber": "6314560188"
+    "email": "scott.silsbe@gmail.com"
   },
   "intro": {
     "title": "full stack web development",
