@@ -1014,7 +1014,7 @@ main[data-theme='dark'] .x-content-li {
   line-height: 1.75rem;
   letter-spacing: .02rem;
   font-weight: var(--theme-weight-adjust-text); }
-  .code-project > :not(:first-child):not(.code-project-divider) {
+  .code-project > :not(:first-child):not(.code-project-sec-title) {
     margin-top: 1rem; }
   .code-project .code-project-title > :not(:first-child),
   .code-project .code-project-links > :not(:first-child) {
@@ -1033,8 +1033,10 @@ main[data-theme='dark'] .x-content-li {
   .code-project .code-project-links {
     display: flex;
     align-items: center; }
+  .code-project .code-project-sec-title {
+    margin-top: 1.5rem; }
   .code-project .code-project-divider {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time);
     background-color: var(--code-project-divider); }
 

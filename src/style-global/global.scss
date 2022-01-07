@@ -1326,7 +1326,7 @@ input:checked + .th-switch-slider {
   @include colorfade();
   @include font-adjust();
 
-  & > :not(:first-child):not(.code-project-divider) {
+  & > :not(:first-child):not(.code-project-sec-title) {
     margin-top: 1rem;
   };
 
@@ -1362,8 +1362,12 @@ input:checked + .th-switch-slider {
     align-items: center;
   };
 
+  & .code-project-sec-title {
+    margin-top: 1.5rem;
+  };
+
   & .code-project-divider {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     @include colorfade();
     background-color: var(--code-project-divider);
   };
