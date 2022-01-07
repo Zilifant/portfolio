@@ -43,5 +43,5 @@
 </div>
 
 <style lang='scss'>
-  @import '../style/bio.scss';
+  @import '../style/pages/bio.scss';
 </style>
