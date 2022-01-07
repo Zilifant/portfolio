@@ -55,5 +55,26 @@
         "href": "https://github.com/Zilifant/portfolio"
       }
     ]
+  },
+  {
+    "type": "single-section",
+    "id": "stringifuction",
+    "title": "StringiFunction",
+    "description": "<p>Convert JavaScript Objects to and from JSON while preserving functions.</p>",
+    "icon": "slogo",
+    "links": [
+      {
+        "type": "npm",
+        "text": "npm",
+        "icon": "npm",
+        "href": "https://www.npmjs.com/package/stringifunction"
+      },
+      {
+        "type": "github",
+        "text": "GitHub",
+        "icon": "github",
+        "href": "https://github.com/Zilifant/stringifunction"
+      }
+    ]
   }
 ]
