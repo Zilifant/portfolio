@@ -7,7 +7,11 @@
   import Resume from './pages/Resume.svelte';
   import Writing from './pages/Writing.svelte';
   import Code from './pages/Code.svelte';
-  import { version, pages, res, code, writ, } from './content/site-info';
+  import {
+    version, pages,
+    bio, res, code, writ,
+    light, dark,
+  } from './content/site-info';
   import {
     getRandomQuote,
     setFlyDirection,
@@ -20,8 +24,8 @@
 
   $: isCurrentPage = (pg) => (pg === page) ? 'current' : '';
   $: isPrevPage = (pg) => (pg === prevPage) ? 'prev' : 'not-prev';
-  $: pageData = (page) => (!!page) ? page : 'bio';
-  $: themeData = (theme) => (!!theme) ? theme : 'dark';
+  $: pageData = (page) => (!!page) ? page : bio;
+  $: themeData = (theme) => (!!theme) ? theme : dark;
 
   let prevPage, flyTo;
   let dropNavState = 'hidden';
@@ -30,7 +34,7 @@
   let quote = getRandomQuote();
 
   function switchTheme(e) {
-    theme = e.target.checked ? 'light' : 'dark';
+    theme = e.target.checked ? light : dark;
     localStorage.setItem('theme', theme);
     applySafariNavFix();
   };
@@ -70,7 +74,7 @@
         <input
           class='theme-switch-checkbox'
           type='checkbox'
-          checked={theme === 'light'}
+          checked={theme === light}
           on:change={(e) => switchTheme(e)}
         >
         <div class='th-switch-slider preload'>

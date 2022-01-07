@@ -4,6 +4,9 @@ import pkg from '../../package.json';
 
 export const version = pkg.version;
 
+export const dark = 'dark';
+export const light = 'light';
+
 export const pages = [
   { id: 'bio',     color: 'pink',   pos: 1 },
   { id: 'resume',  color: 'blue',   pos: 2 },
