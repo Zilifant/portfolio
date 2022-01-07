@@ -34,7 +34,6 @@ export function getInitialPageId() {
   const targetPg = window.location.hash.substring(1);
   const isViablePg = pageIds.includes(targetPg);
   if (isViablePg) return targetPg;
-  console.log(pageIds[0]);
   return pageIds[0];
 };
 
