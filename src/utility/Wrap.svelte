@@ -10,29 +10,20 @@ from right or left, depending on the pages' relative positions in the navbar.
   export let flyDirection;
 
   const distance = 3000;
+  const vector = (flyDirection === 'left') ? distance : -distance;
   const delay = 0;
-  const duration = 200;
+  const fadeDuration = 200;
   const flyDuration = 500;
 </script>
 
-{#if flyDirection === 'right'}
+<div
+  class='transition-wrapper'
+  in:fly='{{x:vector, delay: delay, duration: flyDuration}}'
+  out:fade='{{duration: fadeDuration}}'
+>
+  <slot></slot>
+</div>
 
-  <div
-    class='transition-wrapper'
-    in:fly='{{x:-distance, delay: delay, duration: flyDuration}}'
-    out:fade='{{duration: duration}}'
-  >
-    <slot></slot>
-  </div>
-
-{:else}
-
-  <div
-    class='transition-wrapper'
-    in:fly='{{x:distance, delay: delay, duration: flyDuration}}'
-    out:fade='{{duration: duration}}'
-    >
-    <slot></slot>
-  </div>
-
-{/if}
+<!-- <style lang='scss'>
+  @import '../style/utility/wrap.scss';
+</style> -->
