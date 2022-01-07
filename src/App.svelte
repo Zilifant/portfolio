@@ -8,17 +8,13 @@
   import Resume from './pages/Resume.svelte';
   import Writing from './pages/Writing.svelte';
   import Code from './pages/Code.svelte';
-  import {
-    version, pages,
-    bio, res, code, writ,
-    light, dark,
+  import { version, pages, bio, res, code, writ, dark,
   } from './content/site-info';
   import {
     getRandomQuote,
     setFlyDirection,
     getInitialPageId,
     removePreloadClass,
-    applySafariNavFix,
   } from './utilities';
 
   removePreloadClass({ firstLoad: true });
@@ -33,12 +29,6 @@
   let page = getInitialPageId();
   let theme = localStorage.getItem('theme');
   let quote = getRandomQuote();
-
-  function switchTheme(e) {
-    theme = e.target.checked ? light : dark;
-    localStorage.setItem('theme', theme);
-    applySafariNavFix();
-  };
 
   function switchPage(newPage) {
     // If link to current page triggered, do nothing.
