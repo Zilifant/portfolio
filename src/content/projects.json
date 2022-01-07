@@ -49,10 +49,18 @@
     "icon": "slogo",
     "links": [
       {
+        "type": "live",
+        "text": "See It Live!",
+        "icon": "slogo",
+        "href": "https://www.scottsilsbe.com",
+        "onClick": "<iframe src='https://giphy.com/embed/LycfkVG4L6x0Y' width='480' height='270' frameBorder='0' class='giphy-embed' allowFullScreen></iframe><p><a href='https://giphy.com/gifs/LycfkVG4L6x0Y'>via GIPHY</a></p>"
+      },
+      {
         "type": "github",
         "text": "GitHub",
         "icon": "github",
-        "href": "https://github.com/Zilifant/portfolio"
+        "href": "https://github.com/Zilifant/portfolio",
+        "onClick": "<iframe src='https://giphy.com/embed/LycfkVG4L6x0Y' width='480' height='270' frameBorder='0' class='giphy-embed' allowFullScreen></iframe><p><a href='https://giphy.com/gifs/LycfkVG4L6x0Y'>via GIPHY</a></p>"
       }
     ]
   },
