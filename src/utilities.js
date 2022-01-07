@@ -43,6 +43,7 @@ export function getInitialPageId() {
 
 // Remove `preload` CSS class from all elements after 1 second.
 // The `preload` class disables animations.
+// TODO: Legacy code from vanilla site; check if needed, then remove or refactor.
 export function removePreloadClass({ firstLoad }) {
   function remove() {
     setTimeout(() => {
