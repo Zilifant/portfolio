@@ -294,6 +294,7 @@ main[data-theme='light'] {
   --x-btn-border: var(--bdr1) solid var(--white);
   --x-btn-icon-fore: var(--text);
   --x-btn-icon-border-fix: var(--x-btn-bg);
+  --code-project-divider: var(--horz-bar);
   --dark-shadow: var(--gray9);
   --btn-fg: var(--white);
   --btn-fg-hover: var(--white);
@@ -354,6 +355,7 @@ main[data-theme='dark'] {
   --x-btn-border: var(--bdr1) solid var(--chlg6);
   --x-btn-icon-fore: var(--text);
   --x-btn-icon-border-fix: var(--x-btn-bg);
+  --code-project-divider: var(--chlg6);
   --dark-shadow: var(--black);
   --btn-fg: var(--text);
   --btn-fg-hover: var(--white);

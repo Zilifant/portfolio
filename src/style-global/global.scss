@@ -1326,7 +1326,7 @@ input:checked + .th-switch-slider {
   @include colorfade();
   @include font-adjust();
 
-  & > :not(:first-child) {
+  & > :not(:first-child):not(.code-project-divider) {
     margin-top: 1rem;
   };
 
@@ -1356,6 +1356,12 @@ input:checked + .th-switch-slider {
   & .code-project-links {
     display: flex;
     align-items: center;
+  };
+
+  & .code-project-divider {
+    margin-top: 2rem;
+    @include colorfade();
+    background-color: var(--code-project-divider);
   };
 }
 
