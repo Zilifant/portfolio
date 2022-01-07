@@ -341,7 +341,7 @@ input:checked + .th-switch-slider {
 .mni-code.not-prev {
   background-image: linear-gradient(to bottom, var(--accent-code) 50%, var(--nav-bg) 50%); }
 
-.mni.prev.mni-bio {
+.main-nav-item.prev.mni-bio {
   -webkit-animation: swapBgBio 0s;
           animation: swapBgBio 0s;
   -webkit-animation-delay: .2s;
@@ -351,7 +351,7 @@ input:checked + .th-switch-slider {
   background-size: 100% 300%;
   background-image: linear-gradient(to bottom, var(--accent-bio) 33%, var(--nav-bg-this-page) 33% 67%, var(--nav-bg) 67%); }
 
-.mni.prev.mni-resume {
+.main-nav-item.prev.mni-resume {
   -webkit-animation: swapBgRes 0s;
           animation: swapBgRes 0s;
   -webkit-animation-delay: .2s;
@@ -361,7 +361,7 @@ input:checked + .th-switch-slider {
   background-size: 100% 300%;
   background-image: linear-gradient(to bottom, var(--accent-res) 33%, var(--nav-bg-this-page) 33% 67%, var(--nav-bg) 67%); }
 
-.mni.prev.mni-writing {
+.main-nav-item.prev.mni-writing {
   -webkit-animation: swapBgWrit 0s;
           animation: swapBgWrit 0s;
   -webkit-animation-delay: .2s;
@@ -371,7 +371,7 @@ input:checked + .th-switch-slider {
   background-size: 100% 300%;
   background-image: linear-gradient(to bottom, var(--accent-writ) 33%, var(--nav-bg-this-page) 33% 67%, var(--nav-bg) 67%); }
 
-.mni.prev.mni-code {
+.main-nav-item.prev.mni-code {
   -webkit-animation: swapBgCode 0s;
           animation: swapBgCode 0s;
   -webkit-animation-delay: .2s;
@@ -381,15 +381,15 @@ input:checked + .th-switch-slider {
   background-size: 100% 300%;
   background-image: linear-gradient(to bottom, var(--accent-code) 33%, var(--nav-bg-this-page) 33% 67%, var(--nav-bg) 67%); }
 
-.mni.prev:hover {
+.main-nav-item.prev:hover {
   background-position: top; }
 
-.mni.current {
+.main-nav-item.current {
   cursor: default;
   background-position: center;
   background-size: 100% 300%;
   background-image: linear-gradient(to bottom, var(--accent) 33%, var(--nav-bg-this-page) 33% 67%, var(--nav-bg) 67%); }
-  .mni.current:hover {
+  .main-nav-item.current:hover {
     background-position: top; }
 
 /* hide default nav & show mobile nav */

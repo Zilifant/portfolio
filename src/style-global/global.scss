@@ -428,7 +428,7 @@ input:checked + .th-switch-slider {
   );
 }
 
-.mni.prev {
+.main-nav-item.prev {
   &.mni-bio {
     animation: swapBgBio 0s;
     animation-delay: .2s;
@@ -478,7 +478,7 @@ input:checked + .th-switch-slider {
   };
 }
 
-.mni.current {
+.main-nav-item.current {
   cursor: default;
   background-position: center;
   background-size: 100% 300%;
