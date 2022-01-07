@@ -2,6 +2,7 @@
 
 <script>
   import Wrap from './utility/Wrap.svelte';
+  import Header from './pages/Header.svelte';
   import Footer from './utility/Footer.svelte';
   import Bio from './pages/Bio.svelte';
   import Resume from './pages/Resume.svelte';
@@ -67,23 +68,7 @@
   data-theme={themeData(theme)}
 >
 
-  <header class='main-head'>
-    <div class='main-head-grid'>
-      <h4 class='main-head-item main-head-item-title'>Scott Silsbe</h4>
-      <label class='main-head-item theme-switch-bg'>
-        <input
-          class='theme-switch-checkbox'
-          type='checkbox'
-          checked={theme === light}
-          on:change={(e) => switchTheme(e)}
-        >
-        <div class='th-switch-slider preload'>
-          <div class='eclipse-animation moon preload'></div>
-          <div class='eclipse-animation earth preload'></div>
-        </div>
-      </label>
-    </div>
-  </header>
+  <Header bind:theme={theme} />
 
   <nav class='main-nav'>
     {#each pages as { id }}
