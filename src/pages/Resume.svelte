@@ -39,8 +39,12 @@
 
 <div class={'page-wrapper resume'}>
 
+  <section class='content res-headline'>
+    <p class='res-headline-text'>{res.intro.headline}</p>
+  </section>
+
   <section class='content res-achievements'>
-    <h2 class='res-sec-title first-sec'>At A Glance</h2>
+    <h2 class='res-sec-title'>At A Glance</h2>
     <ul>
       {#each res.intro.achievements as item}
         <li class='achievement'>{item}</li>

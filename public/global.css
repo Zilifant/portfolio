@@ -649,10 +649,14 @@ input:checked + .th-switch-slider {
   transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time);
   margin: 1rem 0 1rem 2px;
   font-size: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: .1rem; }
-  .res-sec-title.first-sec {
-    margin-top: 0; }
+  letter-spacing: .1rem;
+  text-transform: uppercase; }
+
+.res-headline-text {
+  transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time);
+  font-size: 1.5rem;
+  letter-spacing: .1rem;
+  line-height: 2rem; }
 
 .res-achievements ul,
 .res-endorsements ul,

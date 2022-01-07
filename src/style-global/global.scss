@@ -806,11 +806,15 @@ input:checked + .th-switch-slider {
   @include colorfade();
   margin: 1rem 0 1rem 2px;
   font-size: 1.5rem;
-  text-transform: uppercase;
   letter-spacing: .1rem;
-  &.first-sec {
-    margin-top: 0;
-  };
+  text-transform: uppercase;
+}
+
+.res-headline-text {
+  @include colorfade();
+  font-size: 1.5rem;
+  letter-spacing: .1rem;
+  line-height: 2rem;
 }
 
 .res-achievements ul,
