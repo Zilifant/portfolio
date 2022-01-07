@@ -1349,6 +1349,10 @@ input:checked + .th-switch-slider {
     };
   };
 
+  // & .code-project-headline > p {
+  //   font-size: 1.25rem;
+  // }
+
   & .code-project-description > p:not(:first-child) {
     margin-top: .5rem;
   };
