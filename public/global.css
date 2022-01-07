@@ -709,6 +709,7 @@ input:checked + .th-switch-slider {
   .endorsement .endorse-person {
     transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time);
     color: var(--text-alt-faded);
+    font-weight: var(--theme-weight-adjust-title-text);
     margin-top: .5rem; }
 
 .edu {

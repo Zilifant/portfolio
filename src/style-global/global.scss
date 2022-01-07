@@ -878,6 +878,7 @@ input:checked + .th-switch-slider {
   & .endorse-person {
     @include colorfade();
     color: var(--text-alt-faded);
+    font-weight: var(--theme-weight-adjust-title-text);
     margin-top: .5rem;
   };
 }
