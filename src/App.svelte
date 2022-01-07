@@ -1,7 +1,6 @@
 <!-- App -->
 
 <script>
-  import { onMount } from 'svelte';
   import Wrap from './utility/Wrap.svelte';
   import Footer from './utility/Footer.svelte';
   import Bio from './pages/Bio.svelte';
@@ -11,37 +10,41 @@
   import { version, pages, res, code, writ, } from './content/site-info';
   import {
     getRandomQuote,
-    setThemeFromLocalStorage,
-    switchTheme,
     setFlyDirection,
     getInitialPageId,
     removePreloadClass,
+    applySafariNavFix,
   } from './utilities';
 
   removePreloadClass({ firstLoad: true });
 
   $: isCurrentPage = (pg) => (pg === page) ? 'current' : '';
   $: isPrevPage = (pg) => (pg === prevPage) ? 'prev' : 'not-prev';
-  $: getTheme = () => document.body.getAttribute('class');
+  $: pageData = (page) => (!!page) ? page : 'bio';
+  $: themeData = (theme) => (!!theme) ? theme : 'dark';
 
   let prevPage, flyTo;
   let dropNavState = 'hidden';
   let page = getInitialPageId();
+  let theme = localStorage.getItem('theme');
   let quote = getRandomQuote();
 
-  onMount(() => setThemeFromLocalStorage(page));
+  function switchTheme(e) {
+    theme = e.target.checked ? 'light' : 'dark';
+    localStorage.setItem('theme', theme);
+    applySafariNavFix();
+  };
 
-  function switchPage(newPg) {
+  function switchPage(newPage) {
     // If link to current page triggered, do nothing.
-    if (newPg === page) return;
+    if (newPage === page) return;
 
     // Update state.
     prevPage = page;
-    page = newPg;
+    page = newPage;
     flyTo = setFlyDirection(prevPage, page);
     quote = getRandomQuote();
 
-    document.body.setAttribute('id', `${page}-${getTheme()}`);
     removePreloadClass({ firstLoad: false });
 
     // If viewing dropNav, minimize it.
@@ -54,7 +57,11 @@
   };
 </script>
 
-<main class='wrapper'>
+<main
+  class='main-wrapper'
+  data-page={pageData(page)}
+  data-theme={themeData(theme)}
+>
 
   <header class='main-head'>
     <div class='main-head-grid'>
@@ -63,7 +70,8 @@
         <input
           class='theme-switch-checkbox'
           type='checkbox'
-          on:change={(e) => switchTheme(e, page)}
+          checked={theme === 'light'}
+          on:change={(e) => switchTheme(e)}
         >
         <div class='th-switch-slider preload'>
           <div class='eclipse-animation moon preload'></div>
@@ -121,7 +129,7 @@
         </Wrap>
       {:else}
         <Wrap flyDirection={flyTo}>
-          <Bio isDarkMode={getTheme() === 'dark'} />
+          <Bio theme={themeData(theme)} />
         </Wrap>
       {/if}
     </div>

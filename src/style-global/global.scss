@@ -143,7 +143,7 @@ p, ul, ol, li {
 
 /*WRAPPER*/
 
-.wrapper {
+main {
   background-color: var(--bgcolor);
 }
 
@@ -1167,7 +1167,7 @@ input:checked + .th-switch-slider {
 }
 
 .x-content-li {
-  body.dark & {
+  main[data-theme='dark'] & {
     color: var(--text-alt-faded);
   };
   &:not(:first-child) {

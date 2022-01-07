@@ -3,8 +3,8 @@
 <script>
   import partners from '../content/partners.json';
 
-  export let isDarkMode;
-  $: suffix = isDarkMode ? '-alt' : '';
+  export let theme;
+  $: suffix = (theme === 'dark') ? '-alt' : '';
 </script>
 
 <div class={'page-wrapper bio'}>

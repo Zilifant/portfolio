@@ -146,7 +146,7 @@ p, ul, ol, li {
   font-weight: var(--theme-weight-adjust-text); }
 
 /*WRAPPER*/
-.wrapper {
+main {
   background-color: var(--bgcolor); }
 
 /*SVG*/
@@ -939,7 +939,7 @@ input:checked + .th-switch-slider {
   list-style-type: none;
   padding: 0 1rem 1rem 3.5rem; }
 
-body.dark .x-content-li {
+main[data-theme='dark'] .x-content-li {
   color: var(--text-alt-faded); }
 
 .x-content-li:not(:first-child) {

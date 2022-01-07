@@ -243,7 +243,7 @@
   --shadow2: rgba(0, 0, 0, 0.1);
 }
 
-body.light {
+main[data-theme='light'] {
   --accent-bio: var(--pink4);
   --accent-bio-hover: var(--pink3);
   --accent-bio-hover-dark: var(--pink5);
@@ -303,7 +303,7 @@ body.light {
   --theme-weight-adjust-title-text: 400;
 }
 
-body.dark {
+main[data-theme='dark'] {
   --accent-bio: var(--pink5);
   --accent-bio-hover: var(--pink4);
   --accent-bio-hover-dark: var(--pink6);
@@ -363,35 +363,35 @@ body.dark {
   --theme-weight-adjust-title-text: 400;
 }
 
-body#bio-light {
+main[data-theme='light'][data-page='bio'] {
   --accent: var(--pink4);
   --accent-hover: var(--pink3);
 }
-body#resume-light {
+main[data-theme='light'][data-page='resume'] {
   --accent: var(--cyan5);
   --accent-hover: var(--cyan4);
 }
-body#writing-light {
+main[data-theme='light'][data-page='writing'] {
   --accent: var(--oran4);
   --accent-hover: var(--oran3);
 }
-body#code-light {
+main[data-theme='light'][data-page='code'] {
   --accent: var(--emer5);
   --accent-hover: var(--emer4);
 }
-body#bio-dark {
+main[data-theme='dark'][data-page='bio'] {
   --accent: var(--pink5);
   --accent-hover: var(--pink4);
 }
-body#resume-dark {
+main[data-theme='dark'][data-page='resume'] {
   --accent: var(--cyan6);
   --accent-hover: var(--cyan5);
 }
-body#writing-dark {
+main[data-theme='dark'][data-page='writing'] {
   --accent: var(--oran5);
   --accent-hover: var(--oran4);
 }
-body#code-dark {
+main[data-theme='dark'][data-page='code'] {
   --accent: var(--emer6);
   --accent-hover: var(--emer5);
 }
