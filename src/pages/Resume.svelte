@@ -141,5 +141,5 @@
 </div>
 
 <style lang='scss'>
-  @import '../style/resume.scss';
+  @import '../style/pages/resume.scss';
 </style>
