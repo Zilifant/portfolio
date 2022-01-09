@@ -59,3 +59,7 @@
     </p>
   </div>
 </footer>
+
+<style lang='scss'>
+  @import '../style/utility/footer.scss';
+</style>
