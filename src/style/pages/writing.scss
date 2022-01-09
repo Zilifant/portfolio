@@ -1,0 +1,65 @@
+// Writing
+
+svg.svg-cstitle {
+  width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  fill: var(--text);
+}
+
+@media (max-width: 440px) {
+  svg.svg-cstitle {
+    width: 86vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    fill: var(--text);
+  }
+}
+
+.writing-divider {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.p1,
+.p1 > em,
+.p2 {
+  font-size: 20px;
+  line-height: 2rem;
+  font-weight: var(--theme-weight-adjust-text);
+  margin: 1rem 0;
+}
+
+.p1,
+.p1 > em {
+    color: var(--text);
+}
+
+.p2 {
+    color: var(--text-alt-faded);
+}
+
+.p3 {
+  margin-top: 0;
+  margin-left: 3rem;
+  margin-right: 2.5rem;
+  margin-bottom: .5rem;
+  line-height: 1.25rem;
+  font-size: 1rem;
+  font-family: monospace;
+  color: var(--cyan5);
+}
+
+// @media screen and (min-device-height: 1000px) {
+//   .p1,
+//   .p1 > em,
+//   .p2 {
+//     font-size: 24px;
+//     line-height: 2.5rem;
+//     font-weight: var(--theme-weight-adjust-text);
+//   }
+// }
