@@ -6,7 +6,6 @@
   object-fit: contain;
   overflow: hidden;
   border: var(--x-btn-border);
-  // @include light-dark-shadows();
   @include colorfade();
   & > img {
     width: 100%;
@@ -44,7 +43,6 @@
     background-color: var(--res-item-bg);
     border: var(--x-btn-border);
     @include colorfade();
-    // @include light-dark-shadows();
     & img {
       height: 65px;
       width: 144px;
