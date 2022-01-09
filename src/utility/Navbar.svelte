@@ -69,3 +69,7 @@
     </div>
   </div>
 </nav>
+
+<style lang='scss'>
+  @import '../style/utility/navbar.scss';
+</style>
