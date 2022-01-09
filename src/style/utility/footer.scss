@@ -1,0 +1,91 @@
+// Footer
+
+@import '../mixins.scss';
+
+.foot {
+  display: flex;
+  justify-content: center;
+  background: var(--foot-bg);
+  border-top: var(--bdr1) solid var(--foot-border);
+  @include colorfade();
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1.5rem;
+  padding: 1rem 0;
+  width: 100%;
+  max-width: 800px;
+  min-height: 100px;
+}
+
+.foot-item { display: flex; }
+
+.foot-item-right,
+.foot-item-left a {
+  position: relative;
+  font-size: .75rem;
+  line-height: 17px;
+  color: var(--foot-text);
+  font-weight: var(--theme-weight-adjust-text);
+}
+
+.foot-item-left a {
+  left: 0;
+  font-style: italic;
+  text-decoration: none;
+  margin-right: 2rem;
+  @include colorfade();
+}
+
+.foot-item-left a:hover {
+  color: var(--accent);
+}
+
+.foot-item-right {
+  justify-self: right;
+  text-align: right;
+  margin-left: 2rem;
+}
+
+.copyright-1-line { display: none; }
+
+.foot-social-icon {
+  display: flex;
+  vertical-align: bottom;
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: var(--rad);
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
+.foot-social-icon svg {
+  margin: auto;
+  fill: var(--foot-social-icon-bg);
+  @include colorfade();
+  &:hover {
+    fill: var(--accent-hover);
+  }
+}
+
+// center all footer content for mobile
+@media (max-width: 600px) {
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .foot-item {
+    text-align: center;
+    margin: .5rem 1.5rem;
+  }
+
+  .foot-item-center { order: -1; }
+
+  .copyright-2-line { display: none; }
+  .copyright-1-line { display: flex; }
+}
