@@ -1,0 +1,115 @@
+// Header
+
+@import '../mixins.scss';
+
+@keyframes movingGradient {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
+.main-head {
+  display: flex;
+  padding: .75rem 0;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: var(--header-bg);
+  @include colorfade();
+}
+
+.main-head-grid {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-template-areas: '. title switch';
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 1.5rem;
+  max-width: 800px;
+}
+
+.main-head-item {
+  z-index: 0;
+}
+
+.main-head-item-title {
+  grid-area: title;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  background: linear-gradient(var(--header-text), var(--chlg0));
+  -webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// hide default header
+@media (max-width: 600px) { .main-head { display: none; } }
+
+// Theme Switch
+
+.theme-switch-bg {
+  justify-self: right;
+  grid-area: switch;
+  padding: 4px;
+  width: 50px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid var(--chlg6);
+  overflow: hidden;
+  cursor: pointer;
+  background-color: var(--chlg7);
+}
+
+.theme-switch-bg input { display: none; }
+
+.th-switch-slider {
+  cursor: pointer;
+  position: relative;
+  right: -20px;
+  z-index: 999;
+  overflow: hidden;
+  height: 20px;
+  width: 20px;
+  -webkit-transition: transform .5s;
+     -moz-transition: transform .5s;
+       -o-transition: transform .5s;
+          transition: transform .5s;
+}
+
+.eclipse-animation {
+  @include circle(100%);
+  transition: all .5s;
+  &.moon {
+    animation: movingGradient 8s ease infinite;
+    background: linear-gradient(
+      45deg, var(--ambr3), var(--ambr4), var(--ambr5), var(--ambr6)
+    );
+    background-size: 400% 400%; // must be last in property list
+  };
+  &.earth {
+    background-color: var(--chlg7);
+    transform: translate(100%, -175%);
+  };
+  input:checked + .th-switch-slider & {
+    &.moon {
+      animation: movingGradient 8s ease infinite;
+      background: linear-gradient(
+        45deg, var(--white), var(--colg0), var(--colg3), var(--colg4)
+      );
+      background-size: 400% 400%; // must be last in property list
+    };
+    &.earth {
+      transform: translate(33%, -125%);
+    };
+  };
+}
+
+input:checked + .th-switch-slider {
+  -webkit-transform: translateX(-20px);
+     -moz-transform: translateX(-20px);
+      -ms-transform: translateX(-20px);
+       -o-transform: translateX(-20px);
+          transform: translateX(-20px);
+}
