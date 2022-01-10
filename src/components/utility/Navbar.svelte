@@ -2,10 +2,10 @@
 
 <script>
 
-  import { pages } from '../constants';
+  import { pages } from '../../constants';
   import {
     setFlyDirection, getRandomQuote, removePreloadClass
-  } from '../utilities';
+  } from '../../utilities';
 
   export let page, quote, flyTo;
 
@@ -71,5 +71,5 @@
 </nav>
 
 <style lang='scss'>
-  @import '../style/utility/navbar.scss';
+  @import '../../style/utility/navbar.scss';
 </style>

@@ -24,6 +24,18 @@
   };
 }
 
+.content-30-left { width: 30%; }
+.content-30-left > * { margin-right: 1rem; }
+.content-70-right {
+  width: 70%;
+  & > * {
+    margin-left: 1rem;
+    @media (max-width: 800px) {
+      margin-left: 0;
+    };
+  };
+}
+
 .content-right-bio {
   display: flex;
   flex-direction: column;
@@ -48,4 +60,10 @@
       width: 144px;
     };
   };
+}
+
+.large-text p,
+.large-text p em {
+  font-size: 1.5rem;
+  line-height: 2.25rem;
 }

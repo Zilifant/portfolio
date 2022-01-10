@@ -1,0 +1,16 @@
+// SVG Icon
+
+.svg-icon {
+  height: 100%;
+  width: 100%;
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  stroke-linejoin: round;
+  stroke-miterlimit: 2;
+  margin: 0;
+  fill: var(--text);
+}
+
+.svg-wrap.flex {
+  display: flex;
+}

@@ -1,14 +1,14 @@
 <!-- App -->
 
 <script>
-  import Wrap from './utility/Wrap.svelte';
-  import Header from './utility/Header.svelte';
-  import Navbar from './utility/Navbar.svelte';
-  import Footer from './utility/Footer.svelte';
-  import Bio from './pages/Bio.svelte';
-  import Resume from './pages/Resume.svelte';
-  import Writing from './pages/Writing.svelte';
-  import Code from './pages/Code.svelte';
+  import Wrap from './components/utility/Wrap.svelte';
+  import Header from './components/utility/Header.svelte';
+  import Navbar from './components/utility/Navbar.svelte';
+  import Footer from './components/utility/Footer.svelte';
+  import Bio from './components/pages/Bio.svelte';
+  import Resume from './components/pages/Resume.svelte';
+  import Writing from './components/pages/Writing.svelte';
+  import Code from './components/pages/Code.svelte';
   import {
     version, bio, res, code, writ, dark,
   } from './constants';
@@ -75,4 +75,5 @@
 <style lang='scss' global>
   @import './style/variables.scss';
   @import './style/mixins.scss';
+  @import './style/global.scss';
 </style>

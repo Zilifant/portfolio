@@ -2,8 +2,8 @@
 
 <script>
 
-  import socials from '../content/socials.json';
-  import { bio } from '../constants';
+  import socials from '../../content/socials.json';
+  import { bio } from '../../constants';
 
   export let page = bio;
   export let version;
@@ -61,5 +61,5 @@
 </footer>
 
 <style lang='scss'>
-  @import '../style/utility/footer.scss';
+  @import '../../style/utility/footer.scss';
 </style>

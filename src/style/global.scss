@@ -1,0 +1,104 @@
+// Global
+
+@import './mixins.scss';
+
+// Reset
+
+html, body {
+  overflow: overlay;
+  height: 100%;
+}
+
+main {
+  min-height: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  background: var(--bg);
+}
+
+*, *:before, *:after {
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--text);
+}
+
+button {
+  appearance: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 0;
+  &:focus { outline: none; };
+}
+
+h1,h2,h3,h4,h5,h6,li,ol,p,ul {
+  font-style:normal;
+  text-decoration:none;
+  overflow-wrap: break-word;
+}
+
+h1,h2,h3,h4,h5,h6{font-weight:400}
+h1{font-size:2.5rem}
+h2{font-size:2.25rem}
+h3{font-size:2rem}
+h4{font-size:1.75rem}
+h5{font-size:1.5rem}
+h6{font-size:1.25rem}
+
+p, ul, ol, li {
+  @include font-adjust();
+}
+
+// Wrappers
+
+main {
+  background-color: var(--bgcolor);
+}
+
+.content-wrapper,
+.page-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.content-wrapper {
+  display: flex;
+  flex: auto;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.transition-grid {
+  display: grid;
+}
+
+.page-wrapper {
+  max-width: 800px;
+  margin: 0 1.5rem;
+}
+
+.content-wrapper,
+.side-right,
+.side-left {
+  background: var(--content-bg);
+  @include colorfade();
+}
+
+// Utility
+
+.btn {
+  border-radius: var(--rad);
+}
+
+.preload,
+.preload:before {
+  -webkit-transition: none;
+     -moz-transition: none;
+       -o-transition: none;
+          transition: none;
+}

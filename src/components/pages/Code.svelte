@@ -1,11 +1,12 @@
-<!-- SVG Icons -->
+<!-- Code -->
 
 <script>
-  export let ico, cls;
+  import projects from '../../content/projects.json';
 
   const svg = {
     plus:
     `<svg
+      class="svg-icon"
       viewBox="0 0 75 75"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -15,6 +16,7 @@
 
     quote:
     `<svg
+      class="svg-icon"
       viewBox="0 0 100 71"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -28,6 +30,7 @@
 
     github:
     `<svg
+      class="svg-icon"
       viewBox='0 0 171 167'
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -37,6 +40,7 @@
 
     npm:
     `<svg
+      class="svg-icon"
       viewBox="0 0 24 24"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -46,6 +50,7 @@
 
     mhk:
     `<svg
+      class="svg-icon"
       viewBox="0 0 262 301"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -57,6 +62,7 @@
 
     slogo:
     `<svg
+      class="svg-icon"
       viewBox="0 0 262 301"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -68,6 +74,60 @@
   };
 </script>
 
-<div class={`svg-wrap ${cls || ''}`.trim()}>
-  {@html svg[ico]}
+<div class={'page-wrapper code'}>
+
+  {#each projects as project}
+    <section class='code-project'>
+
+      {#if project.type === 'multi-section'}
+
+        <h3>{project.title}</h3>
+        <div class='code-project-description'>{@html project.description}</div>
+        {#each project.sections as section}
+          <h3 class='code-project-sec-title'>{section.title}</h3>
+          <div class='code-project-description'>{@html section.description}</div>
+          <div class='code-project-links'>
+            {#each section.links as {type, text, icon, href}}
+              <a
+                class={`btn url-pseudo-btn ${type}-url`}
+                href={href}
+                target="_blank" rel="noopener noreferrer"
+              >
+                <div class='svg-wrap flex'>
+                  {@html svg[icon]}
+                </div>
+                <p>{text}</p>
+              </a>
+            {/each}
+          </div>
+        {/each}
+
+      {:else}
+
+        <h3>{project.title}</h3>
+        <div class='code-project-description'>{@html project.description}</div>
+        <div class='code-project-links'>
+          {#each project.links as {type, text, icon, href}}
+            <a
+              class={`btn url-pseudo-btn ${type}-url`}
+              href={href}
+              target="_blank" rel="noopener noreferrer"
+            >
+              <div class='svg-wrap flex'>
+                {@html svg[icon]}
+              </div>
+              <p>{text}</p>
+            </a>
+          {/each}
+        </div>
+
+      {/if}
+
+    </section>
+  {/each}
+
 </div>
+
+<style lang="scss">
+  @import '../../style/pages/code.scss';
+</style>

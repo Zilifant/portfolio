@@ -25,5 +25,5 @@ from right or left, depending on the pages' relative positions in the navbar.
 </div>
 
 <style lang='scss'>
-  @import '../style/utility/wrap.scss';
+  @import '../../style/utility/wrap.scss';
 </style>

@@ -89,5 +89,5 @@
 </div>
 
 <style lang='scss'>
-  @import '../style/pages/writing.scss';
+  @import '../../style/pages/writing.scss';
 </style>

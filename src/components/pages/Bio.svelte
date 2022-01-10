@@ -1,7 +1,7 @@
 <!-- Bio -->
 
 <script>
-  import partners from '../content/partners.json';
+  import partners from '../../content/partners.json';
 
   export let theme;
   $: suffix = (theme === 'dark') ? '-alt' : '';
@@ -43,5 +43,5 @@
 </div>
 
 <style lang='scss'>
-  @import '../style/pages/bio.scss';
+  @import '../../style/pages/bio.scss';
 </style>

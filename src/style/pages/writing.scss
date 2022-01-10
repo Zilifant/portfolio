@@ -20,6 +20,12 @@ svg.svg-cstitle {
   }
 }
 
+.horz-bar {
+  height: var(--bdr1);
+  margin: 1rem 0;
+  background: var(--horz-bar);
+}
+
 .writing-divider {
   margin-top: 2rem;
   margin-bottom: 2rem;

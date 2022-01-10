@@ -1,0 +1,81 @@
+// Code
+
+@import '../mixins.scss';
+
+.page-wrapper.code > :not(:first-child) {
+  margin-top: 1rem;
+}
+
+.page-wrapper.code > section {
+  width: 100%;
+}
+
+.code-project {
+  padding: 1.25rem 1rem;
+  background-color: var(--res-item-bg);
+  border: var(--x-btn-border);
+  @include colorfade();
+  @include font-adjust();
+
+  & > :not(:first-child):not(.code-project-sec-title) {
+    margin-top: 1rem;
+  };
+
+  & .code-project-title > :not(:first-child),
+  & .code-project-links > :not(:first-child) {
+    margin-left: .5rem;
+  };
+
+  & .code-project-title {
+    display: flex;
+    align-items: center;
+  };
+
+  & .code-project-links {
+    display: flex;
+    align-items: center;
+  };
+
+  & .code-project-sec-title {
+    margin-top: 1.5rem;
+  };
+
+  & .code-project-divider {
+    margin-top: 1.5rem;
+    @include colorfade();
+    background-color: var(--code-project-divider);
+  };
+}
+
+.url-pseudo-btn {
+  display: flex;
+  padding: .5rem 1rem;
+  align-items: center;
+  min-width: max-content;
+  width: max-content;
+  text-decoration: none;
+  color: var(--white);
+  background-color: var(--btn-bg);
+  @include font-adjust();
+  $t: var(--time);
+  transition:
+    color $t,
+    background-color $t,
+    border-color $t,
+    transform $t;
+  &:hover {
+    transform: translateY(-5px);
+  };
+  & p {
+    font-size: 1.25rem;
+    position: relative;
+    color: var(--btn-fg);
+    @include colorfade();
+  };
+  &:not(:active):hover {
+    background-color: var(--btn-bg-hover);
+    & p {
+      color: var(--btn-fg-hover);
+    };
+  };
+}

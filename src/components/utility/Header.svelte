@@ -2,8 +2,8 @@
 
 <script>
 
-  import { light, dark } from '../constants';
-  import { applySafariNavFix } from '../utilities';
+  import { light, dark } from '../../constants';
+  import { applySafariNavFix } from '../../utilities';
 
   export let theme;
 
@@ -34,5 +34,5 @@
 </header>
 
 <style lang='scss'>
-  @import '../style/utility/header.scss';
+  @import '../../style/utility/header.scss';
 </style>
