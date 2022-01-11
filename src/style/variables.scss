@@ -290,6 +290,7 @@ main[data-theme='light'] {
   --x-btn-bg: var(--white);
   --x-btn-bg-hover: var(--white);
   --x-content-bg: var(--white);
+  --x-content-li: var(--text);
   --x-btn-shadow: var(--trug3);
   --x-btn-border: var(--bdr1) solid var(--white);
   --x-btn-icon-fore: var(--text);
@@ -351,6 +352,7 @@ main[data-theme='dark'] {
   --x-btn-bg: var(--chlg9);
   --x-btn-bg-hover: var(--x-btn-bg);
   --x-content-bg: var(--x-btn-bg);
+  --x-content-li: var(--text-alt-faded);
   --x-btn-shadow: var(--chlg9);
   --x-btn-border: var(--bdr1) solid var(--chlg6);
   --x-btn-icon-fore: var(--text);

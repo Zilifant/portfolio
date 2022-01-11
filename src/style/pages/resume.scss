@@ -354,9 +354,7 @@
 }
 
 .x-content-li {
-  main[data-theme='dark'] & {
-    color: var(--text-alt-faded);
-  };
+  color: var(--x-content-li);
   &:not(:first-child) {
     margin-top: .25rem;
   };
