@@ -1,6 +1,6 @@
 {
   "name": "svelte-app",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "license": "MIT",
   "scripts": {
     "sass": "./node_modules/.bin/node-sass src/style-global -o temp",
