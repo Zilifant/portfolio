@@ -2,8 +2,6 @@
   display: flex; }
 
 .url-pseudo-btn .svg-icon {
-  height: 100%;
-  width: 100%;
   fill-rule: evenodd;
   clip-rule: evenodd;
   stroke-linejoin: round;
