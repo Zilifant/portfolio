@@ -25,7 +25,7 @@
     <p>I design, produce, and run large-scale live gaming events.</p>
     <p>Or rather, I did. Then 2020 happened. &#x1F610;</p>
     <p>While I continue to explore opportunities in the events space, my focus is now full-stack web development.</p>
-    <p>Companies and organizations I've worked with...</p>
+    <p><em>Who I've worked with...</em></p>
   </section>
 
   <section class='partner-logo-grid'>
