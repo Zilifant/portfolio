@@ -4,6 +4,7 @@
 /temp/
 /scripts/
 
+.env
 notes.md
 .DS_Store
 **/.DS_Store
