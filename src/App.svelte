@@ -9,12 +9,9 @@
   import Resume from './components/pages/Resume.svelte';
   import Writing from './components/pages/Writing.svelte';
   import Code from './components/pages/Code.svelte';
-  import {
-    version, bio, res, code, writ, dark,
-  } from './constants';
-  import {
-    getRandomQuote, getInitialPageId, removePreloadClass,
-  } from './utilities';
+  import { version, bio, res, code, writ, dark, } from './constants';
+  import { randFrom, getInitialPageId, removePreloadClass, } from './utilities';
+  import { sendXMLHttpRequest } from './sendXMLHttpRequest';
 
   removePreloadClass({ firstLoad: true });
 
@@ -24,7 +21,23 @@
   let flyTo = 'left';
   let page = getInitialPageId();
   let theme = localStorage.getItem('theme');
-  let quote = getRandomQuote();
+  let quotes = [];
+  let quote = '';
+
+  const fromBin = (binId) => {
+    return {
+      url: `https://api.jsonbin.io/v3/b/${binId}/latest`,
+      headers: [
+        { name: 'X-Master-Key', value: proc?.env.MASTER_KEY }
+      ],
+      resType: 'json'
+    };
+  };
+
+  sendXMLHttpRequest(fromBin(proc?.env.QUOTE_BIN_ID)).then(resData => {
+    quotes = resData.record;
+    quote = randFrom(quotes);
+  });
 
 </script>
 
@@ -40,6 +53,7 @@
     bind:page={page}
     bind:quote={quote}
     bind:flyTo={flyTo}
+    quotes={quotes}
   />
 
   <div class='content-wrapper'>

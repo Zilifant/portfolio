@@ -1,13 +1,12 @@
 // Utilities
 
-import quotes from './content/quotes.json';
 import { pageIds } from './constants';
 
 //------------//
 //Random Quote//
 //------------//
 
-export const getRandomQuote = () => quotes[Math.floor(Math.random() * quotes.length)];
+export const randFrom = (arr=[]) => arr[Math.floor(Math.random() * arr.length)];
 
 //----------------------------//
 //Fly Direction on Page Switch//

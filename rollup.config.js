@@ -6,6 +6,8 @@ import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
 import json from '@rollup/plugin-json';
 import preprocess from 'svelte-preprocess';
+import { config as configureDotEnv } from 'dotenv';
+import replace from '@rollup/plugin-replace';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -30,6 +32,8 @@ function serve() {
 	};
 }
 
+configureDotEnv();
+
 export default {
 	input: 'src/main.js',
 	output: {
@@ -39,6 +43,17 @@ export default {
 		file: 'public/build/bundle.js'
 	},
 	plugins: [
+		replace({
+			preventAssignment: true,
+			proc: JSON.stringify({
+				env: {
+					isProd: production,
+					QUOTE_BIN_ID: process.env.QUOTE_BIN_ID,
+					MASTER_KEY: process.env.MASTER_KEY
+				}
+			})
+		}),
+
 		svelte({
 			preprocess: preprocess(),
 			compilerOptions: {

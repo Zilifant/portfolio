@@ -3,11 +3,9 @@
 <script>
 
   import { pages } from '../../constants';
-  import {
-    setFlyDirection, getRandomQuote, removePreloadClass
-  } from '../../utilities';
+  import { setFlyDirection, removePreloadClass, randFrom } from '../../utilities';
 
-  export let page, quote, flyTo;
+  export let page, quote, quotes, flyTo;
 
   let prevPage;
   let dropNavState = 'hidden';
@@ -23,7 +21,7 @@
     prevPage = page;
     page = newPage;
     flyTo = setFlyDirection(prevPage, page);
-    quote = getRandomQuote();
+    quote = randFrom(quotes);
 
     removePreloadClass({ firstLoad: false });
 

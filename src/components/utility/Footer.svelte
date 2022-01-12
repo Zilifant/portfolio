@@ -15,11 +15,11 @@
   <div class='footer-grid'>
     <p class='foot-item foot-item-left' id='foot-quote-display'>
       <a
-        href={quote.url}
+        href={quote?.url || ''}
         target='_blank'
         rel='noopener noreferrer'
       >
-        {quote.text}<br>{quote.author}
+        {quote?.text || ''}<br>{quote?.author || ''}
       </a>
     </p>
     <div class='foot-item foot-item-center'>
