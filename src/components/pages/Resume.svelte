@@ -1,12 +1,11 @@
 <!-- Resume -->
 
 <script>
-  import res from '../../content/resume.json';
-
   let highlightedCat = 'coding';
+  export let res;
 
   // Alphabetize skills.
-  const skills = res.skills.skills.sort((a, b) => {
+  $: skills = res?.skills.skills.sort((a, b) => {
     return a.name.localeCompare(b.name);
   });
 
@@ -53,7 +52,7 @@
 
   <section class='content res-endorsements'>
     <ul>
-      {#each res.intro.endorsements as {name, title, quote}}
+      {#each res.endorsements as {name, title, quote}}
         <li class='endorsement'>
           <div class='svg-wrap endorsement-icon preload'>
             <svg
@@ -81,8 +80,8 @@
   <section class='content res-edu'>
     <div class='edu'>
       <h3>Education</h3>
-      {#each res.education as {degree, subject, name, year}}
-        <p><span class='degree'>{degree} </span><span class='subject'>{subject}</span><br><span class='name'>{name}</span> <span class='year'>{year}</span></p>
+      {#each res.education as {degree, subject, name, gradYear}}
+        <p><span class='degree'>{degree} </span><span class='subject'>{subject}</span><br><span class='name'>{name}</span> <span class='year'>{gradYear}</span></p>
       {/each}
     </div>
   </section>
@@ -148,11 +147,12 @@
   <section class='content res-interests'>
     <h2 class='res-sec-title'>Also...</h2>
     <ul>
-      {#each res.interests as interest}
+      {#each res.interests.longForm as interest}
         <li class='interest'>{interest}</li>
       {/each}
     </ul>
   </section>
+
 </div>
 
 <style lang='scss'>

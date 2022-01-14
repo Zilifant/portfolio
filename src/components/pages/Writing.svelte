@@ -1,7 +1,8 @@
 <!-- Writing -->
 
 <script>
-  // Nothing right now...
+  export let writing;
+  const stories = writing.stories; // Placeholder
 </script>
 
 <div class={'page-wrapper'}>

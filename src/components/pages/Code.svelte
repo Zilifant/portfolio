@@ -1,7 +1,7 @@
 <!-- Code -->
 
 <script>
-  import projects from '../../content/projects.json';
+  export let code;
 
   const svg = {
     plus:
@@ -76,7 +76,7 @@
 
 <div class={'page-wrapper code'}>
 
-  {#each projects as project}
+  {#each code.projects as project}
     <section class='code-project'>
 
       {#if project.type === 'multi-section'}

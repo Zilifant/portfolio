@@ -21,21 +21,21 @@
   let flyTo = 'left';
   let page = getInitialPageId();
   let theme = localStorage.getItem('theme');
+  let content;
   let quotes = [];
   let quote = '';
 
-  const fromBin = (binId) => {
-    return {
-      url: `https://api.jsonbin.io/v3/b/${binId}/latest`,
-      headers: [
-        { name: 'X-Master-Key', value: proc?.env.MASTER_KEY }
-      ],
-      resType: 'json'
-    };
+  const reqArgs = {
+    url: `https://api.jsonbin.io/v3/b/${proc?.env.CONTENT_BIN_ID}/latest`,
+    headers: [
+      { name: 'X-Master-Key', value: proc?.env.MASTER_KEY }
+    ],
+    resType: 'json'
   };
 
-  sendXMLHttpRequest(fromBin(proc?.env.QUOTE_BIN_ID)).then(resData => {
-    quotes = resData.record;
+  const promise = sendXMLHttpRequest(reqArgs).then(resData => {
+    content = resData.record;
+    quotes = content.quotes.quotes;
     quote = randFrom(quotes);
   });
 
@@ -57,31 +57,39 @@
   />
 
   <div class='content-wrapper'>
-    <div class='transition-grid'>
-      {#if page === res}
-        <Wrap flyDirection={flyTo}>
-          <Resume/>
-        </Wrap>
-      {:else if page === writ}
-        <Wrap flyDirection={flyTo}>
-          <Writing/>
-        </Wrap>
-      {:else if page === code}
-        <Wrap flyDirection={flyTo}>
-          <Code/>
-        </Wrap>
-      {:else}
-        <Wrap flyDirection={flyTo}>
-          <Bio theme={themeData(theme)} />
-        </Wrap>
-      {/if}
-    </div>
+    {#await promise}
+      <div>Loading...</div>
+    {:then}
+      <div class='transition-grid'>
+        {#if page === res}
+          <Wrap flyDirection={flyTo}>
+            <Resume res={content.resume}/>
+          </Wrap>
+        {:else if page === writ}
+          <Wrap flyDirection={flyTo}>
+            <Writing writing={content.writing}/>
+          </Wrap>
+        {:else if page === code}
+          <Wrap flyDirection={flyTo}>
+            <Code code={content.code}/>
+          </Wrap>
+        {:else}
+          <Wrap flyDirection={flyTo}>
+            <Bio
+              bio={content.bio}
+              theme={themeData(theme)}
+            />
+          </Wrap>
+        {/if}
+      </div>
+    {/await}
   </div>
 
   <Footer
     page={page}
     quote={quote}
     version={version}
+    socials={content?.socials}
   />
 
 </main>
