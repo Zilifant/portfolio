@@ -3,11 +3,11 @@
 
 // TODO: Add support for additional methods and data types.
 
-export function sendXMLHttpRequest({ method, url, headers, data, resType }) {
+export function sendXMLHttpRequest({ method='GET', url, headers, data, resType }) {
 
   const promise = new Promise((resolve, reject) => {
     const requester = new XMLHttpRequest();
-    requester.open(method='GET', url);
+    requester.open(method, url);
 
     if (headers) headers.forEach(header => {
       requester.setRequestHeader(header.name, header.value);
