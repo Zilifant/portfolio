@@ -1,5 +1,7 @@
 /* Styles for elements created using `{@html element}` */
 
+/* Code Page */
+
 .svg-wrap.flex {
   display: flex;
 }
@@ -29,8 +31,23 @@
   margin-top: .5rem;
 }
 
+/* Bio Page */
+
 .large-text p,
 .large-text p em {
   font-size: 1.5rem;
   line-height: 2.25rem;
+}
+
+.content-70-right > * {
+  margin-left: 1rem;
+}
+
+@media (max-width: 800px) {
+  .content-70-right > * {
+    margin-left: 0;
+  };
+  .content-right-bio :not(:first-child) {
+    margin-top: 1rem;
+  };
 }
