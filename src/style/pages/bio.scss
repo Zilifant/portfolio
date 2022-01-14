@@ -15,13 +15,8 @@
 
 @media (max-width: 800px) {
   // hide headshot
-  .content-left-bio { display: none; }
-  .content-right-bio {
-    width: 100%;
-    & :not(:first-child) {
-      margin-top: 1rem;
-    };
-  };
+  .content-left-bio { display: none; };
+  .content-right-bio { width: 100%; };
 }
 
 .content-30-left { width: 30%; }
@@ -30,12 +25,6 @@
   width: 70%;
   @media (max-width: 800px) {
     width: 100%;
-  };
-  & > * {
-    margin-left: 1rem;
-    @media (max-width: 800px) {
-      margin-left: 0;
-    };
   };
 }
 
