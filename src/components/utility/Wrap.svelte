@@ -23,7 +23,3 @@ from right or left, depending on the pages' relative positions in the navbar.
 >
   <slot></slot>
 </div>
-
-<style lang='scss'>
-  @import '../../style/utility/wrap.scss';
-</style>

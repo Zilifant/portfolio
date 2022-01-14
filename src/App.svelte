@@ -60,28 +60,26 @@
     {#await promise}
       <div>Loading...</div>
     {:then}
-      <div class='transition-grid'>
-        {#if page === res}
-          <Wrap flyDirection={flyTo}>
-            <Resume res={content.resume}/>
-          </Wrap>
-        {:else if page === writ}
-          <Wrap flyDirection={flyTo}>
-            <Writing writing={content.writing}/>
-          </Wrap>
-        {:else if page === code}
-          <Wrap flyDirection={flyTo}>
-            <Code code={content.code}/>
-          </Wrap>
-        {:else}
-          <Wrap flyDirection={flyTo}>
-            <Bio
-              bio={content.bio}
-              theme={themeData(theme)}
-            />
-          </Wrap>
-        {/if}
-      </div>
+      {#if page === res}
+        <Wrap flyDirection={flyTo}>
+          <Resume res={content.resume}/>
+        </Wrap>
+      {:else if page === writ}
+        <Wrap flyDirection={flyTo}>
+          <Writing writing={content.writing}/>
+        </Wrap>
+      {:else if page === code}
+        <Wrap flyDirection={flyTo}>
+          <Code code={content.code}/>
+        </Wrap>
+      {:else}
+        <Wrap flyDirection={flyTo}>
+          <Bio
+            bio={content.bio}
+            theme={themeData(theme)}
+          />
+        </Wrap>
+      {/if}
     {/await}
   </div>
 
