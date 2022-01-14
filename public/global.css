@@ -1,5 +1,8 @@
+/* Styles for elements created using `{@html element}` */
+
 .svg-wrap.flex {
-  display: flex; }
+  display: flex;
+}
 
 .url-pseudo-btn .svg-icon {
   fill-rule: evenodd;
@@ -11,10 +14,23 @@
   fill: var(--btn-fg);
   height: 20px;
   width: 20px;
-  transition: color var(--time), background-color var(--time), border-color var(--time), fill var(--time); }
+  transition:
+    color var(--time),
+    background-color var(--time),
+    border-color var(--time),
+    fill var(--time);
+}
 
 .url-pseudo-btn:not(:active):hover .svg-icon {
-  fill: var(--btn-fg-hover); }
+  fill: var(--btn-fg-hover);
+}
 
 .code-project .code-project-description > p:not(:first-child) {
-  margin-top: .5rem; }
+  margin-top: .5rem;
+}
+
+.large-text p,
+.large-text p em {
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+}
