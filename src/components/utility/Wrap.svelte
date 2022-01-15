@@ -7,19 +7,40 @@ from right or left, depending on the pages' relative positions in the navbar.
 <script>
   import { fly, fade } from 'svelte/transition';
 
-  export let flyDirection;
+  export let animation;
 
-  const distance = 3000;
-  const vector = (flyDirection === 'left') ? distance : -distance;
-  const delay = 0;
-  const fadeDuration = 200;
-  const flyDuration = 500;
+  const flyDistance = 3000;
+  const flyVector = (animation === 'flyLeft') ? flyDistance : -flyDistance;
+  const flyInDelay = 0;
+  const flyInDuration = 500;
+
+  const fadeInDelay = 200;
+  const fadeInDuration = 200;
+  const fadeOutDuration = 200;
 </script>
 
-<div
-  class='transition-wrapper'
-  in:fly='{{x:vector, delay: delay, duration: flyDuration}}'
-  out:fade='{{duration: fadeDuration}}'
->
-  <slot></slot>
-</div>
+{#if animation === 'fade'}
+
+  <div
+    class='transition-wrapper'
+    in:fade='{{delay: fadeInDelay, duration: fadeInDuration}}'
+    out:fade='{{duration: fadeOutDuration}}'
+  >
+    <slot></slot>
+  </div>
+
+{:else}
+
+  <div
+    class='transition-wrapper'
+    in:fly='{{x:flyVector, delay: flyInDelay, duration: flyInDuration}}'
+    out:fade='{{duration: fadeOutDuration}}'
+  >
+    <slot></slot>
+  </div>
+
+{/if}
+
+<style lang='scss'>
+  @import '../../style/utility/wrap.scss';
+</style>
