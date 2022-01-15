@@ -2,6 +2,7 @@
 
 <script>
   import Wrap from './components/utility/Wrap.svelte';
+  import Loading from './components/utility/Loading.svelte';
   import Header from './components/utility/Header.svelte';
   import Navbar from './components/utility/Navbar.svelte';
   import Footer from './components/utility/Footer.svelte';
@@ -18,9 +19,9 @@
   $: pageData = (page) => (!!page) ? page : bio;
   $: themeData = (theme) => (!!theme) ? theme : dark;
 
-  let flyTo = 'left';
   let page = getInitialPageId();
   let theme = localStorage.getItem('theme');
+  let animation = 'fade';
   let content;
   let quotes = [];
   let quote = '';
@@ -52,35 +53,37 @@
   <Navbar
     bind:page={page}
     bind:quote={quote}
-    bind:flyTo={flyTo}
+    bind:animation={animation}
     quotes={quotes}
   />
 
   <div class='content-wrapper'>
-    {#await promise}
-      <div>Loading...</div>
-    {:then}
-      {#if page === res}
-        <Wrap flyDirection={flyTo}>
-          <Resume res={content.resume}/>
-        </Wrap>
-      {:else if page === writ}
-        <Wrap flyDirection={flyTo}>
-          <Writing writing={content.writing}/>
-        </Wrap>
-      {:else if page === code}
-        <Wrap flyDirection={flyTo}>
-          <Code code={content.code}/>
-        </Wrap>
-      {:else}
-        <Wrap flyDirection={flyTo}>
-          <Bio
-            bio={content.bio}
-            theme={themeData(theme)}
-          />
-        </Wrap>
-      {/if}
-    {/await}
+    <div class='transition-grid'>
+      {#await promise}
+        <Loading/>
+      {:then}
+        {#if page === res}
+          <Wrap animation={animation}>
+            <Resume res={content.resume}/>
+          </Wrap>
+        {:else if page === writ}
+          <Wrap animation={animation}>
+            <Writing writing={content.writing}/>
+          </Wrap>
+        {:else if page === code}
+          <Wrap animation={animation}>
+            <Code code={content.code}/>
+          </Wrap>
+        {:else}
+          <Wrap animation={animation}>
+            <Bio
+              bio={content.bio}
+              theme={themeData(theme)}
+            />
+          </Wrap>
+        {/if}
+      {/await}
+    </div>
   </div>
 
   <Footer
