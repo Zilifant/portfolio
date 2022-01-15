@@ -5,7 +5,7 @@
   import { pages } from '../../constants';
   import { setFlyDirection, removePreloadClass, randFrom } from '../../utilities';
 
-  export let page, quote, quotes, flyTo;
+  export let page, quote, quotes, animation;
 
   let prevPage;
   let dropNavState = 'hidden';
@@ -20,7 +20,7 @@
     // Update state.
     prevPage = page;
     page = newPage;
-    flyTo = setFlyDirection(prevPage, page);
+    animation = setFlyDirection(prevPage, page);
     quote = randFrom(quotes);
 
     removePreloadClass({ firstLoad: false });
