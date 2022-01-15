@@ -20,7 +20,7 @@ export function setFlyDirection(fromPg, toPg) {
   }, {});
 
   // Use reference object to compare relative 'position' of pages to determine fly direction.
-  return pageOrderRef[fromPg] > pageOrderRef[toPg] ? 'right' : 'left';
+  return pageOrderRef[fromPg] > pageOrderRef[toPg] ? 'flyRight' : 'flyLeft';
 };
 
 //---------------------//
