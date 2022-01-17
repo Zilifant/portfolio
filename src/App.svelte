@@ -27,15 +27,12 @@
   let quote = '';
 
   const reqArgs = {
-    url: `https://api.jsonbin.io/v3/b/${proc?.env.CONTENT_BIN_ID}/latest`,
-    headers: [
-      { name: 'X-Master-Key', value: proc?.env.MASTER_KEY }
-    ],
+    url: proc?.env.RELAY_URL,
     resType: 'json'
   };
 
-  const promise = sendXMLHttpRequest(reqArgs).then(resData => {
-    content = resData.record;
+  const promise = sendXMLHttpRequest(reqArgs).then(res => {
+    content = res.data.record;
     quotes = content.quotes.quotes;
     quote = randFrom(quotes);
   });
