@@ -22,7 +22,7 @@
   let page = getInitialPageId();
   let theme = localStorage.getItem('theme');
   let animation = 'fade';
-  let content;
+  let content, loaded;
   let quotes = [];
   let quote = '';
 
@@ -32,6 +32,7 @@
   };
 
   const promise = sendXMLHttpRequest(reqArgs).then(res => {
+    loaded = true;
     content = res.data.record;
     quotes = content.quotes.quotes;
     quote = randFrom(quotes);
@@ -57,7 +58,7 @@
   <div class='content-wrapper'>
     <div class='transition-grid'>
       {#await promise}
-        <Loading/>
+        <Loading loaded={loaded}/>
       {:then}
         {#if page === res}
           <Wrap animation={animation}>

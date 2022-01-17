@@ -9,6 +9,10 @@
   }
 }
 
+.loading-grid.loaded {
+  display: none;
+}
+
 .loading-grid {
   display: flex;
   position: relative;

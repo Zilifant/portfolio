@@ -6,6 +6,8 @@ Displayed in main content section while waiting for page data to load from conte
 <script>
   import { fade } from 'svelte/transition';
 
+  export let loaded;
+
   const delayIn = 0;
   const durationIn = 0;
   const delayOut = 0;
@@ -17,7 +19,7 @@ Displayed in main content section while waiting for page data to load from conte
   in:fade= '{{ delay: delayIn,  duration: durationIn  }}'
   out:fade='{{ delay: delayOut, duration: durationOut }}'
 >
-  <div class='page-wrapper loading-grid'>
+  <div class={`page-wrapper loading-grid ${loaded ? 'loaded' : ''}`}>
     <div></div>
     <div></div>
     <div></div>
