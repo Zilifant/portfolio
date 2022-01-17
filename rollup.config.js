@@ -10,6 +10,7 @@ import { config as configureDotEnv } from 'dotenv';
 import replace from '@rollup/plugin-replace';
 
 const production = !process.env.ROLLUP_WATCH;
+const relayHost = production ? 'https://mhk-back.herokuapp.com' : 'http://localhost:8888';
 
 function serve() {
 	let server;
@@ -48,7 +49,7 @@ export default {
 			proc: JSON.stringify({
 				env: {
 					isProd: production,
-					RELAY_URL: process.env.RELAY_URL,
+					RELAY_URL: relayHost + '/api/admin/portfolio',
 				}
 			})
 		}),
