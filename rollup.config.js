@@ -48,8 +48,7 @@ export default {
 			proc: JSON.stringify({
 				env: {
 					isProd: production,
-					CONTENT_BIN_ID: process.env.CONTENT_BIN_ID,
-					MASTER_KEY: process.env.MASTER_KEY
+					RELAY_URL: process.env.RELAY_URL,
 				}
 			})
 		}),
