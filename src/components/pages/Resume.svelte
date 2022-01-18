@@ -109,37 +109,39 @@
     <h2 class='res-sec-title'>Experience</h2>
     <ul>
       {#each res.experience as exp}
-        <li class='x-wrapper exp'>
-          <div
-            class='x-btn'
-            type='button'
-            on:click|preventDefault={expand}
-          >
-            <div class='svg-wrap x-btn-icon-wrap preload'>
-              <svg
-                class="svg-x-btn"
-                viewBox="0 0 75 75"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M45,30L45,1C45,0.448 44.552,-0 44,0C41.273,0 33.727,0 31,0C30.448,-0 30,0.448 30,1C30,6.209 30,30 30,30L1,30C0.448,30 -0,30.448 0,31C0,33.727 0,41.273 0,44C-0,44.552 0.448,45 1,45C6.209,45 30,45 30,45L30,74C30,74.552 30.448,75 31,75C33.727,75 41.273,75 44,75C44.552,75 45,74.552 45,74C45,68.791 45,45 45,45L74,45C74.552,45 75,44.552 75,44C75,41.273 75,33.727 75,31C75,30.448 74.552,30 74,30C68.791,30 45,30 45,30Z"/>
-              </svg>
+        {#if exp.id !== 'webdev'}
+          <li class='x-wrapper exp'>
+            <div
+              class='x-btn'
+              type='button'
+              on:click|preventDefault={expand}
+            >
+              <div class='svg-wrap x-btn-icon-wrap preload'>
+                <svg
+                  class="svg-x-btn"
+                  viewBox="0 0 75 75"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M45,30L45,1C45,0.448 44.552,-0 44,0C41.273,0 33.727,0 31,0C30.448,-0 30,0.448 30,1C30,6.209 30,30 30,30L1,30C0.448,30 -0,30.448 0,31C0,33.727 0,41.273 0,44C-0,44.552 0.448,45 1,45C6.209,45 30,45 30,45L30,74C30,74.552 30.448,75 31,75C33.727,75 41.273,75 44,75C44.552,75 45,74.552 45,74C45,68.791 45,45 45,45L74,45C74.552,45 75,44.552 75,44C75,41.273 75,33.727 75,31C75,30.448 74.552,30 74,30C68.791,30 45,30 45,30Z"/>
+                </svg>
+              </div>
+              <h6 class='exp-title'>{exp.title}</h6>
+              <div class='exp-org-ano-wrap'>
+                <h6 class='exp-org'>{exp.organization}</h6>
+                <div class='exp-year'>{renderDates(exp.startYear, exp.endYear)}</div>
+              </div>
+              <div class='exp-summary'>{exp.summary.general}</div>
             </div>
-            <h6 class='exp-title'>{exp.title}</h6>
-            <div class='exp-org-ano-wrap'>
-              <h6 class='exp-org'>{exp.organization}</h6>
-              <div class='exp-year'>{renderDates(exp.startYear, exp.endYear)}</div>
+            <div class={`x-content blts-${exp.bullets.length}`}>
+              <ul class='x-content-ul'>
+                {#each exp.bullets as {lead, text}}
+                  <li class='x-content-li'><span class='lead'>{lead}</span><br>{text}</li>
+                {/each}
+              </ul>
             </div>
-            <div class='exp-summary'>{exp.summary.general}</div>
-          </div>
-          <div class={`x-content blts-${exp.bullets.length}`}>
-            <ul class='x-content-ul'>
-              {#each exp.bullets as {lead, text}}
-                <li class='x-content-li'><span class='lead'>{lead}</span><br>{text}</li>
-              {/each}
-            </ul>
-          </div>
-        </li>
+          </li>
+        {/if}
       {/each}
     </ul>
   </section>
