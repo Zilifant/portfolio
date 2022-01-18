@@ -38,13 +38,13 @@
 <div class={'page-wrapper resume'}>
 
   <section class='content res-headline'>
-    <p class='res-headline-text'>{res.intro.headline}</p>
+    <p class='res-headline-text'>{res.intro.headline.general}</p>
   </section>
 
   <section class='content res-achievements'>
     <h2 class='res-sec-title'>At A Glance</h2>
     <ul>
-      {#each res.intro.achievements as item}
+      {#each res.intro.achievements.general as item}
         <li class='achievement'>{item}</li>
       {/each}
     </ul>
@@ -80,8 +80,8 @@
   <section class='content res-edu'>
     <div class='edu'>
       <h3>Education</h3>
-      {#each res.education as {degree, subject, name, gradYear}}
-        <p><span class='degree'>{degree} </span><span class='subject'>{subject}</span><br><span class='name'>{name}</span> <span class='year'>{gradYear}</span></p>
+      {#each res.education as {degreeShort, subject, nameLong, gradYear}}
+        <p><span class='degree'>{degreeShort} </span><span class='subject'>{subject}</span><br><span class='name'>{nameLong}</span> <span class='year'>{gradYear}</span></p>
       {/each}
     </div>
   </section>
@@ -130,7 +130,7 @@
               <h6 class='exp-org'>{exp.organization}</h6>
               <div class='exp-year'>{renderDates(exp.startYear, exp.endYear)}</div>
             </div>
-            <div class='exp-summary'>{exp.summary}</div>
+            <div class='exp-summary'>{exp.summary.general}</div>
           </div>
           <div class={`x-content blts-${exp.bullets.length}`}>
             <ul class='x-content-ul'>
