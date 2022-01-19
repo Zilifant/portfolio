@@ -153,45 +153,94 @@
 }
 
 .skill-btn {
-  color: var(--white);
-  padding: .5rem;
-  margin: .25rem 0 .25rem .5rem;
-  min-width: max-content;
+  // display: flex;
+  // align-items: center;
+  // width: max-content;
   flex-grow: 1;
-  @include font-adjust();
-  $t: .3s;
+
+  min-width: max-content;
+  margin: .25rem 0 .25rem .5rem;
+  padding: .5rem;
+  color: var(--white);
+  background-color: var(--btn-bg);
+  $t: var(--time);
   transition:
     color $t,
     background-color $t,
     border-color $t,
     transform $t,
     padding $t;
-  &.biz {
-    background-color: var(--accent-res); };
-  &.coding {
-    background-color: var(--accent-bio); };
-  &.events {
-    background-color: var(--accent-code); };
-  &.games {
-    background-color: var(--accent-writ); };
-  &.creative {
-    background-color: var(--accent-create); };
-  &:hover {
-    transform: translateY(-5px);
+
+  & p {
+    position: relative;
+    @include font-adjust();
+    @include colorfade();
   };
-  &:not(:active):hover {
-    &.biz { background-color: var(--accent-res-hover-dark); };
-    &.coding { background-color: var(--accent-bio-hover-dark); };
-    &.events { background-color: var(--accent-code-hover-dark); };
-    &.games { background-color: var(--accent-writ-hover-dark); };
-    &.creative { background-color: var(--accent-create-hover-dark); };
-  };
+
+  &.biz      { background-color: var(--accent-res); };
+  &.coding   { background-color: var(--accent-bio); };
+  &.events   { background-color: var(--accent-code); };
+  &.games    { background-color: var(--accent-writ); };
+  &.creative { background-color: var(--accent-create); };
+
+  &:hover { transform: translateY(-5px); };
+
   @media (max-width: 830px) {
     flex-grow: 0;
     padding: 1rem;
     transform: none;
+    &:hover { transform: none; };
   };
+
+  // &:not(:active):hover {
+  //   &.biz { background-color: var(--accent-res-hover-dark); };
+  //   &.coding { background-color: var(--accent-bio-hover-dark); };
+  //   &.events { background-color: var(--accent-code-hover-dark); };
+  //   &.games { background-color: var(--accent-writ-hover-dark); };
+  //   &.creative { background-color: var(--accent-create-hover-dark); };
+  // };
 }
+
+// .skill-btn {
+//   color: var(--white);
+//   padding: .5rem;
+//   margin: .25rem 0 .25rem .5rem;
+//   min-width: max-content;
+//   flex-grow: 1;
+//   @include font-adjust();
+//   $t: .3s;
+//   transition:
+//     color $t,
+//     background-color $t,
+//     border-color $t,
+//     transform $t,
+//     padding $t;
+//   &.biz {
+//     background-color: var(--accent-res); };
+//   &.coding {
+//     background-color: var(--accent-bio); };
+//   &.events {
+//     background-color: var(--accent-code); };
+//   &.games {
+//     background-color: var(--accent-writ); };
+//   &.creative {
+//     background-color: var(--accent-create); };
+//   &:hover {
+//     transform: translateY(-5px);
+//   };
+//   &:not(:active):hover {
+//     &.biz { background-color: var(--accent-res-hover-dark); };
+//     &.coding { background-color: var(--accent-bio-hover-dark); };
+//     &.events { background-color: var(--accent-code-hover-dark); };
+//     &.games { background-color: var(--accent-writ-hover-dark); };
+//     &.creative { background-color: var(--accent-create-hover-dark); };
+//   };
+//   @media (max-width: 830px) {
+//     flex-grow: 0;
+//     padding: 1rem;
+//     transform: none;
+//   };
+// }
 
 .res-skills ul {
   margin: -.25rem;
