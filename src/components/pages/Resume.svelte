@@ -94,7 +94,7 @@
           class={`btn skill-btn ${id}`}
           on:click={() => highlightedCat = id}
         >
-          {displayName}
+          <p>{displayName}</p>
         </button>
       {/each}
     </div>
