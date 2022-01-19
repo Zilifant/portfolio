@@ -82,10 +82,20 @@
       {#if project.type === 'multi-section'}
 
         <h3>{project.title}</h3>
-        <div class='code-project-description'>{@html project.description}</div>
+
+        <div class='code-project-description'>
+          {#each project.description.split('\n') as line}
+            <p>{line}</p>
+          {/each}
+        </div>
+
         {#each project.sections as section}
           <h3 class='code-project-sec-title'>{section.title}</h3>
-          <div class='code-project-description'>{@html section.description}</div>
+          <div class='code-project-description'>
+            {#each section.description.split('\n') as line}
+              <p>{line}</p>
+            {/each}
+          </div>
           <div class='code-project-links'>
             {#each section.links as {type, text, icon, href}}
               <a
@@ -105,7 +115,13 @@
       {:else}
 
         <h3>{project.title}</h3>
-        <div class='code-project-description'>{@html project.description}</div>
+
+        <div class='code-project-description'>
+          {#each project.description.split('\n') as line}
+            <p>{line}</p>
+          {/each}
+        </div>
+
         <div class='code-project-links'>
           {#each project.links as {type, text, icon, href}}
             <a
