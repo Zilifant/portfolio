@@ -27,10 +27,6 @@
   fill: var(--btn-fg-hover);
 }
 
-.code-project .code-project-description > p:not(:first-child) {
-  margin-top: .5rem;
-}
-
 /* Bio Page */
 
 .large-text p,
