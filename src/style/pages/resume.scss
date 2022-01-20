@@ -22,13 +22,6 @@
   text-transform: uppercase;
 }
 
-.res-headline-text {
-  @include colorfade();
-  font-size: 1.5rem;
-  letter-spacing: .1rem;
-  line-height: 2rem;
-}
-
 .res-achievements ul,
 .res-endorsements ul,
 .res-interests ul {
