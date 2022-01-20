@@ -3,7 +3,7 @@
 @import '../mixins.scss';
 
 .page-wrapper.code > :not(:first-child) {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .page-wrapper.code > section {
@@ -29,6 +29,10 @@
   & .code-project-title {
     display: flex;
     align-items: center;
+  };
+
+  & .code-project-description > p:not(:first-child) {
+    margin-top: .5rem;
   };
 
   & .code-project-links {
