@@ -38,7 +38,7 @@
 <div class={'page-wrapper resume'}>
 
   <section class='content res-headline'>
-    <p class='res-headline-text'>{res.intro.headline.general}</p>
+    <p class='headline-text'>{res.intro.headline.general}</p>
   </section>
 
   <section class='content res-achievements'>
