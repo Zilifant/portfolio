@@ -1,6 +1,8 @@
 <!-- Code -->
 
 <script>
+  import Tooltip from "../utility/Tooltip.svelte";
+
   export let code;
 
   const svg = {
@@ -76,6 +78,10 @@
 
 <div class={'page-wrapper code'}>
 
+  <section>
+    <p class='headline-text'>{code.summary}</p>
+  </section>
+
   {#each code.projects as project}
     <section class='code-project'>
 
@@ -90,26 +96,58 @@
         </div>
 
         {#each project.sections as section}
+
           <h3 class='code-project-sec-title'>{section.title}</h3>
+
           <div class='code-project-description'>
             {#each section.description.split('\n') as line}
               <p>{line}</p>
             {/each}
           </div>
+
           <div class='code-project-links'>
-            {#each section.links as {type, text, icon, href}}
-              <a
-                class={`btn url-pseudo-btn ${type}-url`}
-                href={href}
-                target="_blank" rel="noopener noreferrer"
-              >
-                <div class='svg-wrap flex'>
-                  {@html svg[icon]}
-                </div>
-                <p>{text}</p>
-              </a>
+            {#each section.links as {type, text, icon, href, spec}}
+              {#if spec}
+
+                <Tooltip cls='gif' side='top'>
+                  <iframe
+                    slot='tipContent'
+                    src='https://giphy.com/embed/LycfkVG4L6x0Y'
+                    width='480'
+                    height='270'
+                    frameBorder='0'
+                    class='giphy-embed'
+                    title="I don't know what I expected."
+                    allowFullScreen
+                  ></iframe>
+                  <div
+                    slot='hoverContent'
+                    class={`btn url-pseudo-btn spec ${type}-url`}
+                  >
+                    <div class='svg-wrap flex'>
+                      {@html svg[icon]}
+                    </div>
+                    <p>{text}</p>
+                  </div>
+                </Tooltip>
+
+              {:else}
+
+                <a
+                  class={`btn url-pseudo-btn url ${type}-url`}
+                  href={href}
+                  target="_blank" rel="noopener noreferrer"
+                >
+                  <div class='svg-wrap flex'>
+                    {@html svg[icon]}
+                  </div>
+                  <p>{text}</p>
+                </a>
+
+              {/if}
             {/each}
           </div>
+
         {/each}
 
       {:else}
@@ -123,17 +161,45 @@
         </div>
 
         <div class='code-project-links'>
-          {#each project.links as {type, text, icon, href}}
-            <a
-              class={`btn url-pseudo-btn ${type}-url`}
-              href={href}
-              target="_blank" rel="noopener noreferrer"
-            >
-              <div class='svg-wrap flex'>
-                {@html svg[icon]}
-              </div>
-              <p>{text}</p>
-            </a>
+          {#each project.links as {type, text, icon, href, spec}}
+            {#if spec}
+
+              <Tooltip cls='gif' side='top'>
+                <iframe
+                  slot='tipContent'
+                  src='https://giphy.com/embed/LycfkVG4L6x0Y'
+                  width='480'
+                  height='270'
+                  frameBorder='0'
+                  class='giphy-embed'
+                  title="I don't know what I expected."
+                  allowFullScreen
+                ></iframe>
+                <div
+                  slot='hoverContent'
+                  class={`btn url-pseudo-btn spec ${type}-url`}
+                >
+                  <div class='svg-wrap flex'>
+                    {@html svg[icon]}
+                  </div>
+                  <p>{text}</p>
+                </div>
+              </Tooltip>
+
+            {:else}
+
+              <a
+                class={`btn url-pseudo-btn url ${type}-url`}
+                href={href}
+                target="_blank" rel="noopener noreferrer"
+              >
+                <div class='svg-wrap flex'>
+                  {@html svg[icon]}
+                </div>
+                <p>{text}</p>
+              </a>
+
+            {/if}
           {/each}
         </div>
 
