@@ -1,0 +1,56 @@
+// Tooltip
+
+.ttip-parent {
+  position:relative;
+}
+
+.ttip-parent .ttip {
+  z-index: 4;
+  background-color: var(--bg);
+  border-radius: 3px;
+  border: 2px solid var(--chlg6);
+  // width: max-content;
+  // max-width: 500px;
+  display: none;
+  // padding: 1rem;
+  position: absolute;
+  line-height: 0;
+}
+
+.ttip.left,
+.ttip.right {
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.ttip.left {
+  right: 100%;
+  margin-right: .5rem;
+}
+
+.ttip.right {
+  left: 100%;
+  margin-left: .5rem;
+}
+
+.ttip.top,
+.ttip.bottom {
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.ttip.top {
+  bottom: calc(100% + .5rem);
+}
+
+.ttip.bottom {
+  top: calc(100% + .5rem);
+}
+
+.ttip-parent:hover .ttip {
+  display: block;
+}
+
+.ttip :not(:first-child) {
+  margin-top: 1rem;
+}
