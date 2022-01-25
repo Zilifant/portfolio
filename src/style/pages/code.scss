@@ -67,17 +67,23 @@
     background-color $t,
     border-color $t,
     transform $t;
-  &:hover {
-    transform: translateY(-5px);
-  };
+
   & p {
     font-size: 1.25rem;
     position: relative;
     color: var(--btn-fg);
     @include colorfade();
   };
-  &:not(:active):hover {
+
+  &.spec:hover {
+    background-color: var(--gray5);
+    cursor: default;
+  };
+
+  &.url:hover {
+    transform: translateY(-5px);
     background-color: var(--btn-bg-hover);
+
     & p {
       color: var(--btn-fg-hover);
     };
