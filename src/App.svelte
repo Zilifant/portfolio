@@ -13,7 +13,6 @@
   import { version, bio, res, code, writ, dark, } from './constants';
   import { randFrom, getInitialPageId, removePreloadClass, } from './utilities';
   import { sendXMLHttpRequest } from './sendXMLHttpRequest';
-  // import { devContent } from '../zed/devContent';
   removePreloadClass({ firstLoad: true });
 
   $: pageData = (page) => (!!page) ? page : bio;
@@ -22,7 +21,7 @@
   let page = getInitialPageId();
   let theme = localStorage.getItem('theme');
   let animation = 'fade';
-  let loaded = false;
+  let loaded = true;
   let content = {};
   let quotes = [];
   let quote = '';
@@ -34,7 +33,7 @@
 
   const promise = sendXMLHttpRequest(reqArgs).then(res => {
     loaded = true;
-    content = res.data.record;
+    content = res.data;
     quotes = content.quotes.quotes;
     quote = randFrom(quotes);
   });
